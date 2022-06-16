@@ -4,7 +4,6 @@
 
 <h1 align="center">Railz UIKit Icons</h1>
 
-
 <p align="center">
   <a href="https://github.com/railz-ai/railz-uikit/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@railzai/railz-icons" alt="Software License"/></a>
   <a href="https://www.npmjs.com/package/@railzai/railz-icons"><img src="https://img.shields.io/npm/v/@railzai/railz-icons/latest.svg" alt="Latest Package on NPM"/></a>
@@ -15,10 +14,7 @@
 </p>
 <h2>Contains icon components.</h2>
 
-
-
 ## [Installation](../../INSTALLATION.md)
-
 
 ## [Usage](../../USAGE.md)
 

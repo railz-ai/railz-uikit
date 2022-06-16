@@ -1,5 +1,5 @@
-import {newSpecPage} from '@stencil/core/testing';
-import {RailzNested} from '../railz-nested';
+import { newSpecPage } from '@stencil/core/testing';
+import { RailzNested } from '../railz-nested';
 
 describe('railz-nested', () => {
   it('renders', async () => {

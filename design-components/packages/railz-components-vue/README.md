@@ -34,9 +34,9 @@ yarn add @railzai/railz-uikit-vue
 Import the `RailzUikitModule` into your component module or app.module.ts file
 
 ```typescript
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 import { RailzUikit } from '@railzai/railz-uikit-vue';
 
-import App from './App.vue'
-createApp(App).use(RailzUikit).mount('#app')
+import App from './App.vue';
+createApp(App).use(RailzUikit).mount('#app');
 ```

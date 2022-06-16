@@ -3,4 +3,3 @@ title: Contributing
 ---
 
 /../../CONTRIBUTING.md
-

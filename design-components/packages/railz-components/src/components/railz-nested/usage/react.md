@@ -1,5 +1,5 @@
 ```typescript jsx
-import {RailzNestedSum} from '@railzai/railz-uikit-react';
+import { RailzNestedSum } from '@railzai/railz-uikit-react';
 
-<RailzNestedSum first={10} second={14}/>
+<RailzNestedSum first={10} second={14} />;
 ```

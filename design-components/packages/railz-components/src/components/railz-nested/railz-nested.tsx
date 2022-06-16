@@ -1,5 +1,5 @@
-import {Component, h, Prop} from '@stencil/core';
-import {Sum} from "./types/sum";
+import { Component, h, Prop } from '@stencil/core';
+import { Sum } from './types/sum';
 
 /**
  * RailzNested
@@ -11,7 +11,6 @@ import {Sum} from "./types/sum";
   shadow: true,
 })
 export class RailzNested {
-
   /**
    * The list of numbers to sum up
    * @type Sum
@@ -20,12 +19,15 @@ export class RailzNested {
   @Prop() sumList: Sum[] = [];
 
   render() {
-    return <div>
-      <p>
-        <b>Now using Railz Nested Component</b>
-      </p>
-      {(this.sumList || []).map((sum) => <railz-nested-sum first={sum.first} second={sum.second}/>)}
-    </div>;
+    return (
+      <div>
+        <p>
+          <b>Now using Railz Nested Component</b>
+        </p>
+        {(this.sumList || []).map(sum => (
+          <railz-nested-sum first={sum.first} second={sum.second} />
+        ))}
+      </div>
+    );
   }
-
 }

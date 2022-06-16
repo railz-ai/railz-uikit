@@ -4,7 +4,6 @@
 
 <h1 align="center">Railz UIKit</h1>
 
-
 <p align="center">
   <a href="https://github.com/railz-ai/railz-uikit/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@railzai/railz-uikit" alt="Software License"/></a>
   <a href="https://www.npmjs.com/package/@railzai/railz-uikit"><img src="https://img.shields.io/npm/v/@railzai/railz-uikit/latest.svg" alt="Latest Package on NPM"/></a>
@@ -15,12 +14,9 @@
 </p>
 <h2 align="center">Contains components libraries.</h2>
 
-
 - [_Railz UIKit_](https://github.com/railz-ai/railz-uikit/design-components) is a library of components that features our implementation of [Railz Connect](https://railz.ai/product/connect) widget and extended components.
 
-
 ## [Installation](../../INSTALLATION.md)
-
 
 ## [Usage](../../USAGE.md)
 

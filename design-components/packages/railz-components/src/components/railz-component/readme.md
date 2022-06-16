@@ -1,9 +1,6 @@
 # railz-component
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Usage
 
@@ -13,23 +10,19 @@
 <railz-component first="Sade" last="Adu"></railz-component>
 ```
 
-
 ### React
 
 ```typescript jsx
-import {RailzComponent} from '@railzai/railz-uikit-react';
+import { RailzComponent } from '@railzai/railz-uikit-react';
 
-<RailzComponent first="Sade" middle="Tola" last="Adu"/>
+<RailzComponent first="Sade" middle="Tola" last="Adu" />;
 ```
-
 
 ### Vue
 
 ```vue
 <railz-component first="Sade" last="Adu"></railz-component>
 ```
-
-
 
 ## Properties
 
@@ -39,7 +32,6 @@ import {RailzComponent} from '@railzai/railz-uikit-react';
 | `last`   | `last`    | The last name   | `string` | `''`    |
 | `middle` | `middle`  | The middle name | `string` | `''`    |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

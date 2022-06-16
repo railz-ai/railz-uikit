@@ -36,15 +36,15 @@ In your own Angular Application, add the below in your code files
 Import the `RailzUikitModule` into your component module or app.module.ts file
 
 ```typescript
-import { NgModule } from '@angular/core'; 
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component'; 
-import {RailzUikitModule} from "@railzai/railz-uikit-angular"; 
-@NgModule({ 
-    declarations: [AppComponent], 
-    imports: [BrowserModule, RailzUikitModule], 
-    providers: [], 
-    bootstrap: [AppComponent], 
-}) 
+import { AppComponent } from './app.component';
+import { RailzUikitModule } from '@railzai/railz-uikit-angular';
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, RailzUikitModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
 export class AppModule {}
 ```

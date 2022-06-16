@@ -1,8 +1,8 @@
-window.onload = function() {
-  const element = document.querySelector(".language-mermaid");
+window.onload = function () {
+  const element = document.querySelector('.language-mermaid');
   if (element) {
     element.classList.add('mermaid');
 
-    mermaid.initialize({startOnLoad:true});
+    mermaid.initialize({ startOnLoad: true });
   }
 };
