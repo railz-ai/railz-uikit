@@ -14,5 +14,8 @@
     "ci:publish:minor": "lerna publish minor --yes --no-verify-access --message 'chore(release): publish minor version'",
     "ci:publish:major": "lerna publish major --yes --no-verify-access --message 'chore(release): publish major version'"
   },
-  "packageManager": "yarn@1.22.17"
+  "packageManager": "yarn@1.22.17",
+  "workspaces": [
+    "packages/*"
+  ]
 }

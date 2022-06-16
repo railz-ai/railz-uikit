@@ -23,7 +23,6 @@
     "url": "git+https://github.com/railz-ai/railz-uikit.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "yarn run clean && yarn run build:cjs && yarn run build:esm",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "build:esm": "tsc --module es6 --outDir dist/esm",

@@ -1,5 +1,5 @@
-import { newSpecPage } from '@stencil/core/testing';
-import { RailzNested } from '../railz-nested';
+import {newSpecPage} from '@stencil/core/testing';
+import {RailzNested} from '../railz-nested';
 
 describe('railz-nested', () => {
   it('renders', async () => {
@@ -10,7 +10,14 @@ describe('railz-nested', () => {
     expect(page.root).toEqualHtml(`
       <railz-nested>
         <mock:shadow-root>
-          <slot></slot>
+          <div>
+         <p>
+           <b>
+             Now using Railz Nested Component
+           </b>
+         </p>
+       </div>
+
         </mock:shadow-root>
       </railz-nested>
     `);
