@@ -1,0 +1,50 @@
+// Palete
+// -------------------------------------------------------------------
+
+$colors: (
+  'white': #fff,
+  'black': #000,
+  'gray': (
+    '100': hsl(0deg 0% 98%),
+    '200': hsl(0deg 0% 93%),
+    '300': hsl(0deg 0% 88%),
+    '400': hsl(0deg 0% 74%),
+    '500': hsl(0deg 0% 62%),
+    '600': hsl(0deg 0% 46%),
+    '700': hsl(0deg 0% 38%),
+    '800': hsl(0deg 0% 26%),
+    '900': hsl(0deg 0% 13%),
+  ),
+  'brand': (
+    'forest_green': hsl(155deg 100% 27% / 100%),
+    'bright_green': hsl(147deg 55% 49% / 100%),
+    'dark_green': hsl(182deg 100% 10% / 100%),
+  ),
+  'success': (
+    'bg': hsl(113deg 36% 95% / 100%),
+    'icon': hsl(147deg 55% 42% / 100%),
+    'text': hsl(154deg 100% 19% / 100%),
+  ),
+  'warning': (
+    'bg': hsl(44deg 85% 95% / 100%),
+    'icon': hsl(33deg 86% 62% / 100%),
+    'text': hsl(34deg 70% 22% / 100%),
+  ),
+  'error': (
+    'bg': hsl(14deg 78% 95% / 100%),
+    'icon': hsl(0deg 100% 35% / 100%),
+    'text': hsl(6deg 56% 22% / 100%),
+  ),
+  'information': (
+    'bg': hsl(207deg 75% 95% / 100%),
+    'icon': hsl(212deg 81% 64% / 100%),
+    'text': hsl(212deg 54% 24% / 100%),
+  ),
+  'charts': (
+    'dark-blue': hsl(191deg 100% 37% / 100%),
+    'light-blue': hsl(166deg 81% 84% / 100%),
+    'yellow': hsl(48deg 100% 61% / 100%),
+    'orange': hsl(16deg 86% 58% / 100%),
+    'red': hsl(0deg 100% 35% / 100%),
+  ),
+);

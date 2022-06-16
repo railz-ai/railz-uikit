@@ -1,0 +1,66 @@
+@use 'sass:list';
+
+//-------------------------------------------------------------------
+// Motion
+//-------------------------------------------------------------------
+
+// Transitions
+//-------------------------------------------------------------------
+
+@function speed($speed) {
+  @return $t * $speed;
+}
+
+@function transition-speed($speed) {
+  @if map-has-key($speeds, $speed) {
+    $speed: map-get($speeds, $speed);
+    @return $speed;
+  }
+  @warn error-message($speed, $speeds,'tokens/_motion.scss');
+  @return null;
+}
+
+@function transition-property($properties...) {
+  $property-list: () !default;
+
+  @each $property-set in $properties {
+    @if map-has-key($transition-properties, $property-set) {
+      $property-set: map-get($transition-properties, $property-set);
+      $property-list: list.append($property-list, #{$property-set}, comma);
+    } @else {
+      @warn error-message($property-set, $transition-properties, 'tokens/_motion.scss');
+      @return null;
+    }
+  }
+
+  @return $property-list;
+}
+
+@mixin transition($speed: 'fast', $properties...) {
+  @if map-has-key($speeds, $speed) {
+    transition: transitionspeed($speed);
+  } @else {
+    transition-duration: $speed;
+  }
+  @if list.length($properties) > 0 {
+    transition-property: transitionproperty($properties...);
+  } @else {
+    transition-property: transitionproperty('default');
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition-duration: 0 !important;
+
+    &:hover,
+    &:focus {
+      transition-duration: 0 !important;
+    }
+  }
+}
+
+@mixin animate($animation, $speed: 'fast', $properties...) {
+  animation: $animation transitionspeed($speed) transitionproperty($properties);
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 0;
+  }
+}

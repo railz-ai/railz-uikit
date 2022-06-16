@@ -1,0 +1,46 @@
+{
+  "name": "@railzai/railz-tokens",
+  "version": "0.0.0",
+  "description": "Design Token Framework",
+  "main": "./scss/ui-kit/_index.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "stylelint": "stylelint 'scss/**/*.scss' --fix",
+    "build": "echo 'done'",
+    "scss": "sass --watch scss:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/railz-ai/railz-uikit.git"
+  },
+  "keywords": [
+    "SCSS",
+    "components",
+    "Design",
+    "System",
+    "Component",
+    "Guide",
+    "Style",
+    "Guide",
+    "Tokens",
+    "Library"
+  ],
+  "author": "railz.ai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/railz-ai/railz-uikit/issues"
+  },
+  "homepage": "https://github.com/railz-ai/railz-uikit#readme",
+  "devDependencies": {
+    "sass": "~1.52.3",
+    "prettier": "2.7.0",
+    "stylelint": "14.9.1",
+    "stylelint-a11y": "1.2.3",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-recommended": "8.0.0",
+    "stylelint-config-standard-scss": "4.0.0",
+    "stylelint-prettier": "2.0.0",
+    "stylelint-scss": "4.2.0"
+  },
+  "packageManager": "yarn@1.22.17"
+}

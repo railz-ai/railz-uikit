@@ -1,0 +1,40 @@
+{
+  "name": "@railzai/railz-uikit",
+  "version": "0.0.0",
+  "description": "Railz.ai Design Components",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/railz-components/railz-components.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/railz-ai/railz-uikit"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "dependencies": {
+    "@stencil/core": "^2.13.0"
+  },
+  "devDependencies": {
+    "@stencil/angular-output-target": "^0.4.0",
+    "@stencil/react-output-target": "^0.3.1",
+    "@stencil/vue-output-target": "^0.6.0",
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.5",
+    "jest-cli": "^27.4.5",
+    "puppeteer": "^10.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,34 @@
+<p align="center">
+  <a href="https://railz.ai/" rel="noopener" target="_blank"><img width="80" src="../../../docs/assets/images/railz-logo.svg" alt="MUI logo"></a>
+</p>
+
+<h1 align="center">Railz Tokens</h1>
+
+
+<p align="center">
+  <a href="https://github.com/railz-ai/railz-uikit/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@railzai/railz-tokens" alt="Software License"/></a>
+  <a href="https://www.npmjs.com/package/@railzai/railz-tokens"><img src="https://img.shields.io/npm/v/@railzai/railz-tokens/latest.svg" alt="Latest Package on NPM"/></a>
+  <a href="https://github.com/railz-ai/railz-uikit/actions/workflows/publish.yml"><img src="https://github.com/railz-ai/railz-uikit/actions/workflows/publish.yml/badge.svg" alt="Latest Deployment"/></a>
+  <a href="https://stenciljs.com/docs/style-guide">
+          <img src="https://img.shields.io/badge/code_style-stencil/stylelint/prettier-5851ff.svg?style=flat-square" alt="Code Style" />
+      </a>
+</p>
+<h2>Contains Design Tokens.</h2>
+
+
+
+## [Installation](../../INSTALLATION.md)
+
+
+## [Usage](../../USAGE.md)
+
+## Contributing
+
+The Railz UIKit Icon library and documentation are open to contributions. For more information, check
+the [guidelines](../../../CONTRIBUTING.md).
+
+## License
+
+[MIT License](../../../LICENSE)
+
+---

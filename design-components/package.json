@@ -1,0 +1,24 @@
+{
+  "name": "design-components",
+  "private": true,
+  "scripts": {
+    "install:codesandbox": "yarn install",
+    "bootstrap": "lerna bootstrap",
+    "add:angular": "lerna add @railzai/railz-uikit --scope=@railzai/railz-uikit-angular --peer",
+    "add:react": "lerna add @railzai/railz-uikit --scope=@railzai/railz-uikit-react",
+    "add:vue": "lerna add @railzai/railz-uikit --scope=@railzai/railz-uikit-vue",
+    "add:components": "yarn add:angular && yarn add:react && yarn add:vue",
+    "run:build": "lerna run --scope '{@railzai/railz-uikit,@railzai/railz-uikit-angular,@railzai/railz-uikit-react,@railzai/railz-uikit-vue}' build",
+    "build": "yarn && yarn run add:components && yarn bootstrap && yarn run:build && yarn lint",
+    "build:codesandbox": "yarn bootstrap && yarn run:build",
+    "test": "yarn workspace @railzai/railz-uikit run test",
+    "eslint": "yarn workspace @railzai/railz-uikit run lint",
+    "stylelint": "yarn workspace @railzai/railz-uikit run stylelint",
+    "ci:publish:prerelease": "lerna publish prerelease --yes --no-verify-access --message 'chore(release): publish prerelease version'",
+    "ci:publish:patch": "lerna publish patch --yes --no-verify-access --message 'chore(release): publish patch version'",
+    "ci:publish:minor": "lerna publish minor --yes --no-verify-access --message 'chore(release): publish minor version'",
+    "ci:publish:major": "lerna publish major --yes --no-verify-access --message 'chore(release): publish major version'",
+    "prettier:write": "prettier . --write --ignore-unknown --allow-empty",
+    "lint": "yarn eslint && yarn stylelint && yarn prettier:write"
+  }
+}

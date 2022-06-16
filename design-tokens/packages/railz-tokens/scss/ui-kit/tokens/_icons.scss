@@ -1,0 +1,17 @@
+// Icon Sizes
+//-------------------------------------------------------------------
+
+$icon-sizes: (
+  'x-large': space(10),
+  'large': space(6),
+  'medium': space(4),
+  'small': space(3),
+  'x-small': space(2),
+  'xx-small': space(1.5),
+);
+
+// Icon Library
+//-------------------------------------------------------------------
+// List out each icon file to generate a CSS class
+
+$icon-list: ('plus', 'error');

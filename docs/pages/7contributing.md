@@ -1,0 +1,6 @@
+---
+title: Contributing
+---
+
+/../../CONTRIBUTING.md
+

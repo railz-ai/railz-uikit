@@ -1,0 +1,23 @@
+# Node artifact files
+node_modules/
+dist/
+
+www
+dist
+loader
+.angular
+.env
+
+packages/components-angular/.angular/cache
+packages/components-react/dist
+packages/components-react/node_modules
+packages/*/lib
+examples/dev/*
+yarn-error.log
+.idea
+/design-tokens/packages/railz-tokens/css/
+package-lock.json
+stencil-generated
+/design-components/packages/railz-components-angular/src/lib/stencil-generated/
+/design-components/packages/railz-components/src/components.d.ts
+/design-icons/packages/railz-icons/src/components.d.ts
