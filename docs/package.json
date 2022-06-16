@@ -10,7 +10,8 @@
     "build": "component-docs build",
     "clean": "del dist/",
     "prestart": "yarn clean",
-    "release": "yarn build && touch dist/.nojekyll && gh-pages -t -d dist -b master"
+    "deploy": "yarn build && gh-pages -t -d dist -b master",
+    "release": "yarn build && gh-pages -t -d dist -b master",
   },
   "dependencies": {
     "component-docs": "~0.23.0"
