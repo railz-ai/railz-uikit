@@ -20,5 +20,8 @@
     "ci:publish:major": "lerna publish major --yes --no-verify-access --message 'chore(release): publish major version'",
     "prettier:write": "prettier . --write --ignore-unknown --allow-empty",
     "lint": "yarn eslint && yarn stylelint && yarn prettier:write"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

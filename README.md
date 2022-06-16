@@ -23,6 +23,7 @@
 - [_Railz Icons_](https://github.com/railz-ai/railz-uikit/design-icons) is a library of icon components.
 
 
+## [Docs](https://railz-ai.github.io/railz-uikit/)
 
 ## Installation
 
