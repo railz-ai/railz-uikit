@@ -4,7 +4,6 @@
 
 <h1 align="center">Railz Tokens</h1>
 
-
 <p align="center">
   <a href="https://github.com/railz-ai/railz-uikit/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@railzai/railz-tokens" alt="Software License"/></a>
   <a href="https://www.npmjs.com/package/@railzai/railz-tokens"><img src="https://img.shields.io/npm/v/@railzai/railz-tokens/latest.svg" alt="Latest Package on NPM"/></a>
@@ -15,10 +14,7 @@
 </p>
 <h2>Contains Design Tokens.</h2>
 
-
-
 ## [Installation](../../INSTALLATION.md)
-
 
 ## [Usage](../../USAGE.md)
 

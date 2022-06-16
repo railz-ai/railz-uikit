@@ -4,7 +4,6 @@
 
 <h1 align="center">Railz UIKit</h1>
 
-
 <p align="center">
   <a href="https://github.com/railz-ai/railz-uikit/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@railzai/railz-uikit" alt="Software License"/></a>
   <a href="https://www.npmjs.com/package/@railzai/railz-uikit"><img src="https://img.shields.io/npm/v/@railzai/railz-uikit/latest.svg" alt="Latest Package on NPM"/></a>
@@ -15,13 +14,11 @@
 </p>
 <h2 align="center">Contains components libraries.</h2>
 
-
 - [_Railz UIKit_](https://github.com/railz-ai/railz-uikit/design-components) is a library of components that features our implementation of [Railz Connect](https://railz.ai/product/connect) widget and extended components.
 
 - [_Railz Tokens_](https://github.com/railz-ai/railz-uikit/design-tokens) is a library of design tokens.
 
 - [_Railz Icons_](https://github.com/railz-ai/railz-uikit/design-icons) is a library of icon components.
-
 
 ## [Docs](https://railz-ai.github.io/railz-uikit/)
 
@@ -36,7 +33,6 @@ the [NPMJS Railz account](https://www.npmjs.com/org/railzai).
 
 ### [Railz Icons](./design-icons/INSTALLATION.md)
 
-
 ## Usage
 
 ### [Railz UIKit](./design-components/USAGE.md)
@@ -44,7 +40,6 @@ the [NPMJS Railz account](https://www.npmjs.com/org/railzai).
 ### [Railz Tokens](./design-tokens/USAGE.md)
 
 ### [Railz Icons](./design-icons/USAGE.md)
-
 
 ## Contributing
 
