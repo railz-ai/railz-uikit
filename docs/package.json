@@ -1,0 +1,27 @@
+{
+  "name": "railz-uikit-docs",
+  "version": "0.0.0",
+  "description": "Documentation for Railz UI Kit",
+  "private": true,
+  "author": "railz.ai",
+  "license": "MIT",
+  "scripts": {
+    "start": "component-docs serve",
+    "build": "component-docs build",
+    "clean": "del dist/",
+    "prestart": "yarn clean"
+  },
+  "dependencies": {
+    "component-docs": "~0.23.0"
+  },
+  "packageManager": "yarn@1.22.17",
+  "devDependencies": {
+    "@babel/core": "~7.18.5",
+    "@babel/plugin-proposal-class-properties": "~7.17.12",
+    "@babel/preset-env": "~7.18.2",
+    "@babel/preset-react": "~7.17.12",
+    "del-cli": "~4.0.1",
+    "doctrine": "^3.0.0",
+    "linaria": "^2.3.1"
+  }
+}

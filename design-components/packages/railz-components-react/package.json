@@ -1,0 +1,55 @@
+{
+  "name": "@railzai/railz-uikit-react",
+  "sideEffects": false,
+  "version": "0.0.0",
+  "description": "React specific wrapper for @railzai/railz-uikit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/railz-ai/railz-uikit"
+  },
+  "author": "Railz.ai",
+  "homepage": "https://docs.railz.ai",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/railz-ai/railz-uikit/issues"
+  },
+  "scripts": {
+    "tsc": "tsc -p .",
+    "rollup": "rollup -c",
+    "build": "yarn clean && yarn compile",
+    "clean": "rimraf dist",
+    "compile": "yarn build:cjs && yarn build:esm",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build:esm": "tsc --module es6 --outDir dist/esm"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "@types/jest": "23.3.9",
+    "@types/node": "^15.12.2",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "jest": "^27.5.1",
+    "jest-dom": "^3.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rimraf": "3.0.2",
+    "typescript": "4.7.3"
+  },
+  "dependencies": {
+    "@railzai/railz-uikit": "^0.0.0",
+    "minimist": "1.2.6"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "license": "MIT",
+  "packageManager": "yarn@1.22.17"
+}

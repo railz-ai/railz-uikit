@@ -1,0 +1,24 @@
+// link Functions
+//-------------------------------------------------------------------
+
+@mixin link($size: 'medium', $layout: 'label-center') {
+  @include link-style;
+  @include get-link-size($size);
+  @include get-link-layout($layout);
+}
+
+@mixin get-link-size($size) {
+  @if index($link-sizes, $size) {
+    @include link-size($size);
+  } @else {
+    @warn error-message($size, $link-sizes, 'components/_links.scss');
+  }
+}
+
+@mixin get-link-layout($layout) {
+  @if index($link-layouts, $layout) {
+    @include link-layout($layout);
+  } @else {
+    @warn error-message($layout, $link-layouts,'components/_links.scss');
+  }
+}

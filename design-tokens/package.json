@@ -1,0 +1,18 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "install:codesandbox": "yarn install",
+    "install": "cd packages/railz-tokens && yarn install && cd ../..",
+    "bootstrap": "lerna bootstrap",
+    "run:build": "lerna run --scope '{@railzai/railz-tokens,}' build",
+    "build": "yarn && yarn bootstrap && yarn run:build && yarn lint",
+    "build:codesandbox": "yarn bootstrap && yarn run:build",
+    "lint": "cd packages/railz-tokens && yarn run stylelint && cd ../..",
+    "ci:publish:prerelease": "lerna publish prerelease --yes --no-verify-access --message 'chore(release): publish prerelease version'",
+    "ci:publish:patch": "lerna publish patch --yes --no-verify-access --message 'chore(release): publish patch version'",
+    "ci:publish:minor": "lerna publish minor --yes --no-verify-access --message 'chore(release): publish minor version'",
+    "ci:publish:major": "lerna publish major --yes --no-verify-access --message 'chore(release): publish major version'"
+  },
+  "packageManager": "yarn@1.22.17"
+}

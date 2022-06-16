@@ -1,0 +1,19 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "install:codesandbox": "yarn install",
+    "bootstrap": "lerna bootstrap",
+    "run:build": "lerna run --scope '{@railzai/railz-icons,}' build",
+    "build": "yarn && yarn bootstrap && yarn run:build",
+    "build:codesandbox": "yarn bootstrap && yarn run:build",
+    "test": "cd packages/railz-icons && yarn run test && cd ../..",
+    "ci:publish:prerelease": "lerna publish prerelease --yes --no-verify-access --message 'chore(release): publish prerelease version'",
+    "ci:publish:prepatch": "lerna publish prepatch --yes --no-verify-access --message 'chore(release): publish prepatch version'",
+    "ci:publish:patch": "lerna publish patch --yes --no-verify-access --message 'chore(release): publish patch version'",
+    "ci:publish:minor": "lerna publish minor --yes --no-verify-access --message 'chore(release): publish minor version'",
+    "ci:publish:major": "lerna publish major --yes --no-verify-access --message 'chore(release): publish major version'",
+    "prettier:write": "prettier . --write --ignore-unknown --allow-empty"
+  },
+  "packageManager": "yarn@1.22.17"
+}

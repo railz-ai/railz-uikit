@@ -1,0 +1,127 @@
+@use 'sass:string';
+@use 'sass:map';
+@use 'sass:list';
+
+// -------------------------------------------------------------------
+// Typography Helper Functions
+// -------------------------------------------------------------------
+@function font-family($family) {
+  @if map-has-key($font-families, $family) {
+    $family: map-get($font-families, $family);
+    @return $family;
+  } @else {
+    @warn error-message($family, $font-families, 'tokens/_typography.scss');
+    @return 'WARNING: Invalid Font Family';
+  }
+}
+
+@function font-size($size) {
+  @if map-has-key($font-sizes, $size) {
+    $size: map-get($font-sizes, $size);
+    @return $size;
+  } @else {
+    @warn error-message($size, $font-sizes, 'tokens/_typography.scss');
+    @return 'WARNING: Invalid Font Size';
+  }
+}
+
+@function font-weight($weight: regular) {
+  @if map-has-key($font-weights, $weight) {
+    @return map-get($font-weights, $weight);
+  } @else {
+    @warn error-message($weight, $font-weights, 'tokens/_typography.scss');
+    @return 'WARNING: Invalid Font Weight';
+  }
+}
+
+@function line-height($height: 'normal') {
+  @if map-has-key($line-heights, $height) {
+    $height: map-get($line-heights, $height);
+    @return $height;
+  } @else {
+    @warn error-message($height, $line-heights, 'tokens/_typography.scss');
+    @return 'WARNING: Invalid Line Height';
+  }
+}
+
+@function letter-spacing($spacing: 'normal') {
+  @if map-has-key($letter-spacing, $spacing) {
+    $spacing: map-get($letter-spacing, $spacing);
+    @return string.unquote($spacing);
+  } @else {
+    @warn error-message($spacing, $letter-spacing, 'tokens/_typography.scss');
+    @return 'WARNING: Invalid Letter Spacing';
+  }
+}
+
+@mixin font-set($set: '') {
+  @debug $set;
+
+  @if map-has-key($font-settings, $set) {
+    $set: map-get($font-settings, $set);
+    @include font($set...);
+  }
+}
+
+@mixin font-set-weight($set: '') {
+  @debug $set;
+
+  @if map-has-key($font-settings, $set) {
+    $set: map-get($font-settings, $set);
+    @include get-font-set-weight($set...);
+  }
+}
+
+@mixin get-font-set-weight(
+  $size: '',
+  $weight: '',
+  $family: list.nth(map-keys($font-families), 1),
+  $line-height: 'normal'
+) {
+  @if $weight {
+    font-weight: font-weight($weight);
+  }
+}
+
+@mixin font(
+  $size: '',
+  $weight: '',
+  $family: list.nth(map-keys($font-families), 1),
+  $line-height: 'normal',
+  $letter-spacing: 'normal',
+  $properties...
+) {
+  @debug $family;
+
+  @if map-has-key($font-settings, $size) {
+    @include font-set($size);
+  } @else {
+    @if $family {
+      font-family: font-family($family);
+    }
+    @if $size {
+      font-size: font-size($size);
+    }
+    @if $weight {
+      font-weight: font-weight($weight);
+    }
+    @if $line-height {
+      line-height: line-height($line-height);
+    }
+    @if $letter-spacing {
+      letter-spacing: letter-spacing($letter-spacing);
+    }
+
+    @each $property in $properties {
+      @if $property == 'capitalize' {
+        text-transform: capitalize;
+      }
+      @if $property == 'uppercase' {
+        text-transform: uppercase;
+      }
+      @if $property == 'lowercase' {
+        text-transform: lowercase;
+      }
+    }
+  }
+}

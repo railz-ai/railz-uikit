@@ -1,0 +1,24 @@
+{
+  "buildCommand": "build:codesandbox",
+  "installCommand": "install:codesandbox",
+  "packages": [
+    "design-components/packages/railz-components",
+    "design-components/packages/railz-components-angular",
+    "design-components/packages/railz-components-react",
+    "design-icons/packages/railz-icons",
+    "design-tokens/packages/railz-tokens"
+  ],
+  "publishDirectory": {
+    "@railzai/railz-uikit": "design-components/packages/railz-components",
+    "@railzai/railz-uikit-angular": "design-components/packages/railz-components-angular",
+    "@railzai/railz-uikit-react": "design-components/packages/railz-components-react",
+    "@railzai/railz-icons": "design-icons/packages/railz-icons",
+    "@railzai/railz-tokens": "design-tokens/packages/railz-tokens"
+  },
+  "sandboxes": [
+    "design-components/examples/react-example",
+    "design-components/examples/angular",
+    "design-components/examples/vue"
+  ],
+  "node": "14"
+}

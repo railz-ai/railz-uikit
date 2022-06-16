@@ -1,0 +1,8 @@
+{
+  "packages": [
+    "design-components/packages/*",
+    "design-icons/packages/*",
+    "design-tokens/packages/*"
+  ],
+  "version": "0.0.0"
+}
