@@ -1,5 +1,6 @@
 ---
 title: Home
+link: index
 ---
 
 <h1 align="center">Railz UIKit</h1>
