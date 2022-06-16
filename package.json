@@ -13,7 +13,7 @@
     "build:components": "cd design-components && yarn && yarn run add:components && yarn bootstrap && yarn run:build && cd ..",
     "build:icons": "cd design-icons && yarn && yarn bootstrap && yarn run:build && cd ..",
     "build:tokens": "cd design-tokens && yarn && yarn build && cd ..",
-    "build": "yarn run build:components && yarn run build:icons && yarn run build:tokens && yarn lint",
+    "build": "yarn run build:components && yarn run build:icons && yarn run build:tokens",
     "prepare": "husky install",
     "test:components": "cd design-components && yarn run test && cd ..",
     "test:icons": "cd design-icons && yarn run test && cd ..",

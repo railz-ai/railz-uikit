@@ -22,6 +22,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'error',
     '@typescript-eslint/explicit-module-boundary-types': 'error',
     '@typescript-eslint/no-explicit-any': 'warn',
+    'no-inferrable-types': ['off', 'ignore-params', 'ignore-properties'],
     '@stencil/async-methods': 'error',
     '@stencil/ban-prefix': ['error', ['stencil', 'stnl', 'st']],
     '@stencil/decorators-context': 'error',
