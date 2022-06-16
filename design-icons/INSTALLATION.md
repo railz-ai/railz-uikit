@@ -15,6 +15,7 @@ With Yarn:
 ```bash
 yarn add @railzai/railz-icons
 ```
+
 #### [React](https://www.npmjs.com/package/@railzai/railz-icons-react)
 
 With NPM:
@@ -44,6 +45,7 @@ yarn add @railzai/railz-icons
 ```
 
 #### [Web Component](https://www.npmjs.com/package/@railzai/railz-icons)
+
 With NPM:
 
 ```bash

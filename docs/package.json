@@ -9,7 +9,8 @@
     "start": "component-docs serve",
     "build": "component-docs build",
     "clean": "del dist/",
-    "prestart": "yarn clean"
+    "prestart": "yarn clean",
+    "release": "yarn build && touch dist/.nojekyll && gh-pages -t -d dist -b master"
   },
   "dependencies": {
     "component-docs": "~0.23.0"
@@ -22,6 +23,7 @@
     "@babel/preset-react": "~7.17.12",
     "del-cli": "~4.0.1",
     "doctrine": "^3.0.0",
+    "gh-pages": "^4.0.0",
     "linaria": "^2.3.1"
   }
 }

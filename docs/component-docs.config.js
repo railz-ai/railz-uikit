@@ -2,10 +2,13 @@ import path from 'path';
 import fs from 'fs';
 import doctrine from 'doctrine';
 
-
 function pages() {
   const pages = path.join(__dirname, 'pages');
-  const component = path.join(__dirname, '../design-components/packages/railz-components/src', 'components');
+  const component = path.join(
+    __dirname,
+    '../design-components/packages/railz-components/src',
+    'components',
+  );
 
   return [
     ...fs
@@ -22,20 +25,23 @@ function pages() {
         const typescriptFile = path.join(dir, typescriptFileFound);
         try {
           const data = fs.readFileSync(typescriptFile, 'utf8');
-          const finalContent = doctrine.parse( data, { unwrap: true });
+          const finalContent = doctrine.parse(data, { unwrap: true });
 
           // Get the assigned group of file
           const group = (finalContent.tags || []).find((tag) => tag.title === 'group')?.description;
 
           // Get the readme file
-          const readmeFound = fs.readdirSync(dir).find((item) => item !== 'readme.md' && item.endsWith('.md'));
+          const readmeFound = fs
+            .readdirSync(dir)
+            .find((item) => item !== 'readme.md' && item.endsWith('.md'));
           const file = path.join(dir, readmeFound);
 
-          return ({ type: 'md', file, group })
+          return { type: 'md', file, group };
         } catch (err) {
           return null;
         }
-      }).filter((item) => item !== null),
+      })
+      .filter((item) => item !== null),
   ];
 }
 const assets = path.join(__dirname, 'assets');
@@ -53,12 +59,12 @@ module.exports = {
     secondary: '#006037',
   },
   github: 'https://github.com/railz-ai/railz-uikit',
-  assets: [
-    path.join(assets, 'images'),
-    path.join(assets, 'scripts')
-  ],
+  assets: [path.join(assets, 'images'), path.join(assets, 'scripts')],
   styles: [path.join(assets, 'styles.css')],
-  scripts: [path.join(assets, 'scripts', 'mermaid.min.js'), path.join(assets, 'scripts', 'mermaid-initialize.js')],
+  scripts: [
+    path.join(assets, 'scripts', 'mermaid.min.js'),
+    path.join(assets, 'scripts', 'mermaid-initialize.js'),
+  ],
   logo: 'images/railz-logo.svg',
   favicon: 'images/railz-icon.png',
 };

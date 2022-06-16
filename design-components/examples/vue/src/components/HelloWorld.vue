@@ -1,14 +1,12 @@
-
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Railz Component</h2>
     <railz-component first="Sade" last="Adu"></railz-component>
     <h2>Railz Nested</h2>
-    <railz-nested :sumList.prop=sumList></railz-nested>
+    <railz-nested :sumList.prop="sumList"></railz-nested>
     <h3>Railz Nested Sum</h3>
     <railz-nested-sum :first.prop="12" :second.prop="10"></railz-nested-sum>
-
   </div>
 </template>
 
@@ -16,14 +14,19 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
   },
   data() {
     return {
-      sumList: [{first: 12, second: 10}, {first: 40, second: 50}, {first: 2, second: 3}, {first: null, second: 3}]
-    }
-  }
-}
+      sumList: [
+        { first: 12, second: 10 },
+        { first: 40, second: 50 },
+        { first: 2, second: 3 },
+        { first: null, second: 3 },
+      ],
+    };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

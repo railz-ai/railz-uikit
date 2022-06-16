@@ -1,5 +1,5 @@
-import {newSpecPage} from '@stencil/core/testing';
-import {RailzNestedSum} from '../railz-nested-sum';
+import { newSpecPage } from '@stencil/core/testing';
+import { RailzNestedSum } from '../railz-nested-sum';
 
 describe('railz-nested-sum', () => {
   it('renders', async () => {

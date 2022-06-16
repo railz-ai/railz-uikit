@@ -24,14 +24,15 @@ yarn add @railzai/railz-uikit-react
 ## Usage
 
 In your own React Application, add the below in your code files
+
 ```typescript jsx
-import React, {useEffect, useState} from 'react';
-import {RailzComponent} from "@railzai/railz-uikit-react";
+import React, { useEffect, useState } from 'react';
+import { RailzComponent } from '@railzai/railz-uikit-react';
 
 function App() {
   return (
     <div className="App">
-      <RailzComponent first="Sade" last="Adu"/>
+      <RailzComponent first="Sade" last="Adu" />
     </div>
   );
 }

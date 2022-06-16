@@ -1,9 +1,6 @@
 # railz-nested
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Usage
 
@@ -13,15 +10,13 @@
 <railz-nested-sum [first]="10" [second]="13"></railz-nested-sum>
 ```
 
-
 ### React
 
 ```typescript jsx
-import {RailzNestedSum} from '@railzai/railz-uikit-react';
+import { RailzNestedSum } from '@railzai/railz-uikit-react';
 
-<RailzNestedSum first={10} second={14}/>
+<RailzNestedSum first={10} second={14} />;
 ```
-
 
 ### Vue
 
@@ -29,14 +24,11 @@ import {RailzNestedSum} from '@railzai/railz-uikit-react';
 <railz-nested-sum :first.prop="12" :second.prop="10"></railz-nested-sum>
 ```
 
-
-
 ## Properties
 
 | Property  | Attribute | Description                   | Type    | Default |
 | --------- | --------- | ----------------------------- | ------- | ------- |
 | `sumList` | --        | The list of numbers to sum up | `Sum[]` | `[]`    |
-
 
 ## Dependencies
 
@@ -45,12 +37,13 @@ import {RailzNestedSum} from '@railzai/railz-uikit-react';
 - [railz-nested-sum](../railz-nested-sum)
 
 ### Graph
+
 ```mermaid
 graph TD;
   railz-nested --> railz-nested-sum
   style railz-nested fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

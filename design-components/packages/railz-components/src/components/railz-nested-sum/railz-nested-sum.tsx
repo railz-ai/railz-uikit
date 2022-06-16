@@ -1,4 +1,4 @@
-import {Component, h, Prop} from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 /**
  * @group RailzNested
@@ -10,7 +10,6 @@ import {Component, h, Prop} from '@stencil/core';
   shadow: true,
 })
 export class RailzNestedSum {
-
   /**
    * The first number to sum up
    * @type number
@@ -30,7 +29,10 @@ export class RailzNestedSum {
   }
 
   render() {
-    return <div>The sum of {this.first} & {this.second} is <b>{this.getSum()}</b></div>;
+    return (
+      <div>
+        The sum of {this.first} & {this.second} is <b>{this.getSum()}</b>
+      </div>
+    );
   }
-
 }
