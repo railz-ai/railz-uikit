@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+
 import { Sum } from './types/sum';
 
 /**
@@ -16,9 +17,9 @@ export class RailzNested {
    * @type Sum
    * @default []
    */
-  @Prop() sumList: Sum[] = [];
+  @Prop() readonly sumList: Sum[] = [];
 
-  render() {
+  render(): HTMLElement {
     return (
       <div>
         <p>
