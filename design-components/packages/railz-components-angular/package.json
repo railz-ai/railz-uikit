@@ -28,7 +28,7 @@
   "peerDependencies": {
     "@angular/common": "~13.2.2",
     "@angular/core": "~13.2.2",
-    "@railzai/railz-uikit": "*"
+    "@railzai/railz-uikit": "^0.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.2",

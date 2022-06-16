@@ -37,9 +37,6 @@
     "vue": "3"
   },
   "packageManager": "yarn@1.22.17",
-  "dependencies": {
-    "@railzai/railz-uikit": "*"
-  },
   "peerDependencies": {
     "@railzai/railz-uikit": "^0.0.0"
   }
