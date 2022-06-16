@@ -15,14 +15,14 @@ export class RailzNestedSum {
    * @type number
    * @default 0
    */
-  @Prop() readonly first = 0;
+  @Prop() readonly first: number = 0;
 
   /**
    * The second number
    * @type number
    * @default 0
    */
-  @Prop() readonly second = 0;
+  @Prop() readonly second: number = 0;
 
   private getSum(): number {
     return (this.first || 0) + (this.second || 0);

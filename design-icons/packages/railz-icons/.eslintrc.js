@@ -26,6 +26,7 @@ module.exports = {
     '@stencil/async-methods': 'error',
     '@stencil/ban-prefix': ['error', ['stencil', 'stnl', 'st']],
     '@stencil/decorators-context': 'error',
+    'no-inferrable-types': ['off', 'ignore-params', 'ignore-properties'],
     '@stencil/decorators-style': [
       'error',
       {

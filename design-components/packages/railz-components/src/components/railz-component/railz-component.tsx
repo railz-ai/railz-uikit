@@ -18,21 +18,21 @@ export class RailzComponent {
    * @type string
    * @default ''
    */
-  @Prop() readonly first = '';
+  @Prop() readonly first: string = '';
 
   /**
    * The middle name
    * @type string
    * @default ''
    */
-  @Prop() readonly middle = '';
+  @Prop() readonly middle: string = '';
 
   /**
    * The last name
    * @type string
    * @default ''
    */
-  @Prop() readonly last = '';
+  @Prop() readonly last: string = '';
 
   private getText(): string {
     return format(this.first, this.middle, this.last);
