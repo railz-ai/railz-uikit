@@ -20,3 +20,5 @@ package-lock.json
 stencil-generated
 /design-components/packages/railz-components-angular/src/lib/stencil-generated/
 lerna-debug.log
+Gemfile
+Gemfile.lock
