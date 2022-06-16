@@ -4,5 +4,15 @@
     "design-icons/packages/*",
     "design-tokens/packages/*"
   ],
-  "version": "0.0.0"
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent",
+  "conventionalCommits": true,
+  "command": {
+    "publish": {
+      "npmClient": "npm",
+      "allowBranch": ["master"],
+      "registry": "https://registry.npmjs.org/"
+    }
+  }
 }
