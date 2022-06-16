@@ -46,5 +46,10 @@
   "lint-staged": {
     "**/*": "prettier . --write --ignore-unknown --allow-empty"
   },
-  "packageManager": "yarn@1.22.17"
+  "packageManager": "yarn@1.22.17",
+  "workspaces": [
+    "design-components/packages/*",
+    "design-icons/packages/*",
+    "design-tokens/packages/*"
+  ]
 }
