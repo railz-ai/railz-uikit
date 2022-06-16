@@ -4,10 +4,8 @@
   "scripts": {
     "install:codesandbox": "yarn install",
     "bootstrap": "lerna bootstrap",
-    "add:angular": "lerna add @railzai/railz-uikit --scope=@railzai/railz-uikit-angular --peer",
-    "add:react": "lerna add @railzai/railz-uikit --scope=@railzai/railz-uikit-react",
-    "add:vue": "lerna add @railzai/railz-uikit --scope=@railzai/railz-uikit-vue",
-    "add:components": "yarn add:angular && yarn add:react && yarn add:vue",
+    "add:all": "lerna add @railzai/railz-uikit --scope=@railzai/railz-uikit-* --peer",
+    "add:components": "yarn add:all",
     "run:build": "lerna run --scope '{@railzai/railz-uikit,@railzai/railz-uikit-angular,@railzai/railz-uikit-react,@railzai/railz-uikit-vue}' build",
     "build": "yarn && yarn run add:components && yarn bootstrap && yarn run:build && yarn lint",
     "build:codesandbox": "yarn bootstrap && yarn run:build",
