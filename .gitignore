@@ -19,5 +19,3 @@ yarn-error.log
 package-lock.json
 stencil-generated
 /design-components/packages/railz-components-angular/src/lib/stencil-generated/
-/design-components/packages/railz-components/src/components.d.ts
-/design-icons/packages/railz-icons/src/components.d.ts
