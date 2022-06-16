@@ -1,4 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
+
 import { format } from '../../utils/utils';
 
 /**
@@ -17,27 +18,27 @@ export class RailzComponent {
    * @type string
    * @default ''
    */
-  @Prop() first: string = '';
+  @Prop() readonly first = '';
 
   /**
    * The middle name
    * @type string
    * @default ''
    */
-  @Prop() middle: string = '';
+  @Prop() readonly middle = '';
 
   /**
    * The last name
    * @type string
    * @default ''
    */
-  @Prop() last: string = '';
+  @Prop() readonly last = '';
 
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }
 
-  render() {
+  render(): HTMLElement {
     return <div>Hello, World! I'm {this.getText()}</div>;
   }
 }

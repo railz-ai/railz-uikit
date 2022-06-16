@@ -15,20 +15,20 @@ export class RailzNestedSum {
    * @type number
    * @default 0
    */
-  @Prop() first: number = 0;
+  @Prop() readonly first = 0;
 
   /**
    * The second number
    * @type number
    * @default 0
    */
-  @Prop() second: number = 0;
+  @Prop() readonly second = 0;
 
   private getSum(): number {
     return (this.first || 0) + (this.second || 0);
   }
 
-  render() {
+  render(): HTMLElement {
     return (
       <div>
         The sum of {this.first} & {this.second} is <b>{this.getSum()}</b>
