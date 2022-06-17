@@ -19,6 +19,7 @@ on:
           - ci:publish:patch
           - ci:publish:minor
           - ci:publish:major
+          - ci:publish:package
 
 jobs:
   publish:
