@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://railz.ai/" rel="noopener" target="_blank"><img width="80" src="../../../docs/assets/images/railz-logo.svg" alt="MUI logo"></a>
+  <a href="https://railz.ai/" rel="noopener" target="_blank"><img src="https://files.readme.io/080c7e0-small-Normal_Logo.png" alt="Railz logo"></a>
 </p>
 
 <h1 align="center">Railz Tokens</h1>

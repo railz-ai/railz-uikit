@@ -1,4 +1,5 @@
 ### Usage
+
 Import the scss file into your own scss file
 
 ```scss
