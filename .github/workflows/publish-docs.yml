@@ -37,7 +37,7 @@ jobs:
         run: npm install -g yarn
 
       - name: Install testing dependencies
-        run: yarn install:codesandbox
+        run: yarn install
 
       - name: Run Build
         run: yarn build
