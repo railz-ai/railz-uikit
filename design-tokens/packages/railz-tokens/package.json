@@ -1,6 +1,6 @@
 {
   "name": "@railzai/railz-tokens",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "description": "Design Token Framework",
   "main": "./scss/ui-kit/_index.scss",
   "scripts": {
@@ -32,8 +32,8 @@
   },
   "homepage": "https://github.com/railz-ai/railz-uikit#readme",
   "devDependencies": {
-    "sass": "~1.52.3",
     "prettier": "2.7.0",
+    "sass": "~1.52.3",
     "stylelint": "14.9.1",
     "stylelint-a11y": "1.2.3",
     "stylelint-config-prettier": "9.0.3",
