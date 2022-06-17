@@ -8,7 +8,7 @@
   "scripts": {
     "start": "component-docs serve",
     "build": "component-docs build",
-    "cp:version": "cp -r ./dist/. ./dist/$VERSION",
+    "cp:version": "rsync -Rr ./dist/. ./dist/$VERSION",
     "clean": "del dist/",
     "prestart": "yarn clean",
     "deploy": "yarn build && gh-pages -t -d dist -b master",
