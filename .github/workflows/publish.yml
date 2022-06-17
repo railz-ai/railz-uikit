@@ -70,6 +70,8 @@ jobs:
 
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
+          
+          git stash
 
           if [ "${{ github.event.inputs.yarnCommand }}" != ''  ]; then
             yarn run "${{ github.event.inputs.yarnCommand }}"
