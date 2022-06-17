@@ -1,9 +1,9 @@
-import { newSpecPage } from '@stencil/core/testing';
-import { RailzComponent } from './railz-component';
+import {newSpecPage} from '@stencil/core/testing';
+import {RailzComponent} from './railz-component';
 
 describe('railz-component', () => {
   it('renders', async () => {
-    const { root } = await newSpecPage({
+    const {root} = await newSpecPage({
       components: [RailzComponent],
       html: '<railz-component></railz-component>',
     });
@@ -19,7 +19,7 @@ describe('railz-component', () => {
   });
 
   it('renders with values', async () => {
-    const { root } = await newSpecPage({
+    const {root} = await newSpecPage({
       components: [RailzComponent],
       html: `<railz-component first="Stencil" last="'Don't call me a framework' JS"></railz-component>`,
     });

@@ -1,9 +1,9 @@
-import { newSpecPage } from '@stencil/core/testing';
-import { MyComponent } from './my-component';
+import {newSpecPage} from '@stencil/core/testing';
+import {MyComponent} from './my-component';
 
 describe('my-component', () => {
   it('renders', async () => {
-    const { root } = await newSpecPage({
+    const {root} = await newSpecPage({
       components: [MyComponent],
       html: '<my-component></my-component>',
     });
@@ -15,8 +15,6 @@ describe('my-component', () => {
         </div>
       </mock:shadow-root>
     </my-component>
-
-
     `);
   });
 });
