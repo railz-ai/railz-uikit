@@ -47,9 +47,6 @@ jobs:
         run: VERSION="${{ github.event.inputs.yarnCommand }}" yarn cp:version
 
       - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v1
-        with:
-          target_branch: gh-pages
-          build_dir: dist
+        run: yarn deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
