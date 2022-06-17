@@ -46,10 +46,9 @@ jobs:
         if: github.event.inputs.yarnCommand != ''
         run: VERSION="${{ github.event.inputs.yarnCommand }}" yarn cp:version
 
-      - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v1
-        with:
-          target_branch: gh-pages
-          build_dir: dist
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/railz-ai/railz-uikit.git
+          yarn deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
