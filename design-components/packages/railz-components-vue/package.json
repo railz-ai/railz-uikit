@@ -39,5 +39,6 @@
   "packageManager": "yarn@1.22.17",
   "peerDependencies": {
     "@railzai/railz-uikit": "^0.0.0"
-  }
+  },
+  "gitHead": "f494f96d86471bccc441ed6674c63027adec7b71"
 }
