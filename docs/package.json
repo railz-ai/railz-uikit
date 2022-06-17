@@ -11,7 +11,7 @@
     "cp:version": "rsync -Rr ./dist/. ./dist/$VERSION",
     "clean": "del dist/",
     "prestart": "yarn clean",
-    "deploy": "gh-pages -t -d dist -b master"
+    "deploy": "gh-pages -t -d dist -b gh-pages"
   },
   "dependencies": {
     "component-docs": "~0.23.0"
