@@ -1,5 +1,3 @@
-@use 'sass:list';
-
 //-------------------------------------------------------------------
 // Motion
 //-------------------------------------------------------------------
@@ -11,7 +9,7 @@
   @return $t * $speed;
 }
 
-@function transition-speed($speed) {
+@function transitionSpeed($speed) {
   @if map-has-key($speeds, $speed) {
     $speed: map-get($speeds, $speed);
     @return $speed;
@@ -20,46 +18,34 @@
   @return null;
 }
 
-@function transition-property($properties...) {
-  $property-list: () !default;
-
-  @each $property-set in $properties {
-    @if map-has-key($transition-properties, $property-set) {
-      $property-set: map-get($transition-properties, $property-set);
-      $property-list: list.append($property-list, #{$property-set}, comma);
-    } @else {
-      @warn error-message($property-set, $transition-properties, 'tokens/_motion.scss');
-      @return null;
-    }
+@function transitionProperty($property-set) {
+  @if map-has-key($transition-properties, $property-set) {
+    $property-set: map-get($transition-properties, $property-set);
+    @return #{$property-set};
   }
-
-  @return $property-list;
+  @warn error-message($property-set, $transition-properties, 'tokens/_motion.scss');
+  @return null;
 }
 
-@mixin transition($speed: 'fast', $properties...) {
+@mixin transition($speed: 'fast', $properties: 'default') {
   @if map-has-key($speeds, $speed) {
-    transition: transitionspeed($speed);
+    transition: transitionSpeed($speed);
   } @else {
     transition-duration: $speed;
   }
-  @if list.length($properties) > 0 {
-    transition-property: transitionproperty($properties...);
-  } @else {
-    transition-property: transitionproperty('default');
-  }
+  transition-property: transitionProperty($properties);
 
   @media (prefers-reduced-motion: reduce) {
     transition-duration: 0 !important;
 
-    &:hover,
-    &:focus {
+    &:hover {
       transition-duration: 0 !important;
     }
   }
 }
 
 @mixin animate($animation, $speed: 'fast', $properties...) {
-  animation: $animation transitionspeed($speed) transitionproperty($properties);
+  animation: $animation transitionSpeed($speed) transitionProperty($properties);
   @media (prefers-reduced-motion: reduce) {
     animation-duration: 0;
   }

@@ -2,8 +2,6 @@
 // Structure
 //-------------------------------------------------------------------
 
-$base-spacing-unit: 8px;
-
 // Screen Sizes for Media Queries
 //-------------------------------------------------------------------
 
@@ -30,16 +28,15 @@ $line-colors: (
   'dark-1': color('gray-800', 0.2),
   'dark-2': color('gray-800', 0.6),
   'dark-3': color('gray-900', 0.9),
-  //,
   'light-1': color('gray-300', 0.2),
   'light-2': color('gray-200', 0.6),
   'light-3': color('gray-100', 0.9),
 );
+
 $lines: (
   'dark-1': thin solid line-color('dark-1'),
   'dark-2': thin solid line-color('dark-2'),
   'dark-3': thin solid line-color('dark-3'),
-  //,
   'light-1': thin solid line-color('light-1'),
   'light-2': thin solid line-color('light-2'),
   'light-3': thin solid line-color('light-3'),
@@ -49,25 +46,23 @@ $lines: (
 //-------------------------------------------------------------------
 
 $radii: (
-  50%,
-  10%,
-  5%,
-  2.5%,
-  96px,
-  80px,
-  64px,
-  40px,
-  32px,
-  24px,
-  16px,
-  14px,
-  12px,
-  10px,
-  8px,
-  6px,
-  4px,
-  2px
+  '50': 50%,
+  '12': 96px,
+  '11': 80px,
+  '10': 64px,
+  '9': 40px,
+  '8': 32px,
+  '7': 24px,
+  '5': 16px,
+  '4': 14px,
+  '3': 12px,
+  '2': 10px,
+  '1': 8px,
+  '.75': 6px,
+  '.5': 5px,
+  '.25': 2px,
 );
+
 $shadows: (
   'drop-1': 0 1px 2px,
   'drop-2': 0 3px 4px,
@@ -79,7 +74,6 @@ $shadows: (
   'drop-8': 0 40px 80px,
   'drop-9': 0 48px 96px,
   'drop-10': 0 56px 112px,
-  //,
   'cast-1': 0 2px 2px -1px,
   'cast-2': 0 4px 4px -2px,
   'cast-3': 0 6px 8px -4px,
@@ -90,7 +84,6 @@ $shadows: (
   'cast-8': 0 48px 80px -40px,
   'cast-9': 0 56px 96px -48px,
   'cast-10': 0 64px 112px -56px,
-  //,
   'glow-1': 0 0 2px,
   'glow-2': 0 0 4px,
   'glow-3': 0 0 8px,
