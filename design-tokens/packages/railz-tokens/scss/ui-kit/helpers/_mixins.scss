@@ -29,10 +29,7 @@
       padding-#{$edge}: env(safe-area-inset-#{$edge});
     }
   } @else {
-    padding: env(safe-area-inset-top)
-      env(safe-area-inset-right)
-      env(safe-area-inset-bottom)
-      env(safe-area-inset-left);
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
 }
 
@@ -46,7 +43,6 @@
 // Create a square with a full border radius
 @mixin circle($size) {
   @include size($size);
-
   border-radius: $size;
 }
 
@@ -95,7 +91,7 @@
 // -----------------------------------------------------------------------------
 
 @mixin mq($size, $limiter: 'min-width', $max-size: '') {
-  @if $limiter == 'between' {
+  @if ($limiter == 'between') {
     @media only screen and (min-width: $size) and (max-width: $max-size) {
       @content;
     }
@@ -136,7 +132,7 @@
   max-width: 100%;
 
   @if $line-clamp-length > 0 {
-    display: box;
+    display: -webkit-box;
     -webkit-line-clamp: $line-clamp-length;
     -webkit-box-orient: vertical;
   } @else {
@@ -150,6 +146,9 @@
   $values: (none, manual, auto, inherit, initial, unset);
 
   @if indexOf($values, $value) {
+    -webkit-hyphens: $value;
+    -moz-hyphens: $value;
+    -ms-hyphens: $value;
     hyphens: $value;
   }
 }
@@ -248,7 +247,7 @@
 // -----------------------------------------------------------------------------
 
 @function contains($string, $find) {
-  @if str-index($string, $find) {
+  @if (str-index($string, $find)) {
     @return true;
   } @else {
     @return false;
@@ -258,12 +257,8 @@
 // Error Message
 // -----------------------------------------------------------------------------
 
-@function error-message($value, $options: '', $file) {
-  //   @if type-of($options) == 'map' {
-  //     $valid-options: map-keys($options);
-  //   } @else {
-  //     $valid-options: $options;
-  //   }
+@function errorMessage($value, $options: '', $file) {
+  $valid-options: map-keys($options);
 
   @warn & contains an invalid property #{$value};
   @debug '-----------------------';
@@ -280,12 +275,10 @@
 
 @mixin debug() {
   $levels: (red, purple, indigo, blue, teal, green, yellow, pink, orange);
-
   outline: 1px solid rgba(nth($levels, 1), 0.25);
   box-shadow: inset 0 0 0 4px rgba(nth($levels, 1), 0.1);
 
-  &:hover,
-  &:focus {
+  &:hover {
     outline: 1px solid rgba(nth($levels, 1), 0.8);
     box-shadow: inset 0 0 0 4px rgba(nth($levels, 1), 0.2);
   }
@@ -296,8 +289,7 @@
       outline: 1px solid rgba($color, 0.25);
       box-shadow: inset 0 0 0 4px rgba($color, 0.1);
 
-      &:hover,
-      &:focus {
+      &:hover {
         outline: 1px solid rgba($color, 0.8);
         box-shadow: inset 0 0 0 4px rgba($color, 0.2);
       }
