@@ -2,7 +2,7 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { RailzNested } from '../railz-nested';
 
-describe('railz-nested', () => {
+describe.skip('railz-nested', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [RailzNested],
