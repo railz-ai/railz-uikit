@@ -2,9 +2,9 @@
 @use 'sass:map';
 @use 'sass:list';
 
-// -------------------------------------------------------------------
+//-------------------------------------------------------------------
 // Typography Helper Functions
-// -------------------------------------------------------------------
+//-------------------------------------------------------------------
 @function font-family($family) {
   @if map-has-key($font-families, $family) {
     $family: map-get($font-families, $family);
@@ -55,7 +55,7 @@
 }
 
 @mixin font-set($set: '') {
-  @debug $set;
+  // @debug $set;
 
   @if map-has-key($font-settings, $set) {
     $set: map-get($font-settings, $set);
@@ -64,7 +64,7 @@
 }
 
 @mixin font-set-weight($set: '') {
-  @debug $set;
+  // @debug $set;
 
   @if map-has-key($font-settings, $set) {
     $set: map-get($font-settings, $set);
@@ -78,7 +78,7 @@
   $family: list.nth(map-keys($font-families), 1),
   $line-height: 'normal'
 ) {
-  @if $weight {
+  @if ($weight) {
     font-weight: font-weight($weight);
   }
 }
@@ -91,37 +91,33 @@
   $letter-spacing: 'normal',
   $properties...
 ) {
-  @debug $family;
+  //   @debug $family;
 
-  @if map-has-key($font-settings, $size) {
-    @include font-set($size);
-  } @else {
-    @if $family {
-      font-family: font-family($family);
-    }
-    @if $size {
-      font-size: font-size($size);
-    }
-    @if $weight {
-      font-weight: font-weight($weight);
-    }
-    @if $line-height {
-      line-height: line-height($line-height);
-    }
-    @if $letter-spacing {
-      letter-spacing: letter-spacing($letter-spacing);
-    }
+  @if ($family) {
+    font-family: font-family($family);
+  }
+  @if ($size) {
+    font-size: font-size($size);
+  }
+  @if ($weight) {
+    font-weight: font-weight($weight);
+  }
+  @if ($line-height) {
+    line-height: line-height($line-height);
+  }
+  @if ($letter-spacing) {
+    letter-spacing: letter-spacing($letter-spacing);
+  }
 
-    @each $property in $properties {
-      @if $property == 'capitalize' {
-        text-transform: capitalize;
-      }
-      @if $property == 'uppercase' {
-        text-transform: uppercase;
-      }
-      @if $property == 'lowercase' {
-        text-transform: lowercase;
-      }
+  @each $property in $properties {
+    @if $property == 'capitalize' {
+      text-transform: capitalize;
+    }
+    @if $property == 'uppercase' {
+      text-transform: uppercase;
+    }
+    @if $property == 'lowercase' {
+      text-transform: lowercase;
     }
   }
 }

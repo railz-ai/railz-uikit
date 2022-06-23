@@ -6,6 +6,7 @@
 //-------------------------------------------------------------------
 
 $font-family-primary: 'Inter', 'Helvetica', sans-serif;
+
 $font-families: (
   'main': $font-family-primary,
 );
@@ -22,6 +23,7 @@ $font-sizes: (
   15: rem(15px),
   16: rem(16px),
   18: rem(18px),
+  20: rem(20px),
   24: rem(24px),
   32: rem(32px),
   40: rem(40px),
@@ -80,49 +82,53 @@ $font-settings: (
     'main',
     'normal',
     'loose',
-    'capitalize',
+    'uppercase',
   ),
   'caption': (
     12,
-    'regular',
+    'medium',
+  ),
+  'body-12': (
+    12,
+    'medium',
   ),
   'body-14': (
     14,
-    'regular',
+    'medium',
   ),
   'body-16': (
     16,
-    'regular',
+    'medium',
   ),
   'subtitle': (
     18,
     'semi-bold',
   ),
-  'healdine-20': (
+  'headline-20': (
     20,
     'semi-bold',
-    'primary',
+    'main',
     'small',
     'tight',
   ),
-  'healdine-24': (
+  'headline-24': (
     24,
     'semi-bold',
-    'primary',
+    'main',
     'small',
     'tight',
   ),
-  'healdine-32': (
+  'headline-32': (
     32,
     'semi-bold',
-    'primary',
+    'main',
     'single',
     'tight',
   ),
-  'healdine-48': (
+  'headline-48': (
     48,
     'semi-bold',
-    'primary',
+    'main',
     'single',
     'tight',
   ),

@@ -27,10 +27,8 @@
   $show-focal-point-guides: $show-focal-point-guides
 ) {
   @include bg($scale, $pos-x, $pos-y, $show-focal-point-guides);
-
   img {
     @include absolute;
-
     width: 100%;
     max-height: 100%;
     max-width: 100%;
@@ -49,7 +47,6 @@ $show-focal-point-guides: false;
 @mixin show-focal-point-guides($pos-x, $pos-y, $show-focal-point-guides) {
   @if $show-focal-point-guides {
     @include transition;
-
     position: relative;
 
     &::before,
@@ -60,7 +57,7 @@ $show-focal-point-guides: false;
       @include transition;
 
       @supports (backdrop-filter: brightness()) {
-        background: rgb(red 0.5);
+        background: rgba(red, 0.5);
         backdrop-filter: brightness(5);
       }
     }
