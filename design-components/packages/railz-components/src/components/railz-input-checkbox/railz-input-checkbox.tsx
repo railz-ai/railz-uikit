@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable max-len */
 import { Component, h, Prop, State } from '@stencil/core';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -14,6 +17,7 @@ export class RailzInputCheckbox {
   @Prop() name: string;
   @Prop() value: string;
 
+  // eslint-disable-next-line @stencil/strict-mutable
   @Prop({ mutable: true, reflect: true }) checked?: boolean;
   @Prop({ mutable: true }) indeterminate?: boolean;
   @Prop() disabled?: boolean;
@@ -22,26 +26,26 @@ export class RailzInputCheckbox {
   @Prop({ mutable: true }) error?: boolean;
   @Prop() errorMessage?: string;
 
-  handleChange() {
+  @State() uuid: string = uuidv4().toString();
+
+  private handleChange(): void {
     this.indeterminate = false;
     this.error = false;
   }
 
-  @State() uuid: string = uuidv4().toString();
-
-  renderInstructionalText() {
+  private renderInstructionalText(): HTMLElement {
     if (this.instructionalText) {
       return <span class="instructional-text">{this.instructionalText}</span>;
     }
   }
 
-  renderErrorMessage() {
+  private renderErrorMessage(): HTMLElement {
     if (this.error) {
       return <span class="error-message">{this.errorMessage || 'Something went wrong'}</span>;
     }
   }
 
-  validationCheck() {
+  private validationCheck(): string {
     const validationClasses = [''];
 
     if (this.error) {
@@ -59,7 +63,7 @@ export class RailzInputCheckbox {
     return validationClasses.join(' ').toString();
   }
 
-  render() {
+  render(): HTMLElement {
     return (
       <div class={`form-group ${this.validationCheck()} ${this.checked ? 'checked' : ''}`}>
         <div class="input-container">

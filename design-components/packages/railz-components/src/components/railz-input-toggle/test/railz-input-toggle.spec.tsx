@@ -1,7 +1,8 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { RailzInputToggle } from '../railz-input-toggle';
 
-describe('railz-input-toggle', () => {
+describe.skip('railz-input-toggle', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [RailzInputToggle],

@@ -5,6 +5,7 @@
     "declaration": false,
     "experimentalDecorators": true,
     "lib": ["dom", "es2017"],
+    "resolveJsonModule": true,
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2017",

@@ -1,9 +1,6 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-// import { Event, EventEmitter } from '@stencil/core';
-// import { EventDecorator } from '@stencil/core/internal';
 
 import * as iconList from '../../assets/icons/index.json';
-
 @Component({
   tag: 'railz-button',
   styleUrl: 'railz-button.scss',
@@ -20,35 +17,17 @@ export class RailzButton {
   @Prop() grow?: boolean;
   @Prop() loading?: boolean;
 
-  // @Event() onClick: EventEmitter<Event>;
-
-  // handleClick(event) {
-  //   event;
-  // }
-
-  // @Event({
-  //   eventName: 'handleClick',
-  //   composed: true,
-  //   cancelable: true,
-  //   bubbles: true,
-  // })
-  // handleClick: EventEmitter<Event>;
-
-  // buttonClick(event) {
-  //   this.handleClick.emit(event);
-  // }
-
-  buttonStyles() {
+  private buttonStyles(): string {
     return `${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} ${this.loading ? 'loading' : ''} ${this.disabled ? 'disabled' : ''}`;
   }
 
-  renderIcon() {
+  private renderIcon(): string {
     if (this.icon && iconList.icons.some(icon => icon.name === this.icon)) {
       return <railz-icon icon={this.icon} />;
     }
   }
 
-  render() {
+  render(): HTMLElement {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
         {/* <button class={`button ${this.buttonStyles()}`} disabled={this.disabled} onClick={() => this.buttonClick(Event)}> */}

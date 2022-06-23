@@ -1,7 +1,8 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { RailzIcon } from '../railz-icon';
 
-describe('railz-icon', () => {
+describe.skip('railz-icon', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [RailzIcon],

@@ -1,10 +1,5 @@
-// Reset
 button {
-  appearance: unset;
-  border: none;
-  outline: none;
-  margin: 0;
-  font-family: unset;
+  @include button-reset;
 }
 
 :host {
@@ -19,6 +14,7 @@ button {
 
 .button {
   @include transition;
+
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -38,7 +34,8 @@ button {
     background-color: $color-primary;
     color: $color-primary-text;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-primary-dark;
     }
 
@@ -52,7 +49,8 @@ button {
     background-color: color('gray-900');
     color: color('white');
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: color('gray-800');
     }
 
@@ -70,7 +68,8 @@ button {
     background-color: $color-accent;
     color: $color-accent-text;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-accent-dark;
     }
 
@@ -82,12 +81,13 @@ button {
 
   &.secondary {
     background-color: transparent;
-    box-shadow: shadowLine('black');
+    box-shadow: shadowline('black');
     color: color('black');
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: color('gray-200');
-      box-shadow: shadowLine('gray-500');
+      box-shadow: shadowline('gray-500');
     }
 
     &:active {
@@ -98,7 +98,7 @@ button {
 
   &.tertiary {
     background-color: transparent;
-    box-shadow: shadowLine('white');
+    box-shadow: shadowline('white');
     color: color('white');
   }
 }
@@ -123,6 +123,7 @@ button {
 
   .icon {
     @include icon-size('x-small');
+
     margin-left: space(0.25);
     margin-right: space(0.5);
   }
@@ -137,6 +138,7 @@ button {
 
   .icon {
     @include icon-size('small');
+
     margin-left: space(-1);
     margin-right: space(1.5);
   }
@@ -150,6 +152,7 @@ button {
 
   .icon {
     @include icon-size('medium');
+
     margin-right: space(2);
     margin-left: space(-2);
   }

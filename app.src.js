@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RedBox from 'redbox-react';
@@ -16,17 +15,14 @@ const render = () => {
       <App
         name={window.__INITIAL_PATH__}
         data={data}
-        github={"https://github.com/railz-ai/railz-uikit"}
-        logo={"images/railz-logo.svg"}
-        title={"[title] · Railz UI Kit"}
+        github={'https://github.com/railz-ai/railz-uikit'}
+        logo={'images/railz-logo.svg'}
+        title={'[title] · Railz UI Kit'}
       />,
-      root
+      root,
     );
   } catch (e) {
-    ReactDOM.render(
-      <RedBox error={e} />,
-      root
-    );
+    ReactDOM.render(<RedBox error={e} />, root);
   }
 };
 

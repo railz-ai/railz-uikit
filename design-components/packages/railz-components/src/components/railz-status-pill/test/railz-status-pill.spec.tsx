@@ -1,7 +1,8 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { RailzStatusPill } from '../railz-status-pill';
 
-describe('railz-status-pill', () => {
+describe.skip('railz-status-pill', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [RailzStatusPill],

@@ -1,4 +1,7 @@
+/* eslint-disable @stencil/decorators-style */
+/* eslint-disable max-len */
 import { Build, Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
+
 import { fetchIcon } from './utils';
 
 @Component({
@@ -8,10 +11,10 @@ import { fetchIcon } from './utils';
   shadow: true,
 })
 export class RailzIcon {
-  @Element() el: HTMLElement;
+  @Element() el: HTMLRailzIconElement;
   @Prop() icon: string = null;
   @Prop() size?: string;
-  @Prop() initialSize: number = 16;
+  @Prop() initialSize = 16;
   @State() private pathData: string;
   @State() private visible = false;
   private intersectionObserver: IntersectionObserver;
@@ -34,7 +37,7 @@ export class RailzIcon {
     this.loadIconPathData();
   }
 
-  render() {
+  render(): HTMLElement {
     return (
       <Host class={`icon ${this.size}`}>
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="100%" preserveAspectRatio="xMidYMid meet" viewBox={`0 0 ${this.initialSize} ${this.initialSize}`}>
@@ -46,16 +49,14 @@ export class RailzIcon {
 
   @Watch('icon') private async loadIconPathData(): Promise<void> {
     const { icon, visible } = this;
-
     if (!Build.isBrowser || !icon || !visible) {
       return;
     }
-
     this.pathData = await fetchIcon({ icon });
   }
 
   private waitUntilVisible(callback: () => void): void {
-    if (!Build.isBrowser || typeof window === 'undefined' || !(window as any).IntersectionObserver) {
+    if (!Build.isBrowser || typeof window === 'undefined' || !(window as typeof window).IntersectionObserver) {
       callback();
       return;
     }

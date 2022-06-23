@@ -9,6 +9,7 @@ input[type='checkbox'] {
 
 label {
   @include font(16, 'medium');
+
   line-height: 1;
   cursor: pointer;
 
@@ -29,18 +30,21 @@ label {
   display: block;
   padding: space(0.25) 0;
   @include font(12, 'medium');
+
   color: color('gray-700');
 }
 
 .error-message {
   display: block;
   @include font(12, 'medium');
+
   color: color('red-700');
 }
 
 .form-group {
   display: flex;
   gap: space(1);
+
   &:focus-within {
     .input-container::after {
       @include show('on');
@@ -52,14 +56,17 @@ label {
   position: relative;
   flex-shrink: 0;
   @include size(space(2.5));
+
   border-radius: radius('.5');
   @include transition;
+
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  &:hover input {
+  &:hover input,
+  &:focus input {
     background-color: $color-primary-light;
     cursor: pointer;
   }
@@ -68,17 +75,21 @@ label {
     content: '';
     position: absolute;
     @include coordinates;
+
     border-radius: inherit;
     box-shadow: 0 0 0 1px color('white'), 0 0 8px color('blue-500'), 0 0 0 2px color('navy-500');
     @include transition;
     @include show('off');
+
     pointer-events: none;
   }
 
   .icon {
     @include transition;
+
     transform: scale(0.5);
     @include show('off');
+
     color: color('white');
   }
 
@@ -87,24 +98,26 @@ label {
     width: 100%;
     position: absolute;
     @include coordinates;
+
     border-radius: inherit;
-    box-shadow: shadowLine();
+    box-shadow: shadowline();
     @include transition;
 
     &:checked {
       background-color: $color-primary;
-      box-shadow: shadowLine($color-primary);
+      box-shadow: shadowline($color-primary);
 
       + .icon {
         transform: scale(1);
         @include show('on');
+
         pointer-events: none;
       }
     }
 
     .disabled & {
       background-color: color('gray-700', 0.5);
-      box-shadow: shadowLine('gray-500');
+      box-shadow: shadowline('gray-500');
     }
 
     .indeterminate & {
@@ -114,6 +127,7 @@ label {
         color: color('gray-800');
         transform: scale(1);
         @include show('on');
+
         pointer-events: none;
       }
     }

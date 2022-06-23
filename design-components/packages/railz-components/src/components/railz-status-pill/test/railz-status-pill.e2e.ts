@@ -1,6 +1,6 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('railz-status-pill', () => {
+describe.skip('railz-status-pill', () => {
   it('renders', async () => {
     const page = await newE2EPage();
     await page.setContent('<railz-status-pill></railz-status-pill>');

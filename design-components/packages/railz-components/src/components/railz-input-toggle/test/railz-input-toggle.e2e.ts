@@ -1,6 +1,6 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('railz-input-toggle', () => {
+describe.skip('railz-input-toggle', () => {
   it('renders', async () => {
     const page = await newE2EPage();
     await page.setContent('<railz-input-toggle></railz-input-toggle>');

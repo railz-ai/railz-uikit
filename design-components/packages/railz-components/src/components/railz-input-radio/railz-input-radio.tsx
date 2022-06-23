@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { Component, h, Prop, State } from '@stencil/core';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -15,6 +17,7 @@ export class RailzInputRadio {
   @Prop() name: string;
   @Prop() value: string;
 
+  // eslint-disable-next-line @stencil/strict-mutable
   @Prop({ mutable: true, reflect: true }) checked?: boolean;
   @Prop({ mutable: true }) indeterminate?: boolean;
   @Prop() disabled?: boolean;
@@ -23,26 +26,27 @@ export class RailzInputRadio {
   @Prop({ mutable: true }) error?: boolean;
   @Prop() errorMessage?: string;
 
-  handleChange() {
+  private handleChange(event: Event): void {
+    console.log(event);
     this.indeterminate = false;
     this.error = false;
   }
 
   @State() uuid: string = uuidv4().toString();
 
-  renderInstructionalText() {
+  private renderInstructionalText(): HTMLElement {
     if (this.instructionalText) {
       return <span class="instructional-text">{this.instructionalText}</span>;
     }
   }
 
-  renderErrorMessage() {
+  private renderErrorMessage(): HTMLElement {
     if (this.error || this.errorMessage) {
       return <span class="error-message">{this.errorMessage || 'Something went wrong'}</span>;
     }
   }
 
-  validationCheck() {
+  private validationCheck(): string {
     const validationClasses = [''];
 
     if (this.errorMessage || this.error) {
@@ -60,7 +64,7 @@ export class RailzInputRadio {
     return validationClasses.join(' ').toString();
   }
 
-  render() {
+  render(): HTMLElement {
     return (
       <div class={`form-group ${this.validationCheck()}`}>
         <div class="input-container">
@@ -71,7 +75,7 @@ export class RailzInputRadio {
             checked={this.checked}
             value={this.value}
             disabled={this.disabled}
-            onChange={() => this.handleChange()}
+            onChange={event => this.handleChange(event)}
           ></input>
         </div>
         <div class="label-container">

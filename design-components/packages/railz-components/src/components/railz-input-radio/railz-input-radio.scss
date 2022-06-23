@@ -9,6 +9,7 @@ input[type='radio'] {
 
 label {
   @include font(16, 'medium');
+
   line-height: 1;
 
   .disabled & {
@@ -28,12 +29,14 @@ label {
   display: block;
   padding: space(0.25) 0;
   @include font(12, 'medium');
+
   color: color('gray-700');
 }
 
 .error-message {
   display: block;
   @include font(12, 'medium');
+
   color: color('red-700');
 }
 
@@ -47,7 +50,8 @@ label {
     }
   }
 
-  &:hover input {
+  &:hover input,
+  &:focus input {
     background-color: $color-primary-light;
     cursor: pointer;
   }
@@ -58,16 +62,19 @@ label {
   flex-shrink: 0;
   @include circle(space(2.5));
   @include transition;
+
   cursor: pointer;
 
   &::after {
     content: '';
     position: absolute;
     @include coordinates;
+
     border-radius: inherit;
     box-shadow: 0 0 0 1px color('white'), 0 0 8px color('blue-500'), 0 0 0 2px color('navy-500');
     @include transition;
     @include show('off');
+
     pointer-events: none;
   }
 
@@ -76,27 +83,30 @@ label {
     width: 100%;
     position: absolute;
     @include coordinates;
+
     border-radius: inherit;
-    box-shadow: shadowLine();
+    box-shadow: shadowline();
     display: flex;
     align-items: center;
     justify-content: center;
     @include transition;
 
-    &:after {
+    &::after {
       content: '';
       position: absolute;
       @include circle(space(1));
       @include transition;
+
       transition-delay: $t * 0.5;
       transform: scale(0.5);
       @include show('off');
+
       background-color: color('white');
     }
 
     &:checked {
       background-color: $color-primary;
-      box-shadow: shadowLine($color-primary);
+      box-shadow: shadowline($color-primary);
 
       &::after {
         transform: scale(1);
@@ -106,7 +116,7 @@ label {
 
     .disabled & {
       background-color: color('gray-700', 0.5);
-      box-shadow: shadowLine('gray-500');
+      box-shadow: shadowline('gray-500');
     }
 
     .indeterminate & {

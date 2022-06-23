@@ -1,6 +1,6 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('railz-icon', () => {
+describe.skip('railz-icon', () => {
   it('renders', async () => {
     const page = await newE2EPage();
     await page.setContent('<railz-icon></railz-icon>');

@@ -1,13 +1,19 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Component, h, Prop, State, Watch } from '@stencil/core';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   tag: 'railz-input-text',
   styleUrl: 'railz-input-text.scss',
-  shadow: true,
+  shadow: false,
 })
-export class RailzTextInput {
+export class RailzInputText {
   @Prop() label: string;
   @Prop() value?: string;
+
+  @Prop() inputId?: string;
+
   @State() dirty?: boolean;
   @Prop() placeholder?: string;
   @Prop() instructionalText?: string;
@@ -19,8 +25,8 @@ export class RailzTextInput {
   @Prop({ reflect: true }) disabled?: boolean;
   @Prop() error?: boolean;
   @Prop() errorMessage?: string;
-  @Prop() minContentLength?: Number;
-  @Prop() maxContentLength?: Number;
+  @Prop() minContentLength?: number;
+  @Prop() maxContentLength?: number;
   @Prop() minNumber?: string;
   @Prop() maxNumber?: string;
   @Prop() pattern?: string;
@@ -29,7 +35,9 @@ export class RailzTextInput {
 
   @Prop() prefixIcon?: string;
 
-  handleChange(event) {
+  @State() uuid: string = uuidv4().toString();
+
+  private handleChange(event): void {
     this.value = event.target.value;
   }
 
@@ -40,19 +48,19 @@ export class RailzTextInput {
     this.validationCheck();
   }
 
-  renderInstructionalText() {
+  private renderInstructionalText(): HTMLElement {
     if (this.instructionalText) {
       return <span class="instructional-text">{this.instructionalText}</span>;
     }
   }
 
-  renderErrorMessage() {
+  private renderErrorMessage(): HTMLElement {
     if (this.error || this.errorMessage) {
       return <span class="error-message">{this.errorMessage || 'Something wrong'}</span>;
     }
   }
 
-  validationCheck() {
+  private validationCheck(): string {
     const validationClasses = [];
     if (this.errorMessage) {
       validationClasses.push('error');
@@ -63,7 +71,7 @@ export class RailzTextInput {
     return validationClasses.join(' ').toString();
   }
 
-  render() {
+  render(): HTMLElement {
     return (
       <div class={`form-group ${this.validationCheck()}`}>
         <div class="input-container">
@@ -74,7 +82,7 @@ export class RailzTextInput {
           </span>
 
           <div class="label-container">
-            <label>{this.label}</label>
+            <label htmlFor={this.inputId || this.uuid}>{this.label}</label>
           </div>
 
           <input
@@ -86,8 +94,11 @@ export class RailzTextInput {
             pattern={this.pattern}
             min={this.minNumber}
             max={this.maxNumber}
+            id={this.inputId || this.uuid}
             onInput={event => this.handleChange(event)}
+            multiple
           />
+
           <span class="suffix-container">
             <slot name="suffix" />
           </span>

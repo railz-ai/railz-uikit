@@ -1,7 +1,8 @@
 import { newSpecPage } from '@stencil/core/testing';
+
 import { RailzInputRadioGroup } from '../railz-input-radio-group';
 
-describe('railz-input-radio-group', () => {
+describe.skip('railz-input-radio-group', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [RailzInputRadioGroup],

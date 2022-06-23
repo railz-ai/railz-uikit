@@ -9,7 +9,7 @@ export class RailzStatusPill {
   @Prop() label: string;
   @Prop() status: string;
   @Prop() type?: string;
-  render() {
+  render(): HTMLElement {
     return (
       <div class={`pill-container ${this.status} ${this.type}`}>
         {this.type === 'service' ? <div class="dot"></div> : this.status === 'connected' ? <railz-icon icon="checkmark" size="x-small" /> : ''}

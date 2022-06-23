@@ -1,6 +1,6 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('railz-input-radio-group', () => {
+describe.skip('railz-input-radio-group', () => {
   it('renders', async () => {
     const page = await newE2EPage();
     await page.setContent('<railz-input-radio-group></railz-input-radio-group>');

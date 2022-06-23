@@ -72,13 +72,25 @@
   }
 }
 
-@mixin get-font-set-weight($size: '', $weight: '', $family: list.nth(map-keys($font-families), 1), $line-height: 'normal') {
+@mixin get-font-set-weight(
+  $size: '',
+  $weight: '',
+  $family: list.nth(map-keys($font-families), 1),
+  $line-height: 'normal'
+) {
   @if ($weight) {
     font-weight: font-weight($weight);
   }
 }
 
-@mixin font($size: '', $weight: '', $family: list.nth(map-keys($font-families), 1), $line-height: 'normal', $letter-spacing: 'normal', $properties...) {
+@mixin font(
+  $size: '',
+  $weight: '',
+  $family: list.nth(map-keys($font-families), 1),
+  $line-height: 'normal',
+  $letter-spacing: 'normal',
+  $properties...
+) {
   //   @debug $family;
 
   @if ($family) {

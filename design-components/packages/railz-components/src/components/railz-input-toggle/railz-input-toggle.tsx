@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable max-len */
 import { Component, h, Prop, State, Watch } from '@stencil/core';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -22,7 +25,7 @@ export class RailzInputToggle {
   @Prop({ mutable: true }) error?: boolean;
   @Prop() errorMessage?: string;
 
-  handleChange() {
+  private handleChange(): void {
     this.indeterminate = false;
     this.error = false;
     this.checked = !this.checked;
@@ -36,20 +39,20 @@ export class RailzInputToggle {
 
   @State() uuid: string = uuidv4().toString();
 
-  renderInstructionalText() {
+  private renderInstructionalText(): HTMLElement {
     if (this.instructionalText) {
       return <span class="instructional-text">{this.instructionalText}</span>;
     }
   }
 
-  renderErrorMessage() {
+  private renderErrorMessage(): HTMLElement {
     if (this.error || this.errorMessage) {
       // this.error = true;
       return <span class="error-message">{this.errorMessage || 'Something went wrong'}</span>;
     }
   }
 
-  validationCheck() {
+  private validationCheck(): string {
     const validationClasses = [''];
 
     if (this.errorMessage || this.error) {
@@ -67,7 +70,7 @@ export class RailzInputToggle {
     return validationClasses.join(' ').toString();
   }
 
-  render() {
+  render(): HTMLElement {
     return (
       <div class={`form-group ${this.validationCheck()} ${this.checked ? 'checked' : ''}`}>
         <div class="input-container">

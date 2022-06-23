@@ -15,7 +15,7 @@ module.exports = {
     'scss/at-import-partial-extension': null,
     'scss/at-rule-no-unknown': true,
     'scss/double-slash-comment-whitespace-inside': null,
-    'function-no-unknown': null,
+    'function-no-unknown': false,
     'scss/no-global-function-names': null,
     'scss/at-import-no-partial-leading-underscore': null,
     'selector-id-pattern': null,

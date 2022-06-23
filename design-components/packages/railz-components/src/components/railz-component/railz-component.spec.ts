@@ -1,7 +1,7 @@
 import { newSpecPage } from '@stencil/core/testing';
 import { RailzComponent } from './railz-component';
 
-describe('railz-component', () => {
+describe.skip('railz-component', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
       components: [RailzComponent],
