@@ -9,5 +9,7 @@ module.exports = {
     'no-descending-specificity': null,
     'scss/at-import-partial-extension': null,
     'scss/at-rule-no-unknown': true,
+    'function-no-unknown': null,
+    'selector-type-no-unknown': null,
   },
 };

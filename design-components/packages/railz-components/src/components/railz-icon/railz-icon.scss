@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+:host(.x-large) {
+  @include icon-size('x-large');
+}
+
+:host(.large) {
+  @include icon-size('large');
+}
+
+:host(.medium) {
+  @include icon-size('medium');
+}
+
+:host(.small) {
+  @include icon-size('small');
+}
+
+:host(.x-small) {
+  @include icon-size('x-small');
+}
+
+:host(.xx-small) {
+  @include icon-size('xx-small');
+}
+
+svg {
+  width: 100%;
+}

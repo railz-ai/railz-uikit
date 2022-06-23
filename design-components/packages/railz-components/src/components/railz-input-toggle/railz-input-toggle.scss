@@ -1,0 +1,226 @@
+input[type='checkbox'] {
+  appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+label {
+  @include font(16, 'medium');
+
+  line-height: 1;
+  cursor: pointer;
+
+  .disabled & {
+    pointer-events: none;
+  }
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+  color: color('gray-900');
+  align-self: center;
+  padding: space(0.25) 0;
+}
+
+.instructional-text {
+  display: block;
+  padding: space(0.25) 0;
+  @include font(12, 'medium');
+
+  color: color('gray-700');
+}
+
+.error-message {
+  display: block;
+  @include font(12, 'medium');
+
+  color: color('red-700');
+}
+
+.form-group {
+  display: flex;
+  gap: space(1);
+
+  &:focus-within {
+    .input-container::after {
+      @include show('on');
+    }
+  }
+}
+
+.input-container {
+  position: relative;
+  flex-shrink: 0;
+  width: space(5);
+  height: space(2.5);
+  border-radius: radius('12');
+  @include transition;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover input,
+  &:focus input {
+    background-color: $color-primary-light;
+    cursor: pointer;
+
+    &:checked {
+      background-color: $color-primary;
+    }
+  }
+
+  &:hover .toggle-track::after,
+  &:focus .toggle-track::after {
+    box-shadow: shadow('drop-1'), shadow('cast-2');
+  }
+
+  &:hover,
+  &:focus {
+    .state-label {
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    @include coordinates;
+
+    border-radius: inherit;
+    box-shadow: 0 0 0 1px color('white'), 0 0 8px color('blue-500'), 0 0 0 2px color('navy-500');
+    @include transition;
+    @include show('off');
+
+    pointer-events: none;
+  }
+
+  .toggle-track {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    @include coordinates;
+    @include transition;
+
+    transition-duration: $t * 0.6;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &::after {
+      content: '';
+      @include circle(space(2));
+
+      position: absolute;
+      background-color: color('white');
+      @include transition;
+
+      margin: space(0.25);
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  input {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    @include coordinates;
+
+    border-radius: inherit;
+    box-shadow: shadowline();
+    @include transition;
+
+    display: flex;
+    align-items: center;
+    background-color: color('gray-300');
+
+    &:checked {
+      background-color: $color-primary;
+      box-shadow: shadowline($color-primary);
+
+      & + .toggle-track {
+        transform: translateX(100%);
+
+        &::after {
+          transform: translateX(-100%) translateX(space(-0.5));
+        }
+
+        .state-label {
+          transform: translateX(-200%) translateX(space(0.25));
+          color: color('white');
+        }
+      }
+    }
+
+    .disabled & {
+      background-color: color('gray-500', 0.5);
+      box-shadow: shadowline('gray-500');
+
+      + .toggle-track {
+        &::after {
+          transform: scale(0.5);
+        }
+      }
+    }
+
+    .disabled &:checked {
+      + .toggle-track::after {
+        transform: translateX(-100%) translateX(space(-0.5)) scale(0.5);
+      }
+    }
+
+    .indeterminate & {
+      background-color: color('gray-500', 0.5);
+
+      + .toggle-track {
+        transform: translateX(50%);
+
+        &::after {
+          transform: translateX(-50%) translateX(space(-0.25));
+        }
+      }
+    }
+
+    .error & {
+      box-shadow: inset 0 0 0 2px color('red-500');
+    }
+  }
+
+  .icon {
+    position: absolute;
+    flex-shrink: 0;
+    color: color('gray-600');
+    transform: translateY(0);
+  }
+
+  .state-label {
+    z-index: 1;
+    @include font(8, 'bold');
+
+    position: absolute;
+    width: 50%;
+    opacity: 0;
+    text-align: center;
+    transform: translateX(100%) translateX(space(-0.25));
+    color: color('gray-800');
+    @include transition;
+  }
+}
+
+.form-group.disabled {
+  cursor: not-allowed !important;
+
+  .input-container,
+  input,
+  label {
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+  }
+}

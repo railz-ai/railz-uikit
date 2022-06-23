@@ -1,0 +1,174 @@
+:host {
+  width: 100%;
+  flex-grow: 1;
+}
+
+:host select {
+  appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.input-container {
+  position: relative;
+  box-shadow: inset 0 0 0 1px color('gray-400');
+  border-radius: radius(2);
+  @include transition;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: space(1);
+  width: 100%;
+
+  &:focus-within {
+    box-shadow: inset 0 0 0 2px color('green-600');
+  }
+
+  &:hover:not(:focus-within) {
+    background-color: color('gray-200', 0.5);
+  }
+}
+
+select {
+  padding: space(1.5) space(3);
+  margin: 0;
+  width: 100%;
+  opacity: 0;
+  @include transition;
+  @include font(16, 'medium');
+
+  transform-origin: top left;
+  transform: scale(0.7);
+  background-color: transparent;
+
+  .input-container:focus-within &,
+  .dirty & {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+label {
+  @include font(12, 'medium');
+
+  color: color('gray-900');
+  @include transition;
+
+  padding: space(0.5) space(1);
+  border-radius: radius(2);
+  pointer-events: none;
+  width: 100%;
+  flex-grow: 1;
+  display: block;
+
+  .input-container:focus-within & {
+    color: color('green-600');
+    font-weight: font-weight('semi-bold');
+    pointer-events: auto;
+  }
+}
+
+.label-container {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  @include transition('fast', 'transform');
+
+  left: 0;
+  z-index: 0;
+  margin-left: space(1.5);
+
+  // border: 10px solid red;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    transform: translate3d(-50%, -25%, 0);
+    background-color: white;
+    z-index: -1;
+    @include transition('fast', 'width');
+  }
+
+  .input-container:focus-within &,
+  .dirty & {
+    transform: translateX(space(-0.5)) translateY(-50%) scale(0.8);
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+railz-icon {
+  position: absolute;
+  right: space(2);
+  pointer-events: none;
+  @include transition;
+
+  .input-container:hover:focus-within & {
+    transform: rotate(-180deg);
+  }
+}
+
+.instructional-text {
+  display: block;
+  padding: space(0.25);
+  @include font(12, 'medium');
+}
+
+.error-message {
+  display: block;
+  padding: space(0.25);
+  @include font(12, 'medium');
+
+  color: color('red-600');
+}
+
+.error {
+  .input-container {
+    box-shadow: inset 0 0 0 1px color('red-600');
+
+    &:focus-within {
+      box-shadow: inset 0 0 0 2px color('red-400');
+    }
+
+    label {
+      color: color('red-600');
+    }
+  }
+}
+
+.dirty {
+  .label-container {
+    transform: translateX(space(-0.5)) translateY(-50%) scale(0.8);
+  }
+
+  input {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.prefix-container {
+  padding: 0 space(0.5);
+  @include font(14, 'medium');
+
+  color: color('gray-700');
+  @include transition;
+
+  opacity: 0;
+  display: flex;
+
+  .input-container:focus-within &,
+  .dirty & {
+    opacity: 1;
+  }
+}
