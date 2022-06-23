@@ -6,7 +6,13 @@ www
 dist
 loader
 .angular
-.env
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
 
 packages/components-angular/.angular/cache
 packages/components-react/dist
