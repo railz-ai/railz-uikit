@@ -9,7 +9,7 @@
   @return $t * $speed;
 }
 
-@function transitionSpeed($speed) {
+@function transition-speed($speed) {
   @if map-has-key($speeds, $speed) {
     $speed: map-get($speeds, $speed);
     @return $speed;
@@ -18,7 +18,7 @@
   @return null;
 }
 
-@function transitionProperty($property-set) {
+@function transition-property($property-set) {
   @if map-has-key($transition-properties, $property-set) {
     $property-set: map-get($transition-properties, $property-set);
     @return #{$property-set};
@@ -29,11 +29,11 @@
 
 @mixin transition($speed: 'fast', $properties: 'default') {
   @if map-has-key($speeds, $speed) {
-    transition: transitionSpeed($speed);
+    transition: transition-speed($speed);
   } @else {
     transition-duration: $speed;
   }
-  transition-property: transitionProperty($properties);
+  transition-property: transition-property($properties);
 
   @media (prefers-reduced-motion: reduce) {
     transition-duration: 0 !important;
@@ -45,7 +45,7 @@
 }
 
 @mixin animate($animation, $speed: 'fast', $properties...) {
-  animation: $animation transitionSpeed($speed) transitionProperty($properties);
+  animation: $animation transition-speed($speed) transition-property($properties);
   @media (prefers-reduced-motion: reduce) {
     animation-duration: 0;
   }
