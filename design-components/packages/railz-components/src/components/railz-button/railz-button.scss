@@ -81,13 +81,13 @@ button {
 
   &.secondary {
     background-color: transparent;
-    box-shadow: shadowline('black');
+    box-shadow: shadow-line('black');
     color: color('black');
 
     &:hover,
     &:focus {
       background-color: color('gray-200');
-      box-shadow: shadowline('gray-500');
+      box-shadow: shadow-line('gray-500');
     }
 
     &:active {
@@ -98,7 +98,7 @@ button {
 
   &.tertiary {
     background-color: transparent;
-    box-shadow: shadowline('white');
+    box-shadow: shadow-line('white');
     color: color('white');
   }
 }

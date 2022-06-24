@@ -85,7 +85,7 @@ label {
     @include coordinates;
 
     border-radius: inherit;
-    box-shadow: shadowline();
+    box-shadow: shadow-line();
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,7 +106,7 @@ label {
 
     &:checked {
       background-color: $color-primary;
-      box-shadow: shadowline($color-primary);
+      box-shadow: shadow-line($color-primary);
 
       &::after {
         transform: scale(1);
@@ -116,7 +116,7 @@ label {
 
     .disabled & {
       background-color: color('gray-700', 0.5);
-      box-shadow: shadowline('gray-500');
+      box-shadow: shadow-line('gray-500');
     }
 
     .indeterminate & {

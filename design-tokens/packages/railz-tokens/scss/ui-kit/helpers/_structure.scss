@@ -53,7 +53,7 @@
   @return null;
 }
 
-@function shadowLine($color: 'dark-1', $edge: 'outline', $stroke-weight: 1px) {
+@function shadow-line($color: 'dark-1', $edge: 'outline', $stroke-weight: 1px) {
   @if contains(#{$color}, 'dark') {
     $color: line-color(#{$color});
   } @else if contains(#{$color}, 'light') {
