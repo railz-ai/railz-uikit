@@ -131,33 +131,25 @@ $color-brand-primary: color('neon_green-700');
 $color-brand-cta: color('neon_green-800');
 $color-brand-dark: color('aqua-900');
 
-$color-primary-onLight-default: color('neon_green-700');
-$color-primary-onDark-default: color('neon_green-700');
-$color-primary-onLight-hover: color('neon_green-600');
-$color-primary-onDark-hover: color('neon_green-600');
+$color-primary-on-light-default: color('neon_green-700');
+$color-primary-on-dark-default: color('neon_green-700');
+$color-primary-on-light-hover: color('neon_green-600');
+$color-primary-on-dark-hover: color('neon_green-600');
 
-$color-accent-onLight-default: color('neon_green-700');
-$color-accent-onDark-default: color('neon_green-700');
-$color-accent-onLight-hover: color('neon_green-600');
-$color-accent-onDark-hover: color('neon_green-600');
+$color-accent-on-light-default: color('neon_green-700');
+$color-accent-on-dark-default: color('neon_green-700');
+$color-accent-on-light-hover: color('neon_green-600');
+$color-accent-on-dark-hover: color('neon_green-600');
 
-$color-background-onLight-default: color('neon_green-700');
-$color-background-onDark-default: color('neon_green-700');
-$color-background-onLight-hover: color('neon_green-600');
-$color-background-onDark-hover: color('neon_green-600');
+$color-background-on-light-default: color('neon_green-700');
+$color-background-on-dark-default: color('neon_green-700');
+$color-background-on-light-hover: color('neon_green-600');
+$color-background-on-dark-hover: color('neon_green-600');
 
-$color-foreground-onLight-default: color('gray-900');
-$color-foreground-onDark-default: color('gray-100');
-$color-foreground-onLight-hover: color('gray-900');
-$color-foreground-onDark-hover: color('gray-600');
-
-// primary:
-//  onLight:
-//    default: ###
-//    hover: ###
-//  onDark:
-//    default: ###
-//    hover: ###
+$color-foreground-on-light-default: color('gray-900');
+$color-foreground-on-dark-default: color('gray-100');
+$color-foreground-on-light-hover: color('gray-900');
+$color-foreground-on-dark-hover: color('gray-600');
 
 :root {
   --color-primary: #{color('green-600')};
