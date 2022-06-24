@@ -100,12 +100,12 @@ label {
     @include coordinates;
 
     border-radius: inherit;
-    box-shadow: shadowline();
+    box-shadow: shadow-line();
     @include transition;
 
     &:checked {
       background-color: $color-primary;
-      box-shadow: shadowline($color-primary);
+      box-shadow: shadow-line($color-primary);
 
       + .icon {
         transform: scale(1);
@@ -117,7 +117,7 @@ label {
 
     .disabled & {
       background-color: color('gray-700', 0.5);
-      box-shadow: shadowline('gray-500');
+      box-shadow: shadow-line('gray-500');
     }
 
     .indeterminate & {
