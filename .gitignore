@@ -7,7 +7,7 @@ dist
 loader
 .angular
 .env
-.DS_Store
+# .DS_Store
 
 packages/components-angular/.angular/cache
 packages/components-react/dist
