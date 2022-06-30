@@ -15,7 +15,8 @@ loader
 # Generated Files
 package-lock.json
 stencil-generated
-/design-components/packages/railz-components-angular/src/lib/stencil-generated/
+/stencil-generated/
+# /design-components/packages/railz-components-angular/src/lib/stencil-generated/
 Gemfile
 Gemfile.lock
 
@@ -66,3 +67,4 @@ packages/components-react/node_modules
 packages/*/lib
 examples/dev/*
 /design-tokens/packages/railz-tokens/css/
+design-components/packages/railz-components-angular/src/lib/stencil-generated/components.ts
