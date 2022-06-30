@@ -9,7 +9,6 @@
 @mixin icon($name) {
   @if index($icon-list, $name) {
     mask: url('~@/assets/icons/#{$name}.svg') no-repeat 50% 50%;
-    mask: url('~@/assets/icons/#{$name}.svg') no-repeat 50% 50%;
   } @else {
     @warn error-message($name, $icon-list, 'tokens/_icons.scss');
   }
