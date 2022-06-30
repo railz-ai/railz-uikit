@@ -1,19 +1,19 @@
 import { newSpecPage } from '@stencil/core/testing';
 
-import { RailzSelectInput } from '../railz-select-input';
+import { RailzInputSelect } from '../railz-input-select';
 
-describe.skip('railz-select-input', () => {
+describe.skip('railz-input-select', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [RailzSelectInput],
-      html: `<railz-select-input></railz-select-input>`,
+      components: [RailzInputSelect],
+      html: `<railz-input-select></railz-input-select>`,
     });
     expect(page.root).toEqualHtml(`
-      <railz-select-input>
+      <railz-input-select>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </railz-select-input>
+      </railz-input-select>
     `);
   });
 });
