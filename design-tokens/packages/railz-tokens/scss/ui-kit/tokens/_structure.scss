@@ -32,7 +32,6 @@ $line-colors: (
   'light-2': color('gray-200', 0.6),
   'light-3': color('gray-100', 0.9),
 );
-
 $lines: (
   'dark-1': thin solid line-color('dark-1'),
   'dark-2': thin solid line-color('dark-2'),
@@ -62,7 +61,6 @@ $radii: (
   '.5': 5px,
   '.25': 2px,
 );
-
 $shadows: (
   'drop-1': 0 1px 2px,
   'drop-2': 0 3px 4px,

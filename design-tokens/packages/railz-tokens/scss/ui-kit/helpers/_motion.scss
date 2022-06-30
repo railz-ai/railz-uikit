@@ -33,12 +33,14 @@
   } @else {
     transition-duration: $speed;
   }
+
   transition-property: transition-property($properties);
 
   @media (prefers-reduced-motion: reduce) {
     transition-duration: 0 !important;
 
-    &:hover {
+    &:hover,
+    &:focus {
       transition-duration: 0 !important;
     }
   }

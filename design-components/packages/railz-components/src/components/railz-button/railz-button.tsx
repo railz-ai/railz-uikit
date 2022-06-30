@@ -1,6 +1,10 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 
 import * as iconList from '../../assets/icons/index.json';
+/**
+ * @description This is the button
+ *
+ */
 @Component({
   tag: 'railz-button',
   styleUrl: 'railz-button.scss',
