@@ -17,9 +17,9 @@
 - [railz-button](../railz-button)
 - [railz-icon-button](../railz-icon-button)
 - [railz-input-checkbox](../railz-input-checkbox)
+- [railz-input-select](../railz-input-select)
 - [railz-input-text](../railz-input-text)
 - [railz-input-toggle](../railz-input-toggle)
-- [railz-select-input](../railz-select-input)
 - [railz-status-pill](../railz-status-pill)
 
 ### Graph
@@ -29,9 +29,9 @@ graph TD;
   railz-button --> railz-icon
   railz-icon-button --> railz-icon
   railz-input-checkbox --> railz-icon
+  railz-input-select --> railz-icon
   railz-input-text --> railz-icon
   railz-input-toggle --> railz-icon
-  railz-select-input --> railz-icon
   railz-status-pill --> railz-icon
   style railz-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

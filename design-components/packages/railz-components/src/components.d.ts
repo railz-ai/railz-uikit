@@ -79,6 +79,15 @@ export namespace Components {
   interface RailzInputRadioGroup {
     options: any[];
   }
+  interface RailzInputSelect {
+    disabled?: boolean;
+    error?: boolean;
+    errorMessage?: string;
+    instructionalText?: string;
+    label: string;
+    required?: boolean;
+    value?: string;
+  }
   interface RailzInputText {
     autocomplete?: string;
     disabled?: boolean;
@@ -135,19 +144,10 @@ export namespace Components {
      */
     second: number;
   }
-  interface RailzSelectInput {
-    disabled?: boolean;
-    error?: boolean;
-    errorMessage?: string;
-    instructionalText?: string;
-    label: string;
-    required?: boolean;
-    value?: string;
-  }
   interface RailzStatusPill {
+    icon?: string;
     label: string;
     status: string;
-    type?: string;
   }
 }
 declare global {
@@ -186,6 +186,11 @@ declare global {
     prototype: HTMLRailzInputRadioGroupElement;
     new (): HTMLRailzInputRadioGroupElement;
   };
+  interface HTMLRailzInputSelectElement extends Components.RailzInputSelect, HTMLStencilElement {}
+  var HTMLRailzInputSelectElement: {
+    prototype: HTMLRailzInputSelectElement;
+    new (): HTMLRailzInputSelectElement;
+  };
   interface HTMLRailzInputTextElement extends Components.RailzInputText, HTMLStencilElement {}
   var HTMLRailzInputTextElement: {
     prototype: HTMLRailzInputTextElement;
@@ -206,11 +211,6 @@ declare global {
     prototype: HTMLRailzNestedSumElement;
     new (): HTMLRailzNestedSumElement;
   };
-  interface HTMLRailzSelectInputElement extends Components.RailzSelectInput, HTMLStencilElement {}
-  var HTMLRailzSelectInputElement: {
-    prototype: HTMLRailzSelectInputElement;
-    new (): HTMLRailzSelectInputElement;
-  };
   interface HTMLRailzStatusPillElement extends Components.RailzStatusPill, HTMLStencilElement {}
   var HTMLRailzStatusPillElement: {
     prototype: HTMLRailzStatusPillElement;
@@ -224,11 +224,11 @@ declare global {
     'railz-input-checkbox': HTMLRailzInputCheckboxElement;
     'railz-input-radio': HTMLRailzInputRadioElement;
     'railz-input-radio-group': HTMLRailzInputRadioGroupElement;
+    'railz-input-select': HTMLRailzInputSelectElement;
     'railz-input-text': HTMLRailzInputTextElement;
     'railz-input-toggle': HTMLRailzInputToggleElement;
     'railz-nested': HTMLRailzNestedElement;
     'railz-nested-sum': HTMLRailzNestedSumElement;
-    'railz-select-input': HTMLRailzSelectInputElement;
     'railz-status-pill': HTMLRailzStatusPillElement;
   }
 }
@@ -305,6 +305,15 @@ declare namespace LocalJSX {
   interface RailzInputRadioGroup {
     options?: any[];
   }
+  interface RailzInputSelect {
+    disabled?: boolean;
+    error?: boolean;
+    errorMessage?: string;
+    instructionalText?: string;
+    label?: string;
+    required?: boolean;
+    value?: string;
+  }
   interface RailzInputText {
     autocomplete?: string;
     disabled?: boolean;
@@ -361,19 +370,10 @@ declare namespace LocalJSX {
      */
     second?: number;
   }
-  interface RailzSelectInput {
-    disabled?: boolean;
-    error?: boolean;
-    errorMessage?: string;
-    instructionalText?: string;
-    label?: string;
-    required?: boolean;
-    value?: string;
-  }
   interface RailzStatusPill {
+    icon?: string;
     label?: string;
     status?: string;
-    type?: string;
   }
   interface IntrinsicElements {
     'railz-button': RailzButton;
@@ -383,11 +383,11 @@ declare namespace LocalJSX {
     'railz-input-checkbox': RailzInputCheckbox;
     'railz-input-radio': RailzInputRadio;
     'railz-input-radio-group': RailzInputRadioGroup;
+    'railz-input-select': RailzInputSelect;
     'railz-input-text': RailzInputText;
     'railz-input-toggle': RailzInputToggle;
     'railz-nested': RailzNested;
     'railz-nested-sum': RailzNestedSum;
-    'railz-select-input': RailzSelectInput;
     'railz-status-pill': RailzStatusPill;
   }
 }
@@ -402,11 +402,11 @@ declare module '@stencil/core' {
       'railz-input-checkbox': LocalJSX.RailzInputCheckbox & JSXBase.HTMLAttributes<HTMLRailzInputCheckboxElement>;
       'railz-input-radio': LocalJSX.RailzInputRadio & JSXBase.HTMLAttributes<HTMLRailzInputRadioElement>;
       'railz-input-radio-group': LocalJSX.RailzInputRadioGroup & JSXBase.HTMLAttributes<HTMLRailzInputRadioGroupElement>;
+      'railz-input-select': LocalJSX.RailzInputSelect & JSXBase.HTMLAttributes<HTMLRailzInputSelectElement>;
       'railz-input-text': LocalJSX.RailzInputText & JSXBase.HTMLAttributes<HTMLRailzInputTextElement>;
       'railz-input-toggle': LocalJSX.RailzInputToggle & JSXBase.HTMLAttributes<HTMLRailzInputToggleElement>;
       'railz-nested': LocalJSX.RailzNested & JSXBase.HTMLAttributes<HTMLRailzNestedElement>;
       'railz-nested-sum': LocalJSX.RailzNestedSum & JSXBase.HTMLAttributes<HTMLRailzNestedSumElement>;
-      'railz-select-input': LocalJSX.RailzSelectInput & JSXBase.HTMLAttributes<HTMLRailzSelectInputElement>;
       'railz-status-pill': LocalJSX.RailzStatusPill & JSXBase.HTMLAttributes<HTMLRailzStatusPillElement>;
     }
   }
