@@ -25,7 +25,7 @@
 @function z($index, $modifer: '') {
   $z-base: 10;
 
-  @if ($index < 0) {
+  @if $index < 0 {
     $index: $index * -1;
     @return #{-1 * pow($z-base, $index) - $modifer};
   }
@@ -64,15 +64,15 @@
     $color: $color;
   }
 
-  @if ($edge == 'top') {
-    @return 0px #{-$stroke-weight} 0px #{$color};
-  } @else if ($edge == 'left') {
+  @if $edge == 'top' {
+    @return 0 #{-$stroke-weight} 0 #{$color};
+  } @else if $edge == 'left' {
     @return #{-$stroke-weight} 0 0 0 #{$color};
-  } @else if ($edge == 'right') {
+  } @else if $edge == 'right' {
     @return $stroke-weight 0 0 0 #{$color};
-  } @else if ($edge == 'bottom') {
+  } @else if $edge == 'bottom' {
     @return 0 $stroke-weight 0 0 #{$color};
-  } @else if ($edge == 'outline') {
+  } @else if $edge == 'outline' {
     @return inset 0 0 0 $stroke-weight #{$color};
   }
 
