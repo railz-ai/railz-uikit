@@ -1,4 +1,4 @@
-# railz-select-input
+# railz-input-select
 
 <!-- Auto Generated Below -->
 
@@ -24,8 +24,8 @@
 
 ```mermaid
 graph TD;
-  railz-select-input --> railz-icon
-  style railz-select-input fill:#f9f,stroke:#333,stroke-width:4px
+  railz-input-select --> railz-icon
+  style railz-input-select fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ---

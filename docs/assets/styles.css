@@ -119,20 +119,24 @@ strong {
 
 code {
   background-color: hsla(160, 100%, 75%, 0.5);
-  color: hsl(198, 87%, 18%);
+  color: hsl(175, 87%, 18%);
   padding: 2px 6px;
   border-radius: 8px;
-  font-weight: 500;
+  font-weight: 600;
   font-family: monospace;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 pre {
-  background-color: hsla(196, 100%, 60%, 0.1);
-  color: hsl(198, 87%, 18%);
+  background-color: hsla(202, 100%, 70%, 0.1);
   padding: 2px 6px;
   border-radius: 8px;
-  font-weight: 500;
   font-family: monospace;
-  font-size: 0.9em;
+}
+
+pre code {
+  font-weight: 600;
+  color: hsl(209, 91%, 27%);
+
+  /* font-size: 0.em; */
 }
