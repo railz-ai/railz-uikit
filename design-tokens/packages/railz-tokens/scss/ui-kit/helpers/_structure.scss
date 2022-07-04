@@ -97,7 +97,7 @@
 // Drop Shadows
 //-------------------------------------------------------------------
 
-@function shadow($shadow-style, $shadow-color: 'gray-900', $opacity: 0.4) {
+@function shadow($shadow-style: 'drop-1', $shadow-color: 'gray-900', $opacity: 0.4) {
   @if map-has-key($shadows, $shadow-style) {
     @if type-of($shadow-color) != string {
       $shadow-color: $shadow-color;

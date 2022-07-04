@@ -35,7 +35,7 @@ function pages() {
             .readdirSync(dir)
             .find((item) => item !== 'readme.md' && item.endsWith('.md'));
           const file = path.join(dir, readmeFound);
-          console.log('file', file);
+
           return { type: 'md', file, group };
         } catch (err) {
           return null;
