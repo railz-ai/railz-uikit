@@ -1,0 +1,39 @@
+//-------------------------------------------------------------------
+// Lines
+//-------------------------------------------------------------------
+
+// Border Line
+
+@function border-line($style: 'dark-1', $stroke-weight: 'thin') {
+  @if map-has-key($lines, $style) {
+    $style: map-get($lines, $style);
+    @return $stroke-weight $style;
+  }
+  @warn error-message($style, $lines, 'tokens/_structure.scss');
+  @return null;
+}
+
+// Shadow Line
+@function shadow-line($color: 'dark-1', $edge: 'outline', $stroke-weight: 1px) {
+  // TODO - evaluate this
+  @if color(#{$color}) {
+    $color: color(#{$color});
+  } @else {
+    $color: $color;
+  }
+
+  @if $edge == 'top' {
+    @return 0 #{-$stroke-weight} 0 #{$color};
+  } @else if $edge == 'left' {
+    @return #{-$stroke-weight} 0 0 0 #{$color};
+  } @else if $edge == 'right' {
+    @return $stroke-weight 0 0 0 #{$color};
+  } @else if $edge == 'bottom' {
+    @return 0 $stroke-weight 0 0 #{$color};
+  } @else if $edge == 'outline' {
+    @return inset 0 0 0 $stroke-weight #{$color};
+  }
+
+  @warn error-message($color, $line-colors, 'tokens/_structure.scss');
+  @return null;
+}

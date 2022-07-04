@@ -35,15 +35,6 @@
 // Lines
 //-------------------------------------------------------------------
 
-@function line-color($color: normal) {
-  @if map-has-key($line-colors, $color) {
-    $color: map-get($line-colors, $color);
-    @return $color;
-  }
-  @warn error-message($color, $line-colors, 'tokens/_structure.scss');
-  @return null;
-}
-
 @function line($style: normal) {
   @if map-has-key($lines, $style) {
     $style: map-get($lines, $style);
@@ -54,11 +45,8 @@
 }
 
 @function shadow-line($color: 'dark-1', $edge: 'outline', $stroke-weight: 1px) {
-  @if contains(#{$color}, 'dark') {
-    $color: line-color(#{$color});
-  } @else if contains(#{$color}, 'light') {
-    $color: line-color(#{$color});
-  } @else if color(#{$color}) {
+  // TODO - evaluate this
+  @if color(#{$color}) {
     $color: color(#{$color});
   } @else {
     $color: $color;
