@@ -6,10 +6,10 @@
 @import 'helpers/_spacing';
 @import 'helpers/_colors';
 @import 'helpers/_typography';
-@import 'helpers/_structure';
 @import 'helpers/_screen-sizes';
 @import 'helpers/_lines';
 @import 'helpers/_border-radius';
+@import 'helpers/_shadows';
 
 @import 'helpers/_motion';
 
@@ -24,8 +24,7 @@
 @import 'tokens/_screen-sizes';
 @import 'tokens/_lines';
 @import 'tokens/_border-radius';
-
-@import 'tokens/_structure';
+@import 'tokens/_shadows';
 
 @import 'tokens/_motion';
 
