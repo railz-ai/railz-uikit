@@ -107,7 +107,7 @@ label {
     @include coordinates;
     @include transition;
 
-    transition-duration: $t * 0.6;
+    transition-duration: speed(0.6);
     pointer-events: none;
     display: flex;
     align-items: center;
