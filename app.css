@@ -491,11 +491,57 @@ a:hover {
 
 table {
   color: var(--theme-text-color);
+  max-width: 100%;
+  overflow: auto;
+  min-width: 0;
 }
 
 table tr,
 table tr:nth-child(2n) {
   background-color: transparent;
+}
+
+h1 {
+  font-weight: 800;
+  color: hsl(0, 0%, 13%);
+}
+
+h2 {
+  font-weight: 700;
+  color: hsl(0, 0%, 13%);
+}
+
+p {
+  color: hsl(0, 0%, 46%);
+}
+
+strong {
+  font-weight: 600;
+  color: hsl(0, 0%, 13%);
+}
+
+code {
+  background-color: hsla(160, 100%, 75%, 0.5);
+  color: hsl(175, 87%, 18%);
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 0.8em;
+}
+
+pre {
+  background-color: hsla(202, 100%, 70%, 0.1);
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-family: monospace;
+}
+
+pre code {
+  font-weight: 600;
+  color: hsl(209, 91%, 27%);
+
+  /* font-size: 0.em; */
 }
 
 
