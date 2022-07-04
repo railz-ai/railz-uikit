@@ -1,0 +1,23 @@
+//-------------------------------------------------------------------
+// Border Radius
+//-------------------------------------------------------------------
+
+$base-radius: 4px;
+
+$radii: (
+  '100%': 100%,
+  '75%': 75%,
+  '50%': 50%,
+  '25%': 25%,
+  'xxx-large': 32px,
+  'xx-large': 24px,
+  'x-large': 16px,
+  'large': 12px,
+  'medium-large': 10px,
+  'medium': 8px,
+  'medium-small': 6px,
+  'small': 5px,
+  'x-small': 4px,
+  'xx-small': 3px,
+  'xxx-small': 2px,
+);

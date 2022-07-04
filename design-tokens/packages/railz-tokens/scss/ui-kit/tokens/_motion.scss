@@ -20,9 +20,7 @@ $speeds: (
 $transition-properties: (
   'all': 'all',
   'default':
-    'background-color, border-color, color, fill, stroke, opacity, 
-    box-shadow, transform, filter, backdrop-filter, height, width, 
-    top, left, right, bottom, max-height, max-width, min-height, min-width',
+    'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, height, width, top, left, right, bottom, max-height, max-width, min-height, min-width',
   'colors': 'background-color, border-color, color, fill, stroke',
   'opacity': 'opacity',
   'shadow': 'box-shadow',

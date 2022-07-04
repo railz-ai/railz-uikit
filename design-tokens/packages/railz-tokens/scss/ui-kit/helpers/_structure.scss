@@ -9,17 +9,6 @@
   @return $base * $scale;
 }
 
-// Screen size
-//-------------------------------------------------------------------
-@function screen($size) {
-  @if map-has-key($screen-sizes, $size) {
-    $size: map-get($screen-sizes, $size);
-    @return $size;
-  }
-  @warn error-message($size, $screen-sizes, 'tokens/_structure.scss');
-  @return null;
-}
-
 // Z-Index
 //-------------------------------------------------------------------
 @function z($index, $modifer: '') {
@@ -30,42 +19,6 @@
     @return #{-1 * pow($z-base, $index) - $modifer};
   }
   @return #{pow($z-base, $index) + $modifer};
-}
-
-// Lines
-//-------------------------------------------------------------------
-
-@function line($style: normal) {
-  @if map-has-key($lines, $style) {
-    $style: map-get($lines, $style);
-    @return $style;
-  }
-  @warn error-message($style, $lines, 'tokens/_structure.scss');
-  @return null;
-}
-
-@function shadow-line($color: 'dark-1', $edge: 'outline', $stroke-weight: 1px) {
-  // TODO - evaluate this
-  @if color(#{$color}) {
-    $color: color(#{$color});
-  } @else {
-    $color: $color;
-  }
-
-  @if $edge == 'top' {
-    @return 0 #{-$stroke-weight} 0 #{$color};
-  } @else if $edge == 'left' {
-    @return #{-$stroke-weight} 0 0 0 #{$color};
-  } @else if $edge == 'right' {
-    @return $stroke-weight 0 0 0 #{$color};
-  } @else if $edge == 'bottom' {
-    @return 0 $stroke-weight 0 0 #{$color};
-  } @else if $edge == 'outline' {
-    @return inset 0 0 0 $stroke-weight #{$color};
-  }
-
-  @warn error-message($color, $line-colors, 'tokens/_structure.scss');
-  @return null;
 }
 
 // Border Radius
