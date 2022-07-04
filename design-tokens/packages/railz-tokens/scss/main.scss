@@ -1,3 +1,9 @@
 @use 'ui-kit/_index' as *;
 
 // @import './reset.scss';
+
+.box {
+  //   border-radius: radius(1);
+  //   @include corner-radius(1, 2, 4, 1);
+  border-radius: corner-radius(1, '25%', 4, 'xxx-large');
+}
