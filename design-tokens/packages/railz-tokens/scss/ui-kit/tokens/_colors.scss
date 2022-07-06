@@ -64,7 +64,7 @@ $colors: (
     '800': hsl(147deg 55% 20%),
     '900': hsl(147deg 55% 10%),
   ),
-  'neon_green': (
+  'neon-green': (
     '50': hsl(155deg 100% 98%),
     '100': hsl(155deg 100% 90%),
     '200': hsl(155deg 100% 80%),
@@ -125,42 +125,66 @@ $colors: (
     '900': hsl(212deg 81% 10%),
   ),
 );
-$color-brand-primary: color('neon_green-700');
-$color-brand-cta: color('neon_green-800');
-$color-brand-dark: color('aqua-900');
-$color-primary-on-light-default: color('neon_green-700');
-$color-primary-on-dark-default: color('neon_green-700');
-$color-primary-on-light-hover: color('neon_green-600');
-$color-primary-on-dark-hover: color('neon_green-600');
-$color-accent-on-light-default: color('neon_green-700');
-$color-accent-on-dark-default: color('neon_green-700');
-$color-accent-on-light-hover: color('neon_green-600');
-$color-accent-on-dark-hover: color('neon_green-600');
-$color-background-on-light-default: color('neon_green-700');
-$color-background-on-dark-default: color('neon_green-700');
-$color-background-on-light-hover: color('neon_green-600');
-$color-background-on-dark-hover: color('neon_green-600');
-$color-foreground-on-light-default: color('gray-900');
-$color-foreground-on-dark-default: color('gray-100');
-$color-foreground-on-light-hover: color('gray-900');
-$color-foreground-on-dark-hover: color('gray-600');
 
-:root {
-  --color-primary: #{color('green-600')};
-  --color-primary-light: #{color('green-500')};
-  --color-primary-dark: #{color('neon_green-800')};
-  --color-primary-text: #{color('white')};
-  --color-accent: #{color('gray-900')};
-  --color-accent-light: #{color('gray-800')};
-  --color-accent-dark: #{color('black')};
-  --color-accent-text: #{color('white')};
-}
+$brand: (
+  'text': (
+    'header': color('gray-900'),
+    'body': color('gray-800'),
+    'subdued': color('gray-600'),
+    'link': color('neon-green-700'),
+    'link-hover': color('neon-green-700'),
+    'link-active': color('neon-green-700'),
+  ),
+  'accent': color('gray-900'),
+  'primary': (
+    'background': color('neon-green-700'),
+    'background-hover': color('neon-green-800'),
+    'background-active': color('neon-green-600'),
+    'foreground': color('white'),
+    'foreground-hover': color('neon-green-200'),
+    'foreground-active': color('neon-green-100'),
+  ),
+);
 
-$color-primary: var(--color-primary, #{color('green-600')});
-$color-primary-dark: var(--color-primary-dark, #{color('green-500')});
-$color-primary-light: var(--color-primary-light, #{color('neon_green-800')});
-$color-primary-text: var(--color-primary-text, #{color('white')});
-$color-accent: var(--color-accent);
-$color-accent-dark: var(--color-accent-dark);
-$color-accent-light: var(--color-accent-light);
-$color-accent-text: var(--color-accent-text);
+// $color-brand-primary: color('neon_green-700');
+// $color-brand-cta: color('neon_green-800');
+// $color-brand-dark: color('aqua-900');
+
+// $color-primary-on-light-default: color('neon_green-700');
+// $color-primary-on-dark-default: color('neon_green-700');
+// $color-primary-on-light-hover: color('neon_green-600');
+// $color-primary-on-dark-hover: color('neon_green-600');
+// $color-accent-on-light-default: color('neon_green-700');
+// $color-accent-on-dark-default: color('neon_green-700');
+// $color-accent-on-light-hover: color('neon_green-600');
+// $color-accent-on-dark-hover: color('neon_green-600');
+
+// $color-background-on-light-default: color('neon_green-700');
+// $color-background-on-dark-default: color('neon_green-700');
+// $color-background-on-light-hover: color('neon_green-600');
+// $color-background-on-dark-hover: color('neon_green-600');
+
+// $color-foreground-on-light-default: color('gray-900');
+// $color-foreground-on-dark-default: color('gray-100');
+// $color-foreground-on-light-hover: color('gray-900');
+// $color-foreground-on-dark-hover: color('gray-600');
+
+// :root {
+//   --color-primary: #{color('green-600')};
+//   --color-primary-light: #{color('green-500')};
+//   --color-primary-dark: #{color('neon_green-800')};
+//   --color-primary-text: #{color('white')};
+//   --color-accent: #{color('gray-900')};
+//   --color-accent-light: #{color('gray-800')};
+//   --color-accent-dark: #{color('black')};
+//   --color-accent-text: #{color('white')};
+// }
+
+// $color-primary: var(--color-primary, #{color('green-600')});
+// $color-primary-dark: var(--color-primary-dark, #{color('green-500')});
+// $color-primary-light: var(--color-primary-light, #{color('neon_green-800')});
+// $color-primary-text: var(--color-primary-text, #{color('white')});
+// $color-accent: var(--color-accent);
+// $color-accent-dark: var(--color-accent-dark);
+// $color-accent-light: var(--color-accent-light);
+// $color-accent-text: var(--color-accent-text);
