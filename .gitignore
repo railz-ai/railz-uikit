@@ -19,6 +19,8 @@ stencil-generated
 # /design-components/packages/railz-components-angular/src/lib/stencil-generated/
 Gemfile
 Gemfile.lock
+**/**/components.d.ts
+
 
 # Log files
 *.log
