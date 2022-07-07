@@ -2,6 +2,9 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable max-len */
 import { Component, State, Prop, h } from '@stencil/core';
+
+import { formatServiceName } from '../../utils/utils';
+
 import { LogoConfig } from './types';
 
 @Component({
@@ -197,7 +200,7 @@ export class MyComponent {
       <svg width={`${this.svgWidth}px`} height={`${this.svgHeight}px`} viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width={this.svgWidth} height={this.svgHeight} fill={`url(#pattern-${this.name})`}>
           {' '}
-          <title>{this.name}</title>{' '}
+          <title>{formatServiceName(this.name)}</title>{' '}
         </rect>
         <defs>
           <pattern id={`pattern-${this.name}`} patternContentUnits="objectBoundingBox" width="1" height="1">
