@@ -15,6 +15,7 @@ export class MyComponent {
   @State() imgHeight: string;
   @State() imgWidth: string;
   @State() transform: string;
+  @State() error = false;
   @State() logoConfig: LogoConfig = {
     freshbooks: {
       svg: {
@@ -175,15 +176,23 @@ export class MyComponent {
   };
 
   connectedCallback(): void {
-    this.svgWidth = this.logoConfig[this.name]['svg']['width'];
-    this.svgHeight = this.logoConfig[this.name]['svg']['height'];
-    this.imgUrl = this.logoConfig[this.name]['svg']['url'];
-    this.imgWidth = this.logoConfig[this.name]['img']['width'];
-    this.imgHeight = this.logoConfig[this.name]['img']['height'];
-    this.transform = this.logoConfig[this.name]['svg']['transform'];
+    if (Object.keys(this.logoConfig).includes(this.name)) {
+      this.svgWidth = this.logoConfig[this.name]['svg']['width'];
+      this.svgHeight = this.logoConfig[this.name]['svg']['height'];
+      this.imgUrl = this.logoConfig[this.name]['svg']['url'];
+      this.imgWidth = this.logoConfig[this.name]['img']['width'];
+      this.imgHeight = this.logoConfig[this.name]['img']['height'];
+      this.transform = this.logoConfig[this.name]['svg']['transform'];
+    } else {
+      this.error = true;
+    }
   }
 
   render() {
+    if (this.error) {
+      return <div></div>;
+    }
+
     return (
       <svg width={`${this.svgWidth}px`} height={`${this.svgHeight}px`} viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width={this.svgWidth} height={this.svgHeight} fill={`url(#pattern-${this.name})`} />
