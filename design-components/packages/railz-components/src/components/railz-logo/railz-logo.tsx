@@ -195,7 +195,9 @@ export class MyComponent {
 
     return (
       <svg width={`${this.svgWidth}px`} height={`${this.svgHeight}px`} viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width={this.svgWidth} height={this.svgHeight} fill={`url(#pattern-${this.name})`} />
+        <rect width={this.svgWidth} height={this.svgHeight} fill={`url(#pattern-${this.name})`}>
+          <title>{this.name}</title>
+        </rect>
         <defs>
           <pattern id={`pattern-${this.name}`} patternContentUnits="objectBoundingBox" width="1" height="1">
             <use xlinkHref={`#image-ref-${this.name}`} transform={this.transform} />
