@@ -14,13 +14,15 @@
 }
 
 // Shadow Line
-@function shadow-line($color: 'dark-1', $edge: 'outline', $stroke-weight: 1px) {
+@function shadow-line($color: 'gray-800', $edge: 'outline', $stroke-weight: 1px, $alpha: 0.2) {
   // TODO - evaluate this
-  @if color(#{$color}) {
-    $color: color(#{$color});
-  } @else {
-    $color: $color;
-  }
+  $color: color(#{$color}, $alpha);
+
+  // @if color(#{$color}) {
+  //   $color: color(#{$color});
+  // } @else {
+  //   $color: $color;
+  // }
 
   @if $edge == 'top' {
     @return 0 #{-$stroke-weight} 0 #{$color};

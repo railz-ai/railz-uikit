@@ -1,6 +1,6 @@
-button {
-  @include button-reset;
-}
+// button {
+//   @include button-reset;
+// }
 
 :host {
   margin: 0;
@@ -28,7 +28,7 @@ button {
 }
 
 .rounded {
-  border-radius: radius('.5');
+  border-radius: radius(1);
 
   &.primary {
     background-color: color('brand-primary-background');
