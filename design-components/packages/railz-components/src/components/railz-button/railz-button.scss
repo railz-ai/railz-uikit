@@ -1,6 +1,12 @@
-// button {
-//   @include button-reset;
-// }
+button {
+  // @include button-reset;
+
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  background: none;
+}
 
 :host {
   margin: 0;

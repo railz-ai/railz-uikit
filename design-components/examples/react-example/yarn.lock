@@ -1512,6 +1512,39 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@railzai/railz-icons@https://pkg.csb.dev/railz-ai/railz-uikit/commit/6250d31c/@railzai/railz-icons":
+  version "0.0.1-alpha.1"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/6250d31c/@railzai/railz-icons#fb34e8cf36cfb6b92c93a876822fc1253d3ea154"
+  dependencies:
+    "@stencil/core" "^2.13.0"
+
+"@railzai/railz-tokens@https://pkg.csb.dev/railz-ai/railz-uikit/commit/6250d31c/@railzai/railz-tokens":
+  version "0.0.1-alpha.1"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/6250d31c/@railzai/railz-tokens#0b193bfd93ea37fd5c1f7748478e034abe324ae0"
+
+"@railzai/railz-uikit-angular@https://pkg.csb.dev/railz-ai/railz-uikit/commit/6250d31c/@railzai/railz-uikit-angular":
+  version "0.0.1-alpha.1"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/6250d31c/@railzai/railz-uikit-angular#e749d0ea2d7753048b3afc8fe3658af7f0c9acf5"
+
+"@railzai/railz-uikit-react@https://pkg.csb.dev/railz-ai/railz-uikit/commit/6250d31c/@railzai/railz-uikit-react":
+  version "0.0.1-alpha.1"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/6250d31c/@railzai/railz-uikit-react#39ca3f91723627dd02cebcc3767d5ef92a9987f2"
+  dependencies:
+    minimist "1.2.6"
+
+"@railzai/railz-uikit-react@~0.0.0":
+  version "0.0.1-alpha.1"
+  resolved "https://registry.yarnpkg.com/@railzai/railz-uikit-react/-/railz-uikit-react-0.0.1-alpha.1.tgz#d9862c2ae952fdd513bb7d87d3edb496f0e96b71"
+  integrity sha512-K7HVSeHKTQbAyfGfMkIB1Cod9O2sRzmpXq5NI7KMonQPYtjPEFUk29/pDdoMRw0l6EGpuewyMGc8ClJFuD5cQg==
+  dependencies:
+    minimist "1.2.6"
+
+"@railzai/railz-uikit@https://pkg.csb.dev/railz-ai/railz-uikit/commit/6250d31c/@railzai/railz-uikit":
+  version "0.0.1-alpha.1"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/6250d31c/@railzai/railz-uikit#a460758bcdecf8faa9c4038784fb040fe7398609"
+  dependencies:
+    "@stencil/core" "~2.13.0"
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz#04bc0608f4aa4b2e4b1aebf284344d0f68fda283"
@@ -1572,6 +1605,16 @@
   integrity sha512-OAPJUAtgeINhh/TAlUID4QTs53Njm7xzddaVlEs/SXwgtiD1tW22zAB/W1wdqfrpmikgaWQ9Fw6Ws+hsiRm5Vg==
   dependencies:
     "@sinonjs/commons" "^1.7.0"
+
+"@stencil/core@^2.13.0":
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.17.0.tgz#503954009df62f1b5655a9a9deb3d8194d66c56e"
+  integrity sha512-KJJH097K2TJlJWj2LANWO0yXCidxOpv1L2MmtYqFxE443t75fxOhtKBZq6zebDaZj2DFGlUtV4pcM/uapfd8TQ==
+
+"@stencil/core@~2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.13.0.tgz#993fd74a5c7c8fe8af75848ca9df2211cd05b818"
+  integrity sha512-EEKHOHgYpg3/iFUKMXTZJjUayRul7sXDwNw0OGgkEOe4t7JWiibDkzUHuruvpbqEydX+z1+ez5K2bMMY76c2wA==
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   version "2.2.3"
@@ -5996,7 +6039,7 @@ minimatch@^5.0.1:
   dependencies:
     brace-expansion "^2.0.1"
 
-minimist@^1.2.0, minimist@^1.2.6:
+minimist@1.2.6, minimist@^1.2.0, minimist@^1.2.6:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
