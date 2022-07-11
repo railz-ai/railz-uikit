@@ -52,7 +52,7 @@ export class RailzIcon {
     if (!Build.isBrowser || !icon || !visible) {
       return;
     }
-    this.pathData = await fetchIcon({ icon });
+    this.pathData = await fetchIcon(icon);
   }
 
   private waitUntilVisible(callback: () => void): void {

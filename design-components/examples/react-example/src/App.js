@@ -1,6 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import { RailzComponent, RailzNested, RailzNestedSum } from '@railzai/railz-uikit-react';
+import {
+  RailzButton,
+  RailzComponent,
+  RailzLogo,
+  RailzNested,
+  RailzNestedSum,
+} from '@railzai/railz-uikit-react';
 
 function App() {
   return (
@@ -22,6 +28,8 @@ function App() {
           ]}
         />
         <h3>Railz Nested Sum</h3>
+        {/* <RailzLogo name="wave" /> */}
+        <RailzButton label="Button" />
         <RailzNestedSum first={12} second={30} />
       </header>
     </div>
