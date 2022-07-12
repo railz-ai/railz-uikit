@@ -20,7 +20,6 @@ stencil-generated
 Gemfile
 Gemfile.lock
 **/**/components.d.ts
-
 # Log files
 *.log
 npm-debug.log*

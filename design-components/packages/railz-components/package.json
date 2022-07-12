@@ -1,6 +1,6 @@
 {
   "name": "@railzai/railz-uikit",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.3",
   "description": "Railz.ai Design Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -40,8 +40,8 @@
   "devDependencies": {
     "@stencil/angular-output-target": "~0.4.0",
     "@stencil/eslint-plugin": "0.4.0",
-    "@stencil/sass": "~1.5.2",
     "@stencil/react-output-target": "~0.3.1",
+    "@stencil/sass": "~1.5.2",
     "@stencil/vue-output-target": "~0.6.0",
     "@types/jest": "~27.4.1",
     "@typescript-eslint/eslint-plugin": "4.33.0",

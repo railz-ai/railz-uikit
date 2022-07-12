@@ -25,7 +25,7 @@
     "stylelint:icons": "cd design-icons && yarn run stylelint && cd ..",
     "stylelint": "yarn run stylelint:components && yarn run stylelint:icons",
     "ci:publish:package": "lerna publish from-package --conventional-commits --create-release github --yes --no-verify-access --message 'chore(release): publish from package'",
-    "publish:package": "lerna publish $RELEASETYPE --conventional-commits --create-release github --yes --no-verify-access --message 'chore(release): publish $RELEASETYPE version'",
+    "publish:package": "lerna publish $RELEASETYPE --conventional-commits --create-release github --yes --no-verify-access --message \"chore(release): publish $RELEASETYPE version\"",
     "ci:publish:prerelease": "RELEASETYPE=prerelease yarn run publish:package",
     "ci:publish:patch": "RELEASETYPE=patch yarn run publish:package",
     "ci:publish:minor": "RELEASETYPE=minor yarn run publish:package",
