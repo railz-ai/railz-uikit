@@ -21,16 +21,14 @@
     color: color('gray-800');
   }
 
-  &.connected {
-    background-color: color('green-500', 0.25);
-    color: color('green-800');
-
-    // padding-right: space(1.5);
+  &.warn {
+    background-color: color('yellow-500', 0.25);
+    color: color('yellow-800');
   }
 
-  &.disconnected {
-    background-color: color('gray-500', 0.25);
-    color: color('gray-800');
+  &.message {
+    background-color: color('blue-500', 0.25);
+    color: color('blue-800');
   }
 
   &.service {
@@ -55,11 +53,11 @@
   margin: 0 space(0.5);
   @include circle(space(0.5));
 
-  .connected & {
+  .active & {
     background-color: color('green-600');
   }
 
-  .disconnected & {
+  .inactive & {
     background-color: color('red-600');
   }
 }

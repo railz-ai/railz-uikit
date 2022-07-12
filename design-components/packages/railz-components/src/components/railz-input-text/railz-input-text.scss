@@ -7,13 +7,18 @@ div {
   display: block;
 }
 
-input[type='*'] {
+@mixin input-reset {
   appearance: none;
   outline: none;
   border: none;
   box-shadow: none;
   background: transparent;
   -webkit-tap-highlight-color: transparent;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
 }
 
 .input-container {
@@ -97,6 +102,8 @@ label {
 }
 
 input {
+  @include input-reset;
+
   padding: space(1.5) 0;
   margin: 0;
   width: 100%;

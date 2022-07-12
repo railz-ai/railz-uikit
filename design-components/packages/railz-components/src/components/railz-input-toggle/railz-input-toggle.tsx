@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable max-len */
-import { Component, h, Prop, State, Watch } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
@@ -31,11 +31,11 @@ export class RailzInputToggle {
     this.checked = !this.checked;
   }
 
-  @Watch('checked')
-  watchPropHandler(newValue: boolean, oldValue: boolean) {
-    console.log('The old value of activated is: ', oldValue);
-    console.log('The new value of activated is: ', newValue);
-  }
+  // @Watch('checked')
+  // watchPropHandler(newValue: boolean, oldValue: boolean) {
+  //   console.log('The old value of activated is: ', oldValue);
+  //   console.log('The new value of activated is: ', newValue);
+  // }
 
   @State() uuid: string = uuidv4().toString();
 

@@ -26,8 +26,7 @@ export class RailzInputRadio {
   @Prop({ mutable: true }) error?: boolean;
   @Prop() errorMessage?: string;
 
-  private handleChange(event: Event): void {
-    console.log(event);
+  private handleChange(): void {
     this.indeterminate = false;
     this.error = false;
   }

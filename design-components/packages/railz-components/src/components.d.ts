@@ -8,9 +8,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import { Sum } from './components/railz-nested/types/sum';
 export namespace Components {
   interface RailzButton {
-    disabled?: boolean;
     grow?: boolean;
     icon?: string;
+    isDisabled?: boolean;
     label: string;
     loading?: boolean;
     shape?: string;
@@ -234,11 +234,12 @@ declare global {
 }
 declare namespace LocalJSX {
   interface RailzButton {
-    disabled?: boolean;
     grow?: boolean;
     icon?: string;
+    isDisabled?: boolean;
     label?: string;
     loading?: boolean;
+    onButtonClick?: (event: CustomEvent<any>) => void;
     shape?: string;
     size?: string;
     type?: string;
@@ -328,6 +329,7 @@ declare namespace LocalJSX {
     maxNumber?: string;
     minContentLength?: number;
     minNumber?: string;
+    onValueChange?: (event: CustomEvent<any>) => void;
     pattern?: string;
     placeholder?: string;
     prefixIcon?: string;

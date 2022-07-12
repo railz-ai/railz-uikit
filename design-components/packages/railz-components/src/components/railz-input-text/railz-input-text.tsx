@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { Component, h, Prop, State, Watch } from '@stencil/core';
+import { Component, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
@@ -37,8 +37,9 @@ export class RailzInputText {
 
   @State() uuid: string = uuidv4().toString();
 
-  private handleChange(event): void {
-    this.value = event.target.value;
+  @Event() valueChange: EventEmitter;
+  private handleChange(event: Event) {
+    this.valueChange.emit(event);
   }
 
   @Watch('value')

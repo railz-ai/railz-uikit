@@ -3,12 +3,15 @@ import './App.css';
 import {
   RailzButton,
   RailzComponent,
-  RailzLogo,
   RailzNested,
   RailzNestedSum,
 } from '@railzai/railz-uikit-react';
 
 function App() {
+  const buttonClick = () => {
+    // console.log('button clicked');
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -28,8 +31,7 @@ function App() {
           ]}
         />
         <h3>Railz Nested Sum</h3>
-        {/* <RailzLogo name="wave" /> */}
-        <RailzButton label="Button" />
+        <RailzButton label="Button" onClick={() => buttonClick()} />
         <RailzNestedSum first={12} second={30} />
       </header>
     </div>
