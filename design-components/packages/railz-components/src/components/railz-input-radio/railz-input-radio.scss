@@ -106,7 +106,7 @@ label {
 
     &:checked {
       background-color: color('brand-primary-background');
-      box-shadow: shadow-line($color-primary);
+      box-shadow: shadow-line('brand-primary-background');
 
       &::after {
         transform: scale(1);

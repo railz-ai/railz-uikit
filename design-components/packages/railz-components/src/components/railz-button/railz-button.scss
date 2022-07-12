@@ -1,5 +1,11 @@
 button {
-  @include button-reset;
+  // @include button-reset;
+
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  background: none;
 }
 
 :host {
@@ -28,7 +34,7 @@ button {
 }
 
 .rounded {
-  border-radius: radius('.5');
+  border-radius: radius(1);
 
   &.primary {
     background-color: color('brand-primary-background');

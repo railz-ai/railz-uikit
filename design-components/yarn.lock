@@ -1723,6 +1723,11 @@
   resolved "https://registry.yarnpkg.com/@stencil/react-output-target/-/react-output-target-0.3.1.tgz#dc9cc2fea32d0e30474a87fcb2a447f90ab78696"
   integrity sha512-6d9pPhyajFfdxkqU/pPP2SzI7wn+EklySQc4KXlI/xcdvC2H9BzLmhmR40fR1q2TQoJbJui/nvSWhbYqkE3OBQ==
 
+"@stencil/sass@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@stencil/sass/-/sass-1.5.2.tgz#861dffe90a8d911b6b2af4a36d8928b5264a8646"
+  integrity sha512-nJ93pUSylsGsMX0eLmhxh1oEljcUjj5mYjhB9ziCdoaydAdjukrUoqDCC7tdVbOcBo2hKptQyWqCtETnBGYsXQ==
+
 "@stencil/vue-output-target@~0.6.0":
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@stencil/vue-output-target/-/vue-output-target-0.6.0.tgz#beb1f6274168f35a928f19fe2198db039f27ff02"
@@ -8653,6 +8658,11 @@ statuses@2.0.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==
+
+stencil-inline-svg@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/stencil-inline-svg/-/stencil-inline-svg-1.1.0.tgz#622630fbfc4b10df010f80625fbefd7546f9928c"
+  integrity sha512-couT89xzsoycwHOIAgnl3WBpXaVRQ3ZlUBINo7HsT/AtWaFW9cxGlAzsK2JzkzxK7yUuoeIpdH2fNlvuH06DRg==
 
 string-length@^4.0.1:
   version "4.0.2"

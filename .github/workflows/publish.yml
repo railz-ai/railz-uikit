@@ -33,7 +33,7 @@ jobs:
       - name: Copy repo code
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: Use Node.js ${{ matrix.node-vQersion }}
         uses: actions/setup-node@v2
@@ -59,7 +59,7 @@ jobs:
       - name: Run Publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           HUSKY: 0
         run: |
