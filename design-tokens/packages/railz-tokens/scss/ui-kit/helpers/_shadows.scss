@@ -1,0 +1,19 @@
+@use 'sass:string';
+//-------------------------------------------------------------------
+// Shadows
+//-------------------------------------------------------------------
+
+@function shadow($shadow-style: 'drop-1', $shadow-color: 'gray-900', $opacity: 0.4) {
+  @if map-has-key($shadows, $shadow-style) {
+    @if type-of($shadow-color) != string {
+      $shadow-color: $shadow-color;
+    } @else {
+      $shadow-color: color($shadow-color, $opacity);
+    }
+
+    $shadow-style: map-get($shadows, $shadow-style);
+    @return #{$shadow-style $shadow-color};
+  }
+  @warn error-message($shadow-style, $shadows, 'tokens/_structure.scss');
+  @return null;
+}

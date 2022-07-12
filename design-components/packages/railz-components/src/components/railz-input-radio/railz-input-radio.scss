@@ -52,7 +52,7 @@ label {
 
   &:hover input,
   &:focus input {
-    background-color: $color-primary-light;
+    background-color: color('brand-primary-background-active');
     cursor: pointer;
   }
 }
@@ -97,7 +97,7 @@ label {
       @include circle(space(1));
       @include transition;
 
-      transition-delay: $t * 0.5;
+      transition-delay: speed(0.5);
       transform: scale(0.5);
       @include show('off');
 
@@ -105,8 +105,8 @@ label {
     }
 
     &:checked {
-      background-color: $color-primary;
-      box-shadow: shadow-line($color-primary);
+      background-color: color('brand-primary-background');
+      box-shadow: shadow-line('brand-primary-background');
 
       &::after {
         transform: scale(1);

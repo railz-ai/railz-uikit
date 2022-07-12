@@ -1,0 +1,27 @@
+@use 'sass:list';
+
+//-------------------------------------------------------------------
+// Border Radius
+//-------------------------------------------------------------------
+
+@function radius($size) {
+  @if type-of($size) == number {
+    @return $size * $base-radius;
+  } @else if map-has-key($radii, $size) {
+    $size: map-get($radii, $size);
+    @return $size;
+  }
+
+  @warn error-message($size, $radii, 'tokens/_structure.scss');
+  @return null;
+}
+
+@function corner-radius($corners...) {
+  $corner-radii: ();
+
+  @each $corner in $corners {
+    $corner-radii: list.append($corner-radii, radius($corner));
+  }
+
+  @return $corner-radii;
+}

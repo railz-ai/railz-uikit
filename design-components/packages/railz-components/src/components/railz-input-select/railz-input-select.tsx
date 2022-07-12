@@ -3,11 +3,11 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
 
 @Component({
-  tag: 'railz-select-input',
-  styleUrl: 'railz-select-input.scss',
+  tag: 'railz-input-select',
+  styleUrl: 'railz-input-select.scss',
   shadow: true,
 })
-export class RailzSelectInput {
+export class RailzInputSelect {
   @Prop() label: string;
   @Prop() value?: string;
   @State() dirty?: boolean;

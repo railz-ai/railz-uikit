@@ -1,6 +1,6 @@
 {
   "name": "@railzai/railz-uikit-vue",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "Railz.ai wrapper for railz-uikit",
   "keywords": [
     "components",
@@ -38,7 +38,7 @@
   },
   "packageManager": "yarn@1.22.17",
   "peerDependencies": {
-    "@railzai/railz-uikit": "^0.0.0"
+    "@railzai/railz-uikit": "^0.0.1-alpha.1"
   },
   "gitHead": "a10e4f996b6135505df71725f3d2a65e274a6359"
 }

@@ -8,7 +8,6 @@
 // Used to apply icon glyphs through CSS
 @mixin icon($name) {
   @if index($icon-list, $name) {
-    -webkit-mask: url('~@/assets/icons/#{$name}.svg') no-repeat 50% 50%;
     mask: url('~@/assets/icons/#{$name}.svg') no-repeat 50% 50%;
   } @else {
     @warn error-message($name, $icon-list, 'tokens/_icons.scss');
@@ -21,11 +20,13 @@
 // Used for positioning inline SVG icons
 @mixin icon-inline {
   @include show-icon-guides;
+
   position: relative;
 
   svg {
     @include absolute;
     @include transition;
+
     height: 100%;
     width: 100%;
 
@@ -49,6 +50,7 @@ $show-icon-guides: false;
       content: '';
       @include absolute;
       @include bg(contain);
+
       background-image: url('library-icon-guide.svg');
       z-index: $z-under;
     }

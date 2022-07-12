@@ -33,3 +33,4 @@ link: index
       GitHub
     </a>
 </div>
+<railz-button label="button" />

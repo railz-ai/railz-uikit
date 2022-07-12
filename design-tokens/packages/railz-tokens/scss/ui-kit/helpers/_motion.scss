@@ -6,7 +6,7 @@
 //-------------------------------------------------------------------
 
 @function speed($speed) {
-  @return $t * $speed;
+  @return $transition-duration * $speed;
 }
 
 @function transition-speed($speed) {
@@ -31,14 +31,16 @@
   @if map-has-key($speeds, $speed) {
     transition: transition-speed($speed);
   } @else {
-    transition-duration: $speed;
+    transition-duration: speed($speed);
   }
+
   transition-property: transition-property($properties);
 
   @media (prefers-reduced-motion: reduce) {
     transition-duration: 0 !important;
 
-    &:hover {
+    &:hover,
+    &:focus {
       transition-duration: 0 !important;
     }
   }

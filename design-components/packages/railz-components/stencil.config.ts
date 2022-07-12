@@ -3,6 +3,9 @@ import { angularOutputTarget } from '@stencil/angular-output-target';
 import { reactOutputTarget } from '@stencil/react-output-target';
 import { vueOutputTarget } from '@stencil/vue-output-target';
 
+import { sass } from '@stencil/sass';
+import { inlineSvg } from 'stencil-inline-svg';
+
 export const config: Config = {
   namespace: 'railz-components',
   enableCache: false,
@@ -37,5 +40,11 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
     },
+  ],
+  plugins: [
+    sass({
+      injectGlobalPaths: ['../../../design-tokens/packages/railz-tokens/scss/ui-kit/_index.scss'],
+    }),
+    inlineSvg(),
   ],
 };

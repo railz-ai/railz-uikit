@@ -57,7 +57,7 @@ label {
   flex-shrink: 0;
   @include size(space(2.5));
 
-  border-radius: radius('.5');
+  border-radius: radius(1);
   @include transition;
 
   cursor: pointer;
@@ -67,7 +67,7 @@ label {
 
   &:hover input,
   &:focus input {
-    background-color: $color-primary-light;
+    background-color: color('brand-primary-background-active');
     cursor: pointer;
   }
 
@@ -104,8 +104,8 @@ label {
     @include transition;
 
     &:checked {
-      background-color: $color-primary;
-      box-shadow: shadow-line($color-primary);
+      background-color: color('brand-primary-background');
+      box-shadow: shadow-line('brand-primary-background');
 
       + .icon {
         transform: scale(1);

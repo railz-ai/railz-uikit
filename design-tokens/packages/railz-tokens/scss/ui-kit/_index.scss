@@ -3,9 +3,14 @@
 
 @import 'helpers/_mixins';
 
+@import 'helpers/_spacing';
 @import 'helpers/_colors';
 @import 'helpers/_typography';
-@import 'helpers/_structure';
+@import 'helpers/_screen-sizes';
+@import 'helpers/_lines';
+@import 'helpers/_border-radius';
+@import 'helpers/_shadows';
+
 @import 'helpers/_motion';
 
 @import 'helpers/_images';
@@ -13,10 +18,14 @@
 
 // Design Tokens
 // -------------------------------------------------------------------
-
+@import 'tokens/_spacing';
 @import 'tokens/_colors';
 @import 'tokens/_typography';
-@import 'tokens/_structure';
+@import 'tokens/_screen-sizes';
+@import 'tokens/_lines';
+@import 'tokens/_border-radius';
+@import 'tokens/_shadows';
+
 @import 'tokens/_motion';
 
 @import 'tokens/_icons';

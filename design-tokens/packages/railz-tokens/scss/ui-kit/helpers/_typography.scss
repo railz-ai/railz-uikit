@@ -78,7 +78,7 @@
   $family: list.nth(map-keys($font-families), 1),
   $line-height: 'normal'
 ) {
-  @if ($weight) {
+  @if $weight {
     font-weight: font-weight($weight);
   }
 }
@@ -93,19 +93,19 @@
 ) {
   //   @debug $family;
 
-  @if ($family) {
+  @if $family {
     font-family: font-family($family);
   }
-  @if ($size) {
+  @if $size {
     font-size: font-size($size);
   }
-  @if ($weight) {
+  @if $weight {
     font-weight: font-weight($weight);
   }
-  @if ($line-height) {
+  @if $line-height {
     line-height: line-height($line-height);
   }
-  @if ($letter-spacing) {
+  @if $letter-spacing {
     letter-spacing: letter-spacing($letter-spacing);
   }
 

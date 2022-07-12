@@ -1,19 +1,22 @@
 // Timing Options
 // -------------------------------------------------------------------
-$t: 0.3s;
+$transition-duration: 0.3s;
 
-// Easing
+// Easing Options
 //-------------------------------------------------------------------
+$transition-snap: cubic-bezier(0.3, 0.9, 0.4, 0.98);
+$transition-drift: cubic-bezier(0.05, 0.31, 0.7, 1);
+$transition-shine: cubic-bezier(0.96, 0.43, 0.55, 0.8);
 
-$t-snap: cubic-bezier(0.3, 0.9, 0.4, 0.98);
-$t-drift: cubic-bezier(0.05, 0.31, 0.7, 1);
-$t-shine: cubic-bezier(0.96, 0.43, 0.55, 0.8);
-
+// Transition Speeds
+//-------------------------------------------------------------------
 $speeds: (
-  'slow': $t * 1.5 $t-drift,
-  'fast': $t $t-snap,
+  'slow': speed(1.5) $transition-drift,
+  'fast': $transition-snap,
 );
 
+// Transition Properties
+//-------------------------------------------------------------------
 $transition-properties: (
   'all': 'all',
   'default':
@@ -27,4 +30,5 @@ $transition-properties: (
   'width': 'width, min-width, max-width',
   'height': 'height, min-height, max-height',
   'padding': 'padding',
+  'margin': 'margin',
 );

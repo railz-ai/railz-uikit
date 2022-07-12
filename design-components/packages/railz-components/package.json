@@ -1,6 +1,6 @@
 {
   "name": "@railzai/railz-uikit",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "Railz.ai Design Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -41,6 +41,7 @@
     "@stencil/angular-output-target": "~0.4.0",
     "@stencil/eslint-plugin": "0.4.0",
     "@stencil/react-output-target": "~0.3.1",
+    "@stencil/sass": "~1.5.2",
     "@stencil/vue-output-target": "~0.6.0",
     "@types/jest": "~27.4.1",
     "@typescript-eslint/eslint-plugin": "4.33.0",
@@ -54,6 +55,7 @@
     "jest-cli": "~27.5.1",
     "prettier": "2.5.1",
     "puppeteer": "~10.0.0",
+    "stencil-inline-svg": "~1.1.0",
     "stylelint": "14.5.3",
     "stylelint-a11y": "1.2.3",
     "stylelint-config-prettier": "9.0.3",

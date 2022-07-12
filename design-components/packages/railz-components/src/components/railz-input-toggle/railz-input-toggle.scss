@@ -57,7 +57,7 @@ label {
   flex-shrink: 0;
   width: space(5);
   height: space(2.5);
-  border-radius: radius('12');
+  border-radius: radius(10);
   @include transition;
 
   cursor: pointer;
@@ -67,11 +67,11 @@ label {
 
   &:hover input,
   &:focus input {
-    background-color: $color-primary-light;
+    background-color: color('brand-primary-background-active');
     cursor: pointer;
 
     &:checked {
-      background-color: $color-primary;
+      background-color: color('brand-primary-background');
     }
   }
 
@@ -107,7 +107,7 @@ label {
     @include coordinates;
     @include transition;
 
-    transition-duration: $t * 0.6;
+    transition-duration: speed(0.6);
     pointer-events: none;
     display: flex;
     align-items: center;
@@ -142,8 +142,8 @@ label {
     background-color: color('gray-300');
 
     &:checked {
-      background-color: $color-primary;
-      box-shadow: shadow-line($color-primary);
+      background-color: color('brand-primary-background');
+      box-shadow: shadow-line('brand-primary-background');
 
       & + .toggle-track {
         transform: translateX(100%);
