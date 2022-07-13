@@ -26,6 +26,12 @@
 | `type`              | `type`               |             | `string`  | `undefined` |
 | `value`             | `value`              |             | `string`  | `undefined` |
 
+## Events
+
+| Event         | Description | Type               |
+| ------------- | ----------- | ------------------ |
+| `valueChange` |             | `CustomEvent<any>` |
+
 ## Dependencies
 
 ### Depends on

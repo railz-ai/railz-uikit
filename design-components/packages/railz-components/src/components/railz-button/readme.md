@@ -4,16 +4,22 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type      | Default     |
-| ---------- | ---------- | ----------- | --------- | ----------- |
-| `disabled` | `disabled` |             | `boolean` | `undefined` |
-| `grow`     | `grow`     |             | `boolean` | `undefined` |
-| `icon`     | `icon`     |             | `string`  | `undefined` |
-| `label`    | `label`    |             | `string`  | `undefined` |
-| `loading`  | `loading`  |             | `boolean` | `undefined` |
-| `shape`    | `shape`    |             | `string`  | `'rounded'` |
-| `size`     | `size`     |             | `string`  | `'medium'`  |
-| `type`     | `type`     |             | `string`  | `'primary'` |
+| Property     | Attribute     | Description | Type      | Default     |
+| ------------ | ------------- | ----------- | --------- | ----------- |
+| `grow`       | `grow`        |             | `boolean` | `undefined` |
+| `icon`       | `icon`        |             | `string`  | `undefined` |
+| `isDisabled` | `is-disabled` |             | `boolean` | `undefined` |
+| `label`      | `label`       |             | `string`  | `undefined` |
+| `loading`    | `loading`     |             | `boolean` | `undefined` |
+| `shape`      | `shape`       |             | `string`  | `'rounded'` |
+| `size`       | `size`        |             | `string`  | `'medium'`  |
+| `type`       | `type`        |             | `string`  | `'primary'` |
+
+## Events
+
+| Event         | Description | Type               |
+| ------------- | ----------- | ------------------ |
+| `buttonClick` |             | `CustomEvent<any>` |
 
 ## Dependencies
 

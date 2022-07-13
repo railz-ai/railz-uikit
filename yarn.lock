@@ -2728,6 +2728,32 @@
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
 
+"@railzai/railz-icons@https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-icons":
+  version "0.0.1-alpha.3"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-icons#8eb7e8379615cf2acb9129948680f37c75fc1800"
+  dependencies:
+    "@stencil/core" "^2.13.0"
+
+"@railzai/railz-tokens@https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-tokens":
+  version "0.0.1-alpha.3"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-tokens#6b328c4b17284cd3e29587e7fcfb740505b09cab"
+
+"@railzai/railz-uikit-angular@https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-angular":
+  version "0.0.1-alpha.3"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-angular#29ea8a15429db8ed4f311cab12a97147158eee4c"
+
+"@railzai/railz-uikit-react@https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-react":
+  version "0.0.1-alpha.3"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-react#2a57b37b379c639e7d49ce50eead5dee03327239"
+  dependencies:
+    minimist "1.2.6"
+
+"@railzai/railz-uikit@https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit":
+  version "0.0.1-alpha.3"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit#14f436931c17921b041987923792689b612470ac"
+  dependencies:
+    "@stencil/core" "~2.13.0"
+
 "@rollup/plugin-json@^4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-json/-/plugin-json-4.1.0.tgz#54e09867ae6963c593844d8bd7a9c718294496f3"
@@ -2806,6 +2832,11 @@
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@stencil/react-output-target/-/react-output-target-0.3.1.tgz#dc9cc2fea32d0e30474a87fcb2a447f90ab78696"
   integrity sha512-6d9pPhyajFfdxkqU/pPP2SzI7wn+EklySQc4KXlI/xcdvC2H9BzLmhmR40fR1q2TQoJbJui/nvSWhbYqkE3OBQ==
+
+"@stencil/sass@~1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@stencil/sass/-/sass-1.5.2.tgz#861dffe90a8d911b6b2af4a36d8928b5264a8646"
+  integrity sha512-nJ93pUSylsGsMX0eLmhxh1oEljcUjj5mYjhB9ziCdoaydAdjukrUoqDCC7tdVbOcBo2hKptQyWqCtETnBGYsXQ==
 
 "@stencil/vue-output-target@~0.6.0":
   version "0.6.0"
@@ -11097,6 +11128,11 @@ statuses@2.0.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==
+
+stencil-inline-svg@~1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/stencil-inline-svg/-/stencil-inline-svg-1.1.0.tgz#622630fbfc4b10df010f80625fbefd7546f9928c"
+  integrity sha512-couT89xzsoycwHOIAgnl3WBpXaVRQ3ZlUBINo7HsT/AtWaFW9cxGlAzsK2JzkzxK7yUuoeIpdH2fNlvuH06DRg==
 
 strict-uri-encode@^2.0.0:
   version "2.0.0"

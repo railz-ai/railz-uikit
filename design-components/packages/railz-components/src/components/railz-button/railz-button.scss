@@ -33,6 +33,21 @@ button {
   white-space: nowrap;
 }
 
+.themed {
+  background-color: color('brand-primary-background');
+  color: color('brand-primary-foreground');
+
+  &:hover,
+  &:focus {
+    background-color: color('brand-primary-background-active');
+  }
+
+  &:active {
+    background-color: color('brand-primary-background-active');
+    transform: translateY(1px);
+  }
+}
+
 .rounded {
   border-radius: radius(1);
 

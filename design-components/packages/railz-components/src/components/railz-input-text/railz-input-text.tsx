@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { Component, h, Prop, State, Watch } from '@stencil/core';
+import { Component, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   tag: 'railz-input-text',
   styleUrl: 'railz-input-text.scss',
-  shadow: false,
+  shadow: true,
 })
 export class RailzInputText {
   @Prop() label: string;
@@ -37,8 +37,13 @@ export class RailzInputText {
 
   @State() uuid: string = uuidv4().toString();
 
-  private handleChange(event): void {
-    this.value = event.target.value;
+  @Event() valueChange: EventEmitter;
+  private handleChange(event: Event) {
+    const eventTarget = event.target as HTMLInputElement;
+
+    this.valueChange.emit(eventTarget);
+    // console.log(event);
+    // console.log('ev', ev.value);
   }
 
   @Watch('value')

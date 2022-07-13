@@ -3,12 +3,34 @@ import './App.css';
 import {
   RailzButton,
   RailzComponent,
-  RailzLogo,
+  RailzInputText,
   RailzNested,
   RailzNestedSum,
 } from '@railzai/railz-uikit-react';
 
+import { useState } from 'react';
+
 function App() {
+  const buttonClick = () => {
+    console.log('button clicked');
+    setButtonTheme('themed');
+
+    if (buttonTheme === 'primary') {
+      setButtonTheme('themed');
+    } else if (buttonTheme === 'themed') {
+      setButtonTheme('secondary');
+    } else {
+      setButtonTheme('primary');
+    }
+  };
+
+  const updateTheme = (event) => {
+    console.log('updateTheme', event);
+  };
+
+  const [buttonTheme, setButtonTheme] = useState('primary');
+  const [disableButton, setDisableButton] = useState(true);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -28,10 +50,31 @@ function App() {
           ]}
         />
         <h3>Railz Nested Sum</h3>
-        {/* <RailzLogo name="wave" /> */}
-        <RailzButton label="Button" />
-        <RailzNestedSum first={12} second={30} />
       </header>
+
+      <p>Button theme {buttonTheme}</p>
+      <RailzButton
+        label="Theme Button"
+        type={buttonTheme}
+        isDisabled={disableButton}
+        onButtonClick={() => buttonClick()}
+      />
+
+      <RailzButton
+        label="Unluck the Theme Button"
+        type={buttonTheme}
+        onButtonClick={() => setDisableButton(true)}
+      />
+
+      <RailzInputText label="set theme" onValueChange={(e) => updateTheme(e)} />
+      <RailzNestedSum first={12} second={30} />
+
+      <input
+        type="text"
+        value={buttonTheme}
+        onChange={(e) => updateTheme(e)}
+        placeholder="button theme"
+      />
     </div>
   );
 }

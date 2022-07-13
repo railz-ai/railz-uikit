@@ -12,7 +12,7 @@ $transition-shine: cubic-bezier(0.96, 0.43, 0.55, 0.8);
 //-------------------------------------------------------------------
 $speeds: (
   'slow': speed(1.5) $transition-drift,
-  'fast': $transition-snap,
+  'fast': speed(1) $transition-snap,
 );
 
 // Transition Properties

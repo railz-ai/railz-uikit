@@ -13,7 +13,8 @@ export class RailzStatusPill {
   render(): HTMLElement {
     return (
       <div class={`pill-container ${this.status}`}>
-        {this.icon === 'dot' ? <div class="dot"></div> : <railz-icon icon={this.icon} size="x-small" />}
+        {this.icon === 'dot' ? <div class="dot"></div> : null}
+        {this.icon ? <railz-icon icon={this.icon} size="x-small" /> : null}
         <span class="label">{this.label}</span>
       </div>
     );

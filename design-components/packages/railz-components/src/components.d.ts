@@ -8,9 +8,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import { Sum } from './components/railz-nested/types/sum';
 export namespace Components {
   interface RailzButton {
-    disabled?: boolean;
     grow?: boolean;
     icon?: string;
+    isDisabled?: boolean;
     label: string;
     loading?: boolean;
     shape?: string;
@@ -122,6 +122,9 @@ export namespace Components {
     required: string;
     value: string;
   }
+  interface RailzLogo {
+    name: string;
+  }
   interface RailzNested {
     /**
      * The list of numbers to sum up
@@ -201,6 +204,11 @@ declare global {
     prototype: HTMLRailzInputToggleElement;
     new (): HTMLRailzInputToggleElement;
   };
+  interface HTMLRailzLogoElement extends Components.RailzLogo, HTMLStencilElement {}
+  var HTMLRailzLogoElement: {
+    prototype: HTMLRailzLogoElement;
+    new (): HTMLRailzLogoElement;
+  };
   interface HTMLRailzNestedElement extends Components.RailzNested, HTMLStencilElement {}
   var HTMLRailzNestedElement: {
     prototype: HTMLRailzNestedElement;
@@ -227,6 +235,7 @@ declare global {
     'railz-input-select': HTMLRailzInputSelectElement;
     'railz-input-text': HTMLRailzInputTextElement;
     'railz-input-toggle': HTMLRailzInputToggleElement;
+    'railz-logo': HTMLRailzLogoElement;
     'railz-nested': HTMLRailzNestedElement;
     'railz-nested-sum': HTMLRailzNestedSumElement;
     'railz-status-pill': HTMLRailzStatusPillElement;
@@ -234,11 +243,12 @@ declare global {
 }
 declare namespace LocalJSX {
   interface RailzButton {
-    disabled?: boolean;
     grow?: boolean;
     icon?: string;
+    isDisabled?: boolean;
     label?: string;
     loading?: boolean;
+    onButtonClick?: (event: CustomEvent<any>) => void;
     shape?: string;
     size?: string;
     type?: string;
@@ -328,6 +338,7 @@ declare namespace LocalJSX {
     maxNumber?: string;
     minContentLength?: number;
     minNumber?: string;
+    onValueChange?: (event: CustomEvent<any>) => void;
     pattern?: string;
     placeholder?: string;
     prefixIcon?: string;
@@ -347,6 +358,9 @@ declare namespace LocalJSX {
     name?: string;
     required?: string;
     value?: string;
+  }
+  interface RailzLogo {
+    name?: string;
   }
   interface RailzNested {
     /**
@@ -386,6 +400,7 @@ declare namespace LocalJSX {
     'railz-input-select': RailzInputSelect;
     'railz-input-text': RailzInputText;
     'railz-input-toggle': RailzInputToggle;
+    'railz-logo': RailzLogo;
     'railz-nested': RailzNested;
     'railz-nested-sum': RailzNestedSum;
     'railz-status-pill': RailzStatusPill;
@@ -405,6 +420,7 @@ declare module '@stencil/core' {
       'railz-input-select': LocalJSX.RailzInputSelect & JSXBase.HTMLAttributes<HTMLRailzInputSelectElement>;
       'railz-input-text': LocalJSX.RailzInputText & JSXBase.HTMLAttributes<HTMLRailzInputTextElement>;
       'railz-input-toggle': LocalJSX.RailzInputToggle & JSXBase.HTMLAttributes<HTMLRailzInputToggleElement>;
+      'railz-logo': LocalJSX.RailzLogo & JSXBase.HTMLAttributes<HTMLRailzLogoElement>;
       'railz-nested': LocalJSX.RailzNested & JSXBase.HTMLAttributes<HTMLRailzNestedElement>;
       'railz-nested-sum': LocalJSX.RailzNestedSum & JSXBase.HTMLAttributes<HTMLRailzNestedSumElement>;
       'railz-status-pill': LocalJSX.RailzStatusPill & JSXBase.HTMLAttributes<HTMLRailzStatusPillElement>;
