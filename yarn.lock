@@ -2728,6 +2728,32 @@
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
 
+"@railzai/railz-icons@https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-icons":
+  version "0.0.1-alpha.3"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-icons#8eb7e8379615cf2acb9129948680f37c75fc1800"
+  dependencies:
+    "@stencil/core" "^2.13.0"
+
+"@railzai/railz-tokens@https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-tokens":
+  version "0.0.1-alpha.3"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-tokens#6b328c4b17284cd3e29587e7fcfb740505b09cab"
+
+"@railzai/railz-uikit-angular@https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-angular":
+  version "0.0.1-alpha.3"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-angular#29ea8a15429db8ed4f311cab12a97147158eee4c"
+
+"@railzai/railz-uikit-react@https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-react":
+  version "0.0.1-alpha.3"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-react#2a57b37b379c639e7d49ce50eead5dee03327239"
+  dependencies:
+    minimist "1.2.6"
+
+"@railzai/railz-uikit@https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit":
+  version "0.0.1-alpha.3"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit#14f436931c17921b041987923792689b612470ac"
+  dependencies:
+    "@stencil/core" "~2.13.0"
+
 "@rollup/plugin-json@^4.1.0":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-json/-/plugin-json-4.1.0.tgz#54e09867ae6963c593844d8bd7a9c718294496f3"

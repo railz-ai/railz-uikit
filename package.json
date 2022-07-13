@@ -35,11 +35,11 @@
     "lint": "yarn eslint && yarn stylelint && yarn prettier:write"
   },
   "devDependencies": {
+    "@commitlint/cli": "~17.0.2",
+    "@commitlint/config-conventional": "~17.0.2",
     "husky": "~8.0.1",
     "lerna": "~5.1.2",
     "lint-staged": "~13.0.1",
-    "@commitlint/cli": "~17.0.2",
-    "@commitlint/config-conventional": "~17.0.2",
     "prettier": "~2.7.0"
   },
   "lint-staged": {
@@ -50,5 +50,12 @@
     "design-components/packages/*",
     "design-icons/packages/*",
     "design-tokens/packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@railzai/railz-icons": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-icons",
+    "@railzai/railz-tokens": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-tokens",
+    "@railzai/railz-uikit": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit",
+    "@railzai/railz-uikit-angular": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-angular",
+    "@railzai/railz-uikit-react": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-react"
+  }
 }
