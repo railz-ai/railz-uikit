@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 @Component({
   tag: 'railz-input-text',
   styleUrl: 'railz-input-text.scss',
-  shadow: false,
+  shadow: true,
 })
 export class RailzInputText {
   @Prop() label: string;
@@ -39,7 +39,11 @@ export class RailzInputText {
 
   @Event() valueChange: EventEmitter;
   private handleChange(event: Event) {
-    this.valueChange.emit(event);
+    const eventTarget = event.target as HTMLInputElement;
+
+    this.valueChange.emit(eventTarget);
+    // console.log(event);
+    // console.log('ev', ev.value);
   }
 
   @Watch('value')
