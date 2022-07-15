@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import {
   RailzButton,
-  RailzComponent,
+  // RailzComponent,
   RailzInputText,
-  RailzNested,
+  // RailzNested,
   RailzIcon,
   RailzNestedSum,
 } from '@railzai/railz-uikit-react';
@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 function App() {
   const buttonClick = () => {
-    console.log('button clicked');
+    // console.log('button clicked');
     setButtonTheme('themed');
 
     if (buttonTheme === 'primary') {
@@ -26,10 +26,10 @@ function App() {
   };
 
   const updateTheme = (event) => {
-    console.log('event', event);
-    console.log('event.target', event.target);
-    console.log('event.target.value', event.target.value);
-    console.log('event.detail', event.detail);
+    // console.log('event', event);
+    // console.log('event.target', event.target);
+    // console.log('event.target.value', event.target.value);
+    // console.log('event.detail', event.detail);
     setButtonTheme(event.detail);
   };
 
@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <RailzInputText label="set theme" onValueChange={(e) => updateTheme(e)} prefixIcon="home" />
 
-      <input type="text" onInput={(e) => updateTheme(e)} placeholder="button theme" />
+      {/* <input type="text" onInput={(e) => updateTheme(e)} placeholder="button theme" /> */}
 
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
