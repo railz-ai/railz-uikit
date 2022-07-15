@@ -26,9 +26,10 @@ function App() {
   };
 
   const updateTheme = (event) => {
-    console.log('updateTheme', event);
-    console.log('updateTheme Value', event.value);
-    console.log('updateTheme detail', event?.value?.detail);
+    console.log('event', event);
+    console.log('event.target', event.target);
+    console.log('event.target.value', event.target.value);
+    console.log('event.detail', event.detail);
     // setButtonTheme(event.value);
   };
 
@@ -37,6 +38,10 @@ function App() {
 
   return (
     <div className="App">
+      <RailzInputText label="set theme" onValueChange={(e) => updateTheme(e)} prefixIcon="home" />
+
+      <input type="text" onChange={(e) => updateTheme(e)} placeholder="button theme" />
+
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -70,21 +75,9 @@ function App() {
         onButtonClick={() => setDisableButton(false)}
       />
 
-      <RailzInputText
-        label="set theme"
-        onValueChange={(e) => updateTheme(e.target)}
-        prefixIcon="home"
-      />
       <RailzNestedSum first={12} second={30} />
 
       <RailzIcon icon="home" size="small" />
-
-      <input
-        type="text"
-        value={buttonTheme}
-        onChange={(e) => updateTheme(e.target)}
-        placeholder="button theme"
-      />
     </div>
   );
 }

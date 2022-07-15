@@ -41,6 +41,10 @@ export class RailzInputText {
   private handleChange(event: Event) {
     const eventTarget = event.target as HTMLInputElement;
     this.valueChange.emit(eventTarget.value);
+
+    console.log('from rz-input: event', event);
+    console.log('from rz-input: event.target', event.target);
+    console.log('from rz-input: event.target.value', eventTarget.value);
   }
 
   @Watch('value')
