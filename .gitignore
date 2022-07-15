@@ -71,3 +71,5 @@ examples/dev/*
 /design-tokens/packages/railz-tokens/css/
 design-components/packages/railz-components-angular/src/lib/stencil-generated/components.ts
 design-components/packages/railz-components-angular/src/lib/stencil-generated/angular-component-lib/utils.ts
+components.d.ts
+/design-components/packages/railz-components/src/components.d.ts

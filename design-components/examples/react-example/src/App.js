@@ -5,6 +5,7 @@ import {
   RailzComponent,
   RailzInputText,
   RailzNested,
+  RailzIcon,
   RailzNestedSum,
 } from '@railzai/railz-uikit-react';
 
@@ -26,6 +27,9 @@ function App() {
 
   const updateTheme = (event) => {
     console.log('updateTheme', event);
+    console.log('updateTheme Value', event.value);
+    console.log('updateTheme detail', event?.value?.detail);
+    // setButtonTheme(event.value);
   };
 
   const [buttonTheme, setButtonTheme] = useState('primary');
@@ -33,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -50,7 +54,7 @@ function App() {
           ]}
         />
         <h3>Railz Nested Sum</h3>
-      </header>
+      </header> */}
 
       <p>Button theme {buttonTheme}</p>
       <RailzButton
@@ -63,16 +67,22 @@ function App() {
       <RailzButton
         label="Unluck the Theme Button"
         type={buttonTheme}
-        onButtonClick={() => setDisableButton(true)}
+        onButtonClick={() => setDisableButton(false)}
       />
 
-      <RailzInputText label="set theme" onValueChange={(e) => updateTheme(e)} />
+      <RailzInputText
+        label="set theme"
+        onValueChange={(e) => updateTheme(e.target)}
+        prefixIcon="home"
+      />
       <RailzNestedSum first={12} second={30} />
+
+      <RailzIcon icon="home" size="small" />
 
       <input
         type="text"
         value={buttonTheme}
-        onChange={(e) => updateTheme(e)}
+        onChange={(e) => updateTheme(e.target)}
         placeholder="button theme"
       />
     </div>
