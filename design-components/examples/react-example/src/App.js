@@ -30,7 +30,7 @@ function App() {
     console.log('event.target', event.target);
     console.log('event.target.value', event.target.value);
     console.log('event.detail', event.detail);
-    // setButtonTheme(event.value);
+    setButtonTheme(event.detail);
   };
 
   const [buttonTheme, setButtonTheme] = useState('primary');
@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <RailzInputText label="set theme" onValueChange={(e) => updateTheme(e)} prefixIcon="home" />
 
-      <input type="text" onChange={(e) => updateTheme(e)} placeholder="button theme" />
+      <input type="text" onInput={(e) => updateTheme(e)} placeholder="button theme" />
 
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
