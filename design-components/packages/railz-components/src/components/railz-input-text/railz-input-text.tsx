@@ -10,7 +10,6 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class RailzInputText {
   @Prop() label: string;
-  @Prop() value?: string;
 
   @Prop() inputId?: string;
 
@@ -34,22 +33,26 @@ export class RailzInputText {
   @Prop() autocomplete?: string;
 
   @Prop() prefixIcon?: string;
+  @Prop({ mutable: true }) value?: string;
 
   @State() uuid: string = uuidv4().toString();
 
   @Event() valueChange: EventEmitter;
   private handleChange(event: Event) {
     const eventTarget = event.target as HTMLInputElement;
+    this.valueChange.emit(eventTarget.value);
 
-    this.valueChange.emit(eventTarget);
-    // console.log(event);
-    // console.log('ev', ev.value);
+    console.log('from rz-input: event', event);
+    console.log('from rz-input: event.target', event.target);
+    console.log('from rz-input: event.target.value', eventTarget.value);
   }
 
   @Watch('value')
   watchStateHandler(newValue) {
+    if (this.value !== newValue) {
+      this.dirty = true;
+    }
     this.value = newValue;
-    this.dirty = newValue;
     this.validationCheck();
   }
 

@@ -1897,11 +1897,6 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@23.3.9":
-  version "23.3.9"
-  resolved "https://registry.npmjs.org/@types/jest/-/jest-23.3.9.tgz"
-  integrity sha512-wNMwXSUcwyYajtbayfPp55tSayuDVU6PfY5gzvRSj80UvxdXEJOVPnUVajaOp7NgXLm+1e2ZDLULmpsU9vDvQw==
-
 "@types/jest@~27.4.1":
   version "27.4.1"
   resolved "https://registry.npmjs.org/@types/jest/-/jest-27.4.1.tgz"
