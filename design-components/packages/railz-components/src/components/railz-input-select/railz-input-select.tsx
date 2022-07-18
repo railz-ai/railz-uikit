@@ -17,12 +17,12 @@ export class RailzInputSelect {
   @Prop() error?: boolean;
   @Prop() errorMessage?: string;
 
-  private handleChange(event) {
+  private handleChange(event): void {
     this.value = event.target.value;
   }
 
   @Watch('value')
-  watchStateHandler(newValue: boolean) {
+  watchValue(newValue: boolean): void {
     // this.value = newValue;
     this.dirty = newValue;
     this.validationCheck();
@@ -59,7 +59,7 @@ export class RailzInputSelect {
             <label>{this.label}</label>
           </div>
 
-          <select onInput={event => this.handleChange(event)}>
+          <select onInput={this.handleChange}>
             <option>1</option>
             <option>2</option>
             <option>3</option>

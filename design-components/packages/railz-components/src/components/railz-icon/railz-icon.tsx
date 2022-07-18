@@ -46,7 +46,8 @@ export class RailzIcon {
     );
   }
 
-  @Watch('icon') private async loadIconPathData(): Promise<void> {
+  @Watch('icon')
+  private async loadIconPathData(): Promise<void> {
     const { icon, visible } = this;
     if (!Build.isBrowser || !icon || !visible) {
       return;
