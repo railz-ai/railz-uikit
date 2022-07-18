@@ -73,3 +73,5 @@ design-components/packages/railz-components-angular/src/lib/stencil-generated/co
 design-components/packages/railz-components-angular/src/lib/stencil-generated/angular-component-lib/utils.ts
 /design-components/packages/railz-components/src/components.d.ts
 /design-components/packages/railz-components/components/
+/design-components/packages/railz-components-react/src/components/react-component-lib/
+/design-components/packages/railz-components-react/src/components/index.ts

@@ -8,9 +8,13 @@ import { inlineSvg } from 'stencil-inline-svg';
 
 export const config: Config = {
   namespace: 'railz-uikit',
-  enableCache: false,
+  enableCache: true,
   autoprefixCss: 'railz',
   preamble: 'Built with Stencil\nCopyright (c) Railz Financial Technologies.',
+  buildEs5: 'prod',
+  extras: {
+    dynamicImportShim: true,
+  },
   outputTargets: [
     angularOutputTarget({
       componentCorePackage: `@railzai/railz-uikit`,
@@ -19,7 +23,7 @@ export const config: Config = {
     }),
     reactOutputTarget({
       componentCorePackage: '@railzai/railz-uikit',
-      proxiesFile: '../railz-components-react/src/components/stencil-generated/index.ts',
+      proxiesFile: '../railz-components-react/src/components/index.ts',
       includeDefineCustomElements: false,
       includeImportCustomElements: true,
       includePolyfills: false,
@@ -46,6 +50,7 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
+      strict: true,
     },
     {
       type: 'www',
