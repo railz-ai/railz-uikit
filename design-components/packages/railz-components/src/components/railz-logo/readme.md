@@ -4,9 +4,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `name`   | `name`    |             | `string` | `undefined` |
+| Property | Attribute | Description              | Type     | Default     |
+| -------- | --------- | ------------------------ | -------- | ----------- |
+| `name`   | `name`    | Name of service provider | `string` | `undefined` |
 
 ---
 

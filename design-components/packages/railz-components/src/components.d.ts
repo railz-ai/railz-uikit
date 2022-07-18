@@ -5,7 +5,6 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-import { Sum } from './components/railz-nested/types/sum';
 export namespace Components {
   interface RailzButton {
     grow?: boolean;
@@ -16,26 +15,6 @@ export namespace Components {
     shape?: string;
     size?: string;
     type?: string;
-  }
-  interface RailzComponent {
-    /**
-     * The first name
-     * @type string
-     * @default ''
-     */
-    first: string;
-    /**
-     * The last name
-     * @type string
-     * @default ''
-     */
-    last: string;
-    /**
-     * The middle name
-     * @type string
-     * @default ''
-     */
-    middle: string;
   }
   interface RailzIcon {
     icon: string;
@@ -123,29 +102,10 @@ export namespace Components {
     value: string;
   }
   interface RailzLogo {
+    /**
+     * Name of service provider
+     */
     name: string;
-  }
-  interface RailzNested {
-    /**
-     * The list of numbers to sum up
-     * @type Sum
-     * @default []
-     */
-    sumList: Sum[];
-  }
-  interface RailzNestedSum {
-    /**
-     * The first number to sum up
-     * @type number
-     * @default 0
-     */
-    first: number;
-    /**
-     * The second number
-     * @type number
-     * @default 0
-     */
-    second: number;
   }
   interface RailzStatusPill {
     icon?: string;
@@ -158,11 +118,6 @@ declare global {
   var HTMLRailzButtonElement: {
     prototype: HTMLRailzButtonElement;
     new (): HTMLRailzButtonElement;
-  };
-  interface HTMLRailzComponentElement extends Components.RailzComponent, HTMLStencilElement {}
-  var HTMLRailzComponentElement: {
-    prototype: HTMLRailzComponentElement;
-    new (): HTMLRailzComponentElement;
   };
   interface HTMLRailzIconElement extends Components.RailzIcon, HTMLStencilElement {}
   var HTMLRailzIconElement: {
@@ -209,16 +164,6 @@ declare global {
     prototype: HTMLRailzLogoElement;
     new (): HTMLRailzLogoElement;
   };
-  interface HTMLRailzNestedElement extends Components.RailzNested, HTMLStencilElement {}
-  var HTMLRailzNestedElement: {
-    prototype: HTMLRailzNestedElement;
-    new (): HTMLRailzNestedElement;
-  };
-  interface HTMLRailzNestedSumElement extends Components.RailzNestedSum, HTMLStencilElement {}
-  var HTMLRailzNestedSumElement: {
-    prototype: HTMLRailzNestedSumElement;
-    new (): HTMLRailzNestedSumElement;
-  };
   interface HTMLRailzStatusPillElement extends Components.RailzStatusPill, HTMLStencilElement {}
   var HTMLRailzStatusPillElement: {
     prototype: HTMLRailzStatusPillElement;
@@ -226,7 +171,6 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'railz-button': HTMLRailzButtonElement;
-    'railz-component': HTMLRailzComponentElement;
     'railz-icon': HTMLRailzIconElement;
     'railz-icon-button': HTMLRailzIconButtonElement;
     'railz-input-checkbox': HTMLRailzInputCheckboxElement;
@@ -236,8 +180,6 @@ declare global {
     'railz-input-text': HTMLRailzInputTextElement;
     'railz-input-toggle': HTMLRailzInputToggleElement;
     'railz-logo': HTMLRailzLogoElement;
-    'railz-nested': HTMLRailzNestedElement;
-    'railz-nested-sum': HTMLRailzNestedSumElement;
     'railz-status-pill': HTMLRailzStatusPillElement;
   }
 }
@@ -252,26 +194,6 @@ declare namespace LocalJSX {
     shape?: string;
     size?: string;
     type?: string;
-  }
-  interface RailzComponent {
-    /**
-     * The first name
-     * @type string
-     * @default ''
-     */
-    first?: string;
-    /**
-     * The last name
-     * @type string
-     * @default ''
-     */
-    last?: string;
-    /**
-     * The middle name
-     * @type string
-     * @default ''
-     */
-    middle?: string;
   }
   interface RailzIcon {
     icon?: string;
@@ -360,29 +282,10 @@ declare namespace LocalJSX {
     value?: string;
   }
   interface RailzLogo {
+    /**
+     * Name of service provider
+     */
     name?: string;
-  }
-  interface RailzNested {
-    /**
-     * The list of numbers to sum up
-     * @type Sum
-     * @default []
-     */
-    sumList?: Sum[];
-  }
-  interface RailzNestedSum {
-    /**
-     * The first number to sum up
-     * @type number
-     * @default 0
-     */
-    first?: number;
-    /**
-     * The second number
-     * @type number
-     * @default 0
-     */
-    second?: number;
   }
   interface RailzStatusPill {
     icon?: string;
@@ -391,7 +294,6 @@ declare namespace LocalJSX {
   }
   interface IntrinsicElements {
     'railz-button': RailzButton;
-    'railz-component': RailzComponent;
     'railz-icon': RailzIcon;
     'railz-icon-button': RailzIconButton;
     'railz-input-checkbox': RailzInputCheckbox;
@@ -401,8 +303,6 @@ declare namespace LocalJSX {
     'railz-input-text': RailzInputText;
     'railz-input-toggle': RailzInputToggle;
     'railz-logo': RailzLogo;
-    'railz-nested': RailzNested;
-    'railz-nested-sum': RailzNestedSum;
     'railz-status-pill': RailzStatusPill;
   }
 }
@@ -411,7 +311,6 @@ declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
       'railz-button': LocalJSX.RailzButton & JSXBase.HTMLAttributes<HTMLRailzButtonElement>;
-      'railz-component': LocalJSX.RailzComponent & JSXBase.HTMLAttributes<HTMLRailzComponentElement>;
       'railz-icon': LocalJSX.RailzIcon & JSXBase.HTMLAttributes<HTMLRailzIconElement>;
       'railz-icon-button': LocalJSX.RailzIconButton & JSXBase.HTMLAttributes<HTMLRailzIconButtonElement>;
       'railz-input-checkbox': LocalJSX.RailzInputCheckbox & JSXBase.HTMLAttributes<HTMLRailzInputCheckboxElement>;
@@ -421,8 +320,6 @@ declare module '@stencil/core' {
       'railz-input-text': LocalJSX.RailzInputText & JSXBase.HTMLAttributes<HTMLRailzInputTextElement>;
       'railz-input-toggle': LocalJSX.RailzInputToggle & JSXBase.HTMLAttributes<HTMLRailzInputToggleElement>;
       'railz-logo': LocalJSX.RailzLogo & JSXBase.HTMLAttributes<HTMLRailzLogoElement>;
-      'railz-nested': LocalJSX.RailzNested & JSXBase.HTMLAttributes<HTMLRailzNestedElement>;
-      'railz-nested-sum': LocalJSX.RailzNestedSum & JSXBase.HTMLAttributes<HTMLRailzNestedSumElement>;
       'railz-status-pill': LocalJSX.RailzStatusPill & JSXBase.HTMLAttributes<HTMLRailzStatusPillElement>;
     }
   }

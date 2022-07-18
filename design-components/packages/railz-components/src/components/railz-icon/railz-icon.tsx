@@ -1,5 +1,4 @@
-/* eslint-disable @stencil/decorators-style */
-/* eslint-disable max-len */
+/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
 import { Build, Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
 
 import { fetchIcon } from './utils';

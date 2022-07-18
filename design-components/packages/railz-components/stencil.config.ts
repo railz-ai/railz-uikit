@@ -7,10 +7,14 @@ import { sass } from '@stencil/sass';
 import { inlineSvg } from 'stencil-inline-svg';
 
 export const config: Config = {
-  namespace: 'railz-components',
-  enableCache: false,
+  namespace: 'railz-uikit',
+  enableCache: true,
   autoprefixCss: 'railz',
   preamble: 'Built with Stencil\nCopyright (c) Railz Financial Technologies.',
+  buildEs5: 'prod',
+  extras: {
+    dynamicImportShim: true,
+  },
   outputTargets: [
     angularOutputTarget({
       componentCorePackage: `@railzai/railz-uikit`,
@@ -19,8 +23,10 @@ export const config: Config = {
     }),
     reactOutputTarget({
       componentCorePackage: '@railzai/railz-uikit',
-      proxiesFile: '../railz-components-react/src/components/stencil-generated/index.ts',
-      includeDefineCustomElements: true,
+      proxiesFile: '../railz-components-react/src/components/index.ts',
+      includeDefineCustomElements: false,
+      includeImportCustomElements: true,
+      includePolyfills: false,
       loaderDir: 'dist/loader',
     }),
     vueOutputTarget({
@@ -32,9 +38,19 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
+      dir: 'components',
+      copy: [
+        {
+          src: '../scripts/custom-elements',
+          dest: 'components',
+          warn: true,
+        },
+      ],
+      includeGlobalScripts: false,
     },
     {
       type: 'docs-readme',
+      strict: true,
     },
     {
       type: 'www',
