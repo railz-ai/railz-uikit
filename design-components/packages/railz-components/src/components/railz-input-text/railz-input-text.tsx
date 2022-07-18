@@ -16,7 +16,6 @@ export class RailzInputText {
   @State() dirty?: boolean;
   @Prop() placeholder?: string;
   @Prop() instructionalText?: string;
-  // @Prop() prefixOptions?: string;
 
   @Prop() type?: string | 'text';
   @Prop() inputmode?: string | 'text';
@@ -33,7 +32,8 @@ export class RailzInputText {
   @Prop() autocomplete?: string;
 
   @Prop() prefixIcon?: string;
-  @Prop({ mutable: true }) value?: string;
+
+  @Prop() value?: string;
 
   @State() uuid: string = uuidv4().toString();
 
@@ -42,17 +42,12 @@ export class RailzInputText {
     const eventTarget = event.target as HTMLInputElement;
     this.valueChange.emit(eventTarget.value);
 
-    console.log('from rz-input: event', event);
-    console.log('from rz-input: event.target', event.target);
-    console.log('from rz-input: event.target.value', eventTarget.value);
-  }
-
-  @Watch('value')
-  watchStateHandler(newValue) {
-    if (this.value !== newValue) {
+    if (eventTarget.value.length > 0) {
       this.dirty = true;
+    } else {
+      this.dirty = false;
     }
-    this.value = newValue;
+
     this.validationCheck();
   }
 
@@ -70,6 +65,9 @@ export class RailzInputText {
 
   private validationCheck(): string {
     const validationClasses = [];
+    if (this.error) {
+      validationClasses.push('error');
+    }
     if (this.errorMessage) {
       validationClasses.push('error');
     }
