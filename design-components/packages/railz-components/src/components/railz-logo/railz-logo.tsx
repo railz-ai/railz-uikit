@@ -11,7 +11,9 @@ import { LogoConfig } from './types';
   tag: 'railz-logo',
 })
 export class MyComponent {
+  /**Name of service provider*/
   @Prop() name: string;
+
   @State() svgWidth: string;
   @State() svgHeight: string;
   @State() imgUrl: string;
