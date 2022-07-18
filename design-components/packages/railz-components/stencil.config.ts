@@ -20,7 +20,9 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@railzai/railz-uikit',
       proxiesFile: '../railz-components-react/src/components/stencil-generated/index.ts',
-      includeDefineCustomElements: true,
+      includeDefineCustomElements: false,
+      includeImportCustomElements: true,
+      includePolyfills: false,
       loaderDir: 'dist/loader',
     }),
     vueOutputTarget({
@@ -32,7 +34,15 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-      autoDefineCustomElements: true,
+      dir: 'components',
+      copy: [
+        {
+          src: '../scripts/custom-elements',
+          dest: 'components',
+          warn: true,
+        },
+      ],
+      includeGlobalScripts: false,
     },
     {
       type: 'docs-readme',

@@ -19,6 +19,7 @@
   },
   "homepage": "https://railz-ai.github.io/railz-uikit/",
   "files": [
+    "components/",
     "dist/"
   ],
   "scripts": {
