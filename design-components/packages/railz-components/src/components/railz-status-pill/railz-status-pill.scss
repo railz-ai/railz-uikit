@@ -47,6 +47,7 @@
 .icon {
   margin-left: space(0.25);
   margin-right: space(0.25);
+  @include icon-size('small');
 }
 
 .dot {
