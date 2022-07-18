@@ -9,6 +9,7 @@
   white-space: nowrap;
   align-items: center;
   border-radius: radius(10);
+  min-height: space(3);
   padding: space(0.5) space(1);
 
   &.active {
@@ -39,7 +40,7 @@
 }
 
 .label {
-  @include font(12, 'medium');
+  @include font(12, 'medium', $line-height: 'single');
 
   padding: 0 space(0.5);
 }

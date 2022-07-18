@@ -11,12 +11,6 @@ export const RailzButton = /*@__PURE__*/ defineContainer<JSX.RailzButton>(
   ['label', 'type', 'shape', 'size', 'icon', 'isDisabled', 'grow', 'loading', 'buttonClick'],
 );
 
-export const RailzComponent = /*@__PURE__*/ defineContainer<JSX.RailzComponent>(
-  'railz-component',
-  undefined,
-  ['first', 'middle', 'last'],
-);
-
 export const RailzIcon = /*@__PURE__*/ defineContainer<JSX.RailzIcon>('railz-icon', undefined, [
   'icon',
   'size',
@@ -125,18 +119,6 @@ export const RailzInputToggle = /*@__PURE__*/ defineContainer<JSX.RailzInputTogg
 export const RailzLogo = /*@__PURE__*/ defineContainer<JSX.RailzLogo>('railz-logo', undefined, [
   'name',
 ]);
-
-export const RailzNested = /*@__PURE__*/ defineContainer<JSX.RailzNested>(
-  'railz-nested',
-  undefined,
-  ['sumList'],
-);
-
-export const RailzNestedSum = /*@__PURE__*/ defineContainer<JSX.RailzNestedSum>(
-  'railz-nested-sum',
-  undefined,
-  ['first', 'second'],
-);
 
 export const RailzStatusPill = /*@__PURE__*/ defineContainer<JSX.RailzStatusPill>(
   'railz-status-pill',
