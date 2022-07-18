@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable max-len */
+/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
 import { Component, State, Prop, h } from '@stencil/core';
 
 import { formatServiceName } from '../../utils/utils';
@@ -11,7 +9,9 @@ import { LogoConfig } from './types';
   tag: 'railz-logo',
 })
 export class MyComponent {
-  /**Name of service provider*/
+  /**
+   * Name of service provider
+   */
   @Prop() name: string;
 
   @State() svgWidth: string;
@@ -193,7 +193,7 @@ export class MyComponent {
     }
   }
 
-  render() {
+  render(): HTMLElement {
     if (this.error) {
       return <div></div>;
     }

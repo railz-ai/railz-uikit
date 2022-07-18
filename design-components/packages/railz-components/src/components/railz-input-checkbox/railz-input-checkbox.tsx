@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable react/jsx-no-bind */
-/* eslint-disable max-len */
+/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
 import { Component, h, Prop, State } from '@stencil/core';
 import { v4 as uuidv4 } from 'uuid';
 
