@@ -1,3 +1,4 @@
+/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({

@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable react/jsx-no-bind */
+/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
 import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 import * as iconList from '../../assets/icons/index.json';
@@ -25,7 +24,7 @@ export class RailzButton {
   @Prop() loading?: boolean;
 
   @Event() buttonClick: EventEmitter;
-  private handleClick(event: Event) {
+  private handleClick(event: Event): void {
     this.buttonClick.emit(event);
   }
 

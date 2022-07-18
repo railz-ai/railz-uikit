@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
 import { Component, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -41,14 +40,10 @@ export class RailzInputText {
   private handleChange(event: Event) {
     const eventTarget = event.target as HTMLInputElement;
     this.valueChange.emit(eventTarget.value);
-
-    console.log('from rz-input: event', event);
-    console.log('from rz-input: event.target', event.target);
-    console.log('from rz-input: event.target.value', eventTarget.value);
   }
 
   @Watch('value')
-  watchStateHandler(newValue) {
+  watchStateHandler(newValue): void {
     if (this.value !== newValue) {
       this.dirty = true;
     }
