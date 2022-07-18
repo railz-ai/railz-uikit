@@ -20,8 +20,7 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@railzai/railz-uikit',
       proxiesFile: '../railz-components-react/src/components/stencil-generated/index.ts',
-      includeDefineCustomElements: false,
-      includeImportCustomElements: true,
+      includeDefineCustomElements: true,
       loaderDir: 'dist/loader',
     }),
     vueOutputTarget({
