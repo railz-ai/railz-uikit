@@ -68,15 +68,7 @@ export class RailzInputRadio {
     return (
       <div class={`form-group ${this.validationCheck()}`}>
         <div class="input-container">
-          <input
-            type="radio"
-            id={this.inputId || this.uuid}
-            name={this.name}
-            checked={this.checked}
-            value={this.value}
-            disabled={this.disabled}
-            onChange={event => this.handleChange(event)}
-          ></input>
+          <input type="radio" id={this.inputId || this.uuid} name={this.name} checked={this.checked} value={this.value} disabled={this.disabled} onChange={this.handleChange} />
         </div>
         <div class="label-container">
           <label htmlFor={this.inputId || this.uuid}>{this.label}</label>

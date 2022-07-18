@@ -72,7 +72,7 @@ export class RailzInputToggle {
     return (
       <div class={`form-group ${this.validationCheck()} ${this.checked ? 'checked' : ''}`}>
         <div class="input-container">
-          <input type="checkbox" id={this.inputId || this.uuid} checked={this.checked} value={this.value} name={this.name} onChange={() => this.handleChange()} />
+          <input type="checkbox" id={this.inputId || this.uuid} checked={this.checked} value={this.value} name={this.name} onChange={this.handleChange} />
           <div class="toggle-track">
             <span class="state-label">{this.checked ? 'on' : 'off'}</span>
           </div>

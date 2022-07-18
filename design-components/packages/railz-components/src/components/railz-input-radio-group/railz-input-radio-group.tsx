@@ -22,7 +22,7 @@ export interface RadioInput {
 export class RailzInputRadioGroup {
   // @Prop({ mutable: true }) options: RadioInput[];
   // eslint-disable-next-line @stencil/strict-mutable
-  @Prop({ mutable: true }) options: any[];
+  @Prop({ mutable: true }) options: RadioInput[];
 
   render(): HTMLElement {
     return (

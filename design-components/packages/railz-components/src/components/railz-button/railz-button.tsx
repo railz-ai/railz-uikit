@@ -41,7 +41,7 @@ export class RailzButton {
   render(): HTMLElement {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
-        <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
+        <button onClick={this.handleClick} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
           {this.renderIcon()}
           {this.loading ? <span class="loading-indicator"></span> : null}
           <span class="label">{this.loading ? 'Loading...' : this.label}</span>

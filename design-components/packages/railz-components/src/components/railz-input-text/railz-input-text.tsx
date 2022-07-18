@@ -37,13 +37,13 @@ export class RailzInputText {
   @State() uuid: string = uuidv4().toString();
 
   @Event() valueChange: EventEmitter;
-  private handleChange(event: Event) {
+  private handleChange(event: Event): void {
     const eventTarget = event.target as HTMLInputElement;
     this.valueChange.emit(eventTarget.value);
   }
 
   @Watch('value')
-  watchStateHandler(newValue): void {
+  watchStateHandler(newValue: string): void {
     if (this.value !== newValue) {
       this.dirty = true;
     }
@@ -98,7 +98,7 @@ export class RailzInputText {
             min={this.minNumber}
             max={this.maxNumber}
             id={this.inputId || this.uuid}
-            onInput={event => this.handleChange(event)}
+            onInput={this.handleChange}
             multiple
           />
 

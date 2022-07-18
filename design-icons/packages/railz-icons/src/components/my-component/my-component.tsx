@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Component, Prop, h } from '@stencil/core';
 
 import { format } from '../../utils/utils';
