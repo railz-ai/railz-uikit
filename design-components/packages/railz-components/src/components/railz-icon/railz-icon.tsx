@@ -5,7 +5,7 @@ import { Build, Component, Element, h, Host, Prop, State, Watch } from '@stencil
 import { fetchIcon } from './utils';
 
 @Component({
-  assetsDirs: ['assets'],
+  assetsDirs: ['../assets'],
   tag: 'railz-icon',
   styleUrl: 'railz-icon.scss',
   shadow: true,
