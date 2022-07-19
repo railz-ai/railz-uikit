@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
+import { RadioInput } from './components/railz-input-radio-group/railz-input-radio-group';
 export namespace Components {
   interface RailzButton {
     grow?: boolean;
@@ -56,7 +57,7 @@ export namespace Components {
     value: string;
   }
   interface RailzInputRadioGroup {
-    options: any[];
+    options: RadioInput[];
   }
   interface RailzInputSelect {
     disabled?: boolean;
@@ -235,7 +236,7 @@ declare namespace LocalJSX {
     value?: string;
   }
   interface RailzInputRadioGroup {
-    options?: any[];
+    options?: RadioInput[];
   }
   interface RailzInputSelect {
     disabled?: boolean;

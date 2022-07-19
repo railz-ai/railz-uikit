@@ -15,6 +15,7 @@ loader
 # Generated Files
 package-lock.json
 /stencil-generated
+/stencil-generated/**/**
 **/**/stencil-generated/
 # /design-components/packages/railz-components-angular/src/lib/stencil-generated/
 Gemfile
