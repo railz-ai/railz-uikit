@@ -25,7 +25,7 @@ export class RailzButton {
   @Prop() loading?: boolean;
 
   @Event() buttonClick: EventEmitter;
-  private handleClick(event: Event) {
+  private handleClick(event: Event): void {
     this.buttonClick.emit(event);
   }
 

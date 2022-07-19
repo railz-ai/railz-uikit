@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable react/jsx-no-bind */
-/* eslint-disable max-len */
+/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
 import { Component, h, Prop, State } from '@stencil/core';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -67,7 +65,7 @@ export class RailzInputCheckbox {
     return (
       <div class={`form-group ${this.validationCheck()} ${this.checked ? 'checked' : ''}`}>
         <div class="input-container">
-          <input type="checkbox" id={this.inputId || this.uuid} checked={this.checked} value={this.value} name={this.name} onChange={() => this.handleChange()} />
+          <input type="checkbox" id={this.inputId || this.uuid} checked={this.checked} value={this.value} name={this.name} onChange={this.handleChange} />
           {this.indeterminate ? <railz-icon icon="indeterminate" size="x-small" /> : <railz-icon icon="checkmark" size="x-small" />}
         </div>
         <div class="label-container">

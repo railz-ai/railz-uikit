@@ -4,9 +4,9 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type    | Default     |
-| --------- | --------- | ----------- | ------- | ----------- |
-| `options` | --        |             | `any[]` | `undefined` |
+| Property  | Attribute | Description | Type           | Default     |
+| --------- | --------- | ----------- | -------------- | ----------- |
+| `options` | --        |             | `RadioInput[]` | `undefined` |
 
 ## Dependencies
 

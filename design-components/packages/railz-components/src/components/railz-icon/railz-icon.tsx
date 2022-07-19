@@ -1,11 +1,10 @@
-/* eslint-disable @stencil/decorators-style */
-/* eslint-disable max-len */
+/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
 import { Build, Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
 
 import { fetchIcon } from './utils';
 
 @Component({
-  assetsDirs: ['assets'],
+  assetsDirs: ['../assets'],
   tag: 'railz-icon',
   styleUrl: 'railz-icon.scss',
   shadow: true,
@@ -47,7 +46,8 @@ export class RailzIcon {
     );
   }
 
-  @Watch('icon') private async loadIconPathData(): Promise<void> {
+  @Watch('icon')
+  private async loadIconPathData(): Promise<void> {
     const { icon, visible } = this;
     if (!Build.isBrowser || !icon || !visible) {
       return;

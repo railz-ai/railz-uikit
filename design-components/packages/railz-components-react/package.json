@@ -1,7 +1,7 @@
 {
   "name": "@railzai/railz-uikit-react",
   "sideEffects": false,
-  "version": "0.0.1-alpha.5",
+  "version": "0.0.1-alpha.6",
   "description": "React specific wrapper for @railzai/railz-uikit",
   "repository": {
     "type": "git",
@@ -18,19 +18,22 @@
   "scripts": {
     "tsc": "tsc -p .",
     "rollup": "rollup -c",
-    "build": "yarn clean && yarn compile",
-    "clean": "rimraf dist",
-    "compile": "yarn build:cjs && yarn build:esm",
+    "compile:old": "yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "build:esm": "tsc --module es6 --outDir dist/esm"
+    "build:esm": "tsc --module es6 --outDir dist/esm",
+    "build": "yarn clean && yarn compile && yarn clean:base:dist",
+    "clean": "rimraf dist && rimraf base-dist",
+    "clean:base:dist": "rimraf base-dist",
+    "compile": "npm run tsc && rollup -c"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/types/index.d.ts",
   "files": [
     "dist/"
   ],
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0",
     "@types/jest": "~27.4.1",
     "@types/node": "^15.12.2",
     "@types/react": "^17.0.34",
@@ -40,13 +43,16 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rimraf": "3.0.2",
+    "rollup": "^2.77.0",
+    "rollup-plugin-sourcemaps": "^0.6.3",
     "typescript": "4.7.3"
   },
   "dependencies": {
+    "@railzai/railz-uikit": "^0.0.1-alpha.6",
     "minimist": "1.2.6"
   },
   "peerDependencies": {
-    "@railzai/railz-uikit": "^0.0.1-alpha.1",
+    "@railzai/railz-uikit": "^0.0.1-alpha.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

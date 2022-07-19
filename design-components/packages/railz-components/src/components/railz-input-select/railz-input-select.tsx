@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
 import { Component, h, Prop, State, Watch } from '@stencil/core';
 
 @Component({
@@ -18,12 +17,12 @@ export class RailzInputSelect {
   @Prop() error?: boolean;
   @Prop() errorMessage?: string;
 
-  private handleChange(event) {
+  private handleChange(event): void {
     this.value = event.target.value;
   }
 
   @Watch('value')
-  watchStateHandler(newValue: boolean) {
+  watchValue(newValue: boolean): void {
     // this.value = newValue;
     this.dirty = newValue;
     this.validationCheck();
@@ -60,7 +59,7 @@ export class RailzInputSelect {
             <label>{this.label}</label>
           </div>
 
-          <select onInput={event => this.handleChange(event)}>
+          <select onInput={this.handleChange}>
             <option>1</option>
             <option>2</option>
             <option>3</option>

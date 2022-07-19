@@ -1,0 +1,9 @@
+{
+  "name": "@railzai/railz-uikit/components",
+  "version": "1.0.0",
+  "description": "Railz UI Kit Components",
+  "main": "./index.js",
+  "types": "./custom-elements.d.ts",
+  "private": true,
+  "sideEffects": false
+}

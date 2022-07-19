@@ -6,7 +6,7 @@ import {
   RailzInputText,
   // RailzNested,
   RailzIcon,
-  RailzNestedSum,
+  // RailzNestedSum,
 } from '@railzai/railz-uikit-react';
 
 import { useState } from 'react';
@@ -75,7 +75,7 @@ function App() {
         onButtonClick={() => setDisableButton(false)}
       />
 
-      <RailzNestedSum first={12} second={30} />
+      {/* <RailzNestedSum first={12} second={30} /> */}
 
       <RailzIcon icon="home" size="small" />
     </div>

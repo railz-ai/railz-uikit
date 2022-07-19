@@ -1,6 +1,6 @@
 {
   "name": "@railzai/railz-uikit",
-  "version": "0.0.1-alpha.5",
+  "version": "0.0.1-alpha.6",
   "description": "Railz.ai Design Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://railz-ai.github.io/railz-uikit/",
   "files": [
+    "components/",
     "dist/"
   ],
   "scripts": {
