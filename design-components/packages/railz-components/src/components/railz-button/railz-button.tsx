@@ -1,4 +1,5 @@
-/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable react/jsx-no-bind */
 import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 import * as iconList from '../../assets/icons/index.json';
@@ -41,7 +42,7 @@ export class RailzButton {
   render(): HTMLElement {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
-        <button onClick={this.handleClick} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
+        <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
           {this.renderIcon()}
           {this.loading ? <span class="loading-indicator"></span> : null}
           <span class="label">{this.loading ? 'Loading...' : this.label}</span>
