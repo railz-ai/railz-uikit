@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Component, h, Prop, State, Event, EventEmitter } from '@stencil/core';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -17,6 +17,7 @@ export class RailzInputText {
   @State() dirty?: boolean;
   @Prop() placeholder?: string;
   @Prop() instructionalText?: string;
+  // @Prop() prefixOptions?: string;
 
   @Prop() type?: string | 'text';
   @Prop() inputmode?: string | 'text';
@@ -34,12 +35,12 @@ export class RailzInputText {
 
   @Prop() prefixIcon?: string;
 
-  @Prop() value?: string;
+  @Prop({ mutable: true }) value?: string;
 
   @State() uuid: string = uuidv4().toString();
 
   @Event() valueChange: EventEmitter;
-  private handleChange(event: Event): void {
+  private handleChange(event: Event) {
     const eventTarget = event.target as HTMLInputElement;
     this.valueChange.emit(eventTarget.value);
 
@@ -102,7 +103,7 @@ export class RailzInputText {
             min={this.minNumber}
             max={this.maxNumber}
             id={this.inputId || this.uuid}
-            onInput={this.handleChange}
+            onInput={event => this.handleChange(event)}
             multiple
           />
 
