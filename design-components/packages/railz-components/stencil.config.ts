@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { Config } from '@stencil/core';
 import { angularOutputTarget } from '@stencil/angular-output-target';
 import { reactOutputTarget } from '@stencil/react-output-target';
@@ -59,7 +60,7 @@ export const config: Config = {
   ],
   plugins: [
     sass({
-      injectGlobalPaths: ['../../../design-tokens/packages/railz-tokens/scss/ui-kit/_index.scss'],
+      injectGlobalPaths: ['../../../design-tokens/packages/railz-tokens/scss/reset.scss', '../../../design-tokens/packages/railz-tokens/scss/ui-kit/_index.scss'],
     }),
     inlineSvg(),
   ],
