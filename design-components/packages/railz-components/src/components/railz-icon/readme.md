@@ -20,7 +20,6 @@
 - [railz-input-select](../railz-input-select)
 - [railz-input-text](../railz-input-text)
 - [railz-input-toggle](../railz-input-toggle)
-- [railz-status-pill](../railz-status-pill)
 
 ### Graph
 
@@ -32,7 +31,6 @@ graph TD;
   railz-input-select --> railz-icon
   railz-input-text --> railz-icon
   railz-input-toggle --> railz-icon
-  railz-status-pill --> railz-icon
   style railz-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

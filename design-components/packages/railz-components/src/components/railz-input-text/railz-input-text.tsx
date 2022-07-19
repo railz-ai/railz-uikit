@@ -1,5 +1,7 @@
-/* eslint-disable max-len, @typescript-eslint/no-unused-vars */
-import { Component, h, Prop, State, Watch, Event, EventEmitter } from '@stencil/core';
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { Component, h, Prop, State, Event, EventEmitter } from '@stencil/core';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
@@ -32,22 +34,22 @@ export class RailzInputText {
   @Prop() autocomplete?: string;
 
   @Prop() prefixIcon?: string;
+
   @Prop({ mutable: true }) value?: string;
 
   @State() uuid: string = uuidv4().toString();
 
   @Event() valueChange: EventEmitter;
-  private handleChange(event: Event): void {
+  private handleChange(event: Event) {
     const eventTarget = event.target as HTMLInputElement;
     this.valueChange.emit(eventTarget.value);
-  }
 
-  @Watch('value')
-  watchStateHandler(newValue: string): void {
-    if (this.value !== newValue) {
+    if (eventTarget.value.length > 0) {
       this.dirty = true;
+    } else {
+      this.dirty = false;
     }
-    this.value = newValue;
+
     this.validationCheck();
   }
 
@@ -65,6 +67,9 @@ export class RailzInputText {
 
   private validationCheck(): string {
     const validationClasses = [];
+    if (this.error) {
+      validationClasses.push('error');
+    }
     if (this.errorMessage) {
       validationClasses.push('error');
     }
@@ -98,7 +103,7 @@ export class RailzInputText {
             min={this.minNumber}
             max={this.maxNumber}
             id={this.inputId || this.uuid}
-            onInput={this.handleChange}
+            onInput={event => this.handleChange(event)}
             multiple
           />
 
