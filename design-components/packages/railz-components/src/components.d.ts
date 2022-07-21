@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { RadioInput } from "./components/railz-input-radio-group/railz-input-radio-group";
+import { LogoVariant } from "./components/railz-logo/enums";
 export namespace Components {
     interface RailzButton {
         "grow"?: boolean;
@@ -107,6 +108,8 @@ export namespace Components {
           * Name of service provider
          */
         "name": string;
+        "outline": boolean;
+        "variant": LogoVariant;
     }
     interface RailzStatusPill {
         "icon"?: string;
@@ -298,6 +301,8 @@ declare namespace LocalJSX {
           * Name of service provider
          */
         "name"?: string;
+        "outline"?: boolean;
+        "variant"?: LogoVariant;
     }
     interface RailzStatusPill {
         "icon"?: string;
