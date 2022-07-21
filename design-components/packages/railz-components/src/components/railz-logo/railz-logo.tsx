@@ -459,8 +459,8 @@ export class MyComponent {
       const isSmallIcon = this.variant === 'small';
       this.rectX = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['x'] : null;
       this.rectY = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['y'] : null;
-      this.rectWidth = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['x'] : this.svgWidth;
-      this.rectHeight = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['y'] : this.svgHeight;
+      this.rectWidth = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['width'] : this.svgWidth;
+      this.rectHeight = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['height'] : this.svgHeight;
     } else {
       this.error = true;
     }
