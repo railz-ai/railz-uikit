@@ -4,7 +4,7 @@ import { Component, State, Prop, h } from '@stencil/core';
 import { formatServiceName } from '../../utils/utils';
 
 import { LogoConfig } from './types';
-import { LogoVariant } from './enums';
+// import { LogoVariant } from './enums';
 
 @Component({
   tag: 'railz-logo',
@@ -14,7 +14,7 @@ export class MyComponent {
    * Name of service provider
    */
   @Prop() name: string;
-  @Prop() variant: LogoVariant = LogoVariant.LARGE;
+  @Prop() variant = 'large';
   @Prop() outline: boolean;
 
   @State() svgWidth: string;
@@ -456,7 +456,7 @@ export class MyComponent {
       this.imgHeight = this.logoConfig[this.name]['img'][this.variant]['height'];
       this.transform = this.logoConfig[this.name]['svg'][this.variant]['transform'];
 
-      const isSmallIcon = this.variant === LogoVariant.SMALL;
+      const isSmallIcon = this.variant === 'small';
       this.rectX = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['x'] : null;
       this.rectY = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['y'] : null;
       this.rectWidth = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['x'] : this.svgWidth;
@@ -473,14 +473,14 @@ export class MyComponent {
 
     return (
       <svg width={`${this.svgWidth}px`} height={`${this.svgHeight}px`} viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-        {this.variant === LogoVariant.SMALL && this.outline && <circle cx="12" cy="12" r="11.5" fill="white" stroke="#BDBDBD" />}
-        {this.variant === LogoVariant.LARGE && (
+        {this.variant === 'small' && this.outline && <circle cx="12" cy="12" r="11.5" fill="white" stroke="#BDBDBD" />}
+        {this.variant === 'large' && (
           <rect width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
             {' '}
             <title>{formatServiceName(this.name)}</title>{' '}
           </rect>
         )}
-        {this.variant === LogoVariant.SMALL && (
+        {this.variant === 'small' && (
           <rect x={this.rectX} y={this.rectY} width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
             {' '}
             <title>{formatServiceName(this.name)}</title>{' '}
