@@ -106,6 +106,12 @@ export class MyComponent {
           height: '',
           url: '',
           transform: '',
+          rect: {
+            x: '',
+            y: '',
+            width: '',
+            height: '',
+          },
         },
       },
       img: {
