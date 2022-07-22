@@ -474,7 +474,7 @@ export class MyComponent {
       this.rectWidth = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['width'] : this.svgWidth;
       this.rectHeight = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['height'] : this.svgHeight;
     } else {
-      this.error = true;
+      // this.error = true;
     }
   }
 
