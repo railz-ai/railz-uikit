@@ -4,7 +4,6 @@ import { Component, State, Prop, h } from '@stencil/core';
 import { formatServiceName } from '../../utils/utils';
 
 import { LogoConfig } from './types';
-// import { LogoVariant } from './enums';
 
 @Component({
   tag: 'railz-logo',
@@ -13,9 +12,15 @@ export class MyComponent {
   /**
    * Name of service provider
    */
-  @Prop() name: string;
+  @Prop() name?: string;
   @Prop() variant = 'large';
-  @Prop() outline: boolean;
+  @Prop() outline?: boolean = false;
+  @Prop() imgIcon?: {
+    url: string;
+    name: string;
+    iconWidth?: string;
+    iconHeight?: string;
+  };
 
   @State() svgWidth: string;
   @State() svgHeight: string;
@@ -448,7 +453,7 @@ export class MyComponent {
   };
 
   connectedCallback(): void {
-    if (Object.keys(this.logoConfig).includes(this.name)) {
+    if (Object.keys(this.logoConfig).includes(this.name) && !this.imgIcon) {
       this.svgWidth = this.logoConfig[this.name]['svg'][this.variant]['width'];
       this.svgHeight = this.logoConfig[this.name]['svg'][this.variant]['height'];
       this.imgUrl = this.logoConfig[this.name]['svg'][this.variant]['url'];
@@ -469,6 +474,10 @@ export class MyComponent {
   render(): HTMLElement {
     if (this.error) {
       return <div></div>;
+    }
+
+    if (this.imgIcon) {
+      return <img src={this.imgIcon.url} alt={`${this.imgIcon.name} icon`} style={{ width: this.imgIcon?.iconWidth || '24px', height: this.imgIcon?.iconHeight || '24px' }} />;
     }
 
     return (
