@@ -18,15 +18,6 @@ export class MyComponent {
   @Prop() outline?: boolean = false;
   @Prop() imgIconUrl?: string;
   @Prop() imgIconName?: string;
-  @Prop() imgIcon?: {
-    url: string;
-    name: string;
-    iconWidth?: string;
-    iconHeight?: string;
-  };
-
-  @State() imgIconUrlState: string;
-  @State() imgIconNameState: string;
 
   @State() svgWidth: string;
   @State() svgHeight: string;
@@ -459,7 +450,6 @@ export class MyComponent {
   };
 
   connectedCallback(): void {
-    console.log('connectedCallback', this.imgIcon, this.imgIconUrl, this.imgIconName);
     if (Object.keys(this.logoConfig).includes(this.name)) {
       this.svgWidth = this.logoConfig[this.name]['svg'][this.variant]['width'];
       this.svgHeight = this.logoConfig[this.name]['svg'][this.variant]['height'];
@@ -473,52 +463,12 @@ export class MyComponent {
       this.rectY = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['y'] : null;
       this.rectWidth = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['width'] : this.svgWidth;
       this.rectHeight = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['height'] : this.svgHeight;
-    } else {
-      // this.error = true;
     }
   }
 
   componentWillLoad(): void {
-    console.log('componentWillLoad', this.imgIcon, this.imgIconUrl, this.imgIconName);
-    if (this.imgIconUrl) {
-      this.imgIconUrlState = this.imgIconUrl;
-      this.imgIconNameState = this.imgIconName;
-    }
-  }
-
-  private renderImgIcon(): any {
-    console.log('renderImgIcon', this.imgIconUrlState, this.imgIconUrl);
-    if (this.imgIconUrl) {
-      return <img src={this.imgIconUrl} alt={`${this.imgIconName} icon`} style={{ width: this.imgIcon?.iconWidth || '24px', height: this.imgIcon?.iconHeight || '24px' }} />;
-    }
-  }
-
-  private renderSvg(): any {
-    console.log('renderSvg');
-    if (Object.keys(this.logoConfig).includes(this.name)) {
-      return (
-        <svg width={`${this.svgWidth}px`} height={`${this.svgHeight}px`} viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-          {this.variant === 'small' && this.outline && <circle cx="12" cy="12" r="11.5" fill="white" stroke="#BDBDBD" />}
-          {this.variant === 'large' && (
-            <rect width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
-              {' '}
-              <title>{formatServiceName(this.name)}</title>{' '}
-            </rect>
-          )}
-          {this.variant === 'small' && (
-            <rect x={this.rectX} y={this.rectY} width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
-              {' '}
-              <title>{formatServiceName(this.name)}</title>{' '}
-            </rect>
-          )}
-          <defs>
-            <pattern id={`pattern-${this.name}`} patternContentUnits="objectBoundingBox" width="1" height="1">
-              <use xlinkHref={`#image-ref-${this.name}`} transform={this.transform} />
-            </pattern>
-            <image id={`image-ref-${this.name}`} width={this.imgWidth} height={this.imgHeight} xlinkHref={this.imgUrl} />
-          </defs>
-        </svg>
-      );
+    if (!Object.keys(this.logoConfig).includes(this.name) && !this.imgIconUrl) {
+      this.error = true;
     }
   }
 
@@ -527,11 +477,32 @@ export class MyComponent {
       return <div></div>;
     }
 
+    if (this.imgIconUrl) {
+      return <img src={this.imgIconUrl} alt={`${this.imgIconName} icon`} style={{ width: '24px', height: '24px' }} />;
+    }
+
     return (
-      <div>
-        {this.renderImgIcon()}
-        {this.renderSvg()}
-      </div>
+      <svg width={`${this.svgWidth}px`} height={`${this.svgHeight}px`} viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+        {this.variant === 'small' && this.outline && <circle cx="12" cy="12" r="11.5" fill="white" stroke="#BDBDBD" />}
+        {this.variant === 'large' && (
+          <rect width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
+            {' '}
+            <title>{formatServiceName(this.name)}</title>{' '}
+          </rect>
+        )}
+        {this.variant === 'small' && (
+          <rect x={this.rectX} y={this.rectY} width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
+            {' '}
+            <title>{formatServiceName(this.name)}</title>{' '}
+          </rect>
+        )}
+        <defs>
+          <pattern id={`pattern-${this.name}`} patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlinkHref={`#image-ref-${this.name}`} transform={this.transform} />
+          </pattern>
+          <image id={`image-ref-${this.name}`} width={this.imgWidth} height={this.imgHeight} xlinkHref={this.imgUrl} />
+        </defs>
+      </svg>
     );
   }
 }
