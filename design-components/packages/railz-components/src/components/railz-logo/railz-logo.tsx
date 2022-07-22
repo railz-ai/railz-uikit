@@ -25,6 +25,9 @@ export class MyComponent {
     iconHeight?: string;
   };
 
+  @State() imgIconUrlState: string;
+  @State() imgIconNameState: string;
+
   @State() svgWidth: string;
   @State() svgHeight: string;
   @State() imgUrl: string;
@@ -477,16 +480,21 @@ export class MyComponent {
 
   componentWillLoad(): void {
     console.log('componentWillLoad', this.imgIcon, this.imgIconUrl, this.imgIconName);
+    if (this.imgIconUrl) {
+      this.imgIconUrlState = this.imgIconUrl;
+      this.imgIconNameState = this.imgIconName;
+    }
   }
 
   private renderImgIcon(): any {
-    console.log('renderImgIcon', this.imgIcon);
+    console.log('renderImgIcon', this.imgIconUrlState, this.imgIconUrl);
     if (this.imgIconUrl) {
       return <img src={this.imgIconUrl} alt={`${this.imgIconName} icon`} style={{ width: this.imgIcon?.iconWidth || '24px', height: this.imgIcon?.iconHeight || '24px' }} />;
     }
   }
 
   private renderSvg(): any {
+    console.log('renderSvg');
     if (Object.keys(this.logoConfig).includes(this.name)) {
       return (
         <svg width={`${this.svgWidth}px`} height={`${this.svgHeight}px`} viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">
