@@ -456,7 +456,7 @@ export class MyComponent {
 
   connectedCallback(): void {
     console.log('connectedCallback', this.imgIcon, this.imgIconUrl, this.imgIconName);
-    if (Object.keys(this.logoConfig).includes(this.name) && !this.imgIcon) {
+    if (Object.keys(this.logoConfig).includes(this.name)) {
       this.svgWidth = this.logoConfig[this.name]['svg'][this.variant]['width'];
       this.svgHeight = this.logoConfig[this.name]['svg'][this.variant]['height'];
       this.imgUrl = this.logoConfig[this.name]['svg'][this.variant]['url'];
@@ -483,9 +483,9 @@ export class MyComponent {
       return <div></div>;
     }
 
-    if (this.imgIcon) {
+    if (this.imgIconUrl) {
       console.log('imgIcon', this.imgIcon);
-      return <img src={this.imgIcon.url} alt={`${this.imgIcon.name} icon`} style={{ width: this.imgIcon?.iconWidth || '24px', height: this.imgIcon?.iconHeight || '24px' }} />;
+      return <img src={this.imgIconUrl} alt={`${this.imgIconName} icon`} style={{ width: this.imgIcon?.iconWidth || '24px', height: this.imgIcon?.iconHeight || '24px' }} />;
     }
 
     return (
