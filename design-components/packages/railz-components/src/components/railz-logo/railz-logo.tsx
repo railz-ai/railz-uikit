@@ -15,6 +15,8 @@ export class MyComponent {
   @Prop() name?: string;
   @Prop() variant = 'large';
   @Prop() outline?: boolean = false;
+  @Prop() imgIconUrl?: string;
+  @Prop() imgIconName?: string;
   @Prop() imgIcon?: {
     url: string;
     name: string;
@@ -453,7 +455,7 @@ export class MyComponent {
   };
 
   connectedCallback(): void {
-    console.log('connectedCallback', this.imgIcon);
+    console.log('connectedCallback', this.imgIcon, this.imgIconUrl, this.imgIconName);
     if (Object.keys(this.logoConfig).includes(this.name) && !this.imgIcon) {
       this.svgWidth = this.logoConfig[this.name]['svg'][this.variant]['width'];
       this.svgHeight = this.logoConfig[this.name]['svg'][this.variant]['height'];
@@ -470,6 +472,10 @@ export class MyComponent {
     } else {
       this.error = true;
     }
+  }
+
+  componentWillLoad(): void {
+    console.log('componentWillLoad', this.imgIcon, this.imgIconUrl, this.imgIconName);
   }
 
   render(): HTMLElement {
