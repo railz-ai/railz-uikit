@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable max-len, @typescript-eslint/no-unused-vars */
 import { Component, State, Prop, h } from '@stencil/core';
 
@@ -478,38 +479,51 @@ export class MyComponent {
     console.log('componentWillLoad', this.imgIcon, this.imgIconUrl, this.imgIconName);
   }
 
+  private renderImgIcon(): any {
+    console.log('renderImgIcon', this.imgIcon);
+    if (this.imgIconUrl) {
+      return <img src={this.imgIconUrl} alt={`${this.imgIconName} icon`} style={{ width: this.imgIcon?.iconWidth || '24px', height: this.imgIcon?.iconHeight || '24px' }} />;
+    }
+  }
+
+  private renderSvg(): any {
+    if (Object.keys(this.logoConfig).includes(this.name)) {
+      return (
+        <svg width={`${this.svgWidth}px`} height={`${this.svgHeight}px`} viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+          {this.variant === 'small' && this.outline && <circle cx="12" cy="12" r="11.5" fill="white" stroke="#BDBDBD" />}
+          {this.variant === 'large' && (
+            <rect width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
+              {' '}
+              <title>{formatServiceName(this.name)}</title>{' '}
+            </rect>
+          )}
+          {this.variant === 'small' && (
+            <rect x={this.rectX} y={this.rectY} width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
+              {' '}
+              <title>{formatServiceName(this.name)}</title>{' '}
+            </rect>
+          )}
+          <defs>
+            <pattern id={`pattern-${this.name}`} patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlinkHref={`#image-ref-${this.name}`} transform={this.transform} />
+            </pattern>
+            <image id={`image-ref-${this.name}`} width={this.imgWidth} height={this.imgHeight} xlinkHref={this.imgUrl} />
+          </defs>
+        </svg>
+      );
+    }
+  }
+
   render(): HTMLElement {
     if (this.error) {
       return <div></div>;
     }
 
-    if (this.imgIconUrl) {
-      console.log('imgIcon', this.imgIcon);
-      return <img src={this.imgIconUrl} alt={`${this.imgIconName} icon`} style={{ width: this.imgIcon?.iconWidth || '24px', height: this.imgIcon?.iconHeight || '24px' }} />;
-    }
-
     return (
-      <svg width={`${this.svgWidth}px`} height={`${this.svgHeight}px`} viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">
-        {this.variant === 'small' && this.outline && <circle cx="12" cy="12" r="11.5" fill="white" stroke="#BDBDBD" />}
-        {this.variant === 'large' && (
-          <rect width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
-            {' '}
-            <title>{formatServiceName(this.name)}</title>{' '}
-          </rect>
-        )}
-        {this.variant === 'small' && (
-          <rect x={this.rectX} y={this.rectY} width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
-            {' '}
-            <title>{formatServiceName(this.name)}</title>{' '}
-          </rect>
-        )}
-        <defs>
-          <pattern id={`pattern-${this.name}`} patternContentUnits="objectBoundingBox" width="1" height="1">
-            <use xlinkHref={`#image-ref-${this.name}`} transform={this.transform} />
-          </pattern>
-          <image id={`image-ref-${this.name}`} width={this.imgWidth} height={this.imgHeight} xlinkHref={this.imgUrl} />
-        </defs>
-      </svg>
+      <div>
+        {this.renderImgIcon()}
+        {this.renderSvg()}
+      </div>
     );
   }
 }
