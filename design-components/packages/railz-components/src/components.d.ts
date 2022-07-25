@@ -5,7 +5,6 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-import { LogoVariant } from './components/railz-logo/enums';
 import { RadioInput } from './components/railz-input-radio-group/railz-input-radio-group';
 export namespace Components {
   interface RailzButton {
@@ -106,12 +105,14 @@ export namespace Components {
     value: string;
   }
   interface RailzLogo {
+    imgIconName?: string;
+    imgIconUrl?: string;
     /**
      * Name of service provider
      */
-    name: string;
-    outline: boolean;
-    variant: LogoVariant;
+    name?: string;
+    outline?: boolean;
+    variant: string;
   }
   interface RailzStatusPill {
     icon?: string;
@@ -290,12 +291,14 @@ declare namespace LocalJSX {
     value?: string;
   }
   interface RailzLogo {
+    imgIconName?: string;
+    imgIconUrl?: string;
     /**
      * Name of service provider
      */
     name?: string;
     outline?: boolean;
-    variant?: LogoVariant;
+    variant?: string;
   }
   interface RailzStatusPill {
     icon?: string;

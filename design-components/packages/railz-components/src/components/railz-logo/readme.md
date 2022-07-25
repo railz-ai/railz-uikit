@@ -4,11 +4,13 @@
 
 ## Properties
 
-| Property  | Attribute | Description              | Type                                     | Default             |
-| --------- | --------- | ------------------------ | ---------------------------------------- | ------------------- |
-| `name`    | `name`    | Name of service provider | `string`                                 | `undefined`         |
-| `outline` | `outline` |                          | `boolean`                                | `undefined`         |
-| `variant` | `variant` |                          | `LogoVariant.LARGE \| LogoVariant.SMALL` | `LogoVariant.LARGE` |
+| Property      | Attribute       | Description              | Type      | Default     |
+| ------------- | --------------- | ------------------------ | --------- | ----------- |
+| `imgIconName` | `img-icon-name` |                          | `string`  | `undefined` |
+| `imgIconUrl`  | `img-icon-url`  |                          | `string`  | `undefined` |
+| `name`        | `name`          | Name of service provider | `string`  | `undefined` |
+| `outline`     | `outline`       |                          | `boolean` | `false`     |
+| `variant`     | `variant`       |                          | `string`  | `'large'`   |
 
 ---
 
