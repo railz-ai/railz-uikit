@@ -468,11 +468,13 @@ export class MyComponent {
       this.rectHeight = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['height'] : this.svgHeight;
     } else if (!this.imgIconUrl && this.imgIconName) {
       this.renderDefaultBank = true;
+      console.log('[connectedCallback], set error');
     }
   }
 
   componentWillLoad(): void {
     if (!Object.keys(this.logoConfig).includes(this.name) && !this.imgIconUrl && !this.imgIconName) {
+      console.log('[componentWillLoad], set error');
       this.error = true;
     }
   }
@@ -485,8 +487,10 @@ export class MyComponent {
     console.log('[renderDefaultBank], ', this.renderDefaultBank);
     console.log('[imgIconUrl], ', this.imgIconUrl);
     console.log('[imgIconName], ', this.imgIconName);
+    console.log('[name], ', this.name);
 
     if ((this.name === 'quickbooks' || this.name === 'quickbooksDesktop') && this.variant === 'small') {
+      console.log('render quick books small icon');
       return <QuickbooksIconSmall />;
     }
 
