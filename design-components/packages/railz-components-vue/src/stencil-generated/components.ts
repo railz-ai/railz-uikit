@@ -130,6 +130,10 @@ export const RailzInputToggle = /*@__PURE__*/ defineContainer<JSX.RailzInputTogg
 
 export const RailzLogo = /*@__PURE__*/ defineContainer<JSX.RailzLogo>('railz-logo', undefined, [
   'name',
+  'variant',
+  'outline',
+  'imgIconUrl',
+  'imgIconName',
 ]);
 
 export const RailzStatusPill = /*@__PURE__*/ defineContainer<JSX.RailzStatusPill>(

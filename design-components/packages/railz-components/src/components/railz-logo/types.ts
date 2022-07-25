@@ -1,14 +1,34 @@
 export interface LogoConfig {
   [provider: string]: {
     svg: {
-      width: string;
-      height: string;
-      url: string;
-      transform: string;
+      large: {
+        width: string;
+        height: string;
+        url: string;
+        transform: string;
+      };
+      small: {
+        width: string;
+        height: string;
+        url: string;
+        transform: string;
+        rect: {
+          x: string;
+          y: string;
+          width: string;
+          height: string;
+        };
+      };
     };
     img: {
-      width: string;
-      height: string;
+      large: {
+        width: string;
+        height: string;
+      };
+      small: {
+        width: string;
+        height: string;
+      };
     };
   };
 }

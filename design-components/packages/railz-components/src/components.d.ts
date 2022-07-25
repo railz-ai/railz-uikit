@@ -105,10 +105,14 @@ export namespace Components {
     value: string;
   }
   interface RailzLogo {
+    imgIconName?: string;
+    imgIconUrl?: string;
     /**
      * Name of service provider
      */
-    name: string;
+    name?: string;
+    outline?: boolean;
+    variant: string;
   }
   interface RailzStatusPill {
     icon?: string;
@@ -287,10 +291,14 @@ declare namespace LocalJSX {
     value?: string;
   }
   interface RailzLogo {
+    imgIconName?: string;
+    imgIconUrl?: string;
     /**
      * Name of service provider
      */
     name?: string;
+    outline?: boolean;
+    variant?: string;
   }
   interface RailzStatusPill {
     icon?: string;
