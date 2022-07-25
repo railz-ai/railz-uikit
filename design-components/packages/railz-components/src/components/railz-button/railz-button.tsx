@@ -23,6 +23,8 @@ export class RailzButton {
   @Prop() isDisabled?: boolean;
   @Prop() grow?: boolean;
   @Prop() loading?: boolean;
+  @Prop() href?: string;
+  @Prop() target?: string = '_blank';
 
   @Event() buttonClick: EventEmitter;
   private handleClick(event: Event): void {
@@ -42,11 +44,18 @@ export class RailzButton {
   render(): HTMLElement {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
-        <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
-          {this.renderIcon()}
-          {this.loading ? <span class="loading-indicator"></span> : null}
-          <span class="label">{this.loading ? 'Loading...' : this.label}</span>
-        </button>
+        {this.href ? (
+          <a href={this.href} target={this.target} class={`button ${this.buttonStyles()}`}>
+            {this.renderIcon()}
+            <span class="label">{this.label}</span>
+          </a>
+        ) : (
+          <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
+            {this.renderIcon()}
+            {this.loading ? <span class="loading-indicator"></span> : null}
+            <span class="label">{this.loading ? 'Loading...' : this.label}</span>
+          </button>
+        )}
       </Host>
     );
   }
