@@ -125,6 +125,7 @@ $colors: (
     '900': hsl(212deg 81% 10%),
   ),
 );
+
 $brand: (
   'text': (
     'header': color('gray-900'),
@@ -134,7 +135,12 @@ $brand: (
     'link-hover': color('neon-green-700'),
     'link-active': color('neon-green-700'),
   ),
-  'accent': color('gray-900'),
+  // 'accent': var(--brand-accent, color('gray-900')),
+  'accent':
+    (
+      'background': color('gray-900'),
+      'foreground': color('white'),
+    ),
   'primary': (
     'background': color('neon-green-700'),
     'background-hover': color('neon-green-800'),
@@ -144,14 +150,3 @@ $brand: (
     'foreground-active': color('neon-green-100'),
   ),
 );
-
-// :root {
-//   --color-primary: #{color('green-600')};
-//   --color-primary-light: #{color('green-500')};
-//   --color-primary-dark: #{color('neon_green-800')};
-//   --color-primary-text: #{color('white')};
-//   --color-accent: #{color('gray-900')};
-//   --color-accent-light: #{color('gray-800')};
-//   --color-accent-dark: #{color('black')};
-//   --color-accent-text: #{color('white')};
-// }
