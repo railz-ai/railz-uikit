@@ -16,6 +16,7 @@ export namespace Components {
     loading?: boolean;
     shape?: string;
     size?: string;
+    target?: string;
     type?: string;
   }
   interface RailzIcon {
@@ -196,6 +197,7 @@ declare namespace LocalJSX {
     onButtonClick?: (event: CustomEvent<any>) => void;
     shape?: string;
     size?: string;
+    target?: string;
     type?: string;
   }
   interface RailzIcon {
