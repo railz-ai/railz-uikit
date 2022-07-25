@@ -6,6 +6,7 @@ import { formatServiceName } from '../../utils/utils';
 
 import { LogoConfig } from './types';
 import DefaultBankIcon from './defaultBankIcon';
+import QuickbooksIconSmall from './quickbooksIconSmall';
 
 @Component({
   tag: 'railz-logo',
@@ -471,7 +472,7 @@ export class MyComponent {
   }
 
   componentWillLoad(): void {
-    if (!Object.keys(this.logoConfig).includes(this.name) && !this.imgIconUrl) {
+    if (!Object.keys(this.logoConfig).includes(this.name) && !this.imgIconUrl && !this.imgIconName) {
       this.error = true;
     }
   }
@@ -479,6 +480,14 @@ export class MyComponent {
   render(): HTMLElement {
     if (this.error) {
       return <div></div>;
+    }
+
+    console.log('[renderDefaultBank], ', this.renderDefaultBank);
+    console.log('[imgIconUrl], ', this.imgIconUrl);
+    console.log('[imgIconName], ', this.imgIconName);
+
+    if ((this.name === 'quickbooks' || this.name === 'quickbooksDesktop') && this.variant === 'small') {
+      return <QuickbooksIconSmall />;
     }
 
     if (this.renderDefaultBank) {

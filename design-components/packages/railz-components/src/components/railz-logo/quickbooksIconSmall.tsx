@@ -1,0 +1,25 @@
+/* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { h } from '@stencil/core';
+
+const QuickbooksIconSmall = (): any => {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="11.5" fill="white" stroke="#BDBDBD" />
+      <path d="M6 6H17.7609V17.4H6V6Z" fill="url(#pattern0)" />
+      <defs>
+        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlinkHref="#image0_408_1560" transform="translate(0 0.0210475) scale(0.00887241 0.00915332)" />
+        </pattern>
+        <image
+          id="image0_408_1560"
+          width="115"
+          height="108"
+          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAABsCAIAAADWoRr/AAAAAXNSR0IArs4c6QAAC7lJREFUeAHtnQlcFNcdx9lDLhE5xYOAB6goHnhjYlVMxGo0qBhjvG3q9UlMtdqPaWMTTT9paj7VfBJjYypqGlubpMYjXkGjpmpNq+KBiJRDDaCIoKDI4S67/W0Hh3GYmfd2mL1mdz+T5M17v/ef9//uMDvvvf970VTWVQR6t/byfJQjcP9RZereZI3ZbFbOpp0smb3MGi+NnS4m6zKFD264KtmVJ5aUVBV3D43vHZaQ2H5YiG+YLAI2rOSSZMEjeWfizaoiBgyeZpNiX5rfe0kr70AborLStNZKvbPIg31C2KbgubYta9MLu0eeuvk9m+nwhKuSbQruTk3pwsMz9hV83bTIITnqIcvge+PE65fuZDgEJe+iaiML95YeX2AwGXh+2v9UhWRLq0s+y9pkf5S8K6qQLDzccfUzk7me56qdT9VJFrdtZtkFO6PkXU6dZOHk2ZIfeK7a+VS1ZIsf9yPsDJS9nGrJsh46KqFaslqNg4dsVEvWUbcqe10PWRaFwgkPWYWBsuY8ZFkUCic8ZBUGyprzkGVRKJzwkFUYKGtOz6YUTGA+uLa+ptZYazabNHLfKw0mo7/ev31ApFINu1tbVl5T5q3zhkHMq+q0eh+dj6/ez0ZT18qQzavIuXgn42r55aKqQkxb3q+rqKuvw2H2MnnJnWTFYFV8WJ8d4/YpRTYtc+NfrvxZq9H936BZq9H66Hy9dT6B3oFRgZ0iA6K6h/TsHZ4QE9RNkSs2i+z50jNHf/z29K0TOXevKNIanpEaYzUvpzmnRrMR1dnRRZPZZDRVPTRU3astv3H/Gmu5W0iPYR2ShkeO6ttmAJspIyGHbL3ZuCv3y915X168c07GJemr+Or86MVEZQttC6IGAtwlODZnbgDZlJgXJ8a8+Pg2p6ndqLGa7N78f6RlflxQmddoQ6WpC6VncWy/kjY3fuGELqnWemnFu0F2eeacQ6m/ObnUHbCyHPETApfnHpoC99lMmgQt2S2XN07dN+7c7X/TGFWf5uztH+D+lst/oneNTLauvnbJ0Z+tP/d7RFPR21WfEu6vP/cuUNQaa2i8I5AteXhz6r6xxwrTaWy5gwYopu0ff7v6FtFZKbIInJp5cGJ+RS7RilsJ8OSdcSCFjSoT812ULLorsw5Owj0rVtPl8hWMZwUWwAEiCQjCZPEomX1oMs09L2Ha2YqqjQ8VbBLgzPk2FT9CYjaF32cRwHPjfoFYHYl8dPN7hPbq0jo23L9tsG+I1ktrsnRw+R/EFfvp/f+anXay+Di/zGbnU7vNSmgzEAMFuIJOozOaDGU1d9ABy6/MvVKeSfzrbtqu65X5y44v/HjUtqZFyBEgi47AyeJjgmqxzGDf0J92mjAqakyf8P4Y5hCT8fLPlJy2J1kMC+DgtYE5xRDHBfTUC9MPXtsL1oIawcx/Fn2H99F58YublvLJ5t67+kHGe011YjktWwQgJHhy7LTWPkFiGrH8h4YHYkV2zsfdMLjdMzgW91n2Rc7nuLfoHx14H8U4Q2xwd16b+c/ZVad+yVNInI7tnLI35di8+EUysEqYdWARHJnf+7W9E4+N6TievhmC0J4g+03+zqzyS5QW3xi05g/DPmrj35ZS70KyCP927w/fuHLQaso2AxrQ8cSNZDG8RvkcwMjmhlFbX46by7OlstPpcfM+StoCZ2n8Ajp2fJLRN1b7Jv9rhPDRWNmQtHV45LM0SlfXjHjqOThL4wXQASBX2Uh2W9Yn3AKx9JtD3h0WmSRWqr58OAuXafziAWwgizHsvIr/EuuP7vj81G4ziTKVCeAyHCc6BYDcqYAGsgeu7SHWDGgRsDpxLVGmSgEch/tE17gYG8h+X3iEWG1R32UB3q2IMlUK4DjcJ7rGxWghi2mf4qpC6WqhfmEz4uZJa9RdOj1uLnd5n6CzwIiuFlNkIZtRekZQx81MiZkqb6KNa8Sl0zqNfnyXyUQXzj6edmHu2SxihWSKRzjRiKsLnu8yiehCzt0GmBayuRU50hUiW0XFhcRLa9yhFBCAQtpTFqYWPQeE5UirMYIlLXCfUiIKwGQ6Y1rEYOGQRtO5day0wH1KiShYntp7dfcePLovjSY6sKO0wH1KiSgAE0gBxPI0IHLBICxR4yYCGhQNTwONl+VHzPNRkACDlOqeNZosUXyeDwjQoGi4Z9FvI85c3XpY7MHKECCiAExmDEAb4hsaxNmTRZDgdVnzuIKmXD2TiAIwgRRuWuKeA7wJP1DZ5ZddnYhS7SeiAEwgtZDFPx0Du0hfOKv8IrE3IW1BHaWAABTSvrAwLWSJPddH9Y9OFFkXgSB9eRctBQSgkG48C9NCtmdYb2k1Snfm7iBqVC+ggcDCtJDtGz4AsUDSXLDY41LZeWmNukvhPiBI+wiMgMloLGTxljCwbaJ0HZS+f2YNUaNiAY37wMi8coGDhSw+NCEhWA6B9TSM3t3+DcfhPtFrLsYGsklRyf76lsSaa06vlBGzRzTr5AK4DMeJjQRAYGRlDWQx0PBCzBQ2VyyBvdvmH56OyD0xgfry4Sxcptm0DgC54zUNZEFkTs8FNFwQV7voyEwstqMRu7oGbsJZylBiHsBGsggqxi6uNCwQ9zrzwESE9dKIXVcDB+EmnKVxAeh4i68byaL+L/qtZJZSE21hBzesuTlRdJSodFEBYrPhIOVGdYAGdDxPnyCL0O0VA9/iKcROESO2+LvZb55aVvTgRzGNK+ZjdQfiYRcdmUUZPwgfAQ3oeM7yY75f6jbrYMFumggExtCevK/Sr+9P7foyVqaKxarzLmmfUz3d+mVuYxDRsif/q125f68yVHHzpdP92gwEtKYaPlko1o/8NHnnUMqVetBjrfznVzbjwGbmQ9o/0yssITqwU5BvCDeiBAPGOq3OnhvK08xCVT16UFZTioHBzLLz/yk5TfPGyiOI9STrRnzKy2ROBchin3cEjb6STvVrxjWK/h/bA0Z8WahfuF6rrzdb1tbge0JE3yu9XuXqbZreX7AbPz64uuCiVq2XBkUVdXeJ89bSjQQoxGUJagTIQje43dNvD1379r9+JViHJhN/ULy/KTtvAYlt1XHQNFW25q3E9wBKrPoTv2BcEZbLrBj4W25OM9MtW5D7eM28hD2rA05q1+kSVxQlizqzevz814PfkajstkXAAjjS7kuRRc1p3eesG7EJj0tpK+5TChR/HPEJsBBdJpBF/eeix2IDIqV2BCI2yJkFMUFdgWJ09DiaRpLJwgpeVHdOSJ/dcz6NRbVq4D4g0L+zU5EFLCyLWj5g1faxu7GEUq3sxPyCy3Ac7lsVm23dAxQxjptH70i/sf9v2VvdYU+Z/hGDp3WfnWzNSlH267GOLFMNDxocmBTaV7DreOFh+v41e9XmJwTf/5tvlrEQ5heeFDVmXKeUfhGDZNuUQ5a5GPYKwLFiwCp0dbA1EIYasFObxBL2u9asbif6c0vpzUKCfIKjAzv3jxg0IGIIgHLHsImNERTIJ8uYQ8cZq/yYVY3oKSLsCXMbiHioNlbXGKoNZgM2j4ASm+Qltv+JYAvkZb6WsBwbMMrehA77WWDzCMyvoP+C3ny7gA7tWnYAXHmNEazVXLJco1jCjoP+15Nb19r0lK4zrK1iZz3tu4Gdm6WCy3nI2upL9JD1kLUVAVvZ9dyzHrK2ImAru557Vo1kzbZyyinsOvKeVXALSKdg+WQjHEmWuPLkyaa62JkjyfYIJUfxuxhOTnMdSXZw26EqnmFzJFnEQmGrMc7XrKqkI8kC5KI+S1WFk+OMg8l2DY5b0Od1TnvUk3QwWYB8te/ykU+NVg/Rx544nixa8mFSGs0qicdtdo3/OgVZoPrd0+sQgNbGP4KLrZ5ivxCu3qnSGqfqCGETll15X2A+GLs3YrISWzgdmHTSnlG3Cn43zkWWdQyTldcq80xe5r7h/Sn31mXrOknCSck6CR3ZzVh9eqUuZIK/RHitbNPuXPHDjLXbszfrioZexdYnzQkGcWeITX3H/zFg48V1yP8fqrMTFmy0e5UAAAAASUVORK5CYII="
+        />
+      </defs>
+    </svg>
+  );
+};
+
+export default QuickbooksIconSmall;
