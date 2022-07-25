@@ -14,6 +14,7 @@
 | `loading`    | `loading`     |             | `boolean` | `undefined` |
 | `shape`      | `shape`       |             | `string`  | `'rounded'` |
 | `size`       | `size`        |             | `string`  | `'medium'`  |
+| `target`     | `target`      |             | `string`  | `'_blank'`  |
 | `type`       | `type`        |             | `string`  | `'primary'` |
 
 ## Events

@@ -35,7 +35,7 @@ export class RailzInputText {
 
   @Prop() prefixIcon?: string;
 
-  @Prop({ mutable: true }) value?: string;
+  @Prop() value?: string;
 
   @State() uuid: string = uuidv4().toString();
 

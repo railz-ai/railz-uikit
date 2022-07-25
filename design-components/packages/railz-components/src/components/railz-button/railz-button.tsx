@@ -24,6 +24,7 @@ export class RailzButton {
   @Prop() grow?: boolean;
   @Prop() loading?: boolean;
   @Prop() href?: string;
+  @Prop() target?: string = '_blank';
 
   @Event() buttonClick: EventEmitter;
   private handleClick(event: Event): void {
@@ -44,7 +45,7 @@ export class RailzButton {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
         {this.href ? (
-          <a href={this.href} class={`button ${this.buttonStyles()}`}>
+          <a href={this.href} target={this.target} class={`button ${this.buttonStyles()}`}>
             {this.renderIcon()}
             <span class="label">{this.label}</span>
           </a>
