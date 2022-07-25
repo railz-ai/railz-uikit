@@ -5,6 +5,7 @@ import { Component, State, Prop, h } from '@stencil/core';
 import { formatServiceName } from '../../utils/utils';
 
 import { LogoConfig } from './types';
+import DefaultBankIcon from './defaultBankIcon';
 
 @Component({
   tag: 'railz-logo',
@@ -30,6 +31,7 @@ export class MyComponent {
   @State() rectY: string | null;
   @State() transform: string;
   @State() error = false;
+  @State() renderDefaultBank = false;
   @State() logoConfig: LogoConfig = {
     freshbooks: {
       svg: {
@@ -463,6 +465,8 @@ export class MyComponent {
       this.rectY = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['y'] : null;
       this.rectWidth = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['width'] : this.svgWidth;
       this.rectHeight = isSmallIcon ? this.logoConfig[this.name]['svg'][this.variant]['rect']['height'] : this.svgHeight;
+    } else if (!this.imgIconUrl && this.imgIconName) {
+      this.renderDefaultBank = true;
     }
   }
 
@@ -475,6 +479,10 @@ export class MyComponent {
   render(): HTMLElement {
     if (this.error) {
       return <div></div>;
+    }
+
+    if (this.renderDefaultBank) {
+      return <DefaultBankIcon />;
     }
 
     if (this.imgIconUrl) {
