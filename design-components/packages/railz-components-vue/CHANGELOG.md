@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.8 (2022-07-25)
+
+
+### Features
+
+* railz logo small icon variant ([#20](https://github.com/railz-ai/railz-uikit/issues/20)) ([303cf51](https://github.com/railz-ai/railz-uikit/commit/303cf5193375b6fce63d374988e5c762af681f6a))
+
+
+
+
+
 ## 0.0.1-alpha.7 (2022-07-25)
 
 **Note:** Version bump only for package @railzai/railz-uikit-vue
