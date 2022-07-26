@@ -1,4 +1,5 @@
 import { Component, h, State } from '@stencil/core';
+import {marked} from "marked";
 // import Markdown from 'markdown-to-jsx';
 
 @Component({
@@ -9,29 +10,16 @@ import { Component, h, State } from '@stencil/core';
 export class PageButtons {
   content?: void;
   @State() isLoading: boolean = false;
-
-  public file_name = 'railz-button';
-
-  fetchContent = () => {
-    console.log('fetchContent');
-
-    import(`/src/docs/components/${this.file_name}/readme.md`)
-      .then(res => {
-        fetch(res.default)
-          .then(res => res.text())
-          .then(res => console.log('response', res));
-        // .catch(err => console.log(err));
-      })
-      .catch(err => console.log('error', err));
-  };
-
-  async componentWillRender() {
-    this.content = await this.fetchContent();
-    console.log('content async', this.content);
+  @State()
+  markdownContent: string = '';
+  componentWillLoad() {
+    fetch('../readmes/railz-button.md')
+      .then(async response => {
+        this.markdownContent = marked.parse(await response.text());
+      });
   }
 
   buttonClickTest() {
-    console.log('clicked!');
     this.isLoading = !this.isLoading;
   }
 
@@ -249,26 +237,30 @@ export class PageButtons {
             <railz-button size="x-large" label="Button Label" type="primary" shape="pill" />
           </div>
         </section>
-        {/*<section>*/}
-        {/*  <h2>Icon Buttons</h2>*/}
-        {/*  <p>*/}
-        {/*    Occaisionally, the interface design calls for a simple interactive icon. Rather than just adding an <code>onClick</code> event to an <code>railz-icon</code> component,*/}
-        {/*    it is strongly recommended to use the <code>railz-icon-button</code> component. This component has all of the affordances of a normal button - like focus, disabled, and*/}
-        {/*    loading states - that are required for creating a rich user experience.*/}
-        {/*  </p>*/}
-        {/*  <div class="row">*/}
-        {/*    <railz-icon-button icon="setup" size="small" label="Button Label" />*/}
-        {/*    <railz-icon-button icon="setup" size="medium" label="Button Label" />*/}
-        {/*    <railz-icon-button icon="setup" size="large" label="Button Label" />*/}
-        {/*    <railz-icon-button icon="setup" size="x-large" label="Button Label" />*/}
-        {/*  </div>*/}
-        {/*  <div class="row">*/}
-        {/*    <railz-icon-button icon="setup" size="small" label="Button Label" shape="circle" />*/}
-        {/*    <railz-icon-button icon="setup" size="medium" label="Button Label" shape="circle" />*/}
-        {/*    <railz-icon-button icon="setup" size="large" label="Button Label" shape="circle" />*/}
-        {/*    <railz-icon-button icon="setup" size="x-large" label="Button Label" shape="circle" />*/}
-        {/*  </div>*/}
-        {/*</section>*/}
+        <section>
+          <h2>Icon Buttons</h2>
+          <p>
+            Occasionally, the interface design calls for a simple interactive icon. Rather than just adding an <code>onClick</code> event to an <code>railz-icon</code> component,
+            it is strongly recommended to use the <code>railz-icon-button</code> component. This component has all of the affordances of a normal button - like focus, disabled, and
+            loading states - that are required for creating a rich user experience.
+          </p>
+          <div class="row">
+            <railz-icon-button icon="setup" size="small" label="Button Label" />
+            <railz-icon-button icon="setup" size="medium" label="Button Label" />
+            <railz-icon-button icon="setup" size="large" label="Button Label" />
+            <railz-icon-button icon="setup" size="x-large" label="Button Label" />
+          </div>
+          <div class="row">
+            <railz-icon-button icon="setup" size="small" label="Button Label" shape="circle" />
+            <railz-icon-button icon="setup" size="medium" label="Button Label" shape="circle" />
+            <railz-icon-button icon="setup" size="large" label="Button Label" shape="circle" />
+            <railz-icon-button icon="setup" size="x-large" label="Button Label" shape="circle" />
+          </div>
+        </section>
+        <section>
+          <h2>Properties</h2>
+          <div innerHTML={this.markdownContent}></div>
+        </section>
         <iframe
           width="100%"
           height="1000px"

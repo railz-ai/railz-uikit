@@ -71,9 +71,9 @@ export class PageTextInputs {
                 <img src="../assets/keyboard-email.png" />
               </div>
               <div class="group">
-                <railz-input-text label="Contact name" placeholder="Zach Forrester" type="text" autocomplete="name" />
+                <railz-input-text label="Contact name" placeholder="John Doe" type="text" autocomplete="name" />
                 <pre>
-                  <code>{`<railz-input-text label="Contact name" placeholder="Zach Forrester" type="text"  autocomplete="name" />`}</code>
+                  <code>{`<railz-input-text label="Contact name" placeholder="John Doe" type="text"  autocomplete="name" />`}</code>
                 </pre>
                 <img src="../assets/keyboard-name.png" />
               </div>

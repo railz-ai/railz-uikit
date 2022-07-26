@@ -4,27 +4,49 @@
   "description": "Documentation for Railz UI Kit",
   "private": true,
   "author": "railz.ai",
-  "license": "MIT",
   "scripts": {
-    "start": "component-docs serve",
-    "build": "component-docs build",
-    "cp:version": "rsync -av ./dist/ ./dist/$VERSION/",
-    "clean": "del dist/",
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "generate:icons": "node SVGtoJson_glob.js",
+    "cp:version": "rsync -av ./www/ ./www/$VERSION/",
+    "clean": "del www/",
     "prestart": "yarn clean",
-    "deploy": "gh-pages -t -d dist -b gh-pages"
+    "deploy": "gh-pages -t -d www -b gh-pages"
   },
-  "dependencies": {
-    "component-docs": "~0.23.0"
-  },
-  "packageManager": "yarn@1.22.17",
   "devDependencies": {
-    "@babel/core": "~7.18.5",
-    "@babel/plugin-proposal-class-properties": "~7.17.12",
-    "@babel/preset-env": "~7.18.2",
-    "@babel/preset-react": "~7.17.12",
+    "@jackfranklin/rollup-plugin-markdown": "^0.4.0",
+    "@stencil/core": "2.13.0",
+    "@stencil/helmet": "^0.3.3",
+    "@stencil/router": "^1.0.1",
+    "@stencil/sass": "^1.5.2",
+    "@types/jest": "^27.0.3",
     "del-cli": "~4.0.1",
     "doctrine": "^3.0.0",
     "gh-pages": "^4.0.0",
-    "linaria": "^2.3.1"
+    "jest": "^27.4.5",
+    "jest-cli": "^27.4.5",
+    "markdown-to-jsx": "^7.1.7",
+    "marked": "^4.0.18",
+    "puppeteer": "^14.1.2",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "stencil-inline-svg": "^1.1.0",
+    "uuid": "^8.3.2",
+    "workbox-build": "^6.5.3"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@railzai/railz-uikit": "latest",
+    "@rollup/plugin-alias": "^3.1.9",
+    "@stencil/react-output-target": "^0.3.1",
+    "@types/marked": "^4.0.3",
+    "fs-extra": "^10.0.1",
+    "glob-promise": "^4.2.2",
+    "path": "^0.12.7",
+    "pretty": "^2.0.0",
+    "svgson": "^5.2.1",
+    "util": "^0.12.4"
   }
 }
