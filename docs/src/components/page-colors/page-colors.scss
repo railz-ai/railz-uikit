@@ -1,0 +1,128 @@
+:host {
+  @include article;
+}
+
+.row {
+  flex-wrap: wrap-reverse;
+  li {
+    flex-grow: 1;
+    min-width: 120px;
+  }
+}
+
+// Not In use
+.text-sample {
+  border-radius: radius('2');
+  box-shadow: shadow('drop-1'), shadow('cast-6');
+  padding: space(2.5);
+  display: flex;
+  flex-direction: column;
+  min-width: 240px;
+
+  .text-primary {
+    @include font(16, 'semi-bold');
+  }
+
+  .text-secondary {
+    @include font(12);
+  }
+  .text-tertiary {
+    @include font(12);
+  }
+
+  .text-highlight {
+    margin-top: space(3);
+    @include font(14, 'semi-bold');
+  }
+
+  &.on-white {
+    background-color: color('white');
+    .text-primary {
+      color: $color-brand-dark;
+    }
+    .text-secondary {
+      color: color('gray-800');
+    }
+    .text-tertiary {
+      color: color('gray-600');
+    }
+    .text-highlight {
+      color: $color-primary;
+    }
+  }
+  &.on-gray {
+    background-color: color('gray-100');
+    .text-primary {
+      color: color('black');
+    }
+    .text-secondary {
+      color: color('gray-900');
+    }
+    .text-tertiary {
+      color: color('gray-700');
+    }
+    .text-highlight {
+      color: $color-primary;
+    }
+  }
+  &.on-dark {
+    background-color: color('gray-900');
+    background-color: $color-brand-dark;
+    .text-primary {
+      color: color('gray-100');
+    }
+    .text-secondary {
+      color: color('gray-100', 0.8);
+    }
+    .text-tertiary {
+      color: color('gray-300', 0.6);
+    }
+    .text-highlight {
+      color: color('green-500');
+    }
+  }
+  &.on-green {
+    background-color: $color-brand-primary;
+    .text-primary {
+      color: color('white');
+    }
+    .text-secondary {
+      color: color('gray-100', 0.8);
+    }
+    .text-tertiary {
+      color: color('gray-100', 0.6);
+    }
+    .text-highlight {
+      color: color('white');
+    }
+  }
+  &.on-dark-gray {
+    background-color: color('gray-900');
+    .text-primary {
+      color: color('gray-100');
+    }
+    .text-secondary {
+      color: color('gray-100', 0.8);
+    }
+    .text-tertiary {
+      color: color('gray-300', 0.6);
+    }
+    .text-highlight {
+      color: color('green-500');
+    }
+  }
+
+  &.on-primary {
+    background-color: $color-primary;
+
+    .text-primary {
+      color: $color-primary-text;
+    }
+  }
+  &.on-accent {
+    background-color: $color-accent;
+    .text-primary {
+      color: $color-accent-text;
+    }
+  }
+}

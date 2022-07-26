@@ -1,0 +1,30 @@
+// Timing Options
+// -------------------------------------------------------------------
+$t: 0.3s;
+
+// Easing
+//-------------------------------------------------------------------
+
+$t-snap: cubic-bezier(0.3, 0.9, 0.4, 0.98);
+$t-drift: cubic-bezier(0.05, 0.31, 0.7, 1);
+$t-shine: cubic-bezier(0.96, 0.43, 0.55, 0.8);
+
+$speeds: (
+  'slow': $t * 1.5 $t-drift,
+  'fast': $t $t-snap,
+);
+
+$transition-properties: (
+  'all': 'all',
+  'default':
+    'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, height, width, top, left, right, bottom, max-height, max-width, min-height, min-width',
+  'colors': 'background-color, border-color, color, fill, stroke',
+  'opacity': 'opacity',
+  'shadow': 'box-shadow',
+  'transform': 'transform',
+  'max': 'max-height, max-width',
+  'min': 'max-height, max-width',
+  'width': 'width, min-width, max-width',
+  'height': 'height, min-height, max-height',
+  'padding': 'padding',
+);

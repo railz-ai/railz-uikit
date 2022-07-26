@@ -1,0 +1,92 @@
+//-------------------------------------------------------------------
+// Links
+// -------------------------------------------------------------------
+
+$link-sizes: ('small', 'medium', 'large');
+$link-layouts: ('label-left', 'label-center', 'label-right');
+
+// Link Sizes
+//-------------------------------------------------------------------
+
+@mixin link-size($size) {
+    padding: space(0.5) space(1);
+
+    @if ($size == 'small') {
+        @include font(12, 'regular', 'primary', 'normal');
+        gap: space(0.5);
+
+        .icon {
+            @include icon-size('small');
+        }
+    }
+    @if ($size == 'medium') {
+        @include font(14, 'regular', 'primary', 'normal');
+        gap: space(1);
+
+        .icon {
+            @include icon-size('medium');
+        }
+    }
+    @if ($size == 'large') {
+        @include font(18, 'regular', 'primary', 'normal');
+        gap: space(2);
+
+        .icon {
+            @include icon-size('large');
+        }
+    }
+}
+
+// Link Layout
+//------------------------------------------------------------------
+
+@mixin link-layout($layout) {
+    @if ($layout == 'label-left') {
+        text-align: left;
+
+        .icon {
+            order: 100;
+        }
+    }
+    @if ($layout == 'label-center') {
+        text-align: center;
+
+        .icon {
+            order: 0;
+        }
+    }
+    @if ($layout == 'label-right') {
+        text-align: right;
+
+        .icon {
+            order: 0;
+        }
+    }
+}
+
+@mixin link-style {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-width: 0;
+    text-decoration: none;
+
+    @include debug;
+
+    &:hover {
+        color: green;
+        // Styles
+    }
+
+    &:active {
+        // Styles
+    }
+
+    &:focus {
+        // Styles
+    }
+
+    &:disabled {
+        // Styles
+    }
+}

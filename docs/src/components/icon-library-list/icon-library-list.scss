@@ -1,0 +1,92 @@
+section {
+  padding: space(2) 0 !important;
+}
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(1);
+  margin-bottom: space(4);
+
+  @include mq(screen('large')) {
+    gap: space(2);
+  }
+
+  li {
+    box-shadow: shadowLine();
+    border-radius: radius(1);
+    padding: space(1);
+    position: relative;
+    @include transition;
+
+    .tooltip {
+      position: absolute;
+      left: 50%;
+      @include font(12, 'semi-bold');
+      padding: space(0.5) space(2);
+      color: color('gray-200');
+      background-color: color('gray-900');
+      z-index: 1;
+      border-radius: radius(3);
+      box-shadow: shadow('drop-3'), shadow('cast-2');
+      @include transition;
+      transform: translate3d(-50%, 50%, 0) scale((0.9));
+      opacity: 0;
+      pointer-events: none;
+      // @include show('off');
+    }
+
+    &:hover .tooltip {
+      @include transition;
+      transform: translate3d(-50%, 0, 0);
+      @include show('on');
+    }
+  }
+
+  &.flexible {
+    li {
+      width: 25%;
+      max-width: space(20);
+      flex-grow: 1;
+
+      @include mq(screen('medium')) {
+        width: 10%;
+        flex-grow: 0;
+      }
+
+      @include mq(screen('xxx-large')) {
+        width: 20%;
+      }
+    }
+  }
+
+  &.xx-small {
+    .icon {
+      @include icon-size('xx-small');
+    }
+  }
+  &.x-small {
+    .icon {
+      @include icon-size('x-small');
+    }
+  }
+  &.small {
+    .icon {
+      @include icon-size('small');
+    }
+  }
+  &.medium {
+    .icon {
+      @include icon-size('medium');
+    }
+  }
+  &.large {
+    .icon {
+      @include icon-size('large');
+    }
+  }
+  &.x-large {
+    .icon {
+      @include icon-size('x-large');
+    }
+  }
+}

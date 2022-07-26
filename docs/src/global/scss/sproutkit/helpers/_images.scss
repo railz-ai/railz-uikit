@@ -1,0 +1,103 @@
+//-------------------------------------------------------------------
+// Images
+//-------------------------------------------------------------------
+
+// Background Image Base Settings
+// -------------------------------------------------------------------
+
+@mixin bg(
+    $scale: cover,
+    $pos-x: center,
+    $pos-y: center,
+    $show-focal-point-guides: $show-focal-point-guides
+) {
+    background-repeat: no-repeat;
+    background-position: $pos-x $pos-y;
+    background-size: $scale;
+    @include show-focal-point-guides($pos-x, $pos-y, $show-focal-point-guides);
+}
+
+// If you'd like an img element to behave similar to a background image
+// -------------------------------------------------------------------
+
+@mixin bg-img(
+    $scale: cover,
+    $pos-x: center,
+    $pos-y: center,
+    $show-focal-point-guides: $show-focal-point-guides
+) {
+    @include bg($scale, $pos-x, $pos-y, $show-focal-point-guides);
+    img {
+        @include absolute;
+        width: 100%;
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        opacity: 0;
+    }
+}
+
+// Image Focal Point Guides
+// -------------------------------------------------------------------
+// Allows you test the focal point of an image
+
+// Set to True to pinpoint centre scaling point of an image
+$show-focal-point-guides: false;
+
+@mixin show-focal-point-guides($pos-x, $pos-y, $show-focal-point-guides) {
+    @if $show-focal-point-guides {
+        @include transition;
+        position: relative;
+
+        &::before,
+        &::after {
+            background: red;
+            position: absolute;
+            content: '';
+            @include transition;
+
+            @supports (backdrop-filter: brightness()) {
+                background: rgba(red, 0.5);
+                backdrop-filter: brightness(5);
+            }
+        }
+
+        &::before {
+            width: 1px;
+            top: 0;
+            bottom: 0;
+            left: $pos-x;
+
+            @if $pos-x == center {
+                left: 50%;
+            }
+
+            @if $pos-x == left {
+                left: 0;
+            }
+
+            @if $pos-x == right {
+                left: 100%;
+            }
+        }
+
+        &::after {
+            height: 1px;
+            left: 0;
+            right: 0;
+            top: $pos-y;
+
+            @if $pos-y == center {
+                top: 50%;
+            }
+
+            @if $pos-y == top {
+                top: 0;
+            }
+
+            @if $pos-y == bottom {
+                top: 100%;
+            }
+        }
+    }
+}

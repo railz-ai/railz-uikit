@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  min-height: stretch;
+}
+
+:where(ul[class]),
+:where(ol[class]) {
+  list-style-type: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// input,
+// button,
+// textarea,
+// select {
+//   font: inherit;
+//   appearance: unset;
+//   outline: none;
+//   border: none;
+// }
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+// Reset
+
+@mixin button-reset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: inline-block;
+  vertical-align: baseline;
+  background-color: transparent;
+  outline: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  white-space: normal;
+}

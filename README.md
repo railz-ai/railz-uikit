@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://railz.ai/" rel="noopener" target="_blank"><img width="80" src="./docs/assets/images/railz-logo.svg" alt="Railz logo"></a>
+  <a href="https://railz.ai/" rel="noopener" target="_blank"><img width="80" src="doc/assets/images/railz-logo.svg" alt="Railz logo"></a>
 </p>
 
 <h1 align="center">Railz UIKit</h1>

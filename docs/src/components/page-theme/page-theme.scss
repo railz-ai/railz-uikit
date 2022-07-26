@@ -1,0 +1,11 @@
+:host {
+  @include article;
+}
+
+.row {
+  flex-wrap: wrap-reverse;
+  li {
+    flex-grow: 1;
+    min-width: 120px;
+  }
+}
