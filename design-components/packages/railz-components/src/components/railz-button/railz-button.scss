@@ -1,6 +1,4 @@
 button {
-  // @include button-reset;
-
   appearance: none;
   box-shadow: none;
   border: none;
@@ -32,21 +30,6 @@ button {
 
 .label {
   white-space: nowrap;
-}
-
-.themed {
-  background-color: color('brand-primary-background');
-  color: color('brand-primary-foreground');
-
-  &:hover,
-  &:focus {
-    background-color: color('brand-primary-background-active');
-  }
-
-  &:active {
-    background-color: color('brand-primary-background-active');
-    transform: translateY(1px);
-  }
 }
 
 .rounded {
@@ -122,6 +105,21 @@ button {
     background-color: transparent;
     box-shadow: shadow-line('white');
     color: color('white');
+  }
+}
+
+.themed {
+  background-color: color('brand-primary-background');
+  color: color('brand-primary-foreground');
+
+  &:hover,
+  &:focus {
+    background-color: color('brand-primary-background-active');
+  }
+
+  &:active {
+    background-color: color('brand-primary-background-active');
+    transform: translateY(1px);
   }
 }
 
