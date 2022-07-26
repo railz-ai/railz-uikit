@@ -1,0 +1,31 @@
+:host {
+  @include article;
+}
+
+.samples {
+  display: flex;
+  gap: space(3);
+  max-width: 100%;
+  min-width: 0;
+  // flex-wrap: wrap;
+
+  .sample {
+    width: 40%;
+    min-width: 0;
+    overflow: hidden;
+  }
+}
+
+// .themed {
+//   --color-primary: red;
+//   --color-primary-dark: blue;
+//   --color-primary-light: orange;
+
+//   --color-accent: '';
+//   --color-accent-light: '';
+//   --color-accent-dark: '';
+
+//   --color-secondary: purple;
+//   --color-secondary-light: #{color('gray-800')};
+//   --color-secondary-dark: #{color('black')};
+// }

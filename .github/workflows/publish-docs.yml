@@ -8,7 +8,7 @@ on:
     inputs:
       yarnCommand:
         type: string
-        description: 'Trigger version generation'
+        description: 'Trigger version generation, input your version'
         required: true
         default: 'latest'
 

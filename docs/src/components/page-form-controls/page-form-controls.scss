@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  @include article;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: space(2);
+  flex-grow: 1;
+}

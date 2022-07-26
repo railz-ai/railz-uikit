@@ -1,0 +1,53 @@
+//-------------------------------------------------------------------
+// Motion
+//-------------------------------------------------------------------
+
+// Transitions
+//-------------------------------------------------------------------
+
+@function speed($speed) {
+    @return $t * $speed;
+}
+
+@function transitionSpeed($speed) {
+    @if map-has-key($speeds, $speed) {
+        $speed: map-get($speeds, $speed);
+        @return $speed;
+    }
+    @warn errorMessage($speed, $speeds,'tokens/_motion.scss');
+    @return null;
+}
+
+@function transitionProperty($property-set) {
+    @if map-has-key($transition-properties, $property-set) {
+        $property-set: map-get($transition-properties, $property-set);
+        @return #{$property-set};
+    }
+    @warn errorMessage($property-set, $transition-properties, 'tokens/_motion.scss');
+    @return null;
+}
+
+@mixin transition($speed: 'fast', $properties: 'default') {
+    @if map-has-key($speeds, $speed) {
+        transition: transitionSpeed($speed);
+    } @else {
+        transition-duration: $speed;
+    }
+    transition-property: transitionProperty($properties);
+
+    @media (prefers-reduced-motion: reduce) {
+        transition-duration: 0 !important;
+
+        &:hover {
+            transition-duration: 0 !important;
+        }
+    }
+}
+
+@mixin animate($animation, $speed: 'fast', $properties...) {
+    animation: $animation transitionSpeed($speed)
+        transitionProperty($properties);
+    @media (prefers-reduced-motion: reduce) {
+        animation-duration: 0;
+    }
+}

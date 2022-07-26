@@ -1,0 +1,64 @@
+//-------------------------------------------------------------------
+// Text Inputs
+//-------------------------------------------------------------------
+
+// Reset
+// -------------------------------------------------------------------
+
+@mixin radio-reset {
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: inline-block;
+    vertical-align: baseline;
+    background-color: transparent;
+    outline: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    white-space: normal;
+}
+
+// Options
+// -------------------------------------------------------------------
+
+$radio-states: (
+    'default',
+    'loading',
+    'disabled',
+    'error',
+    'warning',
+    'valid',
+    'focused'
+);
+
+@mixin radio {
+    display: flex;
+    align-items: baseline;
+
+    label {
+        margin: space(0.5);
+        @include font($text, 'small');
+    }
+
+    input {
+        // Radio styles go here
+    }
+
+    .message {
+        margin: space(0.5);
+        @include font($text, 'x-small');
+    }
+}
+
+$text-input-types: ('radio', 'switch');
+
+@mixin radio-input($type: 'radio') {
+    @if $type == 'radio' {
+        @include radio;
+    }
+    @if $type == 'switch' {
+        // @include input-switch;
+    }
+}

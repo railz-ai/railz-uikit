@@ -151,30 +151,17 @@ It is important to always include this information to reduce the amount of work 
 
 An example
 
-```typescript jsx
-/**
- * @group RailzNested
- */
-export class RailzNestedSum {
+```text
   /**
    * The first number to sum up
    * @type number
    * @default 0
    */
   @Prop() first: number = 0;
-
-  /**
-   * The second number
-   * @type number
-   * @default 0
-   */
-  @Prop() second: number = 0;
-}
 ```
 
 ##### Properties
 
-- **@group** - Only needed if component is used in conjuction with another component
 - **@type** - type of field
 - **@default** - default value of field
 

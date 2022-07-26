@@ -1,0 +1,64 @@
+//-------------------------------------------------------------------
+// Text Inputs
+//-------------------------------------------------------------------
+
+// Reset
+// -------------------------------------------------------------------
+
+@mixin checkbox-reset {
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: inline-block;
+    vertical-align: baseline;
+    background-color: transparent;
+    outline: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    white-space: normal;
+}
+
+// Options
+// -------------------------------------------------------------------
+
+$checkbox-states: (
+    'default',
+    'loading',
+    'disabled',
+    'error',
+    'warning',
+    'valid',
+    'focused'
+);
+
+@mixin checkbox {
+    display: flex;
+    align-items: baseline;
+
+    label {
+        margin: space(0.5);
+        @include font($text, 'small');
+    }
+
+    input {
+        // Checkbox styles go here
+    }
+
+    .message {
+        margin: space(0.5);
+        @include font($text, 'x-small');
+    }
+}
+
+$text-input-types: ('checkbox', 'switch');
+
+@mixin checkbox-input($type: 'checkbox') {
+    @if $type == 'checkbox' {
+        @include checkbox;
+    }
+    @if $type == 'switch' {
+        // @include input-switch;
+    }
+}

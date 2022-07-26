@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h3 {
+  @include font(24, 'semi-bold');
+}
+
+h4 {
+  @include font(16, 'semi-bold');
+}
+
+.group {
+  padding: 20px;
+  flex-grow: 1;
+  width: 20%;
+  min-width: screen('small');
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.row h4 {
+  width: 100%;
+}

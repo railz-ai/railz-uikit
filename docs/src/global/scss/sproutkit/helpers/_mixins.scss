@@ -1,0 +1,298 @@
+@use 'sass:math';
+@use 'sass:string';
+
+// Layout
+// -----------------------------------------------------------------------------
+
+// Maintain a proportionate width/height ratio
+@mixin aspect-ratio($width, $height) {
+  @supports not (aspect-ratio: 0) {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: #{math.div($height, $width) * 100%};
+      @content;
+    }
+  }
+
+  @supports (aspect-ratio: 0) {
+    aspect-ratio: #{strip-units($width)} / #{strip-units($height)};
+  }
+}
+
+// https://webkit.org/blog/7929/designing-websites-for-iphone-x/
+@mixin env-safe-area-padding($edges...) {
+  @if length($edges) > 0 {
+    @each $edge in $edges {
+      padding-#{$edge}: env(safe-area-inset-#{$edge});
+    }
+  } @else {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+}
+
+// If only one value is passed, the height will equal the width
+@mixin size($height, $width: $height) {
+  height: $height;
+  width: $width;
+}
+
+// Circle
+// Create a square with a full border radius
+@mixin circle($size) {
+  @include size($size);
+  border-radius: $size;
+}
+
+// Quick Absolute Positioning
+@mixin absolute($coordinates...) {
+  position: absolute;
+  @include coordinates($coordinates...);
+}
+
+// Quick Fixed Positioning
+@mixin fixed($coordinates...) {
+  position: fixed;
+  @include coordinates($coordinates...);
+}
+
+@mixin coordinates($offset: null, $right: null, $bottom: null, $left: null) {
+  @if $right {
+    top: $offset;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+  } @else if $offset {
+    top: $offset;
+    left: $offset;
+    right: $offset;
+    bottom: $offset;
+  } @else {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+// Hide visually, still be present for screen readers
+@mixin hide-content {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+// Media Queries
+// -----------------------------------------------------------------------------
+
+@mixin mq($size, $limiter: 'min-width', $max-size: '') {
+  @if ($limiter == 'between') {
+    @media only screen and (min-width: $size) and (max-width: $max-size) {
+      @content;
+    }
+  } @else {
+    @media only screen and ($limiter: $size) {
+      @content;
+    }
+  }
+}
+
+// Presentation Styles
+// -----------------------------------------------------------------------------
+
+// Displaying and Hiding Content
+@mixin show($state) {
+  will-change: auto;
+  @if $state == on {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @if $state == off {
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+// Text wrapping
+// -----------------------------------------------------------------------------
+
+// https://medium.com/@elad/trimming-multi-lines-in-css-5ae59d5e6d84
+@mixin truncate($line-clamp-length: 0) {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-width: 0;
+  max-width: 100%;
+
+  @if $line-clamp-length > 0 {
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp-length;
+    -webkit-box-orient: vertical;
+  } @else {
+    white-space: nowrap;
+  }
+}
+
+// https://css-tricks.com/almanac/properties/h/hyphenate/
+// Requires "[lang]" attribute to be set on body
+@mixin hyphenate($value: auto) {
+  $values: (none, manual, auto, inherit, initial, unset);
+
+  @if indexOf($values, $value) {
+    -webkit-hyphens: $value;
+    -moz-hyphens: $value;
+    -ms-hyphens: $value;
+    hyphens: $value;
+  }
+}
+
+// Strip Units
+// -----------------------------------------------------------------------------
+// Strips the unit from a number.
+//    https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_strip-units.scss
+//    https://css-tricks.com/snippets/sass/strip-unit-function/
+
+@function strip-units($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+
+  @return $number;
+}
+
+// Convert Pixels to EMs
+// -----------------------------------------------------------------------------
+// eg. for a relational value of 12px write em(12) when the parent is 16px
+// if the parent is another value say 24px write em(12, 24)
+//    https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_px-to-em.scss
+
+@function em($pxval, $base: 16) {
+  $pxval: strip-units($pxval);
+
+  @return math.div($pxval, $base) + em;
+}
+
+@function rem($pxval, $base: 16) {
+  $pxval: strip-units($pxval);
+  $normalized: math.div($pxval, $base);
+
+  @return $normalized * 1rem;
+}
+
+// Exponent multipler
+// -----------------------------------------------------------------------------
+// https://css-tricks.com/snippets/sass/power-function/
+
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+// Content Queries
+// -----------------------------------------------------------------------------
+// http://alistapart.com/article/quantity-queries-for-css
+
+@mixin exactly($n, $target) {
+  #{$target}:nth-last-child(#{$n}):first-child,
+  #{$target}:nth-last-child(#{$n}):first-child ~ #{$target} {
+    @content;
+  }
+}
+
+@mixin more-than($n, $target) {
+  #{$target}:nth-last-child(n + #{$n}),
+  #{$target}:nth-last-child(n + #{$n}) ~ #{$target} {
+    @content;
+  }
+}
+
+@mixin fewer-than($n, $target) {
+  #{$target}:nth-last-child(-n + #{$n}):first-child,
+  #{$target}:nth-last-child(-n + #{$n}):first-child ~ #{$target} {
+    @content;
+  }
+}
+
+// Map deep get
+// -----------------------------------------------------------------------------
+// From https://css-tricks.com/snippets/sass/deep-getset-maps/
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    @if map-has-key($map, $key) {
+      $map: map-get($map, $key);
+    } @else {
+      $map: null;
+      @warn "The key '#{$key}' does not exist in the map you have specified";
+    }
+  }
+  @return $map;
+}
+
+// String Contains
+// -----------------------------------------------------------------------------
+
+@function contains($string, $find) {
+  @if (str-index($string, $find)) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+// Error Message
+// -----------------------------------------------------------------------------
+
+@function errorMessage($value, $options: '', $file) {
+  $valid-options: map-keys($options);
+
+  @warn & contains an invalid property #{$value};
+  @debug '-----------------------';
+  @debug Valid options are below;
+  @debug '-----------------------';
+  @each $option in $options {
+    @debug $option;
+  }
+  @return 'See #{$file} for details';
+}
+
+// Debug boxes
+// -----------------------------------------------------------------------------
+
+@mixin debug() {
+  $levels: (red, purple, indigo, blue, teal, green, yellow, pink, orange);
+  outline: 1px solid rgba(nth($levels, 1), 0.25);
+  box-shadow: inset 0 0 0 4px rgba(nth($levels, 1), 0.1);
+
+  &:hover {
+    outline: 1px solid rgba(nth($levels, 1), 0.8);
+    box-shadow: inset 0 0 0 4px rgba(nth($levels, 1), 0.2);
+  }
+
+  @for $i from 1 through length($levels) {
+    $color: nth($levels, $i);
+    > :nth-child(#{$i - 1}) {
+      outline: 1px solid rgba($color, 0.25);
+      box-shadow: inset 0 0 0 4px rgba($color, 0.1);
+
+      &:hover {
+        outline: 1px solid rgba($color, 0.8);
+        box-shadow: inset 0 0 0 4px rgba($color, 0.2);
+      }
+    }
+  }
+}

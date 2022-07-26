@@ -1,0 +1,10 @@
+:host {
+  @include article;
+}
+
+.group {
+  display: flex;
+  justify-content: stretch;
+  gap: space(2);
+  // @include debug;
+}

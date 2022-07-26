@@ -1,0 +1,30 @@
+@use 'sass:string';
+
+//-------------------------------------------------------------------
+// Color Helper Functions
+//-------------------------------------------------------------------
+
+@function color($color, $alpha: 1) {
+    @if contains($color, '-') {
+        $palette: string.slice($color, 1, str-index($color, '-') - 1);
+        $shade: string.slice($color, str-index($color, '-') + 1);
+
+        @if map-has-key($colors, $palette) {
+            $colorPalette: map-get($colors, $palette);
+            @if map-has-key($colorPalette, $shade) {
+                $color: map-get($colorPalette, $shade);
+                @return rgba($color, $alpha);
+            }
+        } @else if map-has-key($colors, $color) {
+            $color: map-get($colors, $color);
+            @return rgba($color, $alpha);
+        }
+    } @else if map-has-key($colors, $color) {
+        $color: map-get($colors, $color);
+        @return rgba($color, $alpha);
+    }
+
+    @warn errorMessage($color, $colors, 'tokens/_colors.scss');
+    @return 'WARN: Invalid Color';
+    @return null;
+}

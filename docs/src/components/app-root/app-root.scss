@@ -1,0 +1,150 @@
+.guide-container {
+  display: flex;
+  // @include debug();
+  height: 100vh;
+  width: 100vw;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.view {
+  min-height: 0;
+  min-width: 0;
+  flex-grow: 1;
+  z-index: 1;
+  width: 80%;
+  z-index: 0;
+  position: relative;
+  isolation: isolate;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: -1px 0 0 0 color('gray-500', 0.25);
+  background-color: color('gray-100');
+  @include transition('fast', 'width');
+}
+
+.content-container {
+  overflow-y: auto;
+  min-width: 0;
+  height: 100%;
+}
+
+.sidenav {
+  @include transition('fast', 'width');
+  min-width: 0;
+  width: 0;
+  max-width: 0;
+
+  &.menu-open {
+    min-width: 240px;
+    width: 20%;
+    max-width: 360px;
+  }
+}
+
+.header {
+  min-height: space(5);
+  background-color: color('white');
+  border-bottom: 1px solid color('gray-500', 0.25);
+  display: flex;
+  align-items: center;
+  padding: space(1);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  .actions {
+    margin-left: auto;
+    display: flex;
+    gap: space(1);
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    @include font(10, 'semi-bold');
+    padding: space(0.5) space(2);
+    border-radius: radius(1);
+
+    &.figma {
+      color: color('gray-200');
+      background-color: color('gray-900');
+    }
+
+    &.github {
+      color: color('gray-900');
+      background-color: color('gray-200');
+    }
+  }
+}
+
+.menu-toggle {
+  border-radius: radius(1);
+  appearance: none;
+  background: none;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  @include transition;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: shadowLine();
+    background-color: color('gray-200', 0.5);
+  }
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  padding: space(1) space(1);
+  border-radius: radius(1);
+  @include transition;
+
+  .line {
+    width: space(2.5);
+    border-radius: radius(1);
+    height: 2px;
+    margin: 1.5px 0;
+    background-color: color('gray-500');
+    display: block;
+    @include transition;
+  }
+}
+
+.menuOpen {
+  .menu-icon {
+    transform: rotate(90deg);
+  }
+
+  &:hover {
+    .line:nth-of-type(1) {
+      transform: translate3d(0, 5px, 0) rotate(45deg);
+    }
+
+    .line:nth-of-type(2) {
+      opacity: 0;
+    }
+
+    .line:nth-of-type(3) {
+      transform: translate3d(0, -5px, 0) rotate(-45deg);
+    }
+  }
+}
+
+::part(themed) {
+  --color-primary: #f68061;
+  --color-primary-dark: #d8793e;
+  --color-primary-light: #f6a961;
+  --color-primary-text: #fffad1;
+  --color-accent: #763cb2;
+  --color-accent-light: '';
+  --color-accent-dark: '';
+  --color-accent-text: #ffffff;
+}
