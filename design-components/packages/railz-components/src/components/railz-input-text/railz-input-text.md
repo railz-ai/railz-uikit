@@ -52,10 +52,10 @@ The`railz-input-text` component can receive all standard values for`type`,`input
 ```
 
 <!-- <img src="../assets/keyboard-email.png" />
-<railz-input-text label="Contact name" placeholder="Zach Forrester" type="text" autocomplete="name" /> -->
+<railz-input-text label="Contact name" placeholder="John Doe" type="text" autocomplete="name" /> -->
 
 ```
-<railz-input-text label="Contact name" placeholder="Zach Forrester" type="text"  autocomplete="name" />`}`
+<railz-input-text label="Contact name" placeholder="John Doe" type="text"  autocomplete="name" />`}`
 ```
 
 <!-- <img src="../assets/keyboard-name.png" />

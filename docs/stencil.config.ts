@@ -4,7 +4,40 @@ import { sass } from '@stencil/sass';
 import { inlineSvg } from 'stencil-inline-svg';
 import alias from '@rollup/plugin-alias';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
+import fs from 'fs';
+import path from "path";
 
+function components() {
+  const component = path.join(
+    __dirname,
+    '../design-components/packages/railz-components/src',
+    'components',
+  );
+
+  return [
+    ...fs
+      .readdirSync(component)
+      .map((f) => path.join(component, f))
+      .map((dir) => {
+        try {
+          // Get the readme file
+          const readmeFound = fs
+            .readdirSync(dir)
+            .find((item) => item === 'readme.md');
+          const file = path.join(dir, readmeFound);
+
+          //Get the directory name
+          const dirName = path.basename(dir)
+
+
+          return { src: file, dest: `./readmes/${dirName}.md` };
+        } catch (err) {
+          return null;
+        }
+      })
+      .filter((item) => item !== null),
+  ];
+}
 
 
 export const config: Config = {
@@ -17,7 +50,8 @@ export const config: Config = {
       baseUrl: 'https://railz-ai.github.io/',
       prerenderConfig: './prerender.config.ts',
       copy: [
-        { src: '../../CONTRIBUTING.md', dest: './CONTRIBUTING.md', }
+        { src: '../../CONTRIBUTING.md', dest: './CONTRIBUTING.md', },
+        ...components()
       ]
     },
   ],
