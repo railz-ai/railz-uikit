@@ -47,7 +47,7 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
-      baseUrl: 'https://railz-ai.github.io/',
+      baseUrl: 'https://railz-ai.github.io/railz-uikit/',
       prerenderConfig: './prerender.config.ts',
       copy: [
         { src: '../../CONTRIBUTING.md', dest: './CONTRIBUTING.md', },
