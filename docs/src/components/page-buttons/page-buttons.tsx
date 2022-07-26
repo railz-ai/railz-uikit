@@ -1,6 +1,5 @@
 import { Component, h, State } from '@stencil/core';
-import {marked} from "marked";
-// import Markdown from 'markdown-to-jsx';
+import { marked } from 'marked';
 
 @Component({
   tag: 'page-buttons',
@@ -13,10 +12,9 @@ export class PageButtons {
   @State()
   markdownContent: string = '';
   componentWillLoad() {
-    fetch('../readmes/railz-button.md')
-      .then(async response => {
-        this.markdownContent = marked.parse(await response.text());
-      });
+    fetch('../readmes/railz-button.md').then(async response => {
+      this.markdownContent = marked.parse(await response.text());
+    });
   }
 
   buttonClickTest() {
