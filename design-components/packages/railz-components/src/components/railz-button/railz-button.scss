@@ -205,7 +205,8 @@ railz-icon + .label {
     pointer-events: none !important;
 
     &.primary,
-    &.secondary {
+    &.secondary,
+    &.themed {
       background-color: color('gray-300');
       color: color('gray-800');
     }
