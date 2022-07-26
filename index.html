@@ -1,66 +1,17 @@
-<html lang="en"><head><meta charSet="utf-8"/><link rel="shortcut icon" type="image/png" href="images/railz-icon.png"/><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="description" content=""/><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Home · Railz UI Kit"/><meta name="twitter:description" content=""/><meta property="og:type" content="website"/><meta property="og:title" content="Home · Railz UI Kit"/><meta property="og:description" content=""/><title>Home · Railz UI Kit</title><link type="text/css" rel="stylesheet" href="app.css"/></head><body>
-    <script>
-      var theme;
-
-      try {
-        // Check if there is a preference saved
-        theme = localStorage.getItem('preference-theme');
-      } catch (e) {
-        // Ignore
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <title>Railz.ai UI Kit</title> <meta name="description" content="Welcome to Railz UI Kit, a frontend library with components to make your UI Design faster!"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <meta name="theme-color" content="#16161d"> <meta name="apple-mobile-web-app-capable" content="yes"> <meta http-equiv="x-ua-compatible" content="IE=Edge"> <script type="module" src="/build/app.esm.js" data-stencil data-resources-url="/build/" data-stencil-namespace="app"></script> <script nomodule="" src="/build/app.js" data-stencil></script> <link href="/build/app.css" rel="stylesheet"> <link rel="apple-touch-icon" href="/assets/icon/icon.png"> <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico"> <link rel="manifest" href="/manifest.json"> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"> </head> <body> <app-root></app-root> <script data-build="2022-07-26T13:52:54">
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', function() {
+  navigator.serviceWorker.register('/sw.js')
+    .then(function(reg) {
+    reg.onupdatefound = function() {
+      var installingWorker = reg.installing;
+      installingWorker.onstatechange = function() {
+      if (installingWorker.state === 'installed') {
+        window.dispatchEvent(new Event('swUpdate'))
       }
-
-      if (theme === undefined) {
-        try {
-          // If no preferred theme is set, read OS preference
-          theme = window.matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'dark'
-            : 'light';
-        } catch (e) {
-          // Ignore
-        }
       }
-
-      if (theme === 'dark') {
-        document.body.classList.add('dark-theme');
-      }
-    </script>
-  <div id='root'><div class="Layout_lugqar2"><aside class="SidebarContent_s9nrg4n"><input type="checkbox" id="slide-sidebar" role="button" class="MenuButton_mzfqg8l"/><label for="slide-sidebar" class="MenuIcon_m1mups47">☰</label><div class="MenuContent_mdzibsv"><input type="search" value="" placeholder="Filter…" class="Searchbar_s1nn5lbd"/><nav class="Navigation_nlggdah"><a data-selected="true" class="LinkItem_l1gpol2t" href="index.html">Home</a><a data-selected="false" class="LinkItem_l1gpol2t" href="getting-started.html">Getting Started</a><a data-selected="false" class="LinkItem_l1gpol2t" href="installation.html">Installation</a><a data-selected="false" class="LinkItem_l1gpol2t" href="theming.html">Theming</a><a data-selected="false" class="LinkItem_l1gpol2t" href="design-tokens.html">Design Tokens</a><a data-selected="false" class="LinkItem_l1gpol2t" href="icons.html">Icons</a><a data-selected="false" class="LinkItem_l1gpol2t" href="contributing.html">Contributing</a><hr class="SeparatorItem_slziuo3"/><a data-selected="false" class="LinkItem_l1gpol2t" href="railz-button.html">Railz Button</a><a data-selected="false" class="LinkItem_l1gpol2t" href="railz-icon.html">Railz Icon</a><a data-selected="false" class="LinkItem_l1gpol2t" href="railz-icon-button.html">Railz Icon Button</a><a data-selected="false" class="LinkItem_l1gpol2t" href="railz-input-checkbox.html">Railz Input Checkbox</a><a data-selected="false" class="LinkItem_l1gpol2t" href="railz-input-radio.html">Railz Input Radio</a><a data-selected="false" class="LinkItem_l1gpol2t" href="railz-input-radio-group.html">Railz Input Radio Group</a><a data-selected="false" class="LinkItem_l1gpol2t" href="railz-input-select.html">Railz Input Select</a><a data-selected="false" class="LinkItem_l1gpol2t" href="railz-text-input.html">Railz Text Input</a><a data-selected="false" class="LinkItem_l1gpol2t" href="railz-input-toggle.html">Railz Input Toggle</a><a data-selected="false" class="LinkItem_l1gpol2t" href="railz-status-pill.html">Railz Status Pill</a></nav></div></aside><main class="Container_c119hgic"><div class="HeaderWrapper_h1b6fqjq"><div class="LogoContainer_lz0sul8"><img src="images/railz-logo.svg" alt="Logo" class="LogoImage_l1tdaxxn"/></div><div class="ThemeSwitchDiv_ti2lwtw"><label class="Label_lok00ln" style="--lok00ln-0:#000"><input type="checkbox" disabled="" class="Input_i1midrh5"/><div class="Switch_s120pijg"></div></label><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="23" height="22" fill="orange" viewBox="0 0 130 130" enable-background="new 0 0 129 129"><g><g><path d="m64.5,92.6c15.5,0 28-12.6 28-28s-12.6-28-28-28-28,12.6-28,28 12.5,28 28,28zm0-47.9c11,0 19.9,8.9 19.9,19.9 0,11-8.9,19.9-19.9,19.9s-19.9-8.9-19.9-19.9c0-11 8.9-19.9 19.9-19.9z"></path><path d="m68.6,23.6v-12.9c0-2.3-1.8-4.1-4.1-4.1s-4.1,1.8-4.1,4.1v12.9c0,2.3 1.8,4.1 4.1,4.1s4.1-1.8 4.1-4.1z"></path><path d="m60.4,105.6v12.9c0,2.3 1.8,4.1 4.1,4.1s4.1-1.8 4.1-4.1v-12.9c0-2.3-1.8-4.1-4.1-4.1s-4.1,1.8-4.1,4.1z"></path><path d="m96.4,38.5l9.1-9.1c1.6-1.6 1.6-4.2 0-5.8-1.6-1.6-4.2-1.6-5.8,0l-9.1,9.1c-1.6,1.6-1.6,4.2 0,5.8 0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2z"></path><path d="m23.5,105.6c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l9.1-9.1c1.6-1.6 1.6-4.2 0-5.8-1.6-1.6-4.2-1.6-5.8,0l-9.1,9.1c-1.6,1.6-1.6,4.2 0,5.8z"></path><path d="m122.5,64.6c0-2.3-1.8-4.1-4.1-4.1h-12.9c-2.3,0-4.1,1.8-4.1,4.1 0,2.3 1.8,4.1 4.1,4.1h12.9c2.2,1.42109e-14 4.1-1.8 4.1-4.1z"></path><path d="m10.6,68.7h12.9c2.3,0 4.1-1.8 4.1-4.1 0-2.3-1.8-4.1-4.1-4.1h-12.9c-2.3,0-4.1,1.8-4.1,4.1 0,2.3 1.9,4.1 4.1,4.1z"></path><path d="m102.6,106.8c1,0 2.1-0.4 2.9-1.2 1.6-1.6 1.6-4.2 0-5.8l-9.1-9.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l9.1,9.1c0.8,0.8 1.9,1.2 2.9,1.2z"></path><path d="m38.4,38.5c1.6-1.6 1.6-4.2 0-5.8l-9.1-9.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l9.1,9.1c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2z"></path></g></g></svg></div></div><div class="Inner_ir6lat6"><div><h1 align="center">Railz UIKit</h1>
-
-<p align="center">
-  <a href="https://github.com/railz-ai/railz-uikit/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@railzai/railz-uikit" alt="Software License" /></a>
-  <a href="https://www.npmjs.com/package/@railzai/railz-uikit"><img src="https://img.shields.io/npm/v/@railzai/railz-uikit/latest.svg" alt="Latest Package on NPM" /></a>
-  <a href="https://github.com/railz-ai/railz-uikit/actions/workflows/publish.yml"><img src="https://github.com/railz-ai/railz-uikit/actions/workflows/publish.yml/badge.svg" alt="Latest Deployment" /></a>
-  <a href="https://stenciljs.com/docs/style-guide">
-          <img src="https://img.shields.io/badge/code_style-stencil/stylelint/prettier-5851ff.svg?style=flat-square" alt="Code Style" />
-      </a>
-</p>
-<h2 align="center">Contains components libraries.</h2>
-
-<ul>
-<li><p><strong>Railz UIKit</strong> is a library of components that features our implementation of <a href="https://railz.ai/product/connect">Railz Connect</a> widget and extended components.</p>
-</li>
-<li><p><strong>Railz Tokens</strong> is a library of design tokens.</p>
-</li>
-<li><p><strong>Railz Icons</strong> is a library of icon components.</p>
-</li>
-</ul>
-<div class="buttons">
-    <a class="button primary" href="/getting-started.html">
-      Get started
-    </a>
-    <a class="button" href="https://github.com/railz-ai/railz-uikit" target="_blank" rel="noopener noreferrer">
-      GitHub
-    </a>
-</div>
-
-</div></div></main></div></div>
-    <style type="text/css">
-      :root {
-        --theme-primary-color: #00884F;
-      }
-    </style>
-  
-    <script>
-      window.__INITIAL_PATH__ = 'index';
-    </script>
-  <script src="app.bundle.js"></script><script src="scripts/mermaid.min.js"></script><script src="scripts/mermaid-initialize.js"></script></body></html>
+    }
+    })
+    .catch(function(err) { console.error('service worker error', err) });
+  });
+}</script></body></html>
