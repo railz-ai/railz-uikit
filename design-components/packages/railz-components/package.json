@@ -1,6 +1,6 @@
 {
   "name": "@railzai/railz-uikit",
-  "version": "0.0.1-alpha.9",
+  "version": "0.0.1-alpha.10",
   "description": "Railz.ai Design Components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
