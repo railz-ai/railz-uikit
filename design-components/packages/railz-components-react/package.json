@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "@railzai/railz-uikit-react",
   "sideEffects": false,
   "version": "0.0.1-alpha.12",
