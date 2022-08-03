@@ -25,9 +25,7 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@railzai/railz-uikit',
       proxiesFile: '../railz-components-react/src/components/index.ts',
-      includeDefineCustomElements: false,
-      includeImportCustomElements: true,
-      includePolyfills: false,
+      includeDefineCustomElements: true,
       loaderDir: 'dist/loader',
     }),
     vueOutputTarget({
@@ -40,14 +38,14 @@ export const config: Config = {
     {
       type: 'dist-custom-elements',
       dir: 'components',
-      // copy: [
-      //   {
-      //     src: '../scripts/custom-elements',
-      //     dest: 'components',
-      //     warn: true,
-      //   },
-      // ],
-      // includeGlobalScripts: false,
+      copy: [
+        {
+          src: '../scripts/custom-elements',
+          dest: 'components',
+          warn: true,
+        },
+      ],
+      includeGlobalScripts: false,
     },
     {
       type: 'docs-readme',
