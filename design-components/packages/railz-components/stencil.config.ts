@@ -39,14 +39,14 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-      // dir: 'components',
-      // copy: [
-      //   {
-      //     src: '../scripts/custom-elements',
-      //     dest: 'components',
-      //     warn: true,
-      //   },
-      // ],
+      dir: 'components',
+      copy: [
+        {
+          src: '../scripts/custom-elements',
+          dest: 'components',
+          warn: true,
+        },
+      ],
       // includeGlobalScripts: false,
     },
     {
