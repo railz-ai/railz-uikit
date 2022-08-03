@@ -25,12 +25,12 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@railzai/railz-uikit',
       proxiesFile: '../railz-components-react/src/components/index.ts',
-      includeDefineCustomElements: false,
+      // includeDefineCustomElements: false,
       // includeImportCustomElements: true,
-      includePolyfills: false,
+      includePolyfills: true,
       // loaderDir: 'dist/loader',
 
-      // includeDefineCustomElements: true,
+      includeDefineCustomElements: true,
       loaderDir: 'dist/loader',
     }),
     vueOutputTarget({
