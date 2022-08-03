@@ -25,7 +25,7 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@railzai/railz-uikit',
       proxiesFile: '../railz-components-react/src/components/index.ts',
-      includeImportCustomElements: true,
+      // includeImportCustomElements: true,
       includePolyfills: false,
 
       includeDefineCustomElements: true,
