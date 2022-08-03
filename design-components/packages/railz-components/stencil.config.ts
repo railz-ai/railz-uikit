@@ -39,15 +39,15 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-      dir: 'components',
-      copy: [
-        {
-          src: '../scripts/custom-elements',
-          dest: 'components',
-          warn: true,
-        },
-      ],
-      includeGlobalScripts: false,
+      // dir: 'components',
+      // copy: [
+      //   {
+      //     src: '../scripts/custom-elements',
+      //     dest: 'components',
+      //     warn: true,
+      //   },
+      // ],
+      // includeGlobalScripts: false,
     },
     {
       type: 'docs-readme',
