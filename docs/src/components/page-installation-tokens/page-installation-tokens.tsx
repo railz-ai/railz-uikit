@@ -17,11 +17,11 @@ export class PageInstallationTokens {
             <h2>Installation</h2>
             <h3>With NPM:</h3>
             <pre>
-                <code>{`npm install @railzai/railz-tokens`}</code>
+              <code>{`npm install @railzai/railz-tokens`}</code>
             </pre>
             <h3>With Yarn:</h3>
             <pre>
-                <code>{`yarn add @railzai/railz-tokens`}</code>
+              <code>{`yarn add @railzai/railz-tokens`}</code>
             </pre>
           </section>
         </div>

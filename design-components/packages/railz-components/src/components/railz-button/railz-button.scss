@@ -115,10 +115,12 @@ button {
   &:hover,
   &:focus {
     background-color: color('brand-primary-background-hover');
+    color: color('brand-primary-foreground-hover');
   }
 
   &:active {
     background-color: color('brand-primary-background-active');
+    color: color('brand-primary-foreground-active');
     transform: translateY(1px);
   }
 }

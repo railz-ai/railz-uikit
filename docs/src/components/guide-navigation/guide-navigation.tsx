@@ -51,30 +51,28 @@ export class GuideNavigation {
     },
   ];
 
-  renderSection = (group) => {
-    return (<section>
-      <h3>{group.name}</h3>
-      <ul class='sections'>
-        {group.sections.map(section => (
-          <li>
-            {section?.sections?.length ? this.renderSection(section) : <stencil-route-link url={section.url}>{section.name}</stencil-route-link>}
-          </li>
-        ))}
-      </ul>
-    </section>);
-  }
+  renderSection = group => {
+    return (
+      <section>
+        <h3>{group.name}</h3>
+        <ul class="sections">
+          {group.sections.map(section => (
+            <li>{section?.sections?.length ? this.renderSection(section) : <stencil-route-link url={section.url}>{section.name}</stencil-route-link>}</li>
+          ))}
+        </ul>
+      </section>
+    );
+  };
 
   render() {
     return (
       <nav class={this.menuOpen ? 'menu-open' : ''}>
-        <div class='logo-container'>
-          <a class='plain-a' href='/'>
-            <div class='logo'></div>
+        <div class="logo-container">
+          <a class="plain-a" href="/">
+            <div class="logo"></div>
           </a>
         </div>
-        <div class='content'>
-          {this.groups.map(group => this.renderSection(group))}
-        </div>
+        <div class="content">{this.groups.map(group => this.renderSection(group))}</div>
       </nav>
     );
   }
