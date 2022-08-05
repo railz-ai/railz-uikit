@@ -19,38 +19,38 @@ export class PageInstallationKit {
             <h4>Angular</h4>
             <h5>With NPM:</h5>
             <pre>
-                <code>{`npm install @railzai/railz-uikit-angular`}</code>
+              <code>{`npm install @railzai/railz-uikit-angular`}</code>
             </pre>
             <h5>With Yarn:</h5>
             <pre>
-                <code>{`yarn add @railzai/railz-uikit-angular`}</code>
+              <code>{`yarn add @railzai/railz-uikit-angular`}</code>
             </pre>
             <h4>React</h4>
             <h5>With NPM:</h5>
             <pre>
-                <code>{`npm install @railzai/railz-uikit-react`}</code>
+              <code>{`npm install @railzai/railz-uikit-react`}</code>
             </pre>
             <h5>With Yarn:</h5>
             <pre>
-                <code>{`yarn add @railzai/railz-uikit-react`}</code>
+              <code>{`yarn add @railzai/railz-uikit-react`}</code>
             </pre>
             <h4>Vue</h4>
             <h5>With NPM:</h5>
             <pre>
-                <code>{`npm install @railzai/railz-uikit-vue`}</code>
+              <code>{`npm install @railzai/railz-uikit-vue`}</code>
             </pre>
             <h5>With Yarn:</h5>
             <pre>
-                <code>{`yarn add @railzai/railz-uikit-vue`}</code>
+              <code>{`yarn add @railzai/railz-uikit-vue`}</code>
             </pre>
             <h4>Web Component</h4>
             <h5>With NPM:</h5>
             <pre>
-                <code>{`npm install @railzai/railz-uikit`}</code>
+              <code>{`npm install @railzai/railz-uikit`}</code>
             </pre>
             <h5>With Yarn:</h5>
             <pre>
-                <code>{`yarn add @railzai/railz-uikit`}</code>
+              <code>{`yarn add @railzai/railz-uikit`}</code>
             </pre>
           </section>
         </div>
