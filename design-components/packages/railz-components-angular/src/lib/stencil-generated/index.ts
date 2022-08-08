@@ -11,5 +11,6 @@ export const DIRECTIVES = [
   d.RailzInputText,
   d.RailzInputToggle,
   d.RailzLogo,
+  d.RailzNavigationProgressBar,
   d.RailzStatusPill,
 ];

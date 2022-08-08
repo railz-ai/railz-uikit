@@ -20,6 +20,7 @@
 - [railz-input-select](../railz-input-select)
 - [railz-input-text](../railz-input-text)
 - [railz-input-toggle](../railz-input-toggle)
+- [railz-navigation-progress-bar](../railz-navigation-progress-bar)
 
 ### Graph
 
@@ -31,6 +32,7 @@ graph TD;
   railz-input-select --> railz-icon
   railz-input-text --> railz-icon
   railz-input-toggle --> railz-icon
+  railz-navigation-progress-bar --> railz-icon
   style railz-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

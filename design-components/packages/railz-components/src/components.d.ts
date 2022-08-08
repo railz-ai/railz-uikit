@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import { RadioInput } from './components/railz-input-radio-group/railz-input-radio-group';
+import { Page } from './components/railz-navigation-progress-bar/railz-navigation-progress-bar';
 export namespace Components {
   interface RailzButton {
     grow?: boolean;
@@ -114,6 +115,9 @@ export namespace Components {
     outline?: boolean;
     variant: string;
   }
+  interface RailzNavigationProgressBar {
+    pages: Page[];
+  }
   interface RailzStatusPill {
     icon?: string;
     label: string;
@@ -171,6 +175,11 @@ declare global {
     prototype: HTMLRailzLogoElement;
     new (): HTMLRailzLogoElement;
   };
+  interface HTMLRailzNavigationProgressBarElement extends Components.RailzNavigationProgressBar, HTMLStencilElement {}
+  var HTMLRailzNavigationProgressBarElement: {
+    prototype: HTMLRailzNavigationProgressBarElement;
+    new (): HTMLRailzNavigationProgressBarElement;
+  };
   interface HTMLRailzStatusPillElement extends Components.RailzStatusPill, HTMLStencilElement {}
   var HTMLRailzStatusPillElement: {
     prototype: HTMLRailzStatusPillElement;
@@ -187,6 +196,7 @@ declare global {
     'railz-input-text': HTMLRailzInputTextElement;
     'railz-input-toggle': HTMLRailzInputToggleElement;
     'railz-logo': HTMLRailzLogoElement;
+    'railz-navigation-progress-bar': HTMLRailzNavigationProgressBarElement;
     'railz-status-pill': HTMLRailzStatusPillElement;
   }
 }
@@ -300,6 +310,9 @@ declare namespace LocalJSX {
     outline?: boolean;
     variant?: string;
   }
+  interface RailzNavigationProgressBar {
+    pages?: Page[];
+  }
   interface RailzStatusPill {
     icon?: string;
     label?: string;
@@ -316,6 +329,7 @@ declare namespace LocalJSX {
     'railz-input-text': RailzInputText;
     'railz-input-toggle': RailzInputToggle;
     'railz-logo': RailzLogo;
+    'railz-navigation-progress-bar': RailzNavigationProgressBar;
     'railz-status-pill': RailzStatusPill;
   }
 }
@@ -333,6 +347,7 @@ declare module '@stencil/core' {
       'railz-input-text': LocalJSX.RailzInputText & JSXBase.HTMLAttributes<HTMLRailzInputTextElement>;
       'railz-input-toggle': LocalJSX.RailzInputToggle & JSXBase.HTMLAttributes<HTMLRailzInputToggleElement>;
       'railz-logo': LocalJSX.RailzLogo & JSXBase.HTMLAttributes<HTMLRailzLogoElement>;
+      'railz-navigation-progress-bar': LocalJSX.RailzNavigationProgressBar & JSXBase.HTMLAttributes<HTMLRailzNavigationProgressBarElement>;
       'railz-status-pill': LocalJSX.RailzStatusPill & JSXBase.HTMLAttributes<HTMLRailzStatusPillElement>;
     }
   }

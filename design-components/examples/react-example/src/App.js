@@ -6,6 +6,7 @@ import {
   RailzInputText,
   // RailzNested,
   RailzIcon,
+  RailzNavigationProgressBar,
   // RailzNestedSum,
 } from '@railzai/railz-uikit-react';
 
@@ -35,6 +36,43 @@ function App() {
 
   const [buttonTheme, setButtonTheme] = useState('primary');
   const [disableButton, setDisableButton] = useState(true);
+
+  const pages = [
+    {
+      name: 'Overview',
+      state: 'success',
+    },
+    {
+      name: 'Accounting',
+      state: 'skipped',
+    },
+    {
+      name: 'Banking',
+      state: 'success',
+    },
+    {
+      name: 'Commerce',
+      state: 'current',
+    },
+    {
+      name: 'Summary',
+    },
+  ];
+
+  const updatePages = (page) => {
+    console.log({ page });
+
+    this.pages4 = this.pages4.map((page) => ({
+      ...page,
+      state: page.state === 'current' ? 'skipped' : page.state,
+    }));
+
+    const index = this.pages4.findIndex((p) => p.name === page.name);
+
+    this.pages4[index].state = 'current';
+
+    console.table(this.pages4);
+  };
 
   return (
     <div className="App">
@@ -77,7 +115,24 @@ function App() {
 
       {/* <RailzNestedSum first={12} second={30} /> */}
 
-      <RailzIcon icon="home" size="small" />
+      {/* <RailzIcon icon="home" size="small" /> */}
+
+      <RailzNavigationProgressBar pages={pages} />
+
+      <railz-button
+        onButtonClick={() => updatePages({ name: 'Overview' })}
+        label="Go To Overview"
+      />
+      <railz-button
+        onButtonClick={() => updatePages({ name: 'Accounting' })}
+        label="Go To Accounting"
+      />
+      <railz-button onButtonClick={() => updatePages({ name: 'Banking' })} label="Go To Banking" />
+      <railz-button
+        onButtonClick={() => updatePages({ name: 'Commerce' })}
+        label="Go To Commerce"
+      />
+      <railz-button onButtonClick={() => updatePages({ name: 'Summary' })} label="Go To Summary" />
     </div>
   );
 }

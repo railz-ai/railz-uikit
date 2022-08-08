@@ -136,6 +136,13 @@ export const RailzLogo = /*@__PURE__*/ defineContainer<JSX.RailzLogo>('railz-log
   'imgIconName',
 ]);
 
+export const RailzNavigationProgressBar =
+  /*@__PURE__*/ defineContainer<JSX.RailzNavigationProgressBar>(
+    'railz-navigation-progress-bar',
+    undefined,
+    ['pages'],
+  );
+
 export const RailzStatusPill = /*@__PURE__*/ defineContainer<JSX.RailzStatusPill>(
   'railz-status-pill',
   undefined,

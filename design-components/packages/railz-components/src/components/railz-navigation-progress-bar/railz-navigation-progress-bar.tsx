@@ -20,7 +20,16 @@ export class RailzNavigationProgressBar {
           {this.pages &&
             this.pages.map(page => (
               <li class={`page ${page.state} ${this.selectedPage == page ? 'current' : null}`}>
-                <div class="indicator">{page.state === 'skipped' && <railz-icon icon="indeterminate" />}</div>
+                <div class="indicator">
+                  {page.state === 'skipped' && (
+                    //TODO - Resolve icon component bug -zf
+                    <div class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                        <polygon fill="#323232" fill-rule="evenodd" points="3 7 13 7 13 9 3 9" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
                 <span class="label">{page.name}</span>
               </li>
             ))}
