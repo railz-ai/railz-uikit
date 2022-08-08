@@ -1512,20 +1512,20 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@railzai/railz-tokens@https://pkg.csb.dev/railz-ai/railz-uikit/commit/a217c4c4/@railzai/railz-tokens":
+"@railzai/railz-tokens@https://pkg.csb.dev/railz-ai/railz-uikit/commit/19cc8990/@railzai/railz-tokens":
   version "0.0.1-alpha.13"
-  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/a217c4c4/@railzai/railz-tokens#95239a10baca98dcfa56ccc42b1a016d96e922a1"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/19cc8990/@railzai/railz-tokens#95239a10baca98dcfa56ccc42b1a016d96e922a1"
 
-"@railzai/railz-uikit-react@https://pkg.csb.dev/railz-ai/railz-uikit/commit/a217c4c4/@railzai/railz-uikit-react":
+"@railzai/railz-uikit-react@https://pkg.csb.dev/railz-ai/railz-uikit/commit/19cc8990/@railzai/railz-uikit-react":
   version "0.0.1-alpha.13"
-  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/a217c4c4/@railzai/railz-uikit-react#19bd173991a8bafd48a970211a563d3d1da9c3e1"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/19cc8990/@railzai/railz-uikit-react#2e81638e5c88ae4e8ca25043c2debd3f3f0e6277"
   dependencies:
-    "@railzai/railz-uikit" "https://pkg.csb.dev/railz-ai/railz-uikit/commit/a217c4c4/@railzai/railz-uikit"
+    "@railzai/railz-uikit" "https://pkg.csb.dev/railz-ai/railz-uikit/commit/19cc8990/@railzai/railz-uikit"
     minimist "1.2.6"
 
-"@railzai/railz-uikit@https://pkg.csb.dev/railz-ai/railz-uikit/commit/a217c4c4/@railzai/railz-uikit":
+"@railzai/railz-uikit@https://pkg.csb.dev/railz-ai/railz-uikit/commit/19cc8990/@railzai/railz-uikit":
   version "0.0.1-alpha.13"
-  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/a217c4c4/@railzai/railz-uikit#e9f8aea2777670d2a3dc1929e4256e5b8755ae58"
+  resolved "https://pkg.csb.dev/railz-ai/railz-uikit/commit/19cc8990/@railzai/railz-uikit#118fb8d418fd9b80ff5ae6413cdc673223a01e52"
   dependencies:
     "@stencil/core" "~2.13.0"
 

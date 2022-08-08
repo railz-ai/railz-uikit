@@ -5,7 +5,7 @@ import {
   // RailzComponent,
   RailzInputText,
   // RailzNested,
-  RailzIcon,
+  // RailzIcon,
   RailzNavigationProgressBar,
   // RailzNestedSum,
 } from '@railzai/railz-uikit-react';
@@ -13,8 +13,29 @@ import {
 import { useState } from 'react';
 
 function App() {
+  const [pages, setPages] = useState([
+    {
+      name: 'Overview',
+      state: 'success',
+    },
+    {
+      name: 'Accounting',
+      state: 'skipped',
+    },
+    {
+      name: 'Banking',
+      state: 'success',
+    },
+    {
+      name: 'Commerce',
+      state: 'current',
+    },
+    {
+      name: 'Summary',
+    },
+  ]);
   const buttonClick = () => {
-    // console.log('button clicked');
+    console.log('button clicked');
     setButtonTheme('themed');
 
     if (buttonTheme === 'primary') {
@@ -37,41 +58,22 @@ function App() {
   const [buttonTheme, setButtonTheme] = useState('primary');
   const [disableButton, setDisableButton] = useState(true);
 
-  const pages = [
-    {
-      name: 'Overview',
-      state: 'success',
-    },
-    {
-      name: 'Accounting',
-      state: 'skipped',
-    },
-    {
-      name: 'Banking',
-      state: 'success',
-    },
-    {
-      name: 'Commerce',
-      state: 'current',
-    },
-    {
-      name: 'Summary',
-    },
-  ];
-
   const updatePages = (page) => {
+    console.log('clicked');
     console.log({ page });
 
-    this.pages4 = this.pages4.map((page) => ({
+    const newPages = pages.map((page) => ({
       ...page,
       state: page.state === 'current' ? 'skipped' : page.state,
     }));
 
-    const index = this.pages4.findIndex((p) => p.name === page.name);
+    const index = newPages.findIndex((p) => p.name === page.name);
 
-    this.pages4[index].state = 'current';
+    newPages[index].state = 'current';
 
-    console.table(this.pages4);
+    setPages(newPages);
+
+    console.table(pages);
   };
 
   return (
@@ -117,22 +119,17 @@ function App() {
 
       {/* <RailzIcon icon="home" size="small" /> */}
 
+      <p>{JSON.stringify(pages)}</p>
       <RailzNavigationProgressBar pages={pages} />
 
-      <railz-button
-        onButtonClick={() => updatePages({ name: 'Overview' })}
-        label="Go To Overview"
-      />
-      <railz-button
+      <RailzButton onButtonClick={() => updatePages({ name: 'Overview' })} label="Go To Overview" />
+      <RailzButton
         onButtonClick={() => updatePages({ name: 'Accounting' })}
         label="Go To Accounting"
       />
-      <railz-button onButtonClick={() => updatePages({ name: 'Banking' })} label="Go To Banking" />
-      <railz-button
-        onButtonClick={() => updatePages({ name: 'Commerce' })}
-        label="Go To Commerce"
-      />
-      <railz-button onButtonClick={() => updatePages({ name: 'Summary' })} label="Go To Summary" />
+      <RailzButton onButtonClick={() => updatePages({ name: 'Banking' })} label="Go To Banking" />
+      <RailzButton onButtonClick={() => updatePages({ name: 'Commerce' })} label="Go To Commerce" />
+      <RailzButton onButtonClick={() => updatePages({ name: 'Summary' })} label="Go To Summary" />
     </div>
   );
 }
