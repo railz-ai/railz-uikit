@@ -1,0 +1,161 @@
+:host {
+  display: block;
+}
+
+nav {
+  overflow: auto;
+}
+
+ul {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.page {
+  padding: space(1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  @include transition;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: space(2);
+    width: calc(50% - #{space(1)});
+    height: 2px;
+    margin-top: -1px;
+    background-color: color('gray-400');
+    @include transition;
+  }
+
+  &::before {
+    left: 0;
+    border-radius: inherit;
+  }
+
+  &::after {
+    right: 0;
+    border-radius: inherit;
+  }
+}
+
+.indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include circle(space(2));
+  @include transition;
+
+  // Dot
+  &::before {
+    content: '';
+    position: absolute;
+    @include circle(space(1));
+    @include transition;
+
+    background-color: color('white');
+    border: 2px solid color('gray-400');
+
+    // opacity: 0;
+    // transform: scale(0);
+  }
+
+  // Ring
+  &::after {
+    content: '';
+    position: absolute;
+    border: 2px solid color('gray-900');
+    opacity: 0;
+    transform: scale(0);
+    @include circle(space(2));
+    @include transition;
+  }
+}
+
+.label {
+  padding: space(1);
+  color: color('gray-600');
+  @include font-set('body-14');
+  @include transition;
+}
+
+// States
+.success {
+  &::before,
+  &::after {
+    background-color: color('brand-primary-background');
+  }
+
+  .indicator {
+    &::before {
+      border-color: color('brand-primary-background');
+      background-color: color('brand-primary-background');
+    }
+  }
+
+  .label {
+    font-weight: font-weight('semi-bold');
+    color: color('brand-primary-background');
+  }
+}
+
+.skipped {
+  &::before,
+  &::after {
+    width: calc(50% - #{space(1.5)});
+    background-color: color('brand-primary-background');
+  }
+
+  .indicator {
+    background-color: color('white');
+
+    &::after {
+      opacity: 1;
+      background-color: color('white');
+      transform: scale(1);
+      border-color: color('gray-400');
+    }
+
+    .icon {
+      transform: scale(0.8);
+      color: color('gray-600');
+      z-index: 1;
+      position: relative;
+    }
+  }
+}
+
+.current {
+  &::before,
+  &::after {
+    width: calc(50% - #{space(1.5)});
+  }
+
+  .success + &::before,
+  .skipped + &::before {
+    background-color: color('brand-primary-background');
+  }
+
+  .indicator {
+    &::before {
+      border-color: color('gray-900');
+      background-color: color('gray-900');
+    }
+
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .label {
+    font-weight: font-weight('semi-bold');
+    color: color('gray-900');
+  }
+}
