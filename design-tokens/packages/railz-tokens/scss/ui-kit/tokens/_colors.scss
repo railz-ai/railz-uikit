@@ -125,25 +125,18 @@ $colors: (
     '900': hsl(212deg 81% 10%),
   ),
 );
+
 $brand: (
-  'text': (
-    'header': color('gray-900'),
-    'body': color('gray-800'),
-    'subdued': color('gray-600'),
-    'link': color('neon-green-700'),
-    'link-hover': color('neon-green-700'),
-    'link-active': color('neon-green-700'),
-  ),
   'accent': (
     'background': color('gray-900'),
     'foreground': color('white'),
   ),
   'primary': (
     'background': color('neon-green-700'),
-    'background-hover': color('neon-green-800'),
-    'background-active': color('neon-green-600'),
+    'background-hover': color('gray-900', 0.2),
+    'background-active': color('white', 0.1),
     'foreground': color('white'),
-    'foreground-hover': color('neon-green-200'),
-    'foreground-active': color('neon-green-100'),
+    'foreground-hover': color('white'),
+    'foreground-active': color('white'),
   ),
 );
