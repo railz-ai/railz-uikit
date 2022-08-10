@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import { RadioInput } from './components/railz-input-radio-group/railz-input-radio-group';
 export namespace Components {
   interface RailzButton {
+    buttonClass?: string;
     grow?: boolean;
     href?: string;
     icon?: string;
@@ -192,6 +193,7 @@ declare global {
 }
 declare namespace LocalJSX {
   interface RailzButton {
+    buttonClass?: string;
     grow?: boolean;
     href?: string;
     icon?: string;
