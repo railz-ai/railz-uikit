@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable react/jsx-no-bind */
 import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
@@ -8,6 +9,10 @@ import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
  * @description This is the button
  *
  */
+
+interface InlineStyle {
+  [key: string]: string;
+}
 @Component({
   tag: 'railz-button',
   styleUrl: 'railz-button.scss',
@@ -25,7 +30,10 @@ export class RailzButton {
   @Prop() loading?: boolean;
   @Prop() href?: string;
   @Prop() target?: string = '_blank';
+
   @Prop() buttonClass?: string;
+  @Prop() backgroundColor?: string = 'inherit';
+  @Prop() contrastColor?: string = 'inherit';
 
   @Event() buttonClick: EventEmitter;
   private handleClick(event: Event): void {
@@ -47,12 +55,24 @@ export class RailzButton {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
         {this.href ? (
-          <a href={this.href} target={this.target} class={`button ${this.buttonStyles()}`} part={this.buttonClass}>
+          <a
+            href={this.href}
+            target={this.target}
+            class={`button ${this.buttonStyles()}`}
+            part={this.buttonClass}
+            style={{ backgroundColor: this.backgroundColor, color: this.contrastColor }}
+          >
             {/* {this.renderIcon()} */}
             <span class="label">{this.label}</span>
           </a>
         ) : (
-          <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled} part={this.buttonClass}>
+          <button
+            onClick={event => this.handleClick(event)}
+            class={`button ${this.buttonStyles()}`}
+            disabled={this.isDisabled}
+            part={this.buttonClass}
+            style={{ backgroundColor: this.backgroundColor, color: this.contrastColor }}
+          >
             {/* {this.renderIcon()} */}
             {this.loading ? <span class="loading-indicator"></span> : null}
             <span class="label">{this.loading ? 'Loading...' : this.label}</span>
