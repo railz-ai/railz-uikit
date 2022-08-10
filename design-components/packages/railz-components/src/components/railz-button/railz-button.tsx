@@ -32,8 +32,8 @@ export class RailzButton {
   @Prop() target?: string = '_blank';
 
   @Prop() buttonClass?: string;
-  @Prop() backgroundColor?: string = 'inherit';
-  @Prop() contrastColor?: string = 'inherit';
+  // @Prop() backgroundColor?: string = 'inherit';
+  // @Prop() contrastColor?: string = 'inherit';
 
   @Event() buttonClick: EventEmitter;
   private handleClick(event: Event): void {
@@ -41,7 +41,7 @@ export class RailzButton {
   }
 
   private buttonStyles(): string {
-    return `${this.buttonClass} ${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} 
+    return ` ${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} 
     ${this.loading ? 'loading' : ''} ${this.isDisabled ? 'disabled' : ''}`;
   }
 
@@ -55,24 +55,12 @@ export class RailzButton {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
         {this.href ? (
-          <a
-            href={this.href}
-            target={this.target}
-            class={`button ${this.buttonStyles()}`}
-            part="button"
-            style={{ backgroundColor: this.backgroundColor, color: this.contrastColor }}
-          >
+          <a href={this.href} target={this.target} class={`button ${this.buttonStyles()} ${this.buttonClass}`}>
             {/* {this.renderIcon()} */}
             <span class="label">{this.label}</span>
           </a>
         ) : (
-          <button
-            onClick={event => this.handleClick(event)}
-            class={`button ${this.buttonStyles()}`}
-            disabled={this.isDisabled}
-            part="button"
-            style={{ backgroundColor: this.backgroundColor, color: this.contrastColor }}
-          >
+          <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()} ${this.buttonClass}`} disabled={this.isDisabled}>
             {/* {this.renderIcon()} */}
             {this.loading ? <span class="loading-indicator"></span> : null}
             <span class="label">{this.loading ? 'Loading...' : this.label}</span>
