@@ -47,12 +47,12 @@ export class RailzButton {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
         {this.href ? (
-          <a href={this.href} target={this.target} class={`button ${this.buttonStyles()}`}>
+          <a href={this.href} target={this.target} class={`button ${this.buttonStyles()}`} part={this.buttonClass}>
             {/* {this.renderIcon()} */}
             <span class="label">{this.label}</span>
           </a>
         ) : (
-          <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
+          <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled} part={this.buttonClass}>
             {/* {this.renderIcon()} */}
             {this.loading ? <span class="loading-indicator"></span> : null}
             <span class="label">{this.loading ? 'Loading...' : this.label}</span>
