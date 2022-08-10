@@ -26,6 +26,12 @@
 | ------------- | ----------- | ------------------ |
 | `buttonClick` |             | `CustomEvent<any>` |
 
+## Shadow Parts
+
+| Part       | Description |
+| ---------- | ----------- |
+| `"button"` |             |
+
 ---
 
 _Built with [StencilJS](https://stenciljs.com/)_

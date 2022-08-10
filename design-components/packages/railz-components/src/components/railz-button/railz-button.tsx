@@ -59,7 +59,7 @@ export class RailzButton {
             href={this.href}
             target={this.target}
             class={`button ${this.buttonStyles()}`}
-            part={this.buttonClass}
+            part="button"
             style={{ backgroundColor: this.backgroundColor, color: this.contrastColor }}
           >
             {/* {this.renderIcon()} */}
@@ -70,7 +70,7 @@ export class RailzButton {
             onClick={event => this.handleClick(event)}
             class={`button ${this.buttonStyles()}`}
             disabled={this.isDisabled}
-            part={this.buttonClass}
+            part="button"
             style={{ backgroundColor: this.backgroundColor, color: this.contrastColor }}
           >
             {/* {this.renderIcon()} */}
