@@ -154,4 +154,11 @@ ul {
     font-weight: font-weight('semi-bold');
     color: color('gray-900');
   }
+
+  &:last-of-type {
+    &::before,
+    &::after {
+      background-color: color('brand-primary-background');
+    }
+  }
 }
