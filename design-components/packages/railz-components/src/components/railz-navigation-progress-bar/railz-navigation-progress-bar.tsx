@@ -11,7 +11,6 @@ export interface Page {
 })
 export class RailzNavigationProgressBar {
   @Prop() pages: Page[];
-  @State() selectedPage: Page;
 
   render(): HTMLElement {
     return (
@@ -19,7 +18,7 @@ export class RailzNavigationProgressBar {
         <ul class="pages">
           {this.pages &&
             this.pages.map(page => (
-              <li class={`page ${page.state} ${this.selectedPage == page ? 'current' : null}`}>
+              <li class={`page ${page.state}`}>
                 <div class="indicator">
                   {page.state === 'skipped' && (
                     //TODO - Resolve icon component bug -zf
