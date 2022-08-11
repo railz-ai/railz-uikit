@@ -9,6 +9,7 @@ import { RadioInput } from './components/railz-input-radio-group/railz-input-rad
 import { Page } from './components/railz-navigation-progress-bar/railz-navigation-progress-bar';
 export namespace Components {
   interface RailzButton {
+    buttonClass?: string;
     grow?: boolean;
     href?: string;
     icon?: string;
@@ -202,6 +203,7 @@ declare global {
 }
 declare namespace LocalJSX {
   interface RailzButton {
+    buttonClass?: string;
     grow?: boolean;
     href?: string;
     icon?: string;

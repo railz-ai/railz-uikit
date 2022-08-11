@@ -19,6 +19,7 @@ export const RailzButton = /*@__PURE__*/ defineContainer<JSX.RailzButton>(
     'loading',
     'href',
     'target',
+    'buttonClass',
     'buttonClick',
   ],
 );

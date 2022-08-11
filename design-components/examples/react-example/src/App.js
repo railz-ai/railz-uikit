@@ -106,12 +106,14 @@ function App() {
         label="Theme Button"
         type={buttonTheme}
         isDisabled={disableButton}
+        buttonClass="custom-button-class"
         onButtonClick={() => buttonClick()}
       />
 
       <RailzButton
         label="Unluck the Theme Button"
         type={buttonTheme}
+        buttonClass="custom-button-class"
         onButtonClick={() => setDisableButton(false)}
       />
 
