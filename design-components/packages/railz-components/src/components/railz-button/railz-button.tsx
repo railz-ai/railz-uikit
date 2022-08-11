@@ -2,17 +2,13 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable react/jsx-no-bind */
 import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
-
+// Todo: resolve icon bug with Connect - zf
 // import * as iconList from '../../assets/icons/index.json';
 
 /**
  * @description This is the button
  *
  */
-
-interface InlineStyle {
-  [key: string]: string;
-}
 @Component({
   tag: 'railz-button',
   styleUrl: 'railz-button.scss',
@@ -32,8 +28,6 @@ export class RailzButton {
   @Prop() target?: string = '_blank';
 
   @Prop() buttonClass?: string;
-  // @Prop() backgroundColor?: string = 'inherit';
-  // @Prop() contrastColor?: string = 'inherit';
 
   @Event() buttonClick: EventEmitter;
   private handleClick(event: Event): void {
