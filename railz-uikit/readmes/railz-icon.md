@@ -14,7 +14,6 @@
 
 ### Used by
 
-- [railz-button](../railz-button)
 - [railz-icon-button](../railz-icon-button)
 - [railz-input-checkbox](../railz-input-checkbox)
 - [railz-input-select](../railz-input-select)
@@ -25,7 +24,6 @@
 
 ```mermaid
 graph TD;
-  railz-button --> railz-icon
   railz-icon-button --> railz-icon
   railz-input-checkbox --> railz-icon
   railz-input-select --> railz-icon
