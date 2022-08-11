@@ -42,3 +42,7 @@
   --brand-primary-background-hover: pink;
   --brand-primary-background-active: purple;
 }
+
+.custom-button-class.rounded.primary.sc-railz-button {
+  background-color: red;
+}
