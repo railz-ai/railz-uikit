@@ -35,7 +35,6 @@ function App() {
     },
   ]);
   const buttonClick = () => {
-    console.log('button clicked');
     setButtonTheme('themed');
 
     if (buttonTheme === 'primary') {
@@ -48,10 +47,6 @@ function App() {
   };
 
   const updateTheme = (event) => {
-    // console.log('event', event);
-    // console.log('event.target', event.target);
-    // console.log('event.target.value', event.target.value);
-    // console.log('event.detail', event.detail);
     setButtonTheme(event.detail);
   };
 
@@ -59,9 +54,6 @@ function App() {
   const [disableButton, setDisableButton] = useState(true);
 
   const updatePages = (page) => {
-    console.log('clicked');
-    console.log({ page });
-
     const newPages = pages.map((page) => ({
       ...page,
       state: page.state === 'current' ? 'skipped' : page.state,
