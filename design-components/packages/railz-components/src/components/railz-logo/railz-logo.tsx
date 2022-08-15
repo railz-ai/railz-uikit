@@ -9,6 +9,8 @@ import DefaultBankIcon from './defaultBankIcon';
 
 @Component({
   tag: 'railz-logo',
+  styleUrl: 'railz-logo.scss',
+  shadow: true,
 })
 export class MyComponent {
   /**
@@ -19,6 +21,8 @@ export class MyComponent {
   @Prop() outline?: boolean = false;
   @Prop() imgIconUrl?: string;
   @Prop() imgIconName?: string;
+
+  @State() imageLoaded = false;
 
   @State() svgWidth: string;
   @State() svgHeight: string;
@@ -489,7 +493,16 @@ export class MyComponent {
       return <img src={this.imgIconUrl} alt={`${this.imgIconName} icon`} style={{ width: '24px', height: '24px' }} />;
     }
 
-    return (
+    const imageLoad = (e: Event): void => {
+      this.imageLoaded = true;
+      console.log('loaded', e);
+    };
+
+    return !this.imageLoaded ? (
+      <div>
+        <span class="label">{formatServiceName(this.name)}</span>
+      </div>
+    ) : (
       <svg
         role="img"
         aria-label={formatServiceName(this.name)}
@@ -516,7 +529,7 @@ export class MyComponent {
           <pattern id={`pattern-${this.name}`} patternContentUnits="objectBoundingBox" width="1" height="1">
             <use xlinkHref={`#image-ref-${this.name}`} transform={this.transform} />
           </pattern>
-          <image id={`image-ref-${this.name}`} width={this.imgWidth} height={this.imgHeight} xlinkHref={this.imgUrl} />
+          <image onLoad={e => imageLoad(e)} id={`image-ref-${this.name}`} width={this.imgWidth} height={this.imgHeight} xlinkHref={this.imgUrl} />
         </defs>
       </svg>
     );

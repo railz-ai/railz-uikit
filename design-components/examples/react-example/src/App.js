@@ -1,9 +1,10 @@
 // import logo from './logo.svg';
 import './App.css';
 import {
-  RailzButton,
+  // RailzButton,
   // RailzComponent,
-  RailzInputText,
+  // RailzInputText,
+  RailzLogo,
   // RailzNested,
   // RailzIcon,
   RailzNavigationProgressBar,
@@ -70,7 +71,7 @@ function App() {
 
   return (
     <div className="App">
-      <RailzInputText label="set theme" onValueChange={(e) => updateTheme(e)} prefixIcon="home" />
+      {/* <RailzInputText label="set theme" onValueChange={(e) => updateTheme(e)} prefixIcon="home" /> */}
 
       {/* <input type="text" onInput={(e) => updateTheme(e)} placeholder="button theme" /> */}
 
@@ -94,7 +95,7 @@ function App() {
       </header> */}
 
       <p>Button theme {buttonTheme}</p>
-      <RailzButton
+      {/* <RailzButton
         label="Theme Button"
         type={buttonTheme}
         isDisabled={disableButton}
@@ -107,23 +108,25 @@ function App() {
         type={buttonTheme}
         buttonClass="custom-button-class"
         onButtonClick={() => setDisableButton(false)}
-      />
+      /> */}
 
       {/* <RailzNestedSum first={12} second={30} /> */}
 
       {/* <RailzIcon icon="home" size="small" /> */}
 
-      <p>{JSON.stringify(pages)}</p>
-      <RailzNavigationProgressBar pages={pages} />
+      {/* <p>{JSON.stringify(pages)}</p>
+      <RailzNavigationProgressBar pages={pages} /> */}
 
-      <RailzButton onButtonClick={() => updatePages({ name: 'Overview' })} label="Go To Overview" />
+      {/* <RailzButton onButtonClick={() => updatePages({ name: 'Overview' })} label="Go To Overview" />
       <RailzButton
         onButtonClick={() => updatePages({ name: 'Accounting' })}
         label="Go To Accounting"
       />
       <RailzButton onButtonClick={() => updatePages({ name: 'Banking' })} label="Go To Banking" />
       <RailzButton onButtonClick={() => updatePages({ name: 'Commerce' })} label="Go To Commerce" />
-      <RailzButton onButtonClick={() => updatePages({ name: 'Summary' })} label="Go To Summary" />
+      <RailzButton onButtonClick={() => updatePages({ name: 'Summary' })} label="Go To Summary" /> */}
+
+      <RailzLogo name="freshbooks" />
     </div>
   );
 }
