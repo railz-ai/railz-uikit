@@ -5,15 +5,36 @@ import {
   // RailzComponent,
   RailzInputText,
   // RailzNested,
-  RailzIcon,
+  // RailzIcon,
+  RailzNavigationProgressBar,
   // RailzNestedSum,
 } from '@railzai/railz-uikit-react';
 
 import { useState } from 'react';
 
 function App() {
+  const [pages, setPages] = useState([
+    {
+      name: 'Overview',
+      state: 'success',
+    },
+    {
+      name: 'Accounting',
+      state: 'skipped',
+    },
+    {
+      name: 'Banking',
+      state: 'success',
+    },
+    {
+      name: 'Commerce',
+      state: 'current',
+    },
+    {
+      name: 'Summary',
+    },
+  ]);
   const buttonClick = () => {
-    // console.log('button clicked');
     setButtonTheme('themed');
 
     if (buttonTheme === 'primary') {
@@ -26,15 +47,26 @@ function App() {
   };
 
   const updateTheme = (event) => {
-    // console.log('event', event);
-    // console.log('event.target', event.target);
-    // console.log('event.target.value', event.target.value);
-    // console.log('event.detail', event.detail);
     setButtonTheme(event.detail);
   };
 
   const [buttonTheme, setButtonTheme] = useState('primary');
   const [disableButton, setDisableButton] = useState(true);
+
+  const updatePages = (page) => {
+    const newPages = pages.map((page) => ({
+      ...page,
+      state: page.state === 'current' ? 'skipped' : page.state,
+    }));
+
+    const index = newPages.findIndex((p) => p.name === page.name);
+
+    newPages[index].state = 'current';
+
+    setPages(newPages);
+
+    console.table(pages);
+  };
 
   return (
     <div className="App">
@@ -79,7 +111,19 @@ function App() {
 
       {/* <RailzNestedSum first={12} second={30} /> */}
 
-      <RailzIcon icon="home" size="small" />
+      {/* <RailzIcon icon="home" size="small" /> */}
+
+      <p>{JSON.stringify(pages)}</p>
+      <RailzNavigationProgressBar pages={pages} />
+
+      <RailzButton onButtonClick={() => updatePages({ name: 'Overview' })} label="Go To Overview" />
+      <RailzButton
+        onButtonClick={() => updatePages({ name: 'Accounting' })}
+        label="Go To Accounting"
+      />
+      <RailzButton onButtonClick={() => updatePages({ name: 'Banking' })} label="Go To Banking" />
+      <RailzButton onButtonClick={() => updatePages({ name: 'Commerce' })} label="Go To Commerce" />
+      <RailzButton onButtonClick={() => updatePages({ name: 'Summary' })} label="Go To Summary" />
     </div>
   );
 }
