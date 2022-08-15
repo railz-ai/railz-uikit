@@ -490,7 +490,15 @@ export class MyComponent {
     }
 
     return (
-      <svg width={`${this.svgWidth}px`} height={`${this.svgHeight}px`} viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        role="img"
+        aria-label={formatServiceName(this.name)}
+        width={`${this.svgWidth}px`}
+        height={`${this.svgHeight}px`}
+        viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`}
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         {this.variant === 'small' && this.outline && <circle cx="12" cy="12" r="11.5" fill="white" stroke="#BDBDBD" />}
         {this.variant === 'large' && (
           <rect width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
