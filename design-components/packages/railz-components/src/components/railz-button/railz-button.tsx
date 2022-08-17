@@ -1,7 +1,8 @@
+/* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable react/jsx-no-bind */
 import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
-
+// Todo: resolve icon bug with Connect - zf
 // import * as iconList from '../../assets/icons/index.json';
 
 /**
@@ -26,13 +27,16 @@ export class RailzButton {
   @Prop() href?: string;
   @Prop() target?: string = '_blank';
 
+  @Prop() buttonClass?: string;
+
   @Event() buttonClick: EventEmitter;
   private handleClick(event: Event): void {
     this.buttonClick.emit(event);
   }
 
   private buttonStyles(): string {
-    return `${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} ${this.loading ? 'loading' : ''} ${this.isDisabled ? 'disabled' : ''}`;
+    return `${this.buttonClass} ${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} 
+    ${this.loading ? 'loading' : ''} ${this.isDisabled ? 'disabled' : ''}`;
   }
 
   // private renderIcon(): string {
