@@ -111,36 +111,40 @@ button {
 }
 
 .themed {
+  // --brand-primary-background: #5cc9f5;
+  // --brand-primary-background-hover: pink;
+  // --brand-primary-foreground-hover: purple;
   background-color: color('brand-primary-background');
   color: color('brand-primary-foreground');
+  position: relative;
 
   &::after {
     content: '';
     position: absolute;
     pointer-events: none;
     border-radius: inherit;
-    opacity: 0.2;
-    @include transition;
+    @include transition('fast', 'all');
     @include coordinates;
   }
 
   &:hover,
   &:focus {
-    color: color('brand-primary-foreground-hover');
+    background-color: var(--brand-primary-background-hover, color('brand-primary-background'));
+    color: var(--brand-primary-foreground-hover, color('brand-primary-foreground'));
 
     &::after {
-      background-color: color('brand-primary-background-hover');
-      mix-blend-mode: multiply;
+      backdrop-filter: brightness(60%);
+      background-color: var(--brand-primary-background-hover);
     }
   }
 
   &:active {
-    color: color('brand-primary-foreground-active');
     transform: translateY(1px);
+    color: var(--brand-primary-foreground-active, color('brand-primary-foreground'));
 
     &::after {
-      background-color: color('brand-primary-background-active');
-      mix-blend-mode: lighten;
+      backdrop-filter: brightness(120%);
+      background-color: var(--brand-primary-background-active);
     }
   }
 }
