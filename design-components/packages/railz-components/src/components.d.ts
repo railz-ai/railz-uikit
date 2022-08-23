@@ -309,6 +309,7 @@ declare namespace LocalJSX {
      * Name of service provider
      */
     name?: string;
+    onImageLoad?: (event: CustomEvent<any>) => void;
     outline?: boolean;
     variant?: string;
   }

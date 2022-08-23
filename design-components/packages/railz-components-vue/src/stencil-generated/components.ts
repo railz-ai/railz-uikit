@@ -135,6 +135,7 @@ export const RailzLogo = /*@__PURE__*/ defineContainer<JSX.RailzLogo>('railz-log
   'outline',
   'imgIconUrl',
   'imgIconName',
+  'imageLoad',
 ]);
 
 export const RailzNavigationProgressBar =

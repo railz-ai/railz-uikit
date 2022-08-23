@@ -51,6 +51,10 @@ function App() {
     setButtonTheme(event.detail);
   };
 
+  const imageLoaded = () => {
+    console.log('loaded');
+  };
+
   const [buttonTheme, setButtonTheme] = useState('primary');
   const [disableButton, setDisableButton] = useState(true);
 
@@ -126,7 +130,7 @@ function App() {
       <RailzButton onButtonClick={() => updatePages({ name: 'Commerce' })} label="Go To Commerce" />
       <RailzButton onButtonClick={() => updatePages({ name: 'Summary' })} label="Go To Summary" /> */}
 
-      <RailzLogo name="freshbooks" />
+      <RailzLogo name="freshbooks" onImageLoad={imageLoaded()} />
     </div>
   );
 }
