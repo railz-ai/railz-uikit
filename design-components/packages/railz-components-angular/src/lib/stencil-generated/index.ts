@@ -1,3 +1,4 @@
+
 import * as d from './components';
 
 export const DIRECTIVES = [
@@ -12,5 +13,5 @@ export const DIRECTIVES = [
   d.RailzInputToggle,
   d.RailzLogo,
   d.RailzNavigationProgressBar,
-  d.RailzStatusPill,
+  d.RailzStatusPill
 ];
