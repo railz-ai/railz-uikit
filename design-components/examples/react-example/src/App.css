@@ -46,3 +46,7 @@
 .custom-button-class.rounded.primary.sc-railz-button {
   background-color: red;
 }
+
+:root {
+  --primary-font-stack: 'Inter', 'Helvetica';
+}
