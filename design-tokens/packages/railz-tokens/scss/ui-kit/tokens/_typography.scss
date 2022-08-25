@@ -5,8 +5,18 @@
 // Font Families
 //-------------------------------------------------------------------
 
+@font-face {
+  font-family: Inter;
+  src: url('../../../assets/fonts/inter-italic-var.woff2');
+  font-family: Inter;
+  src: url('../../../assets/fonts/inter-italic-var.woff2');
+}
+
+:root {
+  --primary-font-stack: 'Inter';
+}
+
 $default-font-stack: (
-  'Inter',
   roboto,
   -apple-system,
   blinkmacsystemfont,
@@ -18,9 +28,11 @@ $default-font-stack: (
   'Segoe UI Emoji',
   'Segoe UI Symbol'
 );
-$font-family-primary: (var(--primary-font-stack), #{$default-font-stack});
+$font-family-primary: var(--primary-font-stack), #{$default-font-stack};
 $font-families: (
-  'main': $font-family-primary,
+  'main': (
+    $font-family-primary,
+  ),
 );
 
 // Typographic Scale
