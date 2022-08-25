@@ -5,7 +5,20 @@
 // Font Families
 //-------------------------------------------------------------------
 
-$font-family-primary: 'Inter', 'Helvetica', sans-serif;
+$default-font-stack: (
+  'Inter',
+  roboto,
+  -apple-system,
+  blinkmacsystemfont,
+  'Segoe UI',
+  'Helvetica Neue',
+  arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol'
+);
+$font-family-primary: (var(--primary-font-stack), #{$default-font-stack});
 $font-families: (
   'main': $font-family-primary,
 );
