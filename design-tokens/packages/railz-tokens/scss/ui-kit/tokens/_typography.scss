@@ -5,9 +5,34 @@
 // Font Families
 //-------------------------------------------------------------------
 
-$font-family-primary: 'Inter', 'Helvetica', sans-serif;
+@font-face {
+  font-family: Inter;
+  src: url('../assets/fonts/inter-italic-var.woff2');
+  font-family: Inter;
+  src: url('../assets/fonts/inter-upright-var.woff2');
+}
+
+:root {
+  --primary-font-family: 'Inter';
+}
+
+$default-font-family: (
+  roboto,
+  -apple-system,
+  blinkmacsystemfont,
+  'Segoe UI',
+  'Helvetica Neue',
+  arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol'
+);
+$font-family-primary-list: var(--primary-font-family), #{$default-font-family};
 $font-families: (
-  'main': $font-family-primary,
+  'main': (
+    $font-family-primary-list,
+  ),
 );
 
 // Typographic Scale
