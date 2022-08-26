@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable max-len, @typescript-eslint/no-unused-vars */
-import { Component, State, Prop, h } from '@stencil/core';
+import { Component, State, Prop, h, Event, EventEmitter } from '@stencil/core';
 
 import { formatServiceName } from '../../utils/utils';
 
@@ -9,6 +11,8 @@ import DefaultBankIcon from './defaultBankIcon';
 
 @Component({
   tag: 'railz-logo',
+  styleUrl: 'railz-logo.scss',
+  shadow: true,
 })
 export class MyComponent {
   /**
@@ -32,6 +36,12 @@ export class MyComponent {
   @State() transform: string;
   @State() error = false;
   @State() renderDefaultBank = false;
+
+  @Event() imageLoad: EventEmitter;
+  private handleImageLoad(event: Event): void {
+    this.imageLoad.emit(event);
+  }
+
   @State() logoConfig: LogoConfig = {
     freshbooks: {
       svg: {
@@ -490,25 +500,31 @@ export class MyComponent {
     }
 
     return (
-      <svg width={`${this.svgWidth}px`} height={`${this.svgHeight}px`} viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        role="img"
+        aria-label={formatServiceName(this.name)}
+        width={`${this.svgWidth}px`}
+        height={`${this.svgHeight}px`}
+        viewBox={`0 0 ${this.svgWidth} ${this.svgHeight}`}
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         {this.variant === 'small' && this.outline && <circle cx="12" cy="12" r="11.5" fill="white" stroke="#BDBDBD" />}
         {this.variant === 'large' && (
           <rect width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
-            {' '}
-            <title>{formatServiceName(this.name)}</title>{' '}
+            <title>{formatServiceName(this.name)}</title>
           </rect>
         )}
         {this.variant === 'small' && (
           <rect x={this.rectX} y={this.rectY} width={this.rectWidth} height={this.rectHeight} fill={`url(#pattern-${this.name})`}>
-            {' '}
-            <title>{formatServiceName(this.name)}</title>{' '}
+            <title>{formatServiceName(this.name)}</title>
           </rect>
         )}
         <defs>
           <pattern id={`pattern-${this.name}`} patternContentUnits="objectBoundingBox" width="1" height="1">
             <use xlinkHref={`#image-ref-${this.name}`} transform={this.transform} />
           </pattern>
-          <image id={`image-ref-${this.name}`} width={this.imgWidth} height={this.imgHeight} xlinkHref={this.imgUrl} />
+          <image onLoad={event => this.handleImageLoad(event)} id={`image-ref-${this.name}`} width={this.imgWidth} height={this.imgHeight} xlinkHref={this.imgUrl} />
         </defs>
       </svg>
     );

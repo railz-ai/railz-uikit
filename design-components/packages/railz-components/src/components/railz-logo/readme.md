@@ -12,6 +12,12 @@
 | `outline`     | `outline`       |                          | `boolean` | `false`     |
 | `variant`     | `variant`       |                          | `string`  | `'large'`   |
 
+## Events
+
+| Event       | Description | Type               |
+| ----------- | ----------- | ------------------ |
+| `imageLoad` |             | `CustomEvent<any>` |
+
 ---
 
 _Built with [StencilJS](https://stenciljs.com/)_
