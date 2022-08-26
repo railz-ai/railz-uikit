@@ -13,10 +13,10 @@
 }
 
 :root {
-  --primary-font-stack: 'Inter';
+  --primary-font-family: 'Inter';
 }
 
-$default-font-stack: (
+$default-font-family: (
   roboto,
   -apple-system,
   blinkmacsystemfont,
@@ -28,10 +28,10 @@ $default-font-stack: (
   'Segoe UI Emoji',
   'Segoe UI Symbol'
 );
-$font-family-primary: var(--primary-font-stack), #{$default-font-stack};
+$font-family-primary-list: var(--primary-font-family), #{$default-font-family};
 $font-families: (
   'main': (
-    $font-family-primary,
+    $font-family-primary-list,
   ),
 );
 
