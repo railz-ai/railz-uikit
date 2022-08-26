@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.19 (2022-08-24)
+
+**Note:** Version bump only for package @railzai/railz-icons
+
+
+
+
+
 ## 0.0.1-alpha.18 (2022-08-19)
 
 **Note:** Version bump only for package @railzai/railz-icons
