@@ -69,11 +69,10 @@ label {
   height: 100%;
   display: flex;
   align-items: center;
-  @include transition('fast', 'transform');
-
   left: 0;
   z-index: 0;
   margin-left: space(1.5);
+  @include transition('fast', 'transform');
 
   &::after {
     content: '';
@@ -157,12 +156,11 @@ input {
 .prefix-container {
   padding: 0 space(0.5);
   color: color('gray-700');
-  @include font(14, 'medium');
-  @include transition;
-
   opacity: 0;
   display: flex;
   flex-grow: 1;
+  @include font(14, 'medium');
+  @include transition;
 
   .input-container:focus-within &,
   .dirty & {
@@ -171,11 +169,9 @@ input {
 }
 
 .suffix-container {
-  color: color('green-500');
-  @include font(14, 'medium');
-
   color: color('gray-700');
   text-align: right;
+  @include font(14, 'medium');
 }
 
 railz-icon {
