@@ -155,5 +155,4 @@ li:has(a.link-active) a::after {
     background-image: url('/assets/railz-logo-white.svg');
     @include aspect-ratio(10, 1);
   }
-
 }

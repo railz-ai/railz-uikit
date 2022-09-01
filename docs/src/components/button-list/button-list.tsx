@@ -97,9 +97,9 @@ export class ButtonList {
           <div class="row">
             <h4>Loading</h4>
             <railz-button size="small" label="Button Label" type="primary" loading={true} />
-            <railz-button size="small" label="Button Label" type="secondary"  loading={true} />
-            <railz-button size="small" label="Button Label" type="primary" shape="pill"  loading={true} />
-            <railz-button size="small" label="Button Label" type="secondary" shape="pill"  loading={true} />
+            <railz-button size="small" label="Button Label" type="secondary" loading={true} />
+            <railz-button size="small" label="Button Label" type="primary" shape="pill" loading={true} />
+            <railz-button size="small" label="Button Label" type="secondary" shape="pill" loading={true} />
           </div>
         </div>
       </div>

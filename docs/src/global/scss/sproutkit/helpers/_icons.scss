@@ -7,32 +7,32 @@
 
 // Used to apply icon glyphs through CSS
 @mixin icon($name) {
-    @if index($icon-list, $name) {
-        -webkit-mask: url('~@/assets/icons/#{$name}.svg') no-repeat 50% 50%;
-        mask: url('~@/assets/icons/#{$name}.svg') no-repeat 50% 50%;
-    } @else {
-        @warn errorMessage($name, $icon-list, 'tokens/_icons.scss');
-    }
+  @if index($icon-list, $name) {
+    -webkit-mask: url('~@/assets/icons/#{$name}.svg') no-repeat 50% 50%;
+    mask: url('~@/assets/icons/#{$name}.svg') no-repeat 50% 50%;
+  } @else {
+    @warn errorMessage($name, $icon-list, 'tokens/_icons.scss');
+  }
 
-    @include show-icon-guides;
-    @include transition;
+  @include show-icon-guides;
+  @include transition;
 }
 
 // Used for positioning inline SVG icons
 @mixin icon-inline {
-    @include show-icon-guides;
-    position: relative;
+  @include show-icon-guides;
+  position: relative;
 
-    svg {
-        @include absolute;
-        @include transition;
-        height: 100%;
-        width: 100%;
+  svg {
+    @include absolute;
+    @include transition;
+    height: 100%;
+    width: 100%;
 
-        path {
-            @include transition;
-        }
+    path {
+      @include transition;
     }
+  }
 }
 
 // Icon Layout Guides
@@ -42,28 +42,28 @@
 $show-icon-guides: false;
 
 @mixin show-icon-guides {
-    @if $show-icon-guides {
-        position: relative;
+  @if $show-icon-guides {
+    position: relative;
 
-        &::after {
-            content: '';
-            @include absolute;
-            @include bg(contain);
-            background-image: url('library-icon-guide.svg');
-            z-index: $z-under;
-        }
+    &::after {
+      content: '';
+      @include absolute;
+      @include bg(contain);
+      background-image: url('library-icon-guide.svg');
+      z-index: $z-under;
     }
+  }
 }
 
 @mixin icon-size($size) {
-    $type: type-of($size);
-    @if $type == 'number' {
-        width: strip-units($size) * 1%;
-        @include aspect-ratio(1, 1);
-    } @else if map-has-key($icon-sizes, $size) {
-        width: map-get($icon-sizes, $size);
-        height: map-get($icon-sizes, $size);
-    } @else {
-        @warn errorMessage($size, $icon-sizes, 'tokens/_icons.scss');
-    }
+  $type: type-of($size);
+  @if $type == 'number' {
+    width: strip-units($size) * 1%;
+    @include aspect-ratio(1, 1);
+  } @else if map-has-key($icon-sizes, $size) {
+    width: map-get($icon-sizes, $size);
+    height: map-get($icon-sizes, $size);
+  } @else {
+    @warn errorMessage($size, $icon-sizes, 'tokens/_icons.scss');
+  }
 }

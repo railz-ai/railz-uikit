@@ -11,7 +11,8 @@ export const config: Config = {
   namespace: 'railz-uikit',
   enableCache: true,
   autoprefixCss: 'railz',
-  preamble: 'Built with Stencil\nCopyright (c) Railz Financial Technologies.',
+  preamble:
+    "Railz is the Accounting Data as a Service™ solution that makes sense of your business customers' financial data.\nBuilt with Stencil\nCopyright (c) Railz Financial Technologies.",
   buildEs5: 'prod',
   extras: {
     dynamicImportShim: true,

@@ -17,8 +17,7 @@ button {
 }
 
 .button {
-  @include transition;
-
+  position: relative;
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -26,10 +25,13 @@ button {
   justify-content: center;
   text-decoration: none;
   font-family: font-family('main');
+  @include transition;
 }
 
 .label {
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 
 .rounded {
@@ -111,15 +113,36 @@ button {
 .themed {
   background-color: color('brand-primary-background');
   color: color('brand-primary-foreground');
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    border-radius: inherit;
+    @include transition('fast', 'all');
+    @include coordinates;
+  }
 
   &:hover,
   &:focus {
-    background-color: color('brand-primary-background-active');
+    background-color: var(--brand-primary-background-hover, color('brand-primary-background'));
+    color: var(--brand-primary-foreground-hover, color('brand-primary-foreground'));
+
+    &::after {
+      backdrop-filter: brightness(60%);
+      background-color: var(--brand-primary-background-hover);
+    }
   }
 
   &:active {
-    background-color: color('brand-primary-background-active');
     transform: translateY(1px);
+    color: var(--brand-primary-foreground-active, color('brand-primary-foreground'));
+
+    &::after {
+      backdrop-filter: brightness(120%);
+      background-color: var(--brand-primary-background-active);
+    }
   }
 }
 

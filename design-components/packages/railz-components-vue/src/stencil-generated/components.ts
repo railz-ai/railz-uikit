@@ -19,6 +19,7 @@ export const RailzButton = /*@__PURE__*/ defineContainer<JSX.RailzButton>('railz
   'loading',
   'href',
   'target',
+  'buttonClass',
   'buttonClick'
 ]);
 
@@ -130,7 +131,13 @@ export const RailzLogo = /*@__PURE__*/ defineContainer<JSX.RailzLogo>('railz-log
   'variant',
   'outline',
   'imgIconUrl',
-  'imgIconName'
+  'imgIconName',
+  'imageLoad'
+]);
+
+
+export const RailzNavigationProgressBar = /*@__PURE__*/ defineContainer<JSX.RailzNavigationProgressBar>('railz-navigation-progress-bar', undefined, [
+  'pages'
 ]);
 
 
