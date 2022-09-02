@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.27 (2022-09-02)
+
+
+### Features
+
+* upgrade @testing-library/user-event from 13.5.0 to 14.4.3 ([2159702](https://github.com/railz-ai/railz-uikit/commit/21597026656db239a64de46698d42c2b1557f989))
+
+
+
+
+
 ## 0.0.1-alpha.26 (2022-09-01)
 
 **Note:** Version bump only for package @railzai/railz-uikit-react
