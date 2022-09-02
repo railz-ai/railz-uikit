@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.28 (2022-09-02)
+
+
+### Bug Fixes
+
+* upgrade zone.js from 0.11.6 to 0.11.7 ([82b219d](https://github.com/ionic-team/stencil-component-starter/commit/82b219df97c23504fe3ccbcefb28a3905c03f621))
+
+
+
+
+
 ## 0.0.1-alpha.27 (2022-09-02)
 
 
