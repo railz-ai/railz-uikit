@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@railzai/railz-tokens": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/e89d642f/@railzai/railz-tokens",
-    "@railzai/railz-uikit-react": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/e89d642f/@railzai/railz-uikit-react",
+    "@railzai/railz-tokens": "latest",
+    "@railzai/railz-uikit-react": "latest",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.4.3",
