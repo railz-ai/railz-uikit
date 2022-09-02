@@ -11,10 +11,10 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "generate:icons": "node SVGtoJson_glob.js",
-    "cp:version": "rsync -av ./www/ ./www/$VERSION/",
+    "cp:version": "rsync -av ./www/railz-uikit ./www/railz-uikit/$VERSION/",
     "clean": "del www/",
     "prestart": "yarn clean",
-    "deploy": "gh-pages -t -d www -b gh-pages"
+    "deploy": "gh-pages -t -d www/railz-uikit -b gh-pages"
   },
   "devDependencies": {
     "@stencil/core": "2.13.0",
