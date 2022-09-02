@@ -1,5 +1,5 @@
 {
-  "name": "angular",
+  "name": "angular-example",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -20,7 +20,8 @@
     "@angular/router": "~14.1.2",
     "rxjs": "~7.5.6",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.7"
+    "zone.js": "~0.11.7",
+    "@railzai/railz-uikit-angular": "latest"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.1",
