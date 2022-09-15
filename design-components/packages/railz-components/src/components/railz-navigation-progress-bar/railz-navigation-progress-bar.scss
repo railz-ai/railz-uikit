@@ -12,7 +12,7 @@ ul {
 }
 
 .page {
-  padding: space(1);
+  padding: space(1) space(0.5);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -20,6 +20,10 @@ ul {
   justify-content: center;
   flex-shrink: 0;
   @include transition;
+
+  @include mq(screen('medium-large')) {
+    padding: space(1) space(2);
+  }
 
   &::before,
   &::after {
@@ -29,7 +33,7 @@ ul {
     width: calc(50% - #{space(1)});
     height: 2px;
     margin-top: -1px;
-    background-color: color('gray-400');
+    background-color: color('brand-primary-background');
     @include transition;
   }
 
@@ -82,13 +86,15 @@ ul {
 }
 
 // States
-.success {
+.pending {
   &::before,
   &::after {
-    background-color: color('brand-primary-background');
+    background-color: color('gray-400');
   }
+}
 
-  .indicator {
+.success {
+  + .indicator {
     &::before {
       border-color: color('brand-primary-background');
       background-color: color('brand-primary-background');
@@ -105,6 +111,14 @@ ul {
   &::before,
   &::after {
     width: calc(50% - #{space(1.5)});
+  }
+
+  &::before {
+    background-color: color('brand-primary-background');
+  }
+
+  .success + &::after,
+  .skipped + &::after {
     background-color: color('brand-primary-background');
   }
 
@@ -133,9 +147,17 @@ ul {
     width: calc(50% - #{space(1.5)});
   }
 
-  .success + &::before,
-  .skipped + &::before {
+  &::before {
     background-color: color('brand-primary-background');
+  }
+
+  &::after {
+    background-color: color('gray-400');
+  }
+
+  & + .skipped::before,
+  & + .skipped::after {
+    background-color: color('gray-400');
   }
 
   .indicator {
