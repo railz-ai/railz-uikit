@@ -33,7 +33,8 @@ ul {
     width: calc(50% - #{space(1)});
     height: 2px;
     margin-top: -1px;
-    background-color: color('brand-primary-background');
+    background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+
     @include transition;
   }
 
@@ -94,32 +95,27 @@ ul {
 }
 
 .success {
-  + .indicator {
+  .indicator {
     &::before {
-      border-color: color('brand-primary-background');
-      background-color: color('brand-primary-background');
+      border-color: var(--brand-secondary-background, #{color('neon-green-700')});
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
     }
   }
 
   .label {
     font-weight: font-weight('semi-bold');
-    color: color('brand-primary-background');
+    color: var(--brand-secondary-background, #{color('neon-green-700')});
   }
 }
 
 .skipped {
-  &::before,
-  &::after {
-    width: calc(50% - #{space(1.5)});
-  }
-
   &::before {
-    background-color: color('brand-primary-background');
+    background-color: var(--brand-secondary-background, #{color('neon-green-700')});
   }
 
   .success + &::after,
   .skipped + &::after {
-    background-color: color('brand-primary-background');
+    background-color: var(--brand-secondary-background, #{color('neon-green-700')});
   }
 
   .indicator {
@@ -148,7 +144,7 @@ ul {
   }
 
   &::before {
-    background-color: color('brand-primary-background');
+    background-color: var(--brand-secondary-background, #{color('neon-green-700')});
   }
 
   &::after {
@@ -180,7 +176,7 @@ ul {
   &:last-of-type {
     &::before,
     &::after {
-      background-color: color('brand-primary-background');
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
     }
   }
 }
