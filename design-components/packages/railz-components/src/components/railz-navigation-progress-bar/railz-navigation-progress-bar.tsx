@@ -13,12 +13,8 @@ export class RailzNavigationProgressBar {
   @Prop() pages: Page[];
 
   render(): HTMLElement {
-    console.log(this.pages);
-
     const successPages = this.pages.filter(page => page.state !== 'pending');
     const completedPages = successPages.length;
-
-    console.log({ completedPages });
 
     return (
       <nav>
