@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property            | Attribute            | Description | Type      | Default     |
@@ -18,20 +19,20 @@
 | `required`          | `required`           |             | `string`  | `undefined` |
 | `value`             | `value`              |             | `string`  | `undefined` |
 
+
 ## Dependencies
 
 ### Used by
 
-- [railz-input-radio-group](../railz-input-radio-group)
+ - [railz-input-radio-group](../railz-input-radio-group)
 
 ### Graph
-
 ```mermaid
 graph TD;
   railz-input-radio-group --> railz-input-radio
   style railz-input-radio fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

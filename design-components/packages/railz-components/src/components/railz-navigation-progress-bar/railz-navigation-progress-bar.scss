@@ -12,7 +12,7 @@ ul {
 }
 
 .page {
-  padding: space(1);
+  padding: space(1) space(0.5);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -20,6 +20,10 @@ ul {
   justify-content: center;
   flex-shrink: 0;
   @include transition;
+
+  @include mq(screen('medium-large')) {
+    padding: space(1) space(2);
+  }
 
   &::before,
   &::after {
@@ -29,7 +33,7 @@ ul {
     width: calc(50% - #{space(1)});
     height: 2px;
     margin-top: -1px;
-    background-color: color('gray-400');
+    background-color: var(--brand-secondary-background, #{color('neon-green-700')});
     @include transition;
   }
 
@@ -83,21 +87,15 @@ ul {
 
 // States
 .success {
-  &::before,
-  &::after {
-    background-color: color('brand-primary-background');
-  }
-
   .indicator {
     &::before {
-      border-color: color('brand-primary-background');
-      background-color: color('brand-primary-background');
+      border-color: var(--brand-secondary-background, #{color('neon-green-700')});
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
     }
   }
 
   .label {
-    font-weight: font-weight('semi-bold');
-    color: color('brand-primary-background');
+    color: var(--brand-secondary-background, #{color('neon-green-700')});
   }
 }
 
@@ -105,7 +103,6 @@ ul {
   &::before,
   &::after {
     width: calc(50% - #{space(1.5)});
-    background-color: color('brand-primary-background');
   }
 
   .indicator {
@@ -133,9 +130,8 @@ ul {
     width: calc(50% - #{space(1.5)});
   }
 
-  .success + &::before,
-  .skipped + &::before {
-    background-color: color('brand-primary-background');
+  &::after {
+    background-color: color('gray-400');
   }
 
   .indicator {
@@ -155,10 +151,100 @@ ul {
     color: color('gray-900');
   }
 
+  & ~ .page {
+    &::before,
+    &::after {
+      background-color: color('gray-400');
+    }
+  }
+
   &:last-of-type {
     &::before,
     &::after {
-      background-color: color('brand-primary-background');
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-1 {
+  .page:nth-of-type(1) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-2 {
+  .page:nth-of-type(-n + 1) {
+    &::before,
+    &::after {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+
+  .page:nth-of-type(2) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-3 {
+  .page:nth-of-type(-n + 2) {
+    &::before,
+    &::after {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+
+  .page:nth-of-type(3) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-4 {
+  .page:nth-of-type(-n + 3) {
+    &::before,
+    &::after {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+
+  .page:nth-of-type(4) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-5 {
+  .page:nth-of-type(-n + 4) {
+    &::before,
+    &::after {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+
+  .page:nth-of-type(5) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-6 {
+  .page:nth-of-type(-n + 5) {
+    &::before,
+    &::after {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+
+  .page:nth-of-type(6) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
     }
   }
 }
