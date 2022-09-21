@@ -21,14 +21,13 @@ export class RailzNavigationProgressBar {
 
     return (
       <nav>
-        <p>completedPages: {completedPages}</p>
         <ul class={`pages completed-${completedPages}`}>
           {this.pages &&
             this.pages.map(page => (
               <li class={`page ${page.state || 'pending'}`}>
                 <div class="indicator">
                   {page.state === 'skipped' && (
-                    //TODO - Resolve icon component bug -zf
+                    //TODO - Resolve icon component bug -zach forrester
                     <div class="icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                         <polygon fill="#323232" fill-rule="evenodd" points="3 7 13 7 13 9 3 9" />
