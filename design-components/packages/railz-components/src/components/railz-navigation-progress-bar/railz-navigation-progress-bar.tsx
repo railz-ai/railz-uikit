@@ -21,7 +21,6 @@ export class RailzNavigationProgressBar {
 
     return (
       <nav>
-        <p>completedPages: {completedPages}</p>
         <ul class={`pages completed-${completedPages}`}>
           {this.pages &&
             this.pages.map(page => (
