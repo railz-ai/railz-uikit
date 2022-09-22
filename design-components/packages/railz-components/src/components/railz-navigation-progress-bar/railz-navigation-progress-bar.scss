@@ -12,7 +12,7 @@ ul {
 }
 
 .page {
-  padding: space(1) space(0.5);
+  padding: space(1) space(0);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -21,9 +21,13 @@ ul {
   flex-shrink: 0;
   @include transition;
 
-  @include mq(screen('medium-large')) {
-    padding: space(1) space(2);
-  }
+  // @include mq(screen('medium')) {
+  //   padding: space(1);
+  // }
+
+  // @include mq(screen('xxx-large')) {
+  //   padding: space(1) space(1.5);
+  // }
 
   &::before,
   &::after {
@@ -61,7 +65,7 @@ ul {
     content: '';
     position: absolute;
     background-color: color('white');
-    border: 2px solid color('gray-400');
+    box-shadow: 0 0 0 2px color('gray-400');
     @include circle(space(1));
     @include transition;
   }
@@ -70,7 +74,7 @@ ul {
   &::after {
     content: '';
     position: absolute;
-    border: 2px solid color('gray-900');
+    box-shadow: inset 0 0 0 1px color('gray-900'), 0 0 0 1px color('gray-900');
     opacity: 0;
     transform: scale(0);
     @include circle(space(2));
@@ -81,15 +85,23 @@ ul {
 .label {
   padding: space(1);
   color: color('gray-600');
-  @include font-set('body-14');
+  @include font(10);
   @include transition;
+
+  // @include mq(screen('medium-small')) {
+  //   @include font-set('body-12');
+  // }
+
+  // @include mq(screen('x-large')) {
+  //   @include font-set('body-14');
+  // }
 }
 
 // States
 .success {
   .indicator {
     &::before {
-      border-color: var(--brand-secondary-background, #{color('neon-green-700')});
+      box-shadow: inset 0 0 0 2px var(--brand-secondary-background, #{color('neon-green-700')});
       background-color: var(--brand-secondary-background, #{color('neon-green-700')});
     }
   }
@@ -112,7 +124,7 @@ ul {
       opacity: 1;
       background-color: color('white');
       transform: scale(1);
-      border-color: color('gray-400');
+      box-shadow: inset 0 0 0 2px color('gray-400');
     }
 
     .icon {
@@ -136,7 +148,7 @@ ul {
 
   .indicator {
     &::before {
-      border-color: color('gray-900');
+      box-shadow: inset 0 0 0 2px color('gray-900');
       background-color: color('gray-900');
     }
 
