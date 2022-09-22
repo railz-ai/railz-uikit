@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.33 (2022-09-22)
+
+**Note:** Version bump only for package @railzai/railz-uikit-vue
+
+
+
+
+
 ## 0.0.1-alpha.32 (2022-09-21)
 
 **Note:** Version bump only for package @railzai/railz-uikit-vue
