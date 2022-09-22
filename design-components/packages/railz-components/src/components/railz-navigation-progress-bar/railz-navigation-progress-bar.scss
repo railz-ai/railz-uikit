@@ -12,7 +12,8 @@ ul {
 }
 
 .page {
-  padding: space(1) space(0);
+  // padding: space(1) space(0);
+  padding: space(1) clamp(0px, calc(3vw - #{space(3)}), #{space(1.5)});
   position: relative;
   display: flex;
   flex-direction: column;
@@ -21,13 +22,13 @@ ul {
   flex-shrink: 0;
   @include transition;
 
-  @include mq(screen('medium')) {
-    padding: space(1);
-  }
+  // @include mq(screen('medium')) {
+  //   padding: space(1);
+  // }
 
-  @include mq(screen('xxx-large')) {
-    padding: space(1) space(1.5);
-  }
+  // @include mq(screen('xxx-large')) {
+  //   padding: space(1) space(1.5);
+  // }
 
   &::before,
   &::after {
@@ -88,13 +89,15 @@ ul {
   @include font(10);
   @include transition;
 
-  @include mq(screen('medium-small')) {
-    @include font-set('body-12');
-  }
+  font-size: clamp(#{font-size(10)}, calc(2vw - #{space(1)}), #{font-size(14)});
 
-  @include mq(screen('x-large')) {
-    @include font-set('body-14');
-  }
+  // @include mq(screen('medium-small')) {
+  //   @include font-set('body-12');
+  // }
+
+  // @include mq(screen('x-large')) {
+  //   @include font-set('body-14');
+  // }
 }
 
 // States
