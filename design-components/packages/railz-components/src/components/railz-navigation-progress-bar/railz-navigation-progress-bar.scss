@@ -89,7 +89,7 @@ ul {
   @include font(10);
   @include transition;
 
-  font-size: clamp(#{font-size(10)}, calc(2vw - #{space(1)}), #{font-size(14)});
+  font-size: clamp(#{font-size(10)}, calc(1vw - #{space(1)}), #{font-size(14)});
 
   // @include mq(screen('medium-small')) {
   //   @include font-set('body-12');
