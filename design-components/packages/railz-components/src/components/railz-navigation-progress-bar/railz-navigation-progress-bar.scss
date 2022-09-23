@@ -12,7 +12,7 @@ ul {
 }
 
 .page {
-  padding: space(1) clamp(0px, calc(3vw - #{space(3)}), #{space(1.5)});
+  padding: space(1) clamp(0px, calc(3vw - #{space(4)}), #{space(1.5)});
   position: relative;
   display: flex;
   flex-direction: column;
@@ -80,7 +80,7 @@ ul {
   @include font(10);
   @include transition;
 
-  font-size: clamp(#{font-size(11)}, calc(3vw - #{space(1)}), #{font-size(14)});
+  font-size: clamp(#{font-size(12)}, calc(3vw - #{space(1)}), #{font-size(14)});
 }
 
 // States
