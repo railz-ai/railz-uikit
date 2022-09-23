@@ -80,7 +80,9 @@ ul {
   @include font(10);
   @include transition;
 
-  font-size: clamp(#{font-size(12)}, calc(3vw - #{space(1)}), #{font-size(14)});
+  @include mq(screen('small')) {
+    font-size: clamp(#{font-size(12)}, calc(3vw - #{space(1)}), #{font-size(14)});
+  }
 }
 
 // States
