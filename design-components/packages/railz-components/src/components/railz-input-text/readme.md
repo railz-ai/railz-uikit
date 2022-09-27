@@ -11,7 +11,6 @@
 | `enterkeyhint`      | `enterkeyhint`       |             | `string`  | `undefined` |
 | `error`             | `error`              |             | `boolean` | `undefined` |
 | `errorMessage`      | `error-message`      |             | `string`  | `undefined` |
-| `inputClassName`    | `input-class-name`   |             | `string`  | `undefined` |
 | `inputId`           | `input-id`           |             | `string`  | `undefined` |
 | `inputmode`         | `inputmode`          |             | `string`  | `undefined` |
 | `instructionalText` | `instructional-text` |             | `string`  | `undefined` |
@@ -32,6 +31,20 @@
 | Event         | Description | Type               |
 | ------------- | ----------- | ------------------ |
 | `valueChange` |             | `CustomEvent<any>` |
+
+## Dependencies
+
+### Depends on
+
+- [railz-icon](../railz-icon)
+
+### Graph
+
+```mermaid
+graph TD;
+  railz-input-text --> railz-icon
+  style railz-input-text fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ---
 
