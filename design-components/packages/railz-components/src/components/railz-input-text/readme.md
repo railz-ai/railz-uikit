@@ -7,11 +7,11 @@
 | Property            | Attribute            | Description | Type      | Default     |
 | ------------------- | -------------------- | ----------- | --------- | ----------- |
 | `autocomplete`      | `autocomplete`       |             | `string`  | `undefined` |
-| `className`         | `class-name`         |             | `string`  | `undefined` |
 | `disabled`          | `disabled`           |             | `boolean` | `undefined` |
 | `enterkeyhint`      | `enterkeyhint`       |             | `string`  | `undefined` |
 | `error`             | `error`              |             | `boolean` | `undefined` |
 | `errorMessage`      | `error-message`      |             | `string`  | `undefined` |
+| `inputClassName`    | `input-class-name`   |             | `string`  | `undefined` |
 | `inputId`           | `input-id`           |             | `string`  | `undefined` |
 | `inputmode`         | `inputmode`          |             | `string`  | `undefined` |
 | `instructionalText` | `instructional-text` |             | `string`  | `undefined` |

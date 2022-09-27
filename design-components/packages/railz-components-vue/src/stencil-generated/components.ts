@@ -88,7 +88,7 @@ export const RailzInputSelect = /*@__PURE__*/ defineContainer<JSX.RailzInputSele
 
 
 export const RailzInputText = /*@__PURE__*/ defineContainer<JSX.RailzInputText>('railz-input-text', undefined, [
-  'className',
+  'inputClassName',
   'label',
   'inputId',
   'placeholder',

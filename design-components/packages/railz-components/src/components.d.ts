@@ -74,11 +74,11 @@ export namespace Components {
   }
   interface RailzInputText {
     autocomplete?: string;
-    className?: string;
     disabled?: boolean;
     enterkeyhint?: string;
     error?: boolean;
     errorMessage?: string;
+    inputClassName?: string;
     inputId?: string;
     inputmode?: string | 'text';
     instructionalText?: string;
@@ -270,11 +270,11 @@ declare namespace LocalJSX {
   }
   interface RailzInputText {
     autocomplete?: string;
-    className?: string;
     disabled?: boolean;
     enterkeyhint?: string;
     error?: boolean;
     errorMessage?: string;
+    inputClassName?: string;
     inputId?: string;
     inputmode?: string | 'text';
     instructionalText?: string;
