@@ -101,6 +101,7 @@ input {
   @include input-reset;
   @include transition;
   @include font(16, 'medium');
+  @include truncate;
 
   padding: space(1.5) 0;
   margin: 0;
@@ -150,6 +151,15 @@ input {
   input {
     opacity: 1;
     transform: scale(1);
+  }
+
+  .input-container:hover,
+  .input-container:focus {
+    background: none;
+
+    label {
+      background: none;
+    }
   }
 }
 

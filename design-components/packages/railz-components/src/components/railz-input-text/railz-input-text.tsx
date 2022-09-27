@@ -17,7 +17,6 @@ export class RailzInputText {
   @State() dirty?: boolean;
   @Prop() placeholder?: string;
   @Prop() instructionalText?: string;
-  // @Prop() prefixOptions?: string;
 
   @Prop() type?: string | 'text';
   @Prop() inputmode?: string | 'text';
@@ -51,6 +50,10 @@ export class RailzInputText {
     }
 
     this.validationCheck();
+  }
+
+  componentWillLoad() {
+    this.value ? (this.dirty = true) : (this.dirty = false);
   }
 
   private renderInstructionalText(): HTMLElement {
@@ -105,6 +108,7 @@ export class RailzInputText {
             id={this.inputId || this.uuid}
             onInput={event => this.handleChange(event)}
             multiple
+            disabled={this.disabled}
           />
 
           <span class="suffix-container">
