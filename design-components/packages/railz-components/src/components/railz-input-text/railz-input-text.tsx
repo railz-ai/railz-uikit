@@ -53,6 +53,9 @@ export class RailzInputText {
   }
 
   componentWillLoad() {
+    console.log('componentWillLoad');
+    console.log('this.value', this.value);
+
     this.value ? (this.dirty = true) : (this.dirty = false);
   }
 
