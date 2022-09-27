@@ -91,6 +91,7 @@ export class RailzInputText {
       <div class={`form-group ${this.validationCheck()} ${this.inputClassName}`}>
         <div class="input-container">
           <p>test</p>
+
           {this.prefixIcon ? <railz-icon icon={this.prefixIcon} size="medium" /> : null}
 
           <span class="prefix-container">
@@ -98,6 +99,8 @@ export class RailzInputText {
           </span>
 
           <div class="label-container">
+            <p>test</p>
+
             <label htmlFor={this.inputId || this.uuid}>{this.label}</label>
           </div>
 
@@ -119,6 +122,8 @@ export class RailzInputText {
             <slot name="suffix" />
           </span>
         </div>
+
+        <p>test</p>
 
         {this.renderInstructionalText()}
         {this.renderErrorMessage()}
