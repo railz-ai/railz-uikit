@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
   shadow: true,
 })
 export class RailzInputText {
+  @Prop() className?: string;
   @Prop() label: string;
 
   @Prop() inputId?: string;
@@ -87,7 +88,7 @@ export class RailzInputText {
 
   render(): HTMLElement {
     return (
-      <div class={`form-group ${this.validationCheck()}`}>
+      <div class={`form-group ${this.validationCheck()} ${this.className}`}>
         <div class="input-container">
           {this.prefixIcon ? <railz-icon icon={this.prefixIcon} size="medium" /> : null}
 

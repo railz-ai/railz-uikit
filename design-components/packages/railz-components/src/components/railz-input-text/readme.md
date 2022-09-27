@@ -2,12 +2,12 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property            | Attribute            | Description | Type      | Default     |
 | ------------------- | -------------------- | ----------- | --------- | ----------- |
 | `autocomplete`      | `autocomplete`       |             | `string`  | `undefined` |
+| `className`         | `class-name`         |             | `string`  | `undefined` |
 | `disabled`          | `disabled`           |             | `boolean` | `undefined` |
 | `enterkeyhint`      | `enterkeyhint`       |             | `string`  | `undefined` |
 | `error`             | `error`              |             | `boolean` | `undefined` |
@@ -27,13 +27,11 @@
 | `type`              | `type`               |             | `string`  | `undefined` |
 | `value`             | `value`              |             | `string`  | `undefined` |
 
-
 ## Events
 
 | Event         | Description | Type               |
 | ------------- | ----------- | ------------------ |
 | `valueChange` |             | `CustomEvent<any>` |
-
 
 ## Dependencies
 
@@ -42,12 +40,13 @@
 - [railz-icon](../railz-icon)
 
 ### Graph
+
 ```mermaid
 graph TD;
   railz-input-text --> railz-icon
   style railz-input-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
