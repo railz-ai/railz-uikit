@@ -25,7 +25,7 @@
   }
 }
 
-@function font-weight($weight: regular) {
+@function font-weight($weight: 'regular') {
   @if map-has-key($font-weights, $weight) {
     @return map-get($font-weights, $weight);
   } @else {
@@ -55,8 +55,6 @@
 }
 
 @mixin font-set($set: '') {
-  // @debug $set;
-
   @if map-has-key($font-settings, $set) {
     $set: map-get($font-settings, $set);
     @include font($set...);
@@ -64,8 +62,6 @@
 }
 
 @mixin font-set-weight($set: '') {
-  // @debug $set;
-
   @if map-has-key($font-settings, $set) {
     $set: map-get($font-settings, $set);
     @include get-font-set-weight($set...);
@@ -85,7 +81,7 @@
 
 @mixin font(
   $size: '',
-  $weight: '',
+  $weight: 'regular',
   $family: list.nth(map-keys($font-families), 1),
   $line-height: 'normal',
   $letter-spacing: 'normal',
