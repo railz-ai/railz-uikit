@@ -25,7 +25,7 @@
   }
 }
 
-@function font-weight($weight: regular) {
+@function font-weight($weight: 'regular') {
   @if map-has-key($font-weights, $weight) {
     @return map-get($font-weights, $weight);
   } @else {
@@ -85,7 +85,7 @@
 
 @mixin font(
   $size: '',
-  $weight: '',
+  $weight: 'regular',
   $family: list.nth(map-keys($font-families), 1),
   $line-height: 'normal',
   $letter-spacing: 'normal',
