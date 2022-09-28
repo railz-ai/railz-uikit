@@ -55,8 +55,6 @@
 }
 
 @mixin font-set($set: '') {
-  // @debug $set;
-
   @if map-has-key($font-settings, $set) {
     $set: map-get($font-settings, $set);
     @include font($set...);
@@ -64,8 +62,6 @@
 }
 
 @mixin font-set-weight($set: '') {
-  // @debug $set;
-
   @if map-has-key($font-settings, $set) {
     $set: map-get($font-settings, $set);
     @include get-font-set-weight($set...);
