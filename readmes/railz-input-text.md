@@ -22,6 +22,7 @@
 | `pattern`           | `pattern`            |             | `string`  | `undefined` |
 | `placeholder`       | `placeholder`        |             | `string`  | `undefined` |
 | `prefixIcon`        | `prefix-icon`        |             | `string`  | `undefined` |
+| `readonly`          | `readonly`           |             | `boolean` | `undefined` |
 | `required`          | `required`           |             | `boolean` | `undefined` |
 | `type`              | `type`               |             | `string`  | `undefined` |
 | `value`             | `value`              |             | `string`  | `undefined` |
