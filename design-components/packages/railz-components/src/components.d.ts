@@ -89,6 +89,7 @@ export namespace Components {
         "pattern"?: string;
         "placeholder"?: string;
         "prefixIcon"?: string;
+        "readonly"?: boolean;
         "required"?: boolean;
         "type"?: string | 'text';
         "value"?: string;
@@ -297,6 +298,7 @@ declare namespace LocalJSX {
         "pattern"?: string;
         "placeholder"?: string;
         "prefixIcon"?: string;
+        "readonly"?: boolean;
         "required"?: boolean;
         "type"?: string | 'text';
         "value"?: string;

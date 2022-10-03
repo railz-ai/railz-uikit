@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Component, h, Prop, State, Event, EventEmitter } from '@stencil/core';
@@ -22,6 +21,7 @@ export class RailzInputText {
   @Prop() inputmode?: string | 'text';
   @Prop() required?: boolean;
   @Prop({ reflect: true }) disabled?: boolean;
+  @Prop({ reflect: true }) readonly?: boolean;
   @Prop() error?: boolean;
   @Prop() errorMessage?: string;
   @Prop() minContentLength?: number;
@@ -107,7 +107,7 @@ export class RailzInputText {
             max={this.maxNumber}
             id={this.inputId || this.uuid}
             onInput={event => this.handleChange(event)}
-            multiple
+            readonly={this.readonly}
             disabled={this.disabled}
           />
 

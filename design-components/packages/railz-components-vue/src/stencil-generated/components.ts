@@ -96,6 +96,7 @@ export const RailzInputText = /*@__PURE__*/ defineContainer<JSX.RailzInputText>(
   'inputmode',
   'required',
   'disabled',
+  'readonly',
   'error',
   'errorMessage',
   'minContentLength',
