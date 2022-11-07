@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/railz-components.esm.js"></script>
-    <script nomodule src="/build/railz-components.js"></script>
+    <script type="module" src="../www/build/railz-uikit.esm.js"></script>
+    <script nomodule src="../www/build/railz-uikit.js"></script>
   </head>
   <body>
-    <railz-component first="Stencil" last="'Don't call me a framework' JS"></railz-component>
-
-    <railz-button label="lets goooo" />
+    <h1>h2</h1>
+    <railz-button label="lets goooo" onclick="console.log(1)"></railz-button>
+    <railz-logo name="freshbooks"></railz-logo>
   </body>
 
-  <script></script>
+  <script>
+    let railzNavigationProgressBar = document.createElement('railz-navigation-progress-bar');
+    railzNavigationProgressBar.pages = [
+      { name: 'Step 1', state: 'success', onClick: () => console.log(1) },
+      { name: 'Step 2', state: 'skipped' },
+      { name: 'Step 3', state: 'current', onClick: () => console.log(3) },
+      { name: 'Step 4', state: 'pending', onClick: () => console.log(4) },
+      { name: 'Step 5', state: 'pending', onClick: () => console.log(5) },
+      { name: 'Step 6', state: 'success', onClick: () => console.log(6) },
+      { name: 'Step 7', state: 'skipped', onClick: () => console.log(7) },
+    ];
+    document.body.appendChild(railzNavigationProgressBar);
+  </script>
 </html>
+
+<!-- cd railz-uikit/design-components/packages/railz-components -->
+<!-- yarn build && yarn start -->
+
+<!-- http://127.0.0.1:5500/design-components/packages/railz-components/www/index.html -->
