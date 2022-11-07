@@ -3,6 +3,7 @@ import { Component, h, Prop } from '@stencil/core';
 export interface Page {
   name: string;
   state?: 'pending' | 'current' | 'success' | 'skipped';
+  onClick: any;
 }
 @Component({
   tag: 'railz-navigation-progress-bar',
@@ -24,7 +25,7 @@ export class RailzNavigationProgressBar {
         <ul class={`pages completed-${completedPages}`}>
           {this.pages &&
             this.pages.map(page => (
-              <li class={`page ${page.state || 'pending'}`}>
+              <li class={`page ${page.state || 'pending'} ${page.onClick && 'pointer'}`} onClick={page.onClick}>
                 <div class="indicator">
                   {page.state === 'skipped' && (
                     //TODO - Resolve icon component bug -zach forrester
