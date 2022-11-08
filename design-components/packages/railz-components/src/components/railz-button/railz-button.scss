@@ -110,6 +110,23 @@ button {
   }
 }
 
+.outlined {
+  background-color: transparent;
+  box-shadow: shadow-line('black');
+  color: color('black');
+
+  &:hover,
+  &:focus {
+    background-color: color('gray-200');
+    box-shadow: shadow-line('gray-500');
+  }
+
+  &:active {
+    background-color: color('gray-300');
+    transform: translateY(1px);
+  }
+}
+
 .themed {
   background-color: color('brand-primary-background');
   color: color('brand-primary-foreground');
