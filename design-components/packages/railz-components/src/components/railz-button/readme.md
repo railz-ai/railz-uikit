@@ -23,7 +23,7 @@
 | Event         | Description | Type               |
 | ------------- | ----------- | ------------------ |
 | `buttonClick` |             | `CustomEvent<any>` |
-| `onClick`     |             | `CustomEvent<any>` |
+| `click`       |             | `CustomEvent<any>` |
 
 ---
 

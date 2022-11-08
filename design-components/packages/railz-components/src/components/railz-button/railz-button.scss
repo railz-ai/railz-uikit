@@ -213,6 +213,25 @@ button {
   }
 }
 
+.icon {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+
+  &:empty {
+    display: none;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+  > * {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
 .grow {
   display: flex;
   width: 100%;

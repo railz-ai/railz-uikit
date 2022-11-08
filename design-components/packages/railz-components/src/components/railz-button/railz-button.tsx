@@ -32,10 +32,10 @@ export class RailzButton {
   // @Prop() buttonClass?: string;
   @Prop({ attribute: 'className' }) buttonClass?: string;
 
-  @Event() onClick: EventEmitter;
+  @Event() click: EventEmitter;
   @Event() buttonClick: EventEmitter;
   private handleClick(event: Event): void {
-    this.onClick.emit(event);
+    this.click.emit(event);
     this.buttonClick.emit(event);
   }
 
