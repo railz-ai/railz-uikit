@@ -27,10 +27,13 @@ export class RailzButton {
   @Prop() href?: string;
   @Prop() target?: string = '_blank';
 
-  @Prop() buttonClass?: string;
+  // @Prop() buttonClass?: string;
+  @Prop({ attribute: 'className' }) buttonClass?: string;
 
+  @Event() onClick: EventEmitter;
   @Event() buttonClick: EventEmitter;
   private handleClick(event: Event): void {
+    this.onClick.emit(event);
     this.buttonClick.emit(event);
   }
 
