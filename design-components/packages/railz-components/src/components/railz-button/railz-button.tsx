@@ -20,7 +20,7 @@ export class RailzButton {
   @Prop() type?: string = 'primary';
   @Prop() shape?: string = 'rounded';
   @Prop() size?: string = 'medium';
-  @Prop() icon?: string;
+  @Prop() buttonType?: string;
   // @Prop() prefixIcon?: string;
   // @Prop() suffixIcon?: string;
   @Prop() isDisabled?: boolean;
@@ -79,6 +79,13 @@ export class RailzButton {
             <span class="label">{this.label}</span>
             {this.renderSuffixIcon()}
           </a>
+        ) : this.buttonType ? (
+          <button type={this.buttonType} onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
+            {this.renderPrefixIcon()}
+            {this.loading ? <span class="loading-indicator"></span> : null}
+            <span class="label">{this.loading ? 'Loading...' : this.label}</span>
+            {this.renderSuffixIcon()}
+          </button>
         ) : (
           <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
             {this.renderPrefixIcon()}

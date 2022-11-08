@@ -7,9 +7,9 @@
 | Property      | Attribute     | Description | Type      | Default     |
 | ------------- | ------------- | ----------- | --------- | ----------- |
 | `buttonClass` | `classname`   |             | `string`  | `undefined` |
+| `buttonType`  | `button-type` |             | `string`  | `undefined` |
 | `grow`        | `grow`        |             | `boolean` | `undefined` |
 | `href`        | `href`        |             | `string`  | `undefined` |
-| `icon`        | `icon`        |             | `string`  | `undefined` |
 | `isDisabled`  | `is-disabled` |             | `boolean` | `undefined` |
 | `label`       | `label`       |             | `string`  | `undefined` |
 | `loading`     | `loading`     |             | `boolean` | `undefined` |
