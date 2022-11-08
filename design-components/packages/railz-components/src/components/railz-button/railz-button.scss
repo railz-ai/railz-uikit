@@ -226,9 +226,10 @@ button {
     overflow: hidden;
   }
 
-  > * {
+  ::slotted(*) {
     width: 100%;
     object-fit: contain;
+    outline: 1px solid red;
   }
 }
 
