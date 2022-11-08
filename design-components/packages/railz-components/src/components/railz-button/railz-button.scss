@@ -181,12 +181,10 @@ button {
   padding: space(1) space(2);
   min-width: space(15);
   min-height: space(4);
+  gap: space(0.5);
 
   .icon {
     @include icon-size('x-small');
-
-    margin-left: space(0.25);
-    margin-right: space(0.5);
   }
 }
 
@@ -196,12 +194,10 @@ button {
   padding: space(1.5) space(3);
   min-width: space(23);
   min-height: space(5);
+  gap: space(1);
 
   .icon {
     @include icon-size('small');
-
-    margin-left: space(-1);
-    margin-right: space(1.5);
   }
 }
 
@@ -210,12 +206,10 @@ button {
   font-weight: font-weight('semi-bold');
   padding: space(2) space(6);
   min-width: space(23);
+  gap: space(2);
 
   .icon {
     @include icon-size('medium');
-
-    margin-right: space(2);
-    margin-left: space(-2);
   }
 }
 

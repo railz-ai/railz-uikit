@@ -21,6 +21,8 @@ export class RailzButton {
   @Prop() shape?: string = 'rounded';
   @Prop() size?: string = 'medium';
   @Prop() icon?: string;
+  // @Prop() prefixIcon?: string;
+  // @Prop() suffixIcon?: string;
   @Prop() isDisabled?: boolean;
   @Prop() grow?: boolean;
   @Prop() loading?: boolean;
@@ -48,19 +50,41 @@ export class RailzButton {
   //   }
   // }
 
+  private renderPrefixIcon(): string {
+    if (!this.loading) {
+      return (
+        <div class="icon prefix-icon">
+          <slot name="prefix" />
+        </div>
+      );
+    }
+  }
+
+  private renderSuffixIcon(): string {
+    if (!this.loading) {
+      return (
+        <div class="icon suffix-icon">
+          <slot name="suffix" />
+        </div>
+      );
+    }
+  }
+
   render(): HTMLElement {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
         {this.href ? (
           <a href={this.href} target={this.target} class={`button ${this.buttonStyles()}`}>
-            {/* {this.renderIcon()} */}
+            {this.renderPrefixIcon()}
             <span class="label">{this.label}</span>
+            {this.renderSuffixIcon()}
           </a>
         ) : (
           <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
-            {/* {this.renderIcon()} */}
+            {this.renderPrefixIcon()}
             {this.loading ? <span class="loading-indicator"></span> : null}
             <span class="label">{this.loading ? 'Loading...' : this.label}</span>
+            {this.renderSuffixIcon()}
           </button>
         )}
       </Host>
