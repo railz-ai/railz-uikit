@@ -1,6 +1,6 @@
 {
   "name": "@railzai/railz-tokens",
-  "version": "0.0.1-alpha.38",
+  "version": "0.0.1-alpha.39",
   "description": "Design Token Framework",
   "main": "./scss/ui-kit/_index.scss",
   "scripts": {
