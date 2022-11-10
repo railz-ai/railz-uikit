@@ -29,18 +29,13 @@ export class RailzButton {
   @Prop() href?: string;
   @Prop() target?: string = '_blank';
 
-  // @Prop() buttonClass?: string;
-  @Prop({ attribute: 'className' }) buttonClass?: string;
-
-  @Event() click: EventEmitter;
   @Event() buttonClick: EventEmitter;
   private handleClick(event: Event): void {
-    this.click.emit(event);
     this.buttonClick.emit(event);
   }
 
   private buttonStyles(): string {
-    return `${this.buttonClass} ${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} 
+    return `${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} 
     ${this.loading ? 'loading' : ''} ${this.isDisabled ? 'disabled' : ''}`;
   }
 
