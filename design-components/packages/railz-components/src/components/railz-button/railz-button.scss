@@ -232,11 +232,11 @@ button {
     @include icon-size('small');
   }
 
-  .prefix {
+  .prefix-icon {
     margin-left: space(-0.5);
   }
 
-  .suffix {
+  .suffix-icon {
     margin-right: space(-0.5);
   }
 }
