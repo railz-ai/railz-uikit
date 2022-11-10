@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "dev": "(cd design-components/packages/railz-components && yarn && yarn start)",
     "install:codesandbox:components": "cd design-components && yarn install && cd ..",
     "install:codesandbox:icons": "cd design-icons && yarn install && cd ..",
     "install:codesandbox:tokens": "cd design-tokens && yarn install && cd ..",

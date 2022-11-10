@@ -26,6 +26,9 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    background-color: transparent;
   }
 
   &::before,
