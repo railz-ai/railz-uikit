@@ -133,7 +133,6 @@ button {
   min-width: 0;
   padding: space(0.5) space(1);
   margin: 0 space(-1);
-  font-weight: font-weight('semi-bold');
 
   > *:empty {
     display: none;
@@ -233,11 +232,11 @@ button {
     @include icon-size('small');
   }
 
-  .prefix {
+  .prefix-icon {
     margin-left: space(-0.5);
   }
 
-  .suffix {
+  .suffix-icon {
     margin-right: space(-0.5);
   }
 }
