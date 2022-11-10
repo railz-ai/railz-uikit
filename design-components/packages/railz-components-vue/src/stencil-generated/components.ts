@@ -13,13 +13,12 @@ export const RailzButton = /*@__PURE__*/ defineContainer<JSX.RailzButton>('railz
   'type',
   'shape',
   'size',
-  'icon',
+  'buttonType',
   'isDisabled',
   'grow',
   'loading',
   'href',
   'target',
-  'buttonClass',
   'buttonClick'
 ]);
 

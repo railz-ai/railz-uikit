@@ -20,14 +20,14 @@ export class RailzButton {
   @Prop() type?: string = 'primary';
   @Prop() shape?: string = 'rounded';
   @Prop() size?: string = 'medium';
-  @Prop() icon?: string;
+  @Prop() buttonType?: string;
+  // @Prop() prefixIcon?: string;
+  // @Prop() suffixIcon?: string;
   @Prop() isDisabled?: boolean;
   @Prop() grow?: boolean;
   @Prop() loading?: boolean;
   @Prop() href?: string;
   @Prop() target?: string = '_blank';
-
-  @Prop() buttonClass?: string;
 
   @Event() buttonClick: EventEmitter;
   private handleClick(event: Event): void {
@@ -35,7 +35,7 @@ export class RailzButton {
   }
 
   private buttonStyles(): string {
-    return `${this.buttonClass} ${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} 
+    return `${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} 
     ${this.loading ? 'loading' : ''} ${this.isDisabled ? 'disabled' : ''}`;
   }
 
@@ -45,19 +45,48 @@ export class RailzButton {
   //   }
   // }
 
+  private renderPrefixIcon(): string {
+    if (!this.loading) {
+      return (
+        <div class="icon prefix-icon">
+          <slot name="prefix" />
+        </div>
+      );
+    }
+  }
+
+  private renderSuffixIcon(): string {
+    if (!this.loading) {
+      return (
+        <div class="icon suffix-icon">
+          <slot name="suffix" />
+        </div>
+      );
+    }
+  }
+
   render(): HTMLElement {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
         {this.href ? (
           <a href={this.href} target={this.target} class={`button ${this.buttonStyles()}`}>
-            {/* {this.renderIcon()} */}
+            {this.renderPrefixIcon()}
             <span class="label">{this.label}</span>
+            {this.renderSuffixIcon()}
           </a>
-        ) : (
-          <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
-            {/* {this.renderIcon()} */}
+        ) : this.buttonType ? (
+          <button type={this.buttonType} onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
+            {this.renderPrefixIcon()}
             {this.loading ? <span class="loading-indicator"></span> : null}
             <span class="label">{this.loading ? 'Loading...' : this.label}</span>
+            {this.renderSuffixIcon()}
+          </button>
+        ) : (
+          <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
+            {this.renderPrefixIcon()}
+            {this.loading ? <span class="loading-indicator"></span> : null}
+            <span class="label">{this.loading ? 'Loading...' : this.label}</span>
+            {this.renderSuffixIcon()}
           </button>
         )}
       </Host>

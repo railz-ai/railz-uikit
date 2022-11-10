@@ -18,9 +18,10 @@ button {
 
 .button {
   position: relative;
-  line-height: 1;
+  line-height: line-height('small');
   cursor: pointer;
   display: flex;
+  width: fit-content;
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -43,7 +44,7 @@ button {
 
     &:hover,
     &:focus {
-      background-color: color('brand-primary-background-active');
+      background-color: color('brand-primary-background-hover');
     }
 
     &:active {
@@ -110,6 +111,55 @@ button {
   }
 }
 
+.outlined {
+  background-color: transparent;
+  box-shadow: shadow-line('black');
+  color: color('black');
+
+  &:hover,
+  &:focus {
+    background-color: color('gray-600', 0.2);
+    box-shadow: shadow-line('gray-500');
+  }
+
+  &:active {
+    background-color: color('gray-800', 0.3);
+    transform: translateY(1px);
+  }
+}
+
+.button.text {
+  min-height: auto;
+  min-width: 0;
+  padding: space(0.5) space(1);
+  margin: 0 space(-1);
+  font-weight: font-weight('semi-bold');
+
+  > *:empty {
+    display: none;
+  }
+
+  &.primary {
+    color: color('brand-primary-background');
+    background-color: color('green-200', 0);
+
+    &:hover,
+    &:focus {
+      background-color: color('green-200', 0.2);
+    }
+  }
+
+  &.warning {
+    color: color('red-600');
+    background-color: color('red-200', 0);
+
+    &:hover,
+    &:focus {
+      background-color: color('red-200', 0.2);
+    }
+  }
+}
+
 .themed {
   background-color: color('brand-primary-background');
   color: color('brand-primary-foreground');
@@ -151,6 +201,7 @@ button {
   font-weight: font-weight('medium');
   padding: space(0.5) space(2);
   min-height: space(3);
+  gap: space(0.5);
 
   .icon {
     @include icon-size('x-small');
@@ -162,13 +213,11 @@ button {
   font-weight: font-weight('medium');
   padding: space(1) space(2);
   min-width: space(15);
-  min-height: space(4);
+  min-height: space(5);
+  gap: space(1);
 
   .icon {
     @include icon-size('x-small');
-
-    margin-left: space(0.25);
-    margin-right: space(0.5);
   }
 }
 
@@ -178,12 +227,18 @@ button {
   padding: space(1.5) space(3);
   min-width: space(23);
   min-height: space(5);
+  gap: space(1.5);
 
   .icon {
     @include icon-size('small');
+  }
 
-    margin-left: space(-1);
-    margin-right: space(1.5);
+  .prefix {
+    margin-left: space(-0.5);
+  }
+
+  .suffix {
+    margin-right: space(-0.5);
   }
 }
 
@@ -192,12 +247,33 @@ button {
   font-weight: font-weight('semi-bold');
   padding: space(2) space(6);
   min-width: space(23);
+  gap: space(2);
 
   .icon {
     @include icon-size('medium');
+  }
+}
 
-    margin-right: space(2);
-    margin-left: space(-2);
+.icon {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+
+  &:empty {
+    display: none;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+
+  ::slotted(*) {
+    width: 100%;
+    object-fit: contain;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

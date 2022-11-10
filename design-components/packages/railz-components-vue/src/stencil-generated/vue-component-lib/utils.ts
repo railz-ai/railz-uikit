@@ -1,7 +1,7 @@
 import { VNode, defineComponent, getCurrentInstance, h, inject, ref, Ref } from 'vue';
 
-export interface InputProps<T> {
-  modelValue?: T;
+export interface InputProps extends Object {
+  modelValue: string | boolean;
 }
 
 const UPDATE_VALUE_EVENT = 'update:modelValue';
@@ -54,7 +54,7 @@ const getElementClasses = (
  * @prop externalModelUpdateEvent - The external event to fire from your Vue component when modelUpdateEvent fires. This is used for ensuring that v-model references have been
  * correctly updated when a user's event callback fires.
  */
-export const defineContainer = <Props, VModelType = string | number | boolean>(
+export const defineContainer = <Props>(
   name: string,
   defineCustomElement: any,
   componentProps: string[] = [],
@@ -72,127 +72,123 @@ export const defineContainer = <Props, VModelType = string | number | boolean>(
     defineCustomElement();
   }
 
-  const Container = defineComponent<Props & InputProps<VModelType>>(
-    (props: any, { attrs, slots, emit }) => {
-      let modelPropValue = props[modelProp];
-      const containerRef = ref<HTMLElement>();
-      const classes = new Set(getComponentClasses(attrs.class));
-      const onVnodeBeforeMount = (vnode: VNode) => {
-        // Add a listener to tell Vue to update the v-model
-        if (vnode.el) {
-          const eventsNames = Array.isArray(modelUpdateEvent)
-            ? modelUpdateEvent
-            : [modelUpdateEvent];
-          eventsNames.forEach((eventName: string) => {
-            vnode.el!.addEventListener(eventName.toLowerCase(), (e: Event) => {
-              modelPropValue = (e?.target as any)[modelProp];
-              emit(UPDATE_VALUE_EVENT, modelPropValue);
+  const Container = defineComponent<Props & InputProps>((props: any, { attrs, slots, emit }) => {
+    let modelPropValue = props[modelProp];
+    const containerRef = ref<HTMLElement>();
+    const classes = new Set(getComponentClasses(attrs.class));
+    const onVnodeBeforeMount = (vnode: VNode) => {
+      // Add a listener to tell Vue to update the v-model
+      if (vnode.el) {
+        const eventsNames = Array.isArray(modelUpdateEvent) ? modelUpdateEvent : [modelUpdateEvent];
+        eventsNames.forEach((eventName: string) => {
+          vnode.el.addEventListener(eventName.toLowerCase(), (e: Event) => {
+            modelPropValue = (e?.target as any)[modelProp];
+            emit(UPDATE_VALUE_EVENT, modelPropValue);
 
-              /**
-               * We need to emit the change event here
-               * rather than on the web component to ensure
-               * that any v-model bindings have been updated.
-               * Otherwise, the developer will listen on the
-               * native web component, but the v-model will
-               * not have been updated yet.
-               */
-              if (externalModelUpdateEvent) {
-                emit(externalModelUpdateEvent, e);
-              }
-            });
-          });
-        }
-      };
-
-      const currentInstance = getCurrentInstance();
-      const hasRouter = currentInstance?.appContext?.provides[NAV_MANAGER];
-      const navManager: NavManager | undefined = hasRouter ? inject(NAV_MANAGER) : undefined;
-      const handleRouterLink = (ev: Event) => {
-        const { routerLink } = props;
-        if (routerLink === EMPTY_PROP) return;
-
-        if (navManager !== undefined) {
-          let navigationPayload: any = { event: ev };
-          for (const key in props) {
-            const value = props[key];
-            if (
-              props.hasOwnProperty(key) &&
-              key.startsWith(ROUTER_PROP_PREFIX) &&
-              value !== EMPTY_PROP
-            ) {
-              navigationPayload[key] = value;
+            /**
+             * We need to emit the change event here
+             * rather than on the web component to ensure
+             * that any v-model bindings have been updated.
+             * Otherwise, the developer will listen on the
+             * native web component, but the v-model will
+             * not have been updated yet.
+             */
+            if (externalModelUpdateEvent) {
+              emit(externalModelUpdateEvent, e);
             }
-          }
-
-          navManager.navigate(navigationPayload);
-        } else {
-          console.warn(
-            'Tried to navigate, but no router was found. Make sure you have mounted Vue Router.',
-          );
-        }
-      };
-
-      return () => {
-        modelPropValue = props[modelProp];
-
-        getComponentClasses(attrs.class).forEach((value) => {
-          classes.add(value);
+          });
         });
+      }
+    };
 
-        const oldClick = props.onClick;
-        const handleClick = (ev: Event) => {
-          if (oldClick !== undefined) {
-            oldClick(ev);
-          }
-          if (!ev.defaultPrevented) {
-            handleRouterLink(ev);
-          }
-        };
+    const currentInstance = getCurrentInstance();
+    const hasRouter = currentInstance?.appContext?.provides[NAV_MANAGER];
+    const navManager: NavManager | undefined = hasRouter ? inject(NAV_MANAGER) : undefined;
+    const handleRouterLink = (ev: Event) => {
+      const { routerLink } = props;
+      if (routerLink === EMPTY_PROP) return;
 
-        let propsToAdd: any = {
-          ref: containerRef,
-          class: getElementClasses(containerRef, classes),
-          onClick: handleClick,
-          onVnodeBeforeMount: modelUpdateEvent ? onVnodeBeforeMount : undefined,
-        };
-
-        /**
-         * We can use Object.entries here
-         * to avoid the hasOwnProperty check,
-         * but that would require 2 iterations
-         * where as this only requires 1.
-         */
+      if (navManager !== undefined) {
+        let navigationPayload: any = { event: ev };
         for (const key in props) {
           const value = props[key];
-          if (props.hasOwnProperty(key) && value !== EMPTY_PROP) {
-            propsToAdd[key] = value;
+          if (
+            props.hasOwnProperty(key) &&
+            key.startsWith(ROUTER_PROP_PREFIX) &&
+            value !== EMPTY_PROP
+          ) {
+            navigationPayload[key] = value;
           }
         }
 
-        if (modelProp) {
-          /**
-           * If form value property was set using v-model
-           * then we should use that value.
-           * Otherwise, check to see if form value property
-           * was set as a static value (i.e. no v-model).
-           */
-          if (props[MODEL_VALUE] !== EMPTY_PROP) {
-            propsToAdd = {
-              ...propsToAdd,
-              [modelProp]: props[MODEL_VALUE],
-            };
-          } else if (modelPropValue !== EMPTY_PROP) {
-            propsToAdd = {
-              ...propsToAdd,
-              [modelProp]: modelPropValue,
-            };
-          }
-        }
+        navManager.navigate(navigationPayload);
+      } else {
+        console.warn(
+          'Tried to navigate, but no router was found. Make sure you have mounted Vue Router.',
+        );
+      }
+    };
 
-        return h(name, propsToAdd, slots.default && slots.default());
+    return () => {
+      modelPropValue = props[modelProp];
+
+      getComponentClasses(attrs.class).forEach((value) => {
+        classes.add(value);
+      });
+
+      const oldClick = props.onClick;
+      const handleClick = (ev: Event) => {
+        if (oldClick !== undefined) {
+          oldClick(ev);
+        }
+        if (!ev.defaultPrevented) {
+          handleRouterLink(ev);
+        }
       };
-    },
-  );
+
+      let propsToAdd: any = {
+        ref: containerRef,
+        class: getElementClasses(containerRef, classes),
+        onClick: handleClick,
+        onVnodeBeforeMount: modelUpdateEvent ? onVnodeBeforeMount : undefined,
+      };
+
+      /**
+       * We can use Object.entries here
+       * to avoid the hasOwnProperty check,
+       * but that would require 2 iterations
+       * where as this only requires 1.
+       */
+      for (const key in props) {
+        const value = props[key];
+        if (props.hasOwnProperty(key) && value !== EMPTY_PROP) {
+          propsToAdd[key] = value;
+        }
+      }
+
+      if (modelProp) {
+        /**
+         * If form value property was set using v-model
+         * then we should use that value.
+         * Otherwise, check to see if form value property
+         * was set as a static value (i.e. no v-model).
+         */
+        if (props[MODEL_VALUE] !== EMPTY_PROP) {
+          propsToAdd = {
+            ...propsToAdd,
+            [modelProp]: props[MODEL_VALUE],
+          };
+        } else if (modelPropValue !== EMPTY_PROP) {
+          propsToAdd = {
+            ...propsToAdd,
+            [modelProp]: modelPropValue,
+          };
+        }
+      }
+
+      return h(name, propsToAdd, slots.default && slots.default());
+    };
+  });
 
   Container.displayName = name;
 
