@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property            | Attribute            | Description | Type      | Default     |
@@ -27,11 +28,13 @@
 | `type`              | `type`               |             | `string`  | `undefined` |
 | `value`             | `value`              |             | `string`  | `undefined` |
 
+
 ## Events
 
 | Event         | Description | Type               |
 | ------------- | ----------- | ------------------ |
 | `valueChange` |             | `CustomEvent<any>` |
+
 
 ## Dependencies
 
@@ -40,13 +43,12 @@
 - [railz-icon](../railz-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   railz-input-text --> railz-icon
   style railz-input-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*
