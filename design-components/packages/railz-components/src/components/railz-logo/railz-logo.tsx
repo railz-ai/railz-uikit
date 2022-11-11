@@ -14,7 +14,7 @@ import DefaultBankIcon from './defaultBankIcon';
   styleUrl: 'railz-logo.scss',
   shadow: true,
 })
-export class MyComponent {
+export class RailzLogo {
   /**
    * Name of service provider
    */
