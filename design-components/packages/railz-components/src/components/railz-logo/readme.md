@@ -2,25 +2,15 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
-| Property      | Attribute       | Description              | Type      | Default     |
-| ------------- | --------------- | ------------------------ | --------- | ----------- |
-| `imgIconName` | `img-icon-name` |                          | `string`  | `undefined` |
-| `imgIconUrl`  | `img-icon-url`  |                          | `string`  | `undefined` |
-| `name`        | `name`          | Name of service provider | `string`  | `undefined` |
-| `outline`     | `outline`       |                          | `boolean` | `false`     |
-| `variant`     | `variant`       |                          | `string`  | `'large'`   |
+| Property     | Attribute      | Description | Type                                                                                                                                                                                                                          | Default     |
+| ------------ | -------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `imgIconUrl` | `img-icon-url` |             | `string`                                                                                                                                                                                                                      | `undefined` |
+| `name`       | `name`         |             | `"default" \| "freshbooks" \| "microsoftDynamics" \| "myob" \| "oracleNetsuite" \| "plaid" \| "quickbooksDesktop" \| "quickbooksOnline" \| "sageBusinessCloud" \| "sageIntacct" \| "shopify" \| "square" \| "waze" \| "xero"` | `'default'` |
+| `outlined`   | `outlined`     |             | `boolean`                                                                                                                                                                                                                     | `false`     |
+| `variant`    | `variant`      |             | `"large" \| "small"`                                                                                                                                                                                                          | `'large'`   |
 
+---
 
-## Events
-
-| Event       | Description | Type               |
-| ----------- | ----------- | ------------------ |
-| `imageLoad` |             | `CustomEvent<any>` |
-
-
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
