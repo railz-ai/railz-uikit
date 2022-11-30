@@ -21,21 +21,24 @@ import { formatServiceName } from '../../utils/utils';
   shadow: true,
 })
 export class RailzLogo {
-  @Prop() name?:
-    | 'default'
-    | 'freshbooks'
-    | 'microsoftDynamics'
-    | 'myob'
-    | 'oracleNetsuite'
-    | 'plaid'
-    | 'quickbooksOnline'
-    | 'quickbooksDesktop'
-    | 'sageBusinessCloud'
-    | 'sageIntacct'
-    | 'shopify'
-    | 'square'
-    | 'waze'
-    | 'xero' = 'default';
+  // @Prop() name?:
+  //   | 'default'
+  //   | 'freshbooks'
+  //   | 'microsoftDynamics'
+  //   | 'myob'
+  //   | 'oracleNetsuite'
+  //   | 'plaid'
+  //   | 'quickbooksOnline'
+  //   | 'quickbooksDesktop'
+  //   | 'sageBusinessCloud'
+  //   | 'sageIntacct'
+  //   | 'shopify'
+  //   | 'square'
+  //   | 'waze'
+  //   | 'xero' = 'default';
+
+  @Prop() name?: string = 'default';
+
   @Prop() variant?: 'large' | 'small' = 'large';
   @Prop() outlined?: boolean = false;
   @Prop() imgIconUrl?: string;

@@ -4,12 +4,12 @@
 
 ## Properties
 
-| Property     | Attribute      | Description | Type                                                                                                                                                                                                                          | Default     |
-| ------------ | -------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `imgIconUrl` | `img-icon-url` |             | `string`                                                                                                                                                                                                                      | `undefined` |
-| `name`       | `name`         |             | `"default" \| "freshbooks" \| "microsoftDynamics" \| "myob" \| "oracleNetsuite" \| "plaid" \| "quickbooksDesktop" \| "quickbooksOnline" \| "sageBusinessCloud" \| "sageIntacct" \| "shopify" \| "square" \| "waze" \| "xero"` | `'default'` |
-| `outlined`   | `outlined`     |             | `boolean`                                                                                                                                                                                                                     | `false`     |
-| `variant`    | `variant`      |             | `"large" \| "small"`                                                                                                                                                                                                          | `'large'`   |
+| Property     | Attribute      | Description | Type                 | Default     |
+| ------------ | -------------- | ----------- | -------------------- | ----------- |
+| `imgIconUrl` | `img-icon-url` |             | `string`             | `undefined` |
+| `name`       | `name`         |             | `string`             | `'default'` |
+| `outlined`   | `outlined`     |             | `boolean`            | `false`     |
+| `variant`    | `variant`      |             | `"large" \| "small"` | `'large'`   |
 
 ---
 
