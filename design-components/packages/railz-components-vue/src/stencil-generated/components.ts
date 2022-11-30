@@ -130,8 +130,7 @@ export const RailzLogo = /*@__PURE__*/ defineContainer<JSX.RailzLogo>('railz-log
   'name',
   'variant',
   'outlined',
-  'imgIconUrl',
-  'imageLoad'
+  'imgIconUrl'
 ]);
 
 

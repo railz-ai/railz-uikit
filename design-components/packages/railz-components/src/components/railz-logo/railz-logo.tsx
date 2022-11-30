@@ -1,13 +1,8 @@
-/* eslint-disable react/jsx-no-bind */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable max-len, @typescript-eslint/no-unused-vars */
-import { Component, State, Prop, h, Event, EventEmitter } from '@stencil/core';
+import { Component, State, Prop, h } from '@stencil/core';
 
 import { formatServiceName } from '../../utils/utils';
-
-// import { LogoConfig } from './types';
-// import DefaultBankIcon from './defaultBankIcon';
 
 @Component({
   tag: 'railz-logo',
@@ -15,22 +10,6 @@ import { formatServiceName } from '../../utils/utils';
   shadow: true,
 })
 export class RailzLogo {
-  // @Prop() name?:
-  //   | 'default'
-  //   | 'freshbooks'
-  //   | 'microsoftDynamics'
-  //   | 'myob'
-  //   | 'oracleNetsuite'
-  //   | 'plaid'
-  //   | 'quickbooksOnline'
-  //   | 'quickbooksDesktop'
-  //   | 'sageBusinessCloud'
-  //   | 'sageIntacct'
-  //   | 'shopify'
-  //   | 'square'
-  //   | 'waze'
-  //   | 'xero' = 'default';
-
   @Prop() name?: string = 'default';
 
   @Prop() variant?: 'large' | 'small' = 'large';
@@ -39,17 +18,6 @@ export class RailzLogo {
 
   @State() error = false;
   @State() renderDefaultBank = false;
-
-  @Event() imageLoad: EventEmitter;
-  private handleImageLoad(event: Event): void {
-    this.imageLoad.emit(event);
-  }
-
-  // componentWillLoad(): void {
-  //   if (!Object.keys(this.logoConfig).includes(this.name) && !this.imgIconUrl && !this.imgIconName) {
-  //     this.error = true;
-  //   }
-  // }
 
   @State() private logos: any = {
     default: {
@@ -126,7 +94,6 @@ export class RailzLogo {
         innerHTML={getSVG(this.name)}
         title={formatServiceName(this.name)}
         aria-label={formatServiceName(this.name)}
-        onLoad={this.handleImageLoad}
       />
     );
   }

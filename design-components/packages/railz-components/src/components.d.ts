@@ -301,7 +301,6 @@ declare namespace LocalJSX {
   interface RailzLogo {
     imgIconUrl?: string;
     name?: string;
-    onImageLoad?: (event: CustomEvent<any>) => void;
     outlined?: boolean;
     variant?: 'large' | 'small';
   }
