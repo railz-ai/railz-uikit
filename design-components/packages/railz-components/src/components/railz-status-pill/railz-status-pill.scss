@@ -48,11 +48,10 @@
 .icon {
   margin-left: space(0.25);
   margin-right: space(0.25);
-  @include icon-size('small');
-
   display: flex;
   align-items: center;
   justify-content: center;
+  @include size(space(2));
 }
 
 .dot {

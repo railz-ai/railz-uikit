@@ -5,20 +5,12 @@
 
 ## Properties
 
-| Property      | Attribute       | Description              | Type      | Default     |
-| ------------- | --------------- | ------------------------ | --------- | ----------- |
-| `imgIconName` | `img-icon-name` |                          | `string`  | `undefined` |
-| `imgIconUrl`  | `img-icon-url`  |                          | `string`  | `undefined` |
-| `name`        | `name`          | Name of service provider | `string`  | `undefined` |
-| `outline`     | `outline`       |                          | `boolean` | `false`     |
-| `variant`     | `variant`       |                          | `string`  | `'large'`   |
-
-
-## Events
-
-| Event       | Description | Type               |
-| ----------- | ----------- | ------------------ |
-| `imageLoad` |             | `CustomEvent<any>` |
+| Property     | Attribute      | Description | Type                 | Default     |
+| ------------ | -------------- | ----------- | -------------------- | ----------- |
+| `imgIconUrl` | `img-icon-url` |             | `string`             | `undefined` |
+| `name`       | `name`         |             | `string`             | `'default'` |
+| `outlined`   | `outlined`     |             | `boolean`            | `false`     |
+| `variant`    | `variant`      |             | `"large" \| "small"` | `'large'`   |
 
 
 ----------------------------------------------

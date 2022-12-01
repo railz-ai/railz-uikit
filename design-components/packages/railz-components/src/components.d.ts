@@ -107,14 +107,10 @@ export namespace Components {
         "value": string;
     }
     interface RailzLogo {
-        "imgIconName"?: string;
         "imgIconUrl"?: string;
-        /**
-          * Name of service provider
-         */
         "name"?: string;
-        "outline"?: boolean;
-        "variant": string;
+        "outlined"?: boolean;
+        "variant"?: 'large' | 'small';
     }
     interface RailzNavigationProgressBar {
         "pages": Page[];
@@ -315,15 +311,10 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface RailzLogo {
-        "imgIconName"?: string;
         "imgIconUrl"?: string;
-        /**
-          * Name of service provider
-         */
         "name"?: string;
-        "onImageLoad"?: (event: CustomEvent<any>) => void;
-        "outline"?: boolean;
-        "variant"?: string;
+        "outlined"?: boolean;
+        "variant"?: 'large' | 'small';
     }
     interface RailzNavigationProgressBar {
         "pages"?: Page[];
