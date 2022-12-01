@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.42 (2022-12-01)
+
+**Note:** Version bump only for package @railzai/railz-uikit
+
+
+
+
+
 ## 0.0.1-alpha.41 (2022-11-11)
 
 **Note:** Version bump only for package @railzai/railz-uikit
