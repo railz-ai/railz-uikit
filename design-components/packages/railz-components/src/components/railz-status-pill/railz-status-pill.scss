@@ -51,7 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include icon-size('small');
+  @include size(space(2));
 }
 
 .dot {
