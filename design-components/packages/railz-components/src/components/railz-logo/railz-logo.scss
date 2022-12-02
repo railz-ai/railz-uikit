@@ -16,7 +16,6 @@ svg {
 }
 
 .outlined {
-  position: relative;
   box-shadow: inset 0 0 0 1px color('gray-500', 0.5);
 
   &.large {
@@ -30,6 +29,7 @@ svg {
   }
 
   &.small {
+    position: relative;
     border-radius: 100%;
     @include aspect-ratio(1, 1);
 
