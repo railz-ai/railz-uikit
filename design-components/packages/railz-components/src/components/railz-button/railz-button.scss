@@ -27,6 +27,23 @@ button {
   text-decoration: none;
   font-family: font-family('main');
   @include transition;
+
+  &::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    border-radius: inherit;
+    @include transition('fast', 'all');
+    @include coordinates(-2px);
+  }
+
+  &:focus::before {
+    box-shadow: 0 0 0 2px var(--brand-primary-background-hover, color('brand-primary-background'));
+  }
+
+  &.disabled::before {
+    opacity: 0.5;
+  }
 }
 
 .label {
@@ -113,7 +130,7 @@ button {
 
 .outlined {
   background-color: transparent;
-  box-shadow: shadow-line('black');
+  box-shadow: shadow-line('gray-800');
   color: color('black');
 
   &:hover,
