@@ -21,12 +21,10 @@ export class RailzButton {
   @Prop() shape?: string = 'rounded';
   @Prop() size?: string = 'medium';
   @Prop() buttonType?: string;
-  // @Prop() prefixIcon?: string;
-  // @Prop() suffixIcon?: string;
   @Prop() isDisabled?: boolean;
   @Prop() grow?: boolean;
   @Prop() loading?: boolean;
-  @Prop() href?: string;
+  @Prop({ reflect: false }) href?: string;
   @Prop() target?: string = '_blank';
 
   @Event() buttonClick: EventEmitter;

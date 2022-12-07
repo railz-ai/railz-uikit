@@ -29,12 +29,6 @@ export class RailzInputToggle {
     this.checked = !this.checked;
   }
 
-  // @Watch('checked')
-  // watchPropHandler(newValue: boolean, oldValue: boolean) {
-  //   console.log('The old value of activated is: ', oldValue);
-  //   console.log('The new value of activated is: ', newValue);
-  // }
-
   @State() uuid: string = uuidv4().toString();
 
   private renderInstructionalText(): HTMLElement {
