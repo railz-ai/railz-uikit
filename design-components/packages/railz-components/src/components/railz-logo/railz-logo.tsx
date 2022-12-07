@@ -78,10 +78,6 @@ export class RailzLogo {
 
   render(): HTMLElement {
     const getSVG = (name: string) => {
-      console.log(this.logos[name]);
-
-      console.log(this.variant);
-
       if (this.variant === 'large') return this.logos[name].large;
       if (this.variant === 'small') {
         return this.logos[name].small ? this.logos[name].small : this.logos[name].large;
