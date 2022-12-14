@@ -37,7 +37,7 @@ button {
     @include coordinates(-2px);
   }
 
-  &:focus::before {
+  &:focus-visible::before {
     box-shadow: 0 0 0 2px var(--brand-primary-background-hover, color('brand-primary-background'));
   }
 
