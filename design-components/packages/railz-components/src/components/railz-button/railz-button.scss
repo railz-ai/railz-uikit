@@ -240,10 +240,10 @@ button {
 .large {
   font-size: font-size(16);
   font-weight: font-weight('medium');
-  padding: space(1.5) space(3);
+  padding: space(1) space(2);
   min-width: space(23);
   min-height: space(5);
-  gap: space(1.5);
+  gap: space(1);
 
   .icon {
     @include icon-size('small');
