@@ -10,6 +10,13 @@ button {
   margin: 0;
   font-size: 0;
 
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    outline: none;
+    box-shadow: none;
+  }
+
   &.grow {
     width: 100%;
     flex-grow: 1;
