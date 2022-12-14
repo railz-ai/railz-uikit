@@ -34,11 +34,11 @@ button {
     pointer-events: none;
     border-radius: inherit;
     @include transition('fast', 'all');
-    @include coordinates(-2px);
+    @include coordinates;
   }
 
   &:focus-visible::before {
-    box-shadow: 0 0 0 2px var(--brand-primary-background-hover, color('brand-primary-background'));
+    box-shadow: inset 0 0 0 2px var(--brand-primary-background-hover, color('brand-primary-background')), inset 0 0 0 4px color('white');
   }
 
   &.disabled::before {
