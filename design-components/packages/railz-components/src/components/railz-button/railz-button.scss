@@ -1,4 +1,5 @@
-button {
+button,
+a {
   appearance: none;
   box-shadow: none;
   border: none;
@@ -9,13 +10,6 @@ button {
 :host {
   margin: 0;
   font-size: 0;
-
-  &:focus,
-  &:focus-visible,
-  &:focus-within {
-    outline: none;
-    box-shadow: none;
-  }
 
   &.grow {
     width: 100%;
