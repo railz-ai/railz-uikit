@@ -1,4 +1,5 @@
-button {
+button,
+a {
   appearance: none;
   box-shadow: none;
   border: none;
@@ -34,11 +35,11 @@ button {
     pointer-events: none;
     border-radius: inherit;
     @include transition('fast', 'all');
-    @include coordinates(-2px);
+    @include coordinates;
   }
 
-  &:focus::before {
-    box-shadow: 0 0 0 2px var(--brand-primary-background-hover, color('brand-primary-background'));
+  &:focus-visible::before {
+    box-shadow: inset 0 0 0 2px var(--brand-primary-background-hover, color('brand-primary-background')), inset 0 0 0 4px color('white');
   }
 
   &.disabled::before {
@@ -240,10 +241,10 @@ button {
 .large {
   font-size: font-size(16);
   font-weight: font-weight('medium');
-  padding: space(1.5) space(3);
+  padding: space(1) space(2);
   min-width: space(23);
   min-height: space(5);
-  gap: space(1.5);
+  gap: space(1);
 
   .icon {
     @include icon-size('small');
