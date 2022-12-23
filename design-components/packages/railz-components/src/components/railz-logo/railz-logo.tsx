@@ -84,14 +84,11 @@ export class RailzLogo {
       }
     };
 
+    const parse = new DOMParser();
+
     return (
-      <div
-        class={`logo ${this.variant} ${this.outlined ? 'outlined' : ''}`}
-        // innerHTML={getSVG(this.name)}
-        title={formatServiceName(this.name)}
-        aria-label={formatServiceName(this.name)}
-      >
-        {getSVG(this.name)}
+      <div class={`logo ${this.variant} ${this.outlined ? 'outlined' : ''}`} title={formatServiceName(this.name)} aria-label={formatServiceName(this.name)}>
+        {parse.parseFromString(`${getSVG(this.name)}`, 'text/html')}
       </div>
     );
   }
