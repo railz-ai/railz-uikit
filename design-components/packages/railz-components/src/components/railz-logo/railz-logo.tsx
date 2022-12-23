@@ -87,10 +87,12 @@ export class RailzLogo {
     return (
       <div
         class={`logo ${this.variant} ${this.outlined ? 'outlined' : ''}`}
-        innerHTML={getSVG(this.name)}
+        // innerHTML={getSVG(this.name)}
         title={formatServiceName(this.name)}
         aria-label={formatServiceName(this.name)}
-      />
+      >
+        {getSVG(this.name)}
+      </div>
     );
   }
 }
