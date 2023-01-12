@@ -217,7 +217,7 @@ ul {
     }
 
     .selected-label {
-      transform: scale(1);
+      transform: scale(1.1);
       color: color('black');
       @include show('on');
     }
