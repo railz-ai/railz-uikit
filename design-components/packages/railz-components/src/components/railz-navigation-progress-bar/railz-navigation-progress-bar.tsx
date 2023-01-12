@@ -26,7 +26,12 @@ export class RailzNavigationProgressBar {
             </div>
           )}
         </div>
-        <span class="label">{page.name}</span>
+        <div class="label-container">
+          <span class="label">{page.name}</span>
+          <span class="selected-label" aria-hidden>
+            {page.name}
+          </span>
+        </div>
       </Fragment>
     );
   }
@@ -43,7 +48,9 @@ export class RailzNavigationProgressBar {
         <ul class={`pages completed-${completedPages}`}>
           {this.pages &&
             this.pages.map(page => (
-              <li class={`page ${page.state || 'pending'} `}>{page.onClick ? <button onClick={page.onClick}>{this.page(page)}</button> : this.page(page)}</li>
+              <li class={`page ${page.state || 'pending'} `}>
+                <button onClick={page.onClick}>{this.page(page)}</button>
+              </li>
             ))}
         </ul>
       </nav>
