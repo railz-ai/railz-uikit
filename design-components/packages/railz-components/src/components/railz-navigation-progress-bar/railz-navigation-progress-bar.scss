@@ -9,10 +9,10 @@ nav {
 ul {
   display: flex;
   flex-wrap: nowrap;
+  padding: 2px;
 }
 
 .page {
-  padding: space(1) clamp(0px, calc(3vw - #{space(4)}), #{space(1.5)});
   position: relative;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,40 @@ ul {
     justify-content: center;
     flex-shrink: 0;
     cursor: pointer;
-    background-color: transparent;
+    background: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    padding: space(1) clamp(0px, calc(3vw - #{space(4)}), #{space(1.5)}) 0;
+    position: relative;
+    @include transition;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: space(0.5);
+      z-index: 1;
+      opacity: 0;
+      transform: scale(0);
+      box-shadow: inset 0 0 0 3px var(--brand-secondary-background, #{color('neon-green-700')}), inset 0 0 0 4px color('white');
+      @include transition;
+      @include circle(space(3));
+    }
+
+    &:focus-visible {
+      &::after {
+        opacity: 1;
+        max-height: 100%;
+        transform: scale(1);
+      }
+
+      .label,
+      .selected-label {
+        color: var(--brand-secondary-background, #{color('neon-green-700')});
+      }
+    }
   }
 
   &::before,
@@ -84,15 +117,35 @@ ul {
   }
 }
 
-.label {
+.label-container {
   padding: space(1);
   color: color('gray-600');
+  position: relative;
   @include font(10);
+}
+
+.label,
+.selected-label {
+  display: block;
   @include transition;
 
   @include mq(screen('small')) {
     font-size: clamp(#{font-size(12)}, calc(3vw - #{space(1)}), #{font-size(14)});
   }
+}
+
+.selected-label {
+  color: color('gray-900');
+  font-weight: font-weight('semi-bold');
+  transform: scale(0.9);
+  @include show('off');
+}
+
+.label {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
 }
 
 // States
@@ -137,11 +190,16 @@ ul {
 .current {
   &::before,
   &::after {
-    width: calc(50% - #{space(1.5)});
+    width: calc(50% - #{space(1.75)});
   }
 
   &::after {
     background-color: color('gray-400');
+  }
+
+  &.page button:focus-visible::after {
+    top: 0;
+    @include circle(space(4));
   }
 
   .indicator {
@@ -156,9 +214,18 @@ ul {
     }
   }
 
-  .label {
-    font-weight: font-weight('semi-bold');
-    color: color('gray-900');
+  .label-container {
+    .label {
+      transform: scale(1.1);
+      color: color('black');
+      @include show('off');
+    }
+
+    .selected-label {
+      transform: scale(1);
+      color: color('black');
+      @include show('on');
+    }
   }
 
   & ~ .page {

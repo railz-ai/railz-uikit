@@ -18,10 +18,8 @@ export class PageInstallationKit {
     });
   }
   render() {
-    return (
-      <div class="container">
-        <div innerHTML={this.markdownContent}></div>
-      </div>
-    );
+    const parse = new DOMParser();
+
+    return <div class="container">{parse.parseFromString(this.markdownContent, 'text/html')}</div>;
   }
 }

@@ -23,6 +23,7 @@ export class PageButtons {
 
   render() {
     console.log('content', this.content);
+    const parse = new DOMParser();
 
     return (
       <div class="container">
@@ -257,7 +258,7 @@ export class PageButtons {
         </section>
         <section>
           <h2>Properties</h2>
-          <div innerHTML={this.markdownContent}></div>
+          <div>{parse.parseFromString(this.markdownContent, 'text/html')}</div>
         </section>
         <iframe
           width="100%"
