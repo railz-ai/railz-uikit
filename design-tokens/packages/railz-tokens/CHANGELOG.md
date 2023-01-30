@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.49 (2023-01-30)
+
+**Note:** Version bump only for package @railzai/railz-tokens
+
+
+
+
+
 ## 0.0.1-alpha.48 (2023-01-13)
 
 **Note:** Version bump only for package @railzai/railz-tokens
