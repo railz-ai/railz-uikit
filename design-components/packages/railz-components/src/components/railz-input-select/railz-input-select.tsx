@@ -1,6 +1,11 @@
 /* eslint-disable max-len, @typescript-eslint/no-unused-vars */
 import { Component, h, Prop, State, Watch } from '@stencil/core';
 
+export interface Option {
+  value: string;
+  label: string;
+}
+
 @Component({
   tag: 'railz-input-select',
   styleUrl: 'railz-input-select.scss',
@@ -9,6 +14,7 @@ import { Component, h, Prop, State, Watch } from '@stencil/core';
 export class RailzInputSelect {
   @Prop() label: string;
   @Prop() value?: string;
+  @Prop() options: Option[];
   @State() dirty?: boolean;
 
   @Prop() instructionalText?: string;
@@ -60,11 +66,9 @@ export class RailzInputSelect {
           </div>
 
           <select onInput={this.handleChange}>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            {this.options.map(option => (
+              <option value={option.value}>{option.label}</option>
+            ))}
           </select>
           <railz-icon icon="disclosure_arrow" size="medium" />
         </div>

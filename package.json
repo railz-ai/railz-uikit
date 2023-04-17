@@ -52,12 +52,5 @@
     "design-components/packages/*",
     "design-icons/packages/*",
     "design-tokens/packages/*"
-  ],
-  "dependencies": {
-    "@railzai/railz-icons": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-icons",
-    "@railzai/railz-tokens": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-tokens",
-    "@railzai/railz-uikit": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit",
-    "@railzai/railz-uikit-angular": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-angular",
-    "@railzai/railz-uikit-react": "https://pkg.csb.dev/railz-ai/railz-uikit/commit/34de588e/@railzai/railz-uikit-react"
-  }
+  ]
 }
