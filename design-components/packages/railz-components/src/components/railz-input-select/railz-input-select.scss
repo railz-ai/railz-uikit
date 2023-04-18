@@ -3,13 +3,28 @@
   flex-grow: 1;
 }
 
-:host select {
+:host select,
+:host input {
   appearance: none;
   outline: none;
   border: none;
   box-shadow: none;
   background: transparent;
   -webkit-tap-highlight-color: transparent;
+}
+
+@mixin input-reset {
+  appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus {
+    outline: none;
+    border: none;
+  }
 }
 
 .input-container {
@@ -32,7 +47,15 @@
   }
 }
 
-select {
+input {
+  @include input-reset;
+  @include transition;
+  @include font(16, 'medium');
+  @include truncate;
+}
+
+select,
+input {
   padding: space(1.5) space(3);
   margin: 0;
   width: 100%;
@@ -170,5 +193,75 @@ railz-icon {
   .input-container:focus-within &,
   .dirty & {
     opacity: 1;
+  }
+}
+
+.menu-container {
+  position: absolute;
+  background-color: color('white');
+  width: calc(100% - #{space(4)});
+  top: 100%;
+  left: space(1);
+  margin-top: space(-1);
+  box-shadow: shadow('cast-4');
+  border-radius: radius(2);
+  z-index: 1000000;
+  @include show('off');
+}
+
+.input-container:focus-within .menu-container {
+  @include show('on');
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.option-item {
+  padding: space(0.5) space(1.5);
+  color: color('gray-900');
+  margin: space(0.25) space(0.5);
+  position: relative;
+  border-radius: radius(1);
+  cursor: pointer;
+  outline: none;
+  @include font(14, 'medium');
+  @include transition;
+
+  &:hover,
+  &:focus {
+    background-color: color('gray-200');
+  }
+
+  &:active {
+    background-color: color('gray-300');
+  }
+
+  &.selected {
+    color: color('green-600');
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    border-radius: inherit;
+    @include transition('fast', 'all');
+    @include coordinates(0);
+  }
+
+  &:focus::before {
+    box-shadow: 0 0 0 2px var(--brand-primary-background-hover, color('brand-primary-background'));
+  }
+
+  &:first-of-type {
+    border-radius: radius(1.25) radius(1.25) radius(1) radius(1);
+    margin-top: space(0.5);
+  }
+
+  &:last-of-type {
+    border-radius: radius(1) radius(1) radius(1.25) radius(1.25);
+    margin-bottom: space(0.5);
   }
 }

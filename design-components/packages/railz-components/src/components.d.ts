@@ -64,12 +64,17 @@ export namespace Components {
     options: RadioInput[];
   }
   interface RailzInputSelect {
+    dirty?: boolean;
     disabled?: boolean;
     error?: boolean;
     errorMessage?: string;
     instructionalText?: string;
     label: string;
+    name?: string;
+    optionTemplate?: unknown[];
     options: Option[];
+    partName?: string;
+    placeholder?: string;
     required?: boolean;
     value?: string;
   }
@@ -256,12 +261,18 @@ declare namespace LocalJSX {
     options?: RadioInput[];
   }
   interface RailzInputSelect {
+    dirty?: boolean;
     disabled?: boolean;
     error?: boolean;
     errorMessage?: string;
     instructionalText?: string;
     label?: string;
+    name?: string;
+    onValueChange?: (event: CustomEvent<any>) => void;
+    optionTemplate?: unknown[];
     options?: Option[];
+    partName?: string;
+    placeholder?: string;
     required?: boolean;
     value?: string;
   }

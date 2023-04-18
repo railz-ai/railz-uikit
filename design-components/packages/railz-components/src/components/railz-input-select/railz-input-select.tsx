@@ -1,5 +1,9 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable max-len, @typescript-eslint/no-unused-vars */
-import { Component, h, Prop, State, Watch } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface Option {
   value: string;
@@ -13,25 +17,47 @@ export interface Option {
 })
 export class RailzInputSelect {
   @Prop() label: string;
-  @Prop() value?: string;
+  @Prop({ mutable: true }) value?: string;
   @Prop() options: Option[];
-  @State() dirty?: boolean;
+  @Prop() optionTemplate?: unknown[];
+  @Prop() partName?: string;
+
+  @Prop() placeholder?: string;
+  @Prop({ mutable: true }) dirty?: boolean;
 
   @Prop() instructionalText?: string;
   @Prop() required?: boolean;
   @Prop({ reflect: true }) disabled?: boolean;
   @Prop() error?: boolean;
   @Prop() errorMessage?: string;
+  @Prop() name?: string = uuidv4().toString();
 
-  private handleChange(event): void {
-    this.value = event.target.value;
+  @Event() valueChange: EventEmitter;
+  private handleChange(event: Event, key?: string) {
+    const eventTarget = event?.target as HTMLSelectElement;
+    console.log('eventTarget', { eventTarget });
+    console.log('eventTarget.value', eventTarget.value);
+
+    const emitValue = eventTarget?.value ? eventTarget?.value : this.options[key].label;
+
+    console.log('emitValue', emitValue);
+
+    this.value = emitValue;
+    console.log('this.value', this.value);
+
+    this.valueChange.emit(this.value);
+
+    if (this.value?.length > 0) {
+      this.dirty = true;
+      console.log('this.dirty', this.dirty);
+    } else {
+      this.dirty = false;
+      console.log('this.dirty', this.dirty);
+    }
   }
 
-  @Watch('value')
-  watchValue(newValue: boolean): void {
-    // this.value = newValue;
-    this.dirty = newValue;
-    this.validationCheck();
+  componentWillLoad() {
+    this.value ? (this.dirty = true) : (this.dirty = false);
   }
 
   private renderInstructionalText(): HTMLElement {
@@ -42,7 +68,7 @@ export class RailzInputSelect {
 
   private renderErrorMessage(): HTMLElement {
     if (this.error || this.errorMessage) {
-      return <span class="error-message">{this.errorMessage || 'Something wrong'}</span>;
+      return <span class="error-message">{this.errorMessage || 'Something is wrong'}</span>;
     }
   }
 
@@ -57,6 +83,10 @@ export class RailzInputSelect {
     return validationClasses.join(' ').toString();
   }
 
+  private selectItem(optionItem, key): void {
+    this.handleChange(optionItem, key);
+  }
+
   render(): HTMLElement {
     return (
       <div class={`form-group ${this.validationCheck()}`}>
@@ -65,11 +95,28 @@ export class RailzInputSelect {
             <label>{this.label}</label>
           </div>
 
-          <select onInput={this.handleChange}>
-            {this.options.map(option => (
-              <option value={option.value}>{option.label}</option>
-            ))}
-          </select>
+          {this.optionTemplate ? (
+            <div>
+              <input type="text" value={this.value} placeholder={this.placeholder} readOnly={true} />
+              <div class="menu-container">
+                <ul class="menu">
+                  {this.optionTemplate.map((optionItem, key) => (
+                    <li class="option-item" part="option-item" tabIndex={0} onClick={optionItem => this.selectItem(optionItem, key)}>
+                      {optionItem}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ) : (
+            <select onInput={e => this.handleChange(e)} name={this.name}>
+              {this.options.map(option => (
+                <option selected={this.value === option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          )}
           <railz-icon icon="disclosure_arrow" size="medium" />
         </div>
         {this.renderInstructionalText()}
