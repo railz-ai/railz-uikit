@@ -35,24 +35,17 @@ export class RailzInputSelect {
   @Event() valueChange: EventEmitter;
   private handleChange(event: Event, key?: string) {
     const eventTarget = event?.target as HTMLSelectElement;
-    console.log('eventTarget', { eventTarget });
-    console.log('eventTarget.value', eventTarget.value);
 
     const emitValue = eventTarget?.value ? eventTarget?.value : this.options[key].label;
 
-    console.log('emitValue', emitValue);
-
     this.value = emitValue;
-    console.log('this.value', this.value);
 
     this.valueChange.emit(this.value);
 
     if (this.value?.length > 0) {
       this.dirty = true;
-      console.log('this.dirty', this.dirty);
     } else {
       this.dirty = false;
-      console.log('this.dirty', this.dirty);
     }
   }
 
