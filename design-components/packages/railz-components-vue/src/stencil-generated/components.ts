@@ -78,11 +78,18 @@ export const RailzInputRadioGroup = /*@__PURE__*/ defineContainer<JSX.RailzInput
 export const RailzInputSelect = /*@__PURE__*/ defineContainer<JSX.RailzInputSelect>('railz-input-select', undefined, [
   'label',
   'value',
+  'options',
+  'optionTemplate',
+  'partName',
+  'placeholder',
+  'dirty',
   'instructionalText',
   'required',
   'disabled',
   'error',
-  'errorMessage'
+  'errorMessage',
+  'name',
+  'valueChange'
 ]);
 
 
