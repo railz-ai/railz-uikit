@@ -1,5 +1,5 @@
 import './App.css';
-import { RailzLogo, RailzNavigationProgressBar } from '@railzai/railz-uikit-react';
+import { RailzLogo, RailzNavigationProgressBar, RailzButton } from '@railzai/railz-uikit-react';
 
 function App() {
   const imageLoaded = () => {
@@ -19,6 +19,12 @@ function App() {
           { name: 'Step 7', state: 'success' },
           { name: 'Step 8', state: 'skipped' },
         ]}
+      />
+      <RailzButton
+        type="outlined"
+        label={'Learn More'}
+        href={`https://docs.railz.ai/docs/accounting-integrations-overview`}
+        data-testid={'button-learn-more'}
       />
     </div>
   );
