@@ -65,7 +65,7 @@ export class RailzButton {
 
   private openNewTab(event: any, url: string): void {
     event.preventDefault();
-    const newTab = window.open(url, '_blank', 'noopener,noreferrer');
+    const newTab = window.open(url, this.target, 'noopener,noreferrer');
     newTab.opener = null;
   }
 
