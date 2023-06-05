@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.52 (2023-06-05)
+
+
+### Features
+
+* prevent tabnabbing in uikit (RLZ-2946) ([#77](https://github.com/railz-ai/railz-uikit/issues/77)) ([d8ca992](https://github.com/railz-ai/railz-uikit/commit/d8ca9925da347e158dae4177729f5d298b2c6b39))
+
+
+
+
+
 ## 0.0.1-alpha.51 (2023-04-28)
 
 **Note:** Version bump only for package @railzai/railz-uikit-vue
