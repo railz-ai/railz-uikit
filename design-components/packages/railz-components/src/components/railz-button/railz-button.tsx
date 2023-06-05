@@ -73,7 +73,7 @@ export class RailzButton {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
         {this.href ? (
-          <a href={this.href} rel="noopener noreferrer" class={`button ${this.buttonStyles()}`} onClick={e => this.openNewTab(e, this.href)}>
+          <a href={this.href} class={`button ${this.buttonStyles()}`} onClick={e => this.openNewTab(e, this.href)}>
             {this.renderPrefixIcon()}
             <span class="label">{this.label}</span>
             {this.renderSuffixIcon()}
