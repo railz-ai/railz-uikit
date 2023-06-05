@@ -63,11 +63,17 @@ export class RailzButton {
     }
   }
 
+  private openNewTab(event: any, url: string): void {
+    event.preventDefault();
+    const newTab = window.open(url, this.target, 'noopener,noreferrer');
+    newTab.opener = null;
+  }
+
   render(): HTMLElement {
     return (
       <Host class={`button ${this.buttonStyles()}`}>
         {this.href ? (
-          <a href={this.href} target={this.target} class={`button ${this.buttonStyles()}`}>
+          <a href={this.href} class={`button ${this.buttonStyles()}`} onClick={e => this.openNewTab(e, this.href)}>
             {this.renderPrefixIcon()}
             <span class="label">{this.label}</span>
             {this.renderSuffixIcon()}
