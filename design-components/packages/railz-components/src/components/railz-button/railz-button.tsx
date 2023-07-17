@@ -24,6 +24,7 @@ export class RailzButton {
   @Prop() isDisabled?: boolean;
   @Prop() grow?: boolean;
   @Prop() loading?: boolean;
+  @Prop() loadingText?: string = 'Loading...';
   @Prop({ reflect: false }) href?: string;
   @Prop() target?: string = '_blank';
 
@@ -33,15 +34,19 @@ export class RailzButton {
   }
 
   private buttonStyles(): string {
-    return `${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} 
+    return `${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''}
     ${this.loading ? 'loading' : ''} ${this.isDisabled ? 'disabled' : ''}`;
   }
 
-  // private renderIcon(): string {
-  //   if (this.icon && iconList.icons.some(icon => icon.name === this.icon)) {
-  //     return <railz-icon icon={this.icon} />;
-  //   }
-  // }
+  private loadingIndicator(): HTMLElement {
+    if (this.loading) {
+      return (
+        <div class="loading-indicator">
+          <slot name="loading-component" />
+        </div>
+      );
+    }
+  }
 
   private renderPrefixIcon(): string {
     if (!this.loading) {
@@ -75,21 +80,22 @@ export class RailzButton {
         {this.href ? (
           <a href={this.href} class={`button ${this.buttonStyles()}`} onClick={e => this.openNewTab(e, this.href)}>
             {this.renderPrefixIcon()}
-            <span class="label">{this.label}</span>
+            {this.loadingIndicator()}
+            <span class="label">{this.loading ? this.loadingText : this.label}</span>
             {this.renderSuffixIcon()}
           </a>
         ) : this.buttonType ? (
           <button type={this.buttonType} onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
             {this.renderPrefixIcon()}
-            {this.loading ? <span class="loading-indicator"></span> : null}
-            <span class="label">{this.loading ? 'Loading...' : this.label}</span>
+            {this.loadingIndicator()}
+            <span class="label">{this.loading ? this.loadingText : this.label}</span>
             {this.renderSuffixIcon()}
           </button>
         ) : (
           <button onClick={event => this.handleClick(event)} class={`button ${this.buttonStyles()}`} disabled={this.isDisabled}>
             {this.renderPrefixIcon()}
-            {this.loading ? <span class="loading-indicator"></span> : null}
-            <span class="label">{this.loading ? 'Loading...' : this.label}</span>
+            {this.loadingIndicator()}
+            <span class="label">{this.loading ? this.loadingText : this.label}</span>
             {this.renderSuffixIcon()}
           </button>
         )}

@@ -16,6 +16,7 @@ export namespace Components {
         "isDisabled"?: boolean;
         "label": string;
         "loading"?: boolean;
+        "loadingText"?: string;
         "shape"?: string;
         "size"?: string;
         "target"?: string;
@@ -224,6 +225,7 @@ declare namespace LocalJSX {
         "isDisabled"?: boolean;
         "label"?: string;
         "loading"?: boolean;
+        "loadingText"?: string;
         "onButtonClick"?: (event: CustomEvent<any>) => void;
         "shape"?: string;
         "size"?: string;
