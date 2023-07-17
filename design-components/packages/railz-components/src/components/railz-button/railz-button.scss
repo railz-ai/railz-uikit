@@ -330,3 +330,54 @@ railz-icon + .label {
     }
   }
 }
+
+.loading .label {
+  --mask: linear-gradient(70deg, rgba(0 0 0 / 100%) 30%, rgba(0 0 0 / 50%) 50%, rgba(0 0 0 / 100%) 70%);
+
+  mask: var(--mask);
+  mask-size: 200% 100%;
+  animation: slide 2s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.loading-indicator {
+  flex-shrink: 0;
+
+  &:empty {
+    padding: 2px;
+    width: space(2);
+    height: space(2);
+    border-radius: 50%;
+    background: currentcolor;
+
+    --mask: conic-gradient(rgba(0 0 0 / 0%) 25%, rgba(0 0 0 / 100%)), linear-gradient(#000 0 0) content-box;
+
+    mask: var(--mask);
+    mask-composite: subtract;
+    animation: rotate 1s linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  & + .label {
+    margin-left: space(0.5);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes slide {
+  100% {
+    -webkit-mask-position-x: -200%;
+    mask-position-x: -200%;
+  }
+}
