@@ -96,33 +96,6 @@ library in the file where you want to use them.
 import { RailzLogo } from '@railzai/railz-uikit-react';
 ```
 
-#### For Angular
-
-Lerna already linked the stencil component library to the Angular library during the build process so we only need to
-create the symlink for the Angular component library. Go to `design-components/packages/railz-components-angular` folder and run the below:
-
-In your angular component library, you need to create a symlink.
-
-```bash
-yarn link
-```
-
-#### Usage
-
-In your own Angular Application, you can run the below to link both libraries
-
-```bash
-yarn link @railzai/railz-uikit
-yarn link @railzai/railz-uikit-angular
-```
-
-To make use of the Angular component library in your Angular application, set up your module file to import the
-ui kit module.
-
-```typescript
-import { RailzUikitModule } from '@railzai/railz-uikit-angular';
-```
-
 ## Contributing
 
 The Railz UIKit library and documentation are open to contributions. For more information, check

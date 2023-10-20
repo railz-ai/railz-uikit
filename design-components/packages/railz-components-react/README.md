@@ -7,8 +7,6 @@ Railz is the Accounting Data as a Service™ solution that makes sense of your b
   <img src="https://badgen.net/bundlephobia/dependency-count/@railzai/railz-uikit-react" alt="Tree shaking"/>
 </p>
 
-This is an angular wrapper for `@railzai/railz-visualization`.
-
 ## Installation
 
 With NPM:

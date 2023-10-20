@@ -13,7 +13,6 @@ module.exports = {
   ],
   env: {
     node: true,
-    jest: true,
   },
   rules: {
     'max-len': [2, { code: 160 }],
