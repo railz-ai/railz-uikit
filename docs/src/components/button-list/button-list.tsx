@@ -20,29 +20,29 @@ export class ButtonList {
             <h4>Small</h4>
             <railz-button size="small" label="Save" type="primary" />
             <railz-button size="small" label="Sign up to learn more" type="secondary" />
-            <railz-button size="small" label="Sign Up" type="primary" icon="setup" />
-            <railz-button size="small" label="Log in" type="secondary" icon="setup" />
+            <railz-button size="small" label="Sign Up" type="primary" />
+            <railz-button size="small" label="Log in" type="secondary" />
           </div>
           <div class="row">
             <h4>Medium</h4>
             <railz-button label="Save" type="primary" />
             <railz-button label="Sign up to learn more" type="secondary" />
-            <railz-button label="Sign Up" type="primary" icon="setup" />
-            <railz-button label="Log in" type="secondary" icon="setup" />
+            <railz-button label="Sign Up" type="primary" />
+            <railz-button label="Log in" type="secondary" />
           </div>
           <div class="row">
             <h4>Large</h4>
             <railz-button label="Save" type="primary" size="large" />
             <railz-button label="Sign up to learn more" type="secondary" size="large" />
-            <railz-button label="Sign Up" type="primary" size="large" icon="setup" />
-            <railz-button label="Log in" type="secondary" size="large" icon="setup" />
+            <railz-button label="Sign Up" type="primary" size="large" />
+            <railz-button label="Log in" type="secondary" size="large" />
           </div>
           <div class="row">
             <h4>X-Large</h4>
             <railz-button label="Save" type="primary" size="x-large" />
             <railz-button label="Sign up to learn more" type="secondary" size="x-large" />
-            <railz-button label="Sign Up" type="primary" size="x-large" icon="setup" />
-            <railz-button label="Log in" type="secondary" size="x-large" icon="setup" />
+            <railz-button label="Sign Up" type="primary" size="x-large" />
+            <railz-button label="Log in" type="secondary" size="x-large" />
           </div>
           <div class="row">
             <h4>Full Width</h4>
@@ -59,22 +59,22 @@ export class ButtonList {
             <h4>Medium</h4>
             <railz-button label="Save" type="primary" shape="pill" />
             <railz-button label="Sign up to learn more" type="secondary" shape="pill" />
-            <railz-button label="Sign Up" type="primary" shape="pill" icon="setup" />
-            <railz-button label="Log in" type="secondary" shape="pill" icon="setup" />
+            <railz-button label="Sign Up" type="primary" shape="pill" />
+            <railz-button label="Log in" type="secondary" shape="pill" />
           </div>
           <div class="row">
             <h4>Large</h4>
             <railz-button label="Save" type="primary" size="large" shape="pill" />
             <railz-button label="Sign up to learn more" type="secondary" size="large" shape="pill" />
-            <railz-button label="Sign Up" type="primary" size="large" shape="pill" icon="setup" />
-            <railz-button label="Log in" type="secondary" size="large" shape="pill" icon="setup" />
+            <railz-button label="Sign Up" type="primary" size="large" shape="pill" />
+            <railz-button label="Log in" type="secondary" size="large" shape="pill" />
           </div>
           <div class="row">
             <h4>X-Large</h4>
             <railz-button label="Save" type="primary" size="x-large" shape="pill" />
             <railz-button label="Sign up to learn more" type="secondary" size="x-large" shape="pill" />
-            <railz-button label="Sign Up" type="primary" size="x-large" shape="pill" icon="setup" />
-            <railz-button label="Log in" type="secondary" size="x-large" shape="pill" icon="setup" />
+            <railz-button label="Sign Up" type="primary" size="x-large" shape="pill" />
+            <railz-button label="Log in" type="secondary" size="x-large" shape="pill" />
           </div>
           <div class="row">
             <h4>Full Width</h4>

@@ -1,5 +1,3 @@
-import { Config } from '@stencil/core';
-
 import { sass } from '@stencil/sass';
 import { inlineSvg } from 'stencil-inline-svg';
 import alias from '@rollup/plugin-alias';
@@ -18,6 +16,7 @@ function components() {
         try {
           // Get the readme file
           const readmeFound = fs.readdirSync(dir).find(item => item === 'readme.md');
+          if (!readmeFound) return null;
           const file = path.join(dir, readmeFound);
 
           //Get the directory name
@@ -32,7 +31,7 @@ function components() {
   ];
 }
 
-export const config: Config = {
+export const config = {
   globalStyle: 'src/global/app.css',
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',

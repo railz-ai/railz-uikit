@@ -62,7 +62,7 @@ export class PageButtons {
             <div class="sample">
               <h3>Rounded Rectangle</h3>
               <pre>
-                <code>{`<railz-button shape="rounded !default" type="primary | secondary"  icon="setup" />`}</code>
+                <code>{`<railz-button shape="rounded !default" type="primary | secondary"   />`}</code>
               </pre>
               <h4>Small</h4>
               <pre>
@@ -72,8 +72,8 @@ export class PageButtons {
               <div class="row">
                 <railz-button size="small" label="Save" type="primary" />
                 <railz-button size="small" label="Sign up to learn more" type="secondary" />
-                <railz-button size="small" label="Sign Up" type="primary" icon="setup" />
-                <railz-button size="small" label="Log in" type="secondary" icon="setup" />
+                <railz-button size="small" label="Sign Up" type="primary" />
+                <railz-button size="small" label="Log in" type="secondary" />
               </div>
 
               <h4>Medium</h4>
@@ -84,8 +84,8 @@ export class PageButtons {
               <div class="row">
                 <railz-button label="Save" type="primary" />
                 <railz-button label="Sign up to learn more" type="secondary" />
-                <railz-button label="Sign Up" type="primary" icon="setup" />
-                <railz-button label="Log in" type="secondary" icon="setup" />
+                <railz-button label="Sign Up" type="primary" />
+                <railz-button label="Log in" type="secondary" />
               </div>
 
               <h4>Large</h4>
@@ -96,8 +96,8 @@ export class PageButtons {
               <div class="row">
                 <railz-button label="Save" type="primary" size="large" />
                 <railz-button label="Sign up to learn more" type="secondary" size="large" />
-                <railz-button label="Sign Up" type="primary" size="large" icon="setup" />
-                <railz-button label="Log in" type="secondary" size="large" icon="setup" />
+                <railz-button label="Sign Up" type="primary" size="large" />
+                <railz-button label="Log in" type="secondary" size="large" />
               </div>
 
               <h4>X-Large</h4>
@@ -108,8 +108,8 @@ export class PageButtons {
               <div class="row">
                 <railz-button label="Save" type="primary" size="x-large" />
                 <railz-button label="Sign up to learn more" type="secondary" size="x-large" />
-                <railz-button label="Sign Up" type="primary" size="x-large" icon="setup" />
-                <railz-button label="Log in" type="secondary" size="x-large" icon="setup" />
+                <railz-button label="Sign Up" type="primary" size="x-large" />
+                <railz-button label="Log in" type="secondary" size="x-large" />
               </div>
 
               <h4>Full Width</h4>
@@ -127,7 +127,7 @@ export class PageButtons {
             <div class="sample">
               <h3>Pill</h3>
               <pre>
-                <code>{`<railz-button shape="pill" type="primary | secondary" icon="setup" />`}</code>
+                <code>{`<railz-button shape="pill" type="primary | secondary"  />`}</code>
               </pre>
               <h4>Small</h4>
               <pre>
@@ -137,8 +137,8 @@ export class PageButtons {
               <div class="row">
                 <railz-button shape="pill" size="small" label="Save" type="primary" />
                 <railz-button shape="pill" size="small" label="Sign up to learn more" type="secondary" />
-                <railz-button shape="pill" size="small" label="Sign Up" type="primary" icon="setup" />
-                <railz-button shape="pill" size="small" label="Log in" type="secondary" icon="setup" />
+                <railz-button shape="pill" size="small" label="Sign Up" type="primary" />
+                <railz-button shape="pill" size="small" label="Log in" type="secondary" />
               </div>
 
               <h4>Medium</h4>
@@ -149,8 +149,8 @@ export class PageButtons {
               <div class="row">
                 <railz-button shape="pill" label="Save" type="primary" />
                 <railz-button shape="pill" label="Sign up to learn more" type="secondary" />
-                <railz-button shape="pill" label="Sign Up" type="primary" icon="setup" />
-                <railz-button shape="pill" label="Log in" type="secondary" icon="setup" />
+                <railz-button shape="pill" label="Sign Up" type="primary" />
+                <railz-button shape="pill" label="Log in" type="secondary" />
               </div>
 
               <h4>Large</h4>
@@ -161,8 +161,8 @@ export class PageButtons {
               <div class="row">
                 <railz-button shape="pill" label="Save" type="primary" size="large" />
                 <railz-button shape="pill" label="Sign up to learn more" type="secondary" size="large" />
-                <railz-button shape="pill" label="Sign Up" type="primary" size="large" icon="setup" />
-                <railz-button shape="pill" label="Log in" type="secondary" size="large" icon="setup" />
+                <railz-button shape="pill" label="Sign Up" type="primary" size="large" />
+                <railz-button shape="pill" label="Log in" type="secondary" size="large" />
               </div>
 
               <h4>X-Large</h4>
@@ -173,8 +173,8 @@ export class PageButtons {
               <div class="row">
                 <railz-button shape="pill" label="Save" type="primary" size="x-large" />
                 <railz-button shape="pill" label="Sign up to learn more" type="secondary" size="x-large" />
-                <railz-button shape="pill" label="Sign Up" type="primary" size="x-large" icon="setup" />
-                <railz-button shape="pill" label="Log in" type="secondary" size="x-large" icon="setup" />
+                <railz-button shape="pill" label="Sign Up" type="primary" size="x-large" />
+                <railz-button shape="pill" label="Log in" type="secondary" size="x-large" />
               </div>
 
               <h4>Full Width</h4>
@@ -244,16 +244,16 @@ export class PageButtons {
             loading states - that are required for creating a rich user experience.
           </p>
           <div class="row">
-            <railz-icon-button icon="setup" size="small" label="Button Label" />
-            <railz-icon-button icon="setup" size="medium" label="Button Label" />
-            <railz-icon-button icon="setup" size="large" label="Button Label" />
-            <railz-icon-button icon="setup" size="x-large" label="Button Label" />
+            <railz-icon-button size="small" label="Button Label" />
+            <railz-icon-button size="medium" label="Button Label" />
+            <railz-icon-button size="large" label="Button Label" />
+            <railz-icon-button size="x-large" label="Button Label" />
           </div>
           <div class="row">
-            <railz-icon-button icon="setup" size="small" label="Button Label" shape="circle" />
-            <railz-icon-button icon="setup" size="medium" label="Button Label" shape="circle" />
-            <railz-icon-button icon="setup" size="large" label="Button Label" shape="circle" />
-            <railz-icon-button icon="setup" size="x-large" label="Button Label" shape="circle" />
+            <railz-icon-button size="small" label="Button Label" shape="circle" />
+            <railz-icon-button size="medium" label="Button Label" shape="circle" />
+            <railz-icon-button size="large" label="Button Label" shape="circle" />
+            <railz-icon-button size="x-large" label="Button Label" shape="circle" />
           </div>
         </section>
         <section>

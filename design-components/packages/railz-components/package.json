@@ -23,7 +23,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
     "test:stencil": "stencil test --spec",
     "test:all": "stencil test --spec --e2e",
