@@ -20,8 +20,6 @@ Railz is the Accounting Data as a Service™ solution that makes sense of your b
 
 - [_Railz Tokens_](https://github.com/railz-ai/railz-uikit/design-tokens) is a library of design tokens.
 
-- [_Railz Icons_](https://github.com/railz-ai/railz-uikit/design-icons) is a library of icon components.
-
 ## [Docs](https://railz-ai.github.io/railz-uikit/)
 
 ## Installation
@@ -33,15 +31,11 @@ the [NPMJS Railz account](https://www.npmjs.com/org/railzai).
 
 ### [Railz Tokens](./design-tokens/INSTALLATION.md)
 
-### [Railz Icons](./design-icons/INSTALLATION.md)
-
 ## Usage
 
 ### [Railz UIKit](./design-components/USAGE.md)
 
 ### [Railz Tokens](./design-tokens/USAGE.md)
-
-### [Railz Icons](./design-icons/USAGE.md)
 
 ## Local Development
 
@@ -65,7 +59,7 @@ From the main folder:
 4. Run the bootstrap command to install all the dependencies for the packages, lerna will handle the linking between the
    packages
    ```bash
-   yarn install:codesandbox
+   npm install:codesandbox
    ```
 5. Build the packages to begin using
    ```bash
