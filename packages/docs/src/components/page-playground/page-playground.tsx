@@ -1,4 +1,4 @@
-import { Component, h, State } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'page-playground',
@@ -14,7 +14,7 @@ export class PlaygroundPage {
         </div>
         <div class="content">
           <section>
-            <railz-button label="Click me" onClick={e => console.log(e)} />
+            <railz-button label="Click me" />
           </section>
         </div>
       </div>

@@ -6,7 +6,7 @@ import fs from 'fs';
 import path from 'path';
 
 function components() {
-  const component = path.join(__dirname, '../packages/railz-components/src', 'components');
+  const component = path.join(__dirname, '../railz-components/src', 'components');
 
   return [
     ...fs
@@ -43,7 +43,7 @@ export const config = {
       type: 'www',
       baseUrl: baseUrl,
       prerenderConfig: './prerender.config.ts',
-      copy: [{ src: '../../CONTRIBUTING.md', dest: './CONTRIBUTING.md' }, ...components()],
+      copy: [{ src: '../../../CONTRIBUTING.md', dest: './CONTRIBUTING.md' }, ...components()],
     },
   ],
   plugins: [
@@ -57,7 +57,7 @@ export const config = {
     after: [
       // Plugins injected before rollupNodeResolve()
       alias({
-        entries: [{ find: '../../assets', replacement: '../packages/railz-components/src/assets' }],
+        entries: [{ find: '../../assets', replacement: '../railz-components/src/assets' }],
       }),
     ],
   },
