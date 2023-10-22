@@ -6,7 +6,7 @@ import fs from 'fs';
 import path from 'path';
 
 function components() {
-  const component = path.join(__dirname, '../design-components/packages/railz-components/src', 'components');
+  const component = path.join(__dirname, '../packages/railz-components/src', 'components');
 
   return [
     ...fs
@@ -30,6 +30,9 @@ function components() {
       .filter(item => item !== null),
   ];
 }
+const isProd = process.env.LOCAL_DEV !== 'true';
+const baseUrl = isProd ? 'https://railz-ai.github.io/railz-uikit/' : 'http://localhost:3333/';
+isProd && console.log(`⚠️⚠️ Running in Prod Mode, the docs will only be avaliable in the deployed page (${baseUrl}) ⚠️⚠️`);
 
 export const config = {
   globalStyle: 'src/global/app.css',
@@ -38,7 +41,7 @@ export const config = {
   outputTargets: [
     {
       type: 'www',
-      baseUrl: 'https://railz-ai.github.io/railz-uikit/',
+      baseUrl: baseUrl,
       prerenderConfig: './prerender.config.ts',
       copy: [{ src: '../../CONTRIBUTING.md', dest: './CONTRIBUTING.md' }, ...components()],
     },
@@ -54,7 +57,7 @@ export const config = {
     after: [
       // Plugins injected before rollupNodeResolve()
       alias({
-        entries: [{ find: '../../assets', replacement: '../design-components/packages/railz-components/src/assets' }],
+        entries: [{ find: '../../assets', replacement: '../packages/railz-components/src/assets' }],
       }),
     ],
   },

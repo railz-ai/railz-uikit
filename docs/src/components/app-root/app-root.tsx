@@ -1,4 +1,5 @@
 import { Component, h, State } from '@stencil/core';
+
 @Component({
   tag: 'app-root',
   styleUrl: 'app-root.scss',
@@ -6,9 +7,46 @@ import { Component, h, State } from '@stencil/core';
 })
 export class AppRoot {
   @State() menuOpen: boolean = true;
+  @State() path: string = location.pathname;
+  @State() localDevMode: boolean = ['0.0.0.0', '127.0.0.1', 'localhost'].includes(location.hostname);
+
+  componentWillLoad() {
+    globalThis.localDevMode = this.localDevMode;
+
+    addEventListener('locationChange', () => (this.path = location.pathname));
+    addEventListener('popstate', () => (this.path = location.pathname));
+  }
 
   toggleMenu() {
+    console.log('asd', process.argv, process.env);
     this.menuOpen = !this.menuOpen;
+  }
+
+  renderPath() {
+    // this pseudo-router was copied from here:
+    // https://github.com/stencil-community/stencil-router/issues/154#issuecomment-1709961193
+    if (this.path === '/') {
+      if (this.localDevMode) return <page-playground />;
+      return <app-home />;
+    }
+    if (this.path === '/home') return <app-home />;
+    if (this.path === '/playground') return <page-playground />;
+    if (this.path === '/getting-started/installation/uikit') return <page-installation-kit />;
+    if (this.path === '/getting-started/installation/tokens') return <page-installation-tokens />;
+    if (this.path === '/getting-started/contributing') return <page-contributing />;
+    if (this.path === '/tokens/colors') return <page-colors />;
+    if (this.path === '/tokens/typography') return <page-typography />;
+    if (this.path === '/tokens/structure') return <page-structure />;
+    if (this.path === '/tokens/icons') return <page-icons />;
+    if (this.path === '/tokens/motion') return <page-motion />;
+    if (this.path === '/tokens/theme') return <page-theme />;
+    if (this.path === '/components/buttons') return <page-buttons />;
+    if (this.path === '/components/text-inputs') return <page-text-inputs />;
+    if (this.path === '/components/select-input') return <page-select-input />;
+    if (this.path === '/components/form-controls') return <page-form-controls />;
+    if (this.path === '/components/modal') return <page-modal />;
+    if (this.path === '/components/dropdown-menu') return <page-dropdown-menu />;
+    if (this.path === '/components/status-pills') return <page-status-pills />;
   }
 
   render() {
@@ -38,29 +76,7 @@ export class AppRoot {
               </a>
             </div>
           </div>
-          <main class="content-container">
-            <stencil-router>
-              <stencil-route-switch scrollTopOffset={0}>
-                <stencil-route url="/" component="app-home" exact={true} />
-                <stencil-route url="/getting-started/installation/uikit" component="page-installation-kit" />
-                <stencil-route url="/getting-started/installation/tokens" component="page-installation-tokens" />
-                <stencil-route url="/getting-started/contributing" component="page-contributing" />
-                <stencil-route url="/tokens/colors" component="page-colors" />
-                <stencil-route url="/tokens/typography" component="page-typography" />
-                <stencil-route url="/tokens/structure" component="page-structure" />
-                <stencil-route url="/tokens/icons" component="page-icons" />
-                <stencil-route url="/tokens/motion" component="page-motion" />
-                <stencil-route url="/tokens/theme" component="page-theme" />
-                <stencil-route url="/components/buttons" component="page-buttons" />
-                <stencil-route url="/components/text-inputs" component="page-text-inputs" />
-                <stencil-route url="/components/select-input" component="page-select-input" />
-                <stencil-route url="/components/form-controls" component="page-form-controls" />
-                <stencil-route url="/components/modal" component="page-modal" />
-                <stencil-route url="/components/dropdown-menu" component="page-dropdown-menu" />
-                <stencil-route url="/components/status-pills" component="page-status-pills" />
-              </stencil-route-switch>
-            </stencil-router>
-          </main>
+          <main class="content-container">{this.renderPath()}</main>
         </div>
       </div>
     );

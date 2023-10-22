@@ -6,7 +6,7 @@
   "author": "railz.ai",
   "scripts": {
     "build": "stencil build",
-    "start": "stencil build --dev --watch --serve",
+    "dev": "LOCAL_DEV=true stencil build --dev --watch --serve",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "generate:icons": "node SVGtoJson_glob.js",
@@ -16,10 +16,10 @@
     "deploy": "gh-pages -t -d www/railz-uikit -b gh-pages"
   },
   "devDependencies": {
-    "@stencil/core": "2.22.3",
+    "@stencil/core": "4.5.0",
     "@stencil/helmet": "^0.3.3",
-    "@stencil/router": "^1.0.1",
-    "@stencil/sass": "^1.5.2",
+    "@stencil-community/router": "1.0.2",
+    "@stencil/sass": "^3.0.6",
     "del-cli": "~4.0.1",
     "doctrine": "^3.0.0",
     "gh-pages": "^4.0.0",
@@ -34,12 +34,11 @@
   "license": "MIT",
   "dependencies": {
     "@railzai/railz-uikit": "latest",
-    "@rollup/plugin-alias": "^3.1.9",
-    "@stencil/react-output-target": "^0.3.1",
+    "@rollup/plugin-alias": "^5.0.1",
     "fs-extra": "^10.0.1",
     "glob-promise": "^4.2.2",
     "path": "^0.12.7",
     "pretty": "^2.0.0",
-    "util": "^0.12.4"
+    "util": "^0.12.5"
   }
 }

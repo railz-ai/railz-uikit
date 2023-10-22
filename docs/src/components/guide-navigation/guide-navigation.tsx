@@ -1,5 +1,12 @@
 import { Component, h, Prop } from '@stencil/core';
 
+const HomePaths = globalThis.localDevMode
+  ? [
+      { name: 'Playground', url: '/' },
+      { name: 'Home', url: '/home' },
+    ]
+  : [{ name: 'Home', url: '/home' }];
+
 @Component({
   tag: 'guide-navigation',
   styleUrl: 'guide-navigation.scss',
@@ -10,18 +17,16 @@ export class GuideNavigation {
 
   public groups = [
     {
-      name: 'Getting Started',
+      name: 'Home',
+      url: '/',
+      sections: [...HomePaths, { name: 'Contributing', url: '/getting-started/contributing' }],
+    },
+    {
+      name: 'Installation &',
       url: '/getting-started',
       sections: [
-        {
-          name: 'Installation',
-          url: '/getting-started/installation',
-          sections: [
-            { name: 'UI Kit', url: '/getting-started/installation/uikit' },
-            { name: 'Tokens', url: '/getting-started/installation/tokens' },
-          ],
-        },
-        { name: 'Contributing', url: '/getting-started/contributing' },
+        { name: 'UI Kit', url: '/getting-started/installation/uikit' },
+        { name: 'Tokens', url: '/getting-started/installation/tokens' },
       ],
     },
     {
@@ -57,7 +62,7 @@ export class GuideNavigation {
         <h3>{group.name}</h3>
         <ul class="sections">
           {group.sections.map(section => (
-            <li>{section?.sections?.length ? this.renderSection(section) : <stencil-route-link url={section.url}>{section.name}</stencil-route-link>}</li>
+            <li>{section?.sections?.length ? this.renderSection(section) : <a href={section.url}>{section.name}</a>}</li>
           ))}
         </ul>
       </section>
