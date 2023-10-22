@@ -23,6 +23,7 @@
     "dist/"
   ],
   "scripts": {
+    "prebuild": "if [ ! -f ./src/components.d.ts ]; then touch ./src/components.d.ts; npm run build || true; fi",
     "build": "stencil build",
     "dev": "stencil build --dev",
     "dev:link": "yarn link",
@@ -51,6 +52,7 @@
     "jest": "27.0.3",
     "jest-cli": "27.4.5",
     "eslint": "7.29.0",
+    "puppeteer": "21.4.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "~2.25.4",
     "eslint-plugin-prettier": "4.0.0",

@@ -16,7 +16,7 @@
     "deploy": "gh-pages -t -d www/railz-uikit -b gh-pages"
   },
   "devDependencies": {
-    "@stencil/core": "2.13.0",
+    "@stencil/core": "2.22.3",
     "@stencil/helmet": "^0.3.3",
     "@stencil/router": "^1.0.1",
     "@stencil/sass": "^1.5.2",
