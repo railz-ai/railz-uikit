@@ -1,0 +1,55 @@
+{
+  "name": "@railzai/railz-tokens",
+  "version": "0.0.1-alpha.52",
+  "description": "Design Token Framework",
+  "main": "./scss/ui-kit/_index.scss",
+  "scripts": {
+    "build": "sass scss:css",
+    "lint": "stylelint 'scss/**/*.scss' --fix",
+    "dev": "sass --watch scss:css",
+    "ci:publish:prerelease": "lerna publish prerelease --yes --no-verify-access --message 'chore(release): publish prerelease version'",
+    "ci:publish:patch": "lerna publish patch --yes --no-verify-access --message 'chore(release): publish patch version'",
+    "ci:publish:minor": "lerna publish minor --yes --no-verify-access --message 'chore(release): publish minor version'",
+    "ci:publish:major": "lerna publish major --yes --no-verify-access --message 'chore(release): publish major version'",
+    "dev:link": "yarn link",
+    "dev:unlink": "yarn unlink"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/railz-ai/railz-uikit.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "SCSS",
+    "components",
+    "Design",
+    "System",
+    "Component",
+    "Guide",
+    "Style",
+    "Guide",
+    "Tokens",
+    "Library"
+  ],
+  "author": "railz.ai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/railz-ai/railz-uikit/issues"
+  },
+  "homepage": "https://github.com/railz-ai/railz-uikit#readme",
+  "devDependencies": {
+    "prettier": "2.7.0",
+    "sass": "~1.52.3",
+    "stylelint": "14.9.1",
+    "stylelint-a11y": "1.2.3",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-recommended": "8.0.0",
+    "stylelint-config-standard-scss": "4.0.0",
+    "stylelint-prettier": "2.0.0",
+    "stylelint-scss": "4.2.0"
+  },
+  "packageManager": "yarn@1.22.17",
+  "gitHead": "a10e4f996b6135505df71725f3d2a65e274a6359"
+}

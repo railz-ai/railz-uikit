@@ -68,8 +68,8 @@ packages/components-react/dist
 packages/components-react/node_modules
 packages/*/lib
 examples/dev/*
-/design-tokens/packages/railz-tokens/css/
-/design-components/packages/railz-components/src/components.d.ts
-/design-components/packages/railz-components/components/
-/design-components/packages/railz-components-react/src/components/react-component-lib/
-/design-components/packages/railz-components-react/src/components/index.ts
+packages/railz-tokens/css/
+packages/railz-components/src/components.d.ts
+packages/railz-components/components
+packages/railz-components-react/src/components/react-component-lib/
+packages/railz-components-react/src/components/index.ts

@@ -49,9 +49,11 @@ From the main folder:
 
 1. Clone this [repository](https://github.com/railz-ai/railz-uikit.git)
 2. Install the dependency needed to setup the packages from the main folder.
+
    ```bash
-   yarn
+
    ```
+
 3. Install lerna using yarn
    ```bash
    yarn global add lerna
@@ -59,7 +61,7 @@ From the main folder:
 4. Run the bootstrap command to install all the dependencies for the packages, lerna will handle the linking between the
    packages
    ```bash
-   npm install:codesandbox
+   yarn install
    ```
 5. Build the packages to begin using
    ```bash

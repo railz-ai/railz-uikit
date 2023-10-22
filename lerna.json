@@ -1,7 +1,6 @@
 {
-  "packages": ["design-components/packages/*", "design-tokens/packages/*"],
+  "packages": ["packages/*"],
   "npmClient": "yarn",
-  "useWorkspaces": true,
   "version": "independent",
   "conventionalCommits": true,
   "command": {
