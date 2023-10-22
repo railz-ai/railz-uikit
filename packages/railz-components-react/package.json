@@ -18,11 +18,10 @@
   "scripts": {
     "tsc": "tsc -p .",
     "rollup": "rollup -c",
-    "dev": "yarn compile",
     "build": "yarn clean && yarn compile && yarn clean:base:dist",
     "clean": "rimraf dist && rimraf base-dist",
     "clean:base:dist": "rimraf base-dist",
-    "compile": "npm run tsc && rollup -c",
+    "compile": "npm run tsc && rollup -c && echo '🚀 @railzai/railz-uikit-react compiled'",
     "dev:link": "yarn link",
     "dev:unlink": "yarn unlink"
   },

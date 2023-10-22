@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "dev": "lerna run build && lerna watch -- lerna run dev --since",
+    "dev": "yarn build:only:components && lerna watch -- lerna run build --since --include-dependents",
     "dev:link": "lerna run dev:link && echo '🎉 Linked all packages'",
     "dev:unlink": "lerna run dev:unlink && echo '🎉 Unlinked all packages, remember to clear up cache with something like `yarn install --check-files`'",
     "build": "lerna run build",
