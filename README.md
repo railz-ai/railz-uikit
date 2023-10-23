@@ -38,19 +38,20 @@ Check out the usage instructions for [Railz UIKit](./design-components/USAGE.md)
 
 ### Development - Build Your Packages
 
-We use [lerna](https://github.com/lerna/lerna) and Yarn Workspaces(classic) to handle the monorepo structure.
 
-To build and test your components locally, you can:
- - Link your artifacts (the built packages), by linking packages.
- - Use the Docs playground, to test locally with a simpler setup.
-
-For both alternatives, start with the following steps:
+Start with the following steps:
 
 1. Clone this [repository](https://github.com/railz-ai/railz-uikit.git)
 2. Install the dependencies of the packages with `yarn install`
 3. Build the packages with `yarn build`
 
    > Note: you can build specific groups of packages to increase performance, take a look at the scripts in the `package.json` file.
+   
+You will notice that we use [lerna](https://github.com/lerna/lerna) and Yarn Workspaces(classic) to handle the monorepo structure.
+
+Now, to build and test your components locally, you can:
+ - Link your artifacts (the built packages), by linking packages.
+ - Use the Docs playground, to test locally with a simpler setup.
    
 ### Development - Using Linked Packages
 
@@ -59,7 +60,7 @@ There are 2 scripts in the root `package.json` file that will help you link the 
 - `dev:link` - This will link all the packages in the monorepo to your local machine.
 - `dev:unlink` - This will UNlink all the packages in the monorepo from your local machine.
 
-#### Example with a React App
+##### Example with a React App
 
 In your own React Application, run the following script to link the `@railzai/railz-uikit-react` package: 
 

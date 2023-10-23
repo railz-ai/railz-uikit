@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev:components": "yarn build:only:components && lerna watch --scope=@railzai/railz-uikit --scope=@railzai/railz-uikit-react -- lerna run build --scope=@railzai/railz-uikit --scope=@railzai/railz-uikit-react",
-    "dev:docs": "pm2 delete docs || true && pm2 start 'lerna run --scope=railz-uikit-docs dev' --watch packages/railz-components/dist --name docs --no-automation --no-daemon",
+    "dev:docs": "nodemon --watch packages/railz-components/dist  --delay 2 --exec \"lerna run --scope=railz-uikit-docs dev\"",
     "dev:link": "lerna run dev:link && echo '🎉 Linked all packages'",
     "dev:unlink": "lerna run dev:unlink && echo '🎉 Unlinked all packages, remember to clear up cache with something like `yarn install --check-files`'",
     "build": "lerna run build",
@@ -29,7 +29,8 @@
     "lerna": "~7.4.1",
     "lint-staged": "~13.0.1",
     "prettier": "~2.7.0",
-    "pm2": "5.3.0"
+    "pm2": "5.3.0",
+    "nodemon": "3.0.1"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown --allow-empty"
