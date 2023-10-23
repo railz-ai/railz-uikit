@@ -10,10 +10,17 @@ export class PlaygroundPage {
     return (
       <div class="container">
         <div class="header">
-          <h1>Playground</h1>
+          <h1>Playground (use this place to test and break stuff)</h1>
         </div>
         <div class="content">
           <section>
+            <h2>Railz Logo</h2>
+            <div style={{ width: '100px' }}>
+              <railz-logo name="sageBusinessCloud" variant="small" outlined />
+            </div>
+          </section>
+          <section>
+            <h2>Button</h2>
             <railz-button label="Click me" />
           </section>
         </div>
