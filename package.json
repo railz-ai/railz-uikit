@@ -2,13 +2,14 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "dev:docs": "lerna run --scope railz-uikit-docs dev",
+    "dev:components": "yarn build:only:components && lerna watch --scope=@railzai/railz-uikit --scope=@railzai/railz-uikit-react -- lerna run build --scope=@railzai/railz-uikit --scope=@railzai/railz-uikit-react",
+    "dev:docs": "pm2 delete docs || true && pm2 start 'lerna run --scope=railz-uikit-docs dev' --watch packages/railz-components/dist --name docs --no-automation --no-daemon",
     "dev:link": "lerna run dev:link && echo '🎉 Linked all packages'",
     "dev:unlink": "lerna run dev:unlink && echo '🎉 Unlinked all packages, remember to clear up cache with something like `yarn install --check-files`'",
     "build": "lerna run build",
-    "build:only:components": "lerna run --scope '{@railzai/railz-uikit, @railzai/railz-uikit-react}' build",
-    "build:only:components:stencil": "lerna run --scope @railzai/railz-uikit build",
-    "build:only:tokens": "lerna run --scope '{@railzai/railz-tokens}' build",
+    "build:only:components": "lerna run --scope=@railzai/railz-uikit --scope=@railzai/railz-uikit-react build",
+    "build:only:components:stencil": "lerna run --scope=@railzai/railz-uikit build",
+    "build:only:tokens": "lerna run --scope=@railzai/railz-tokens build",
     "prepare": "husky install",
     "test": "lerna run test",
     "lint": "lerna run lint",
@@ -27,7 +28,8 @@
     "husky": "~8.0.1",
     "lerna": "~7.4.1",
     "lint-staged": "~13.0.1",
-    "prettier": "~2.7.0"
+    "prettier": "~2.7.0",
+    "pm2": "5.3.0"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown --allow-empty"
