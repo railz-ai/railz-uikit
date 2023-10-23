@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://railz.ai/" rel="noopener" target="_blank"><img width="80" src="doc/assets/images/railz-logo.svg" alt="Railz logo"></a>
+  <a href="https://railz.ai/" rel="noopener" target="_blank"><img width="80" src="packages/docs/src/assets/railz-logo-white.svg" alt="Railz logo"></a>
 </p>
 
 Railz is the Accounting Data as a Service™ solution that makes sense of your business customers' financial data.
@@ -41,48 +41,29 @@ the [NPMJS Railz account](https://www.npmjs.com/org/railzai).
 
 ### Build Your Packages
 
-To build and test your components locally, you will need to link the packages together. This is a replacement for
-publishing packages to npm that allows you to develop and test locally. We are
-using [lerna](https://github.com/lerna/lerna) to do this for us
+We use [lerna](https://github.com/lerna/lerna) and Yarn Workspaces(classic) to handle the monorepo structure.
 
-From the main folder:
+To build and test your components locally, you can:
+ - Link your artifacts (the built packages), by linking packages.
+ - Use the Docs playground, to test locally with a simpler setup.
+ - (TODO) use the Railz-UIKit dev server.
+
+To start with:
 
 1. Clone this [repository](https://github.com/railz-ai/railz-uikit.git)
-2. Install the dependency needed to setup the packages from the main folder.
+2. Install the dependencies of the packages with `yarn install`
+3. Build the packages with `yarn build`
 
-   ```bash
+   > Note: you can build specific groups of packages to increase performance, take a look at the scripts in the `package.json` file.
+   
+### Linking Packages to your local machine
 
-   ```
+There are 2 scripts in the root `package.json` file that will help you link the packages to your local machine:
 
-3. Install lerna using yarn
-   ```bash
-   yarn global add lerna
-   ```
-4. Run the bootstrap command to install all the dependencies for the packages, lerna will handle the linking between the
-   packages
-   ```bash
-   yarn install
-   ```
-5. Build the packages to begin using
-   ```bash
-   yarn build
-   ```
-6. Create a symlink to the built **design-components/packages/railz-components** library
-   ```bash
-   cd design-components/packages/railz-components
-   yarn link
-   ```
+- `dev:link` - This will link all the packages in the monorepo to your local machine.
+- `dev:unlink` - This will UNlink all the packages in the monorepo from your local machine.
 
-#### For React
-
-Lerna already linked the stencil component library to the React library during the build process so we only need to
-create the symlink for the React component library. Go to `design-components/packages/railz-components-react` folder and run the below:
-
-```bash
-yarn link
-```
-
-#### Usage
+#### Example with a React App
 
 In your own React Application, you can run the below to link both libraries
 
@@ -91,12 +72,10 @@ yarn link @railzai/railz-uikit
 yarn link @railzai/railz-uikit-react
 ```
 
-To make use of a specific React component library in your React application, import the components from the React component
-library in the file where you want to use them.
+### Using the Docs Playground
 
-```typescript jsx
-import { RailzLogo } from '@railzai/railz-uikit-react';
-```
+The Docs Playground is a Stencil application that uses the Railz-UIKit components. It is a great way to test your components locally.
+
 
 ## Contributing
 
