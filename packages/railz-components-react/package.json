@@ -15,6 +15,7 @@
   "bugs": {
     "url": "https://github.com/railz-ai/railz-uikit/issues"
   },
+  "type": "module",
   "scripts": {
     "tsc": "tsc -p .",
     "rollup": "rollup -c",
