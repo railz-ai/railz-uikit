@@ -15,7 +15,7 @@ export class RailzInputCheckbox {
   @Prop() name: string;
   @Prop() value: string;
 
-  // eslint-disable-next-line @stencil/strict-mutable
+  // eslint-disable-next-line @stencil-community/strict-mutable
   @Prop({ mutable: true, reflect: true }) checked?: boolean;
   @Prop({ mutable: true }) indeterminate?: boolean;
   @Prop() disabled?: boolean;

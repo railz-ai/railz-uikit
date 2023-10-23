@@ -1,0 +1,73 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:@stencil-community/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "max-len": [2, { "code": 160 }],
+    "no-empty": ["warn", { "allowEmptyCatch": true }], // default is false
+    "@typescript-eslint/no-unused-vars": "warn", // default is warn
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "no-inferrable-types": ["off", "ignore-params", "ignore-properties"],
+    "@stencil-community/async-methods": "error",
+    "@stencil-community/ban-prefix": ["error", ["stencil", "stnl", "st"]],
+    "@stencil-community/decorators-context": "error",
+    "@stencil-community/decorators-style": [
+      "error",
+      {
+        "prop": "inline",
+        "state": "inline",
+        "element": "inline",
+        "event": "inline",
+        "method": "multiline",
+        "watch": "multiline",
+        "listen": "multiline"
+      }
+    ],
+    "@stencil-community/element-type": "error",
+    "@stencil-community/host-data-deprecated": "error",
+    "@stencil-community/methods-must-be-public": "error",
+    "@stencil-community/no-unused-watch": "error",
+    "@stencil-community/own-methods-must-be-private": "warn",
+    "@stencil-community/own-props-must-be-private": "warn",
+    "@stencil-community/prefer-vdom-listener": "error",
+    "@stencil-community/props-must-be-public": "error",
+    "@stencil-community/props-must-be-readonly": "off",
+    "@stencil-community/render-returns-host": "error",
+    "@stencil-community/required-jsdoc": "off",
+    "@stencil-community/reserved-member-names": "error",
+    "@stencil-community/single-export": "error",
+    "@stencil-community/strict-mutable": "warn",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "newlines-between": "always-and-inside-groups"
+      }
+    ],
+    "import/no-unresolved": [2, { "commonjs": true, "amd": true }]
+  },
+  "settings": {
+    "import/core-modules": ["@stencil/core/testing"],
+    "react": {
+      "version": "detect", // Tells eslint-plugin-react to automatically detect the version of React to use
+      "pragma": "h"
+    }
+  }
+}

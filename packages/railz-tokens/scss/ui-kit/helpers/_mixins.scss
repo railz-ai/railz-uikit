@@ -64,20 +64,11 @@
 
 @mixin coordinates($offset: null, $right: null, $bottom: null, $left: null) {
   @if $right {
-    top: $offset;
-    left: $left;
-    right: $right;
-    bottom: $bottom;
+    inset: $offset $right $bottom $left;
   } @else if $offset {
-    top: $offset;
-    left: $offset;
-    right: $offset;
-    bottom: $offset;
+    inset: $offset $offset $offset $offset;
   } @else {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
   }
 }
 

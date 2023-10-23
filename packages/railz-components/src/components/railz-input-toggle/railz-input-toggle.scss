@@ -93,7 +93,10 @@ label {
     @include coordinates;
 
     border-radius: inherit;
-    box-shadow: 0 0 0 1px color('white'), 0 0 8px color('blue-500'), 0 0 0 2px color('navy-500');
+    box-shadow:
+      0 0 0 1px color('white'),
+      0 0 8px color('blue-500'),
+      0 0 0 2px color('navy-500');
     @include transition;
     @include show('off');
 

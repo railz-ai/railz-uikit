@@ -20,5 +20,6 @@ module.exports = {
     'scss/at-import-no-partial-leading-underscore': null,
     'selector-id-pattern': null,
     'scss/operator-no-unspaced': null,
+    'media-query-no-invalid': null,
   },
 };

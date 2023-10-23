@@ -17,7 +17,9 @@ $default-font-family: (
   'Segoe UI Emoji',
   'Segoe UI Symbol'
 );
-$font-family-primary-list: var(--primary-font-family), #{$default-font-family};
+$font-family-primary-list:
+  var(--primary-font-family),
+  #{$default-font-family};
 $font-families: (
   'main': (
     $font-family-primary-list,
