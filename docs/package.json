@@ -39,7 +39,7 @@
   "license": "MIT",
   "dependencies": {
     "@railzai/railz-uikit": "latest",
-    "@rollup/plugin-alias": "^3.1.9",
+    "@rollup/plugin-alias": "^5.0.0",
     "@stencil/react-output-target": "^0.3.1",
     "fs-extra": "^10.0.1",
     "glob-promise": "^4.2.2",
