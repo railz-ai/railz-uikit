@@ -1,11 +1,6 @@
 {
-  "packages": [
-    "design-components/packages/*",
-    "design-icons/packages/*",
-    "design-tokens/packages/*"
-  ],
+  "packages": ["packages/*"],
   "npmClient": "yarn",
-  "useWorkspaces": true,
   "version": "independent",
   "conventionalCommits": true,
   "command": {
@@ -14,5 +9,6 @@
       "allowBranch": ["master"],
       "registry": "https://registry.npmjs.org/"
     }
-  }
+  },
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json"
 }

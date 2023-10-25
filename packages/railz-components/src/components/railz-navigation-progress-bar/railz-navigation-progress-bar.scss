@@ -1,0 +1,331 @@
+:host {
+  display: block;
+}
+
+nav {
+  overflow: auto;
+}
+
+ul {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 2px;
+}
+
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  @include transition;
+
+  button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    padding: space(1) clamp(0px, calc(3vw - #{space(4)}), #{space(1.5)}) 0;
+    position: relative;
+    @include transition;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: space(0.5);
+      z-index: 1;
+      opacity: 0;
+      transform: scale(0);
+      box-shadow:
+        inset 0 0 0 3px var(--brand-secondary-background, #{color('neon-green-700')}),
+        inset 0 0 0 4px color('white');
+      @include transition;
+      @include circle(space(3));
+    }
+
+    &:focus-visible {
+      &::after {
+        opacity: 1;
+        max-height: 100%;
+        transform: scale(1);
+      }
+
+      .label,
+      .selected-label {
+        color: var(--brand-secondary-background, #{color('neon-green-700')});
+      }
+    }
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: space(2);
+    width: calc(50% - #{space(1)});
+    height: 2px;
+    margin-top: -1px;
+    background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    @include transition;
+  }
+
+  &::before {
+    left: 0;
+    border-radius: inherit;
+  }
+
+  &::after {
+    right: 0;
+    border-radius: inherit;
+  }
+}
+
+.indicator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include circle(space(2));
+  @include transition;
+
+  // Dot
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: color('white');
+    box-shadow: 0 0 0 2px color('gray-400');
+    @include circle(space(1));
+    @include transition;
+  }
+
+  // Ring
+  &::after {
+    content: '';
+    position: absolute;
+    box-shadow:
+      inset 0 0 0 1px color('gray-900'),
+      0 0 0 1px color('gray-900');
+    opacity: 0;
+    transform: scale(0);
+    @include circle(space(2));
+    @include transition;
+  }
+}
+
+.label-container {
+  padding: space(1);
+  color: color('gray-600');
+  position: relative;
+  @include font(10);
+}
+
+.label,
+.selected-label {
+  display: block;
+  @include transition;
+
+  @include mq(screen('small')) {
+    font-size: clamp(#{font-size(12)}, calc(3vw - #{space(1)}), #{font-size(14)});
+  }
+}
+
+.selected-label {
+  color: color('gray-900');
+  font-weight: font-weight('semi-bold');
+  transform: scale(0.9);
+  @include show('off');
+}
+
+.label {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+// States
+.success {
+  .indicator {
+    &::before {
+      box-shadow: inset 0 0 0 2px var(--brand-secondary-background, #{color('neon-green-700')});
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+
+  .label {
+    color: var(--brand-secondary-background, #{color('neon-green-700')});
+  }
+}
+
+.skipped {
+  &::before,
+  &::after {
+    width: calc(50% - #{space(1.5)});
+  }
+
+  .indicator {
+    background-color: color('white');
+
+    &::after {
+      opacity: 1;
+      background-color: color('white');
+      transform: scale(1);
+      box-shadow: inset 0 0 0 2px color('gray-400');
+    }
+
+    .icon {
+      transform: scale(0.8);
+      color: color('gray-600');
+      z-index: 1;
+      position: relative;
+    }
+  }
+}
+
+.current {
+  &::before,
+  &::after {
+    width: calc(50% - #{space(1.75)});
+  }
+
+  &::after {
+    background-color: color('gray-400');
+  }
+
+  &.page button:focus-visible::after {
+    top: 0;
+    @include circle(space(4));
+  }
+
+  .indicator {
+    &::before {
+      box-shadow: inset 0 0 0 2px color('gray-900');
+      background-color: color('gray-900');
+    }
+
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .label-container {
+    .label {
+      transform: scale(1.1);
+      color: color('black');
+      @include show('off');
+    }
+
+    .selected-label {
+      transform: scale(1);
+      color: color('black');
+      @include show('on');
+    }
+  }
+
+  & ~ .page {
+    &::before,
+    &::after {
+      background-color: color('gray-400');
+    }
+  }
+
+  &:last-of-type {
+    &::before,
+    &::after {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-1 {
+  .page:nth-of-type(1) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-2 {
+  .page:nth-of-type(-n + 1) {
+    &::before,
+    &::after {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+
+  .page:nth-of-type(2) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-3 {
+  .page:nth-of-type(-n + 2) {
+    &::before,
+    &::after {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+
+  .page:nth-of-type(3) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-4 {
+  .page:nth-of-type(-n + 3) {
+    &::before,
+    &::after {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+
+  .page:nth-of-type(4) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-5 {
+  .page:nth-of-type(-n + 4) {
+    &::before,
+    &::after {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+
+  .page:nth-of-type(5) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}
+
+.completed-6 {
+  .page:nth-of-type(-n + 5) {
+    &::before,
+    &::after {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+
+  .page:nth-of-type(6) {
+    &::before {
+      background-color: var(--brand-secondary-background, #{color('neon-green-700')});
+    }
+  }
+}

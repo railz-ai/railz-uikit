@@ -2,29 +2,17 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "dev": "(cd design-components/packages/railz-components && yarn && yarn start)",
-    "install:codesandbox:components": "cd design-components && yarn install && cd ..",
-    "install:codesandbox:icons": "cd design-icons && yarn install && cd ..",
-    "install:codesandbox:tokens": "cd design-tokens && yarn install && cd ..",
-    "install:codesandbox": "yarn install && yarn run install:codesandbox:components && yarn run install:codesandbox:icons && yarn run install:codesandbox:tokens",
-    "build:codesandbox:components": "cd design-components && yarn run add:components && yarn bootstrap && yarn run:build && cd ..",
-    "build:codesandbox:icons": "cd design-icons && yarn bootstrap && yarn run:build && cd ..",
-    "build:codesandbox:tokens": "cd design-tokens && yarn build && cd ..",
-    "build:codesandbox": "yarn run build:codesandbox:components && yarn run build:codesandbox:icons && yarn run build:codesandbox:tokens",
-    "build:components": "cd design-components && yarn && yarn run add:components && yarn bootstrap && yarn run:build && cd ..",
-    "build:icons": "cd design-icons && yarn && yarn bootstrap && yarn run:build && cd ..",
-    "build:tokens": "cd design-tokens && yarn && yarn build && cd ..",
-    "build": "yarn run build:components && yarn run build:icons && yarn run build:tokens",
+    "dev:components": "yarn build:only:components && lerna watch --scope=@railzai/railz-uikit --scope=@railzai/railz-uikit-react -- lerna run build --scope=@railzai/railz-uikit --scope=@railzai/railz-uikit-react",
+    "dev:docs": "nodemon --watch packages/railz-components/dist  --delay 2 --exec \"lerna run --scope=railz-uikit-docs dev\"",
+    "dev:link": "lerna run dev:link && echo '🎉 Linked all packages'",
+    "dev:unlink": "lerna run dev:unlink && echo '🎉 Unlinked all packages, remember to clear up cache with something like `yarn install --check-files`'",
+    "build": "lerna run build",
+    "build:only:components": "lerna run --scope=@railzai/railz-uikit --scope=@railzai/railz-uikit-react build",
+    "build:only:components:stencil": "lerna run --scope=@railzai/railz-uikit build",
+    "build:only:tokens": "lerna run --scope=@railzai/railz-tokens build",
     "prepare": "husky install",
-    "test:components": "cd design-components && yarn run test && cd ..",
-    "test:icons": "cd design-icons && yarn run test && cd ..",
-    "test": "yarn run test:components && yarn run test:icons",
-    "eslint:components": "cd design-components && yarn run lint && cd ..",
-    "eslint:icons": "cd design-icons && yarn run lint && cd ..",
-    "eslint": "yarn run eslint:components && yarn run eslint:icons",
-    "stylelint:components": "cd design-components && yarn run stylelint && cd ..",
-    "stylelint:icons": "cd design-icons && yarn run stylelint && cd ..",
-    "stylelint": "yarn run stylelint:components && yarn run stylelint:icons",
+    "test": "lerna run test",
+    "lint": "lerna run lint",
     "ci:publish:package": "lerna changed && lerna publish from-package --conventional-commits --create-release github --yes --no-verify-access --message 'chore(release): publish from package'",
     "publish:package": "lerna changed && lerna publish $RELEASETYPE --conventional-commits --create-release github --yes --no-verify-access --message \"chore(release): publish $RELEASETYPE version\"",
     "ci:publish:prerelease": "RELEASETYPE=prerelease yarn run publish:package",
@@ -32,25 +20,21 @@
     "ci:publish:minor": "RELEASETYPE=minor yarn run publish:package",
     "ci:publish:major": "RELEASETYPE=major yarn run publish:package",
     "prettier:write": "prettier . --write --ignore-unknown --allow-empty",
-    "run:lint-staged": "lint-staged",
-    "lint": "yarn eslint && yarn stylelint && yarn prettier:write"
+    "run:lint-staged": "lint-staged"
   },
   "devDependencies": {
     "@commitlint/cli": "~17.0.2",
     "@commitlint/config-conventional": "~17.0.2",
-    "@types/jest": "~27.4.1",
-    "husky": "~8.0.1",
-    "lerna": "~5.1.2",
+    "husky": "~8.0.3",
+    "lerna": "~7.4.1",
     "lint-staged": "~13.0.1",
-    "prettier": "~2.7.0"
+    "prettier": "~3.0.3",
+    "nodemon": "3.0.1"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown --allow-empty"
   },
-  "packageManager": "yarn@1.22.17",
   "workspaces": [
-    "design-components/packages/*",
-    "design-icons/packages/*",
-    "design-tokens/packages/*"
+    "packages/*"
   ]
 }

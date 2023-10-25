@@ -1,0 +1,11 @@
+@use 'ui-kit/_index' as *;
+
+@font-face {
+  src: url('../assets/fonts/inter-italic-var.woff2');
+  font-family: Inter;
+  src: url('../assets/fonts/inter-upright-var.woff2');
+}
+
+:root {
+  --primary-font-family: 'Inter';
+}
