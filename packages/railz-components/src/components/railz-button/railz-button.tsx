@@ -33,7 +33,7 @@ export class RailzButton {
   }
 
   private buttonStyles(): string {
-    return `${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} 
+    return `${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''}
     ${this.loading ? 'loading' : ''} ${this.isDisabled ? 'disabled' : ''}`;
   }
 
@@ -46,7 +46,7 @@ export class RailzButton {
   private renderPrefixIcon(): string {
     if (!this.loading) {
       return (
-        <div class="icon prefix-icon">
+        <div class="icon prefix-icon 2">
           <slot name="prefix" />
         </div>
       );
