@@ -18,9 +18,7 @@
     "ci:publish:prerelease": "RELEASETYPE=prerelease yarn run publish:package",
     "ci:publish:patch": "RELEASETYPE=patch yarn run publish:package",
     "ci:publish:minor": "RELEASETYPE=minor yarn run publish:package",
-    "ci:publish:major": "RELEASETYPE=major yarn run publish:package",
-    "prettier:write": "prettier . --write --ignore-unknown --allow-empty",
-    "run:lint-staged": "lint-staged"
+    "ci:publish:major": "RELEASETYPE=major yarn run publish:package"
   },
   "devDependencies": {
     "@commitlint/cli": "~17.0.2",
@@ -32,7 +30,7 @@
     "nodemon": "3.0.1"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown --allow-empty"
+    "**/*": "prettier --write --ignore-unknown --allow-empty --debug=true"
   },
   "workspaces": [
     "packages/*"
