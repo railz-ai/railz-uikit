@@ -30,7 +30,12 @@
     "nodemon": "3.0.1"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown --allow-empty"
+    "*.scss": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx,md}": [
+      "prettier --write"
+    ]
   },
   "workspaces": [
     "packages/*"

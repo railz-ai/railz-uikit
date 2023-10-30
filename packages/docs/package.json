@@ -15,6 +15,14 @@
     "prestart": "yarn clean",
     "deploy": "gh-pages -t -d www/railz-uikit -b gh-pages"
   },
+  "lint-staged": {
+    "*.scss": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
     "@stencil-community/router": "1.0.2",
     "@stencil/core": "4.5.0",

@@ -35,9 +35,20 @@
     "stylelint": "stylelint 'src/**/*.scss' --fix",
     "test:lint:ts": "eslint --ext .ts,.tsx --ignore-path ../../.gitignore",
     "test:lint:scss": "stylelint 'src/**/*.scss'",
-    "test": "yarn run test:lint:ts && yarn run test:lint:scss && yarn run test:stencil",
+    "test:lint": "yarn run test:lint:ts && yarn run test:lint:scss",
+    "test": "yarn run test:stencil",
     "generate": "stencil generate",
     "prettier": "prettier . --write --ignore-unknown --allow-empty"
+  },
+  "lint-staged": {
+    "*.scss": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@stencil/core": "~2.22.3"
