@@ -46,7 +46,7 @@ export class RailzButton {
   private renderPrefixIcon(): string {
     if (!this.loading) {
       return (
-        <div class="icon prefix-icon 2">
+        <div class="icon prefix-icon">
           <slot name="prefix" />
         </div>
       );
