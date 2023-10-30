@@ -30,7 +30,7 @@
     "nodemon": "3.0.1"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown --allow-empty --debug=true"
+    "**/*": "prettier --write --ignore-unknown --allow-empty"
   },
   "workspaces": [
     "packages/*"

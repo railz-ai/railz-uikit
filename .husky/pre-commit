@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 sh .husky/check-branch-name.sh
-yarn lint-staged -d
+yarn lint-staged
 yarn test
