@@ -14,6 +14,12 @@
     "dev:link": "yarn link",
     "dev:unlink": "yarn unlink"
   },
+  "lint-staged": {
+    "*.scss": [
+      "prettier --write",
+      "stylelint --fix"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/railz-ai/railz-uikit.git"

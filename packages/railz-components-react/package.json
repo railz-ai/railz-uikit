@@ -26,6 +26,11 @@
     "dev:link": "yarn link",
     "dev:unlink": "yarn unlink"
   },
+  "lint-staged": {
+    "src/index.ts": [
+      "prettier --write"
+    ]
+  },
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/types/index.d.ts",

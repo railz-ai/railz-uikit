@@ -33,7 +33,7 @@ export class RailzButton {
   }
 
   private buttonStyles(): string {
-    return `${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''} 
+    return `${this.type} ${this.size} ${this.shape} ${this.grow ? 'grow' : ''}
     ${this.loading ? 'loading' : ''} ${this.isDisabled ? 'disabled' : ''}`;
   }
 
