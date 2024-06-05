@@ -130,10 +130,6 @@ The component structure is based on the various libraries contained in this repo
 
 Contains components built using StencilJS
 
-### design-icons
-
-Contains our icon library
-
 ### design-tokens
 
 Contains design tokens for our theming
@@ -180,10 +176,6 @@ Component used to display the sum of two strings
 
 `/./readme.md`
 ```
-
-## Test your changes
-
-[Codesandbox CI](https://codesandbox.io/docs/ci) is used to publish a working version of the packages for each pull request, "a preview".
 
 ## Testing
 

@@ -2,7 +2,6 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property     | Attribute     | Description | Type      | Default     |
@@ -18,14 +17,12 @@
 | `target`     | `target`      |             | `string`  | `'_blank'`  |
 | `type`       | `type`        |             | `string`  | `'primary'` |
 
-
 ## Events
 
 | Event         | Description | Type               |
 | ------------- | ----------- | ------------------ |
 | `buttonClick` |             | `CustomEvent<any>` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

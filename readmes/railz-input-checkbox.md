@@ -2,7 +2,6 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property            | Attribute            | Description | Type      | Default     |
@@ -19,7 +18,6 @@
 | `required`          | `required`           |             | `string`  | `undefined` |
 | `value`             | `value`              |             | `string`  | `undefined` |
 
-
 ## Dependencies
 
 ### Depends on
@@ -27,12 +25,13 @@
 - [railz-icon](../railz-icon)
 
 ### Graph
+
 ```mermaid
 graph TD;
   railz-input-checkbox --> railz-icon
   style railz-input-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

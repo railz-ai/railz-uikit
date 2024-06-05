@@ -2,7 +2,6 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property     | Attribute      | Description | Type                 | Default     |
@@ -12,7 +11,6 @@
 | `outlined`   | `outlined`     |             | `boolean`            | `false`     |
 | `variant`    | `variant`      |             | `"large" \| "small"` | `'large'`   |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
