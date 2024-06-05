@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./docs
+        working-directory: ./packages/docs
     strategy:
       matrix:
         node-version: [20.x]
