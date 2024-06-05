@@ -31,9 +31,8 @@ function components() {
   ];
 }
 const isProd = process.env.LOCAL_DEV !== 'true';
-const baseUrl = isProd ? 'https://railz-ai.github.io/railz-uikit/' : 'http://localhost:3333/';
+const baseUrl = isProd ? '/railz-uikit' : 'http://localhost:3333/';
 isProd && console.log(`⚠️⚠️ Running in Prod Mode, the docs will only be avaliable in the deployed page (${baseUrl}) ⚠️⚠️`);
-
 export const config = {
   globalStyle: 'src/global/app.css',
   globalScript: 'src/global/app.ts',
@@ -42,6 +41,7 @@ export const config = {
     {
       type: 'www',
       baseUrl: baseUrl,
+      resourcesUrl: `/${baseUrl}/build/`,
       prerenderConfig: './prerender.config.ts',
       copy: [{ src: '../../../CONTRIBUTING.md', dest: './CONTRIBUTING.md' }, ...components()],
     },

@@ -68,9 +68,6 @@ export class AppRoot {
             </button>
 
             <div class="actions">
-              <a href="https://www.figma.com/file/VSUSijO0GAHAJa69ICxBDi/Railz-Design-System?node-id=30%3A703" class="figma" target="_blank">
-                Open Figma
-              </a>
               <a href="github.com" class="github" target="_blank">
                 View on Github
               </a>

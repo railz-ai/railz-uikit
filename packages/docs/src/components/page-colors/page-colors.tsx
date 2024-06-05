@@ -158,12 +158,6 @@ export class PageColors {
             <color-swatch-list />
           </section>
         </div>
-
-        <iframe
-          width="100%"
-          height="1000px"
-          src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FVSUSijO0GAHAJa69ICxBDi%2FRailz-Design-System%3Fnode-id%3D1185%253A7619"
-        ></iframe>
       </div>
     );
   }
