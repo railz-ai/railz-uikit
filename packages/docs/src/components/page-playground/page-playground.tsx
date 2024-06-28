@@ -1,5 +1,16 @@
 import { Component, h } from '@stencil/core';
 
+const possibleStates = ['pending', 'current', 'success', 'skipped', 'pending'];
+const stepState = {
+  overview: 'current',
+  accounting: 'current',
+  banking: 'pending',
+  commerce: 'pending',
+  summary: 'pending',
+};
+
+const steps = ['Overview', 'Accounting', 'Banking', 'Commerce', 'Summary'];
+
 @Component({
   tag: 'page-playground',
   styleUrl: 'page-playground.scss',
@@ -22,6 +33,21 @@ export class PlaygroundPage {
           <section>
             <h2>Button</h2>
             <railz-button label="Click me" />
+          </section>
+
+          <section>
+            <h2 class="section-title">Navigation Progress Bar</h2>
+            <railz-navigation-progress-bar
+              pages={steps.map(name => ({
+                name,
+                state: stepState[name],
+                onClick: () => {
+                  const current = possibleStates.findIndex(s => s === stepState[name]);
+                  stepState[name] = possibleStates[current + 1];
+                  console.log(`🐛 | steps:`, { name, stepState: stepState[name] });
+                },
+              }))}
+            />
           </section>
         </div>
       </div>

@@ -4,12 +4,15 @@
 
 nav {
   overflow: auto;
+  width: 100%;
 }
 
 ul {
+  width: 100%;
   display: flex;
   flex-wrap: nowrap;
-  padding: 2px;
+  padding: 0;
+  justify-content: space-between;
 }
 
 .page {
@@ -19,6 +22,7 @@ ul {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  flex-grow: 1;
   @include transition;
 
   button {
@@ -34,7 +38,7 @@ ul {
     outline: none;
     margin: 0;
     padding: 0;
-    padding: space(1) clamp(0px, calc(3vw - #{space(4)}), #{space(1.5)}) 0;
+    padding: space(1) clamp(0px, calc(1vw - #{space(4)}), #{space(1.5)}) 0;
     position: relative;
     @include transition;
 
