@@ -1,9 +1,0 @@
-:host {
-  @include article;
-}
-
-.group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: space(1);
-}
