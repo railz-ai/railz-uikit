@@ -73,8 +73,8 @@ $colors: (
     '500': hsl(155deg 100% 50%),
     '600': hsl(155deg 100% 40%),
     // '700': hsl(155deg 100% 27%),
-    '700': #00884f,
-    '800': hsl(154deg 100% 19%),
+    '700': #4acc3e,
+    '800': #30df20,
     '900': hsl(155deg 100% 10%),
   ),
   'teal': (
@@ -109,9 +109,10 @@ $colors: (
     '400': hsl(191deg 100% 60%),
     '500': hsl(191deg 100% 50%),
     '600': hsl(191deg 100% 37%),
-    '700': hsl(191deg 100% 30%),
+    '700': #1a2b4d,
     '800': hsl(191deg 100% 20%),
     '900': hsl(191deg 100% 10%),
+    'hover': #e8eaed,
   ),
   'navy': (
     '50': hsl(207deg 75% 95%),
@@ -128,14 +129,14 @@ $colors: (
 );
 $brand: (
   'secondary': (
-    'background': color('gray-900'),
+    'background': color('blue-700'),
     'foreground': color('white'),
   ),
   'primary': (
     'background': color('neon-green-700'),
     'background-hover': color('neon-green-800'),
     'background-active': color('green-600'),
-    'foreground': color('white'),
+    'foreground': color('black'),
     'foreground-hover': color('white'),
     'foreground-active': color('white'),
   ),
