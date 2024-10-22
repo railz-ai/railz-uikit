@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.58 (2024-10-18)
+
+
+### Features
+
+* changes to brand colors ([ba6de85](https://github.com/railz-ai/railz-uikit/commit/ba6de8522f27313f825787f510f106a5fa334f34))
+
+
+
+
+
 ## 0.0.1-alpha.57 (2024-09-28)
 
 **Note:** Version bump only for package @railzai/railz-uikit-react

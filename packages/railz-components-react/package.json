@@ -1,7 +1,7 @@
 {
   "name": "@railzai/railz-uikit-react",
   "sideEffects": false,
-  "version": "0.0.1-alpha.57",
+  "version": "0.0.1-alpha.58",
   "description": "React specific wrapper for @railzai/railz-uikit",
   "repository": {
     "type": "git",
@@ -50,7 +50,7 @@
     "typescript": "4.8.2"
   },
   "dependencies": {
-    "@railzai/railz-uikit": "^0.0.1-alpha.57",
+    "@railzai/railz-uikit": "^0.0.1-alpha.58",
     "minimist": "1.2.6"
   },
   "peerDependencies": {
