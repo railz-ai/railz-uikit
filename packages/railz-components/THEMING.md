@@ -6,5 +6,5 @@ Our theming makes use of Sass variables to allow easy customization
 
 | Property   | Type    | Value                                                        |
 | ---------- | ------- | ------------------------------------------------------------ |
-| $primary   | `color` | <div class="palette"><p class="primary"></p> #00884F</div>   |
-| $secondary | `color` | <div class="palette"><p class="secondary"></p> #006037</div> |
+| $primary   | `color` | <div class="palette"><p class="primary"></p> #1A2B4D</div>   |
+| $secondary | `color` | <div class="palette"><p class="secondary"></p> #4ACC3E</div> |
