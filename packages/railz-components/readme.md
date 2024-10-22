@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://railz.ai/" rel="noopener" target="_blank"><img src="https://files.readme.io/080c7e0-small-Normal_Logo.png" alt="Railz logo"></a>
+  <a href="https://railz.ai/" rel="noopener" target="_blank"><img src="https://files.readme.io/080c7e0-small-Normal_Logo.png" alt="FIS logo"></a>
 </p>
 
-Railz is the Accounting Data as a Service™ solution that makes sense of your business customers' financial data.
+Accounting Data as a Service™ is the solution that makes sense of your business customers' financial data.
 
-<h1 align="center">Railz UIKit</h1>
+<h1 align="center">Accounting Data as a Service™ UIKit</h1>
 
 <p align="center">
   <a href="https://github.com/railz-ai/railz-uikit/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@railzai/railz-uikit" alt="Software License"/></a>
@@ -16,7 +16,7 @@ Railz is the Accounting Data as a Service™ solution that makes sense of your b
 </p>
 <h2 align="center">Contains components libraries.</h2>
 
-- [_Railz UIKit_](https://github.com/railz-ai/railz-uikit/design-components) is a library of components that features our implementation of [Railz Connect](https://railz.ai/product/connect) widget and extended components.
+- [_Railz UIKit_](https://github.com/railz-ai/railz-uikit/design-components) is a library of components that features our implementation of [Accounting Data as a Service™ Connect](https://railz.ai/product/connect) widget and extended components.
 
 ## [Installation](./INSTALLATION.md)
 
@@ -24,7 +24,7 @@ Railz is the Accounting Data as a Service™ solution that makes sense of your b
 
 ## Contributing
 
-The Railz UIKit library and documentation are open to contributions. For more information, check
+The Accounting Data as a Service™ UIKit library and documentation are open to contributions. For more information, check
 the [guidelines](./CONTRIBUTING.md).
 
 ## License

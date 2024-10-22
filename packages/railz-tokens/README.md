@@ -2,9 +2,9 @@
   <a href="https://railz.ai/" rel="noopener" target="_blank"><img src="https://files.readme.io/080c7e0-small-Normal_Logo.png" alt="Railz logo"></a>
 </p>
 
-Railz is the Accounting Data as a Service™ solution that makes sense of your business customers' financial data.
+Accounting Data as a Service™ is the solution that makes sense of your business customers' financial data.
 
-<h1 align="center">Railz Tokens</h1>
+<h1 align="center">Accounting Data as a Service™ Tokens</h1>
 
 <p align="center">
   <a href="https://github.com/railz-ai/railz-uikit/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/@railzai/railz-tokens" alt="Software License"/></a>
@@ -22,7 +22,7 @@ Railz is the Accounting Data as a Service™ solution that makes sense of your b
 
 ## Contributing
 
-The Railz UIKit Icon library and documentation are open to contributions. For more information, check
+The Accounting Data as a Service™ UIKit Icon library and documentation are open to contributions. For more information, check
 the [guidelines](../../CONTRIBUTING.md).
 
 ## License
