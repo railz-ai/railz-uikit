@@ -29,6 +29,7 @@
     "dev:link": "yarn link",
     "dev:unlink": "yarn unlink",
     "test:stencil": "stencil test --spec",
+    "test:stencil:specific": "stencil test --spec packages/railz-components/src/components/railz-button/test/railz-button.spec.tsx",
     "test:all": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "lint": "eslint src/**/*{.ts,.tsx} --fix",
