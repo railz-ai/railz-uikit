@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.60 (2024-11-29)
+
+
+### Features
+
+* update codebase ([ab2614e](https://github.com/railz-ai/railz-uikit/commit/ab2614ede27a8b033fe6ac8bd0aa7dbb53c6f3ff))
+
+
+
+
+
 ## 0.0.1-alpha.59 (2024-10-22)
 
 **Note:** Version bump only for package @railzai/railz-uikit
