@@ -67,20 +67,6 @@ In your own React Application, run the following script to link the `@railzai/ra
 
 `yarn link @railzai/railz-uikit-react`
 
-### Using the Docs Playground
-
-The Docs Playground is a Stencil application that uses the Accounting Data as a Service™-UIKit components. It is a great way to test your components locally.
-
-Two commands were created for this:
-
-- `dev:docs` - This will start the Docs Playground in development mode. This will watch for changes in the components and rebuild them automatically.
-
-- `dev:components` - This will build and watch for changes in the railz-components package. This is useful if you are working on the components and want to see the changes in the Docs Playground.
-
-Run both in different terminal tabs, and whenever you change something in `railz-components` or the `docs` packages, it will rebuild and update the docs.
-
-Furthermore, running the Docs Playground in development mode will show you an extra page (the "playground" page), that you can use to edit and play around with components to test them.
-
 ## Contributing
 
 The Accounting Data as a Service™ UIKit library and documentation are open to contributions. For more information, check

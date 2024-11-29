@@ -26,6 +26,7 @@ export class RailzButton {
   @Prop() loading?: boolean;
   @Prop({ reflect: false }) href?: string;
   @Prop() target?: string = '_blank';
+  @Prop() rel?: string = 'noopener, noreferrer';
 
   @Event() buttonClick: EventEmitter;
   private handleClick(event: Event): void {
@@ -65,7 +66,7 @@ export class RailzButton {
 
   private openNewTab(event: any, url: string): void {
     event.preventDefault();
-    const newTab = window.open(url, this.target, 'noopener,noreferrer');
+    const newTab = window.open(url, this.target, this.rel);
     newTab.opener = null;
   }
 
