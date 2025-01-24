@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.0.1-alpha.66 (2025-01-24)
+
+**Note:** Version bump only for package @railzai/railz-uikit-react
+
+
+
+
+
 ## 0.0.1-alpha.65 (2025-01-22)
 
 **Note:** Version bump only for package @railzai/railz-uikit-react
